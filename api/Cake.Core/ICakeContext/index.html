@@ -135,6 +135,20 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Core">Cake<wbr>.Core</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Cake.Core/ICakeArguments">ICakeArguments</a></li>
+				<li class="selected"><a href="/api/Cake.Core/ICakeContext">ICakeContext</a></li>
+				<li><a href="/api/Cake.Core/ICakeEngine">ICakeEngine</a></li>
+				<li><a href="/api/Cake.Core/ICakeEnvironment">ICakeEnvironment</a></li>
+				<li><a href="/api/Cake.Core/ICakePlatform">ICakePlatform</a></li>
+				<li><a href="/api/Cake.Core/ICakeReportPrinter">ICakeReportPrinter</a></li>
+				<li><a href="/api/Cake.Core/ICakeRuntime">ICakeRuntime</a></li>
+				<li><a href="/api/Cake.Core/ICakeTaskInfo">ICakeTaskInfo</a></li>
+				<li><a href="/api/Cake.Core/IConsole">IConsole</a></li>
+				<li><a href="/api/Cake.Core/IExecutionStrategy">IExecutionStrategy</a></li>
+				<li><a href="/api/Cake.Core/ITaskSetupContext">ITaskSetupContext</a></li>
+				<li><a href="/api/Cake.Core/ITaskTeardownContext">ITaskTeardownContext</a></li>
+				<li><a href="/api/Cake.Core/ITeardownContext">ITeardownContext</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/api/Cake.Core/ActionTask">ActionTask</a></li>
 				<li><a href="/api/Cake.Core/CakeContext">CakeContext</a></li>
@@ -166,20 +180,6 @@
 			<li class="header">Enum Types</li>
 				<li><a href="/api/Cake.Core/CakeTaskExecutionStatus">Cake<wbr>Task<wbr>Execution<wbr>Status</a></li>
 				<li><a href="/api/Cake.Core/PlatformFamily">PlatformFamily</a></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/api/Cake.Core/ICakeArguments">ICakeArguments</a></li>
-				<li class="selected"><a href="/api/Cake.Core/ICakeContext">ICakeContext</a></li>
-				<li><a href="/api/Cake.Core/ICakeEngine">ICakeEngine</a></li>
-				<li><a href="/api/Cake.Core/ICakeEnvironment">ICakeEnvironment</a></li>
-				<li><a href="/api/Cake.Core/ICakePlatform">ICakePlatform</a></li>
-				<li><a href="/api/Cake.Core/ICakeReportPrinter">ICakeReportPrinter</a></li>
-				<li><a href="/api/Cake.Core/ICakeRuntime">ICakeRuntime</a></li>
-				<li><a href="/api/Cake.Core/ICakeTaskInfo">ICakeTaskInfo</a></li>
-				<li><a href="/api/Cake.Core/IConsole">IConsole</a></li>
-				<li><a href="/api/Cake.Core/IExecutionStrategy">IExecutionStrategy</a></li>
-				<li><a href="/api/Cake.Core/ITaskSetupContext">ITaskSetupContext</a></li>
-				<li><a href="/api/Cake.Core/ITaskTeardownContext">ITaskTeardownContext</a></li>
-				<li><a href="/api/Cake.Core/ITeardownContext">ITeardownContext</a></li>
 
 
                     </ul>
@@ -218,13 +218,13 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Core/ITaskTeardownContext">ITaskTeardownContext</a></li>								
-											<li><a href="/api/Cake.Core/CakeContext">CakeContext</a></li>								
-											<li><a href="/api/Cake.Core/TaskSetupContext">TaskSetupContext</a></li>								
-											<li><a href="/api/Cake.Core/ITaskSetupContext">ITaskSetupContext</a></li>								
-											<li><a href="/api/Cake.Core/TeardownContext">TeardownContext</a></li>								
-											<li><a href="/api/Cake.Core/TaskTeardownContext">TaskTeardownContext</a></li>								
 											<li><a href="/api/Cake.Core/ITeardownContext">ITeardownContext</a></li>								
+											<li><a href="/api/Cake.Core/TaskTeardownContext">TaskTeardownContext</a></li>								
+											<li><a href="/api/Cake.Core/ITaskSetupContext">ITaskSetupContext</a></li>								
+											<li><a href="/api/Cake.Core/TaskSetupContext">TaskSetupContext</a></li>								
+											<li><a href="/api/Cake.Core/CakeContext">CakeContext</a></li>								
+											<li><a href="/api/Cake.Core/ITaskTeardownContext">ITaskTeardownContext</a></li>								
+											<li><a href="/api/Cake.Core/TeardownContext">TeardownContext</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -234,20 +234,20 @@
 							graph TD
 	Type["ICakeContext"]
 class Type type-node
-	Type-.-&gt;Implementing0["ITaskTeardownContext"]
-	click Implementing0 "/api/Cake.Core/ITaskTeardownContext"
-	Type-.-&gt;Implementing1["CakeContext"]
-	click Implementing1 "/api/Cake.Core/CakeContext"
-	Type-.-&gt;Implementing2["TaskSetupContext"]
-	click Implementing2 "/api/Cake.Core/TaskSetupContext"
-	Type-.-&gt;Implementing3["ITaskSetupContext"]
-	click Implementing3 "/api/Cake.Core/ITaskSetupContext"
-	Type-.-&gt;Implementing4["TeardownContext"]
-	click Implementing4 "/api/Cake.Core/TeardownContext"
-	Type-.-&gt;Implementing5["TaskTeardownContext"]
-	click Implementing5 "/api/Cake.Core/TaskTeardownContext"
-	Type-.-&gt;Implementing6["ITeardownContext"]
-	click Implementing6 "/api/Cake.Core/ITeardownContext"
+	Type-.-&gt;Implementing0["ITeardownContext"]
+	click Implementing0 "/api/Cake.Core/ITeardownContext"
+	Type-.-&gt;Implementing1["TaskTeardownContext"]
+	click Implementing1 "/api/Cake.Core/TaskTeardownContext"
+	Type-.-&gt;Implementing2["ITaskSetupContext"]
+	click Implementing2 "/api/Cake.Core/ITaskSetupContext"
+	Type-.-&gt;Implementing3["TaskSetupContext"]
+	click Implementing3 "/api/Cake.Core/TaskSetupContext"
+	Type-.-&gt;Implementing4["CakeContext"]
+	click Implementing4 "/api/Cake.Core/CakeContext"
+	Type-.-&gt;Implementing5["ITaskTeardownContext"]
+	click Implementing5 "/api/Cake.Core/ITaskTeardownContext"
+	Type-.-&gt;Implementing6["TeardownContext"]
+	click Implementing6 "/api/Cake.Core/TeardownContext"
 
 						</div>
 					</div>

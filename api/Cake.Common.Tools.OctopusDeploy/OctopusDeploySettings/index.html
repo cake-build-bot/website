@@ -191,9 +191,9 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseDeploymentSettings">Octopus<wbr>Deploy<wbr>Release<wbr>Deployment<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusPushSettings">OctopusPushSettings</a></li>								
 											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/CreateReleaseSettings">Create<wbr>Release<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusPushSettings">OctopusPushSettings</a></li>								
+											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseDeploymentSettings">Octopus<wbr>Deploy<wbr>Release<wbr>Deployment<wbr>Settings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -207,12 +207,12 @@
 	Base1["object"]--&gt;Base0
 	Type["OctopusDeploySettings"]
 class Type type-node
-	Type--&gt;Derived0["OctopusDeployReleaseDeploymentSettings"]
-	click Derived0 "/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseDeploymentSettings"
+	Type--&gt;Derived0["CreateReleaseSettings"]
+	click Derived0 "/api/Cake.Common.Tools.OctopusDeploy/CreateReleaseSettings"
 	Type--&gt;Derived1["OctopusPushSettings"]
 	click Derived1 "/api/Cake.Common.Tools.OctopusDeploy/OctopusPushSettings"
-	Type--&gt;Derived2["CreateReleaseSettings"]
-	click Derived2 "/api/Cake.Common.Tools.OctopusDeploy/CreateReleaseSettings"
+	Type--&gt;Derived2["OctopusDeployReleaseDeploymentSettings"]
+	click Derived2 "/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseDeploymentSettings"
 
 						</div>
 					</div>

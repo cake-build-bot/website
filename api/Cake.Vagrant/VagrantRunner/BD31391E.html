@@ -78,7 +78,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -197,7 +199,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+                This packages a currently running VirtualBox environment into a re-usable box.
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -218,6 +224,11 @@
 	<pre><code>public void Package(Action&lt;VagrantPackageSettings&gt; configure)</code></pre>
 
 
+	<h1 id="Remarks">Remarks</h1>
+	<div>
+                This command can only be used with other providers based on the provider implementation and if the provider
+                supports it.
+            </div>
 
 
 
@@ -235,7 +246,7 @@
 					<tbody><tr>
 						<td>configure</td>
 						<td>Action<wbr>&lt;<wbr>Vagrant<wbr>Package<wbr>Settings&gt;<wbr></td>
-						<td></td>
+						<td>Settings to use when packaging the box</td>
 					</tr>
 			</tbody></table>
 		</div>

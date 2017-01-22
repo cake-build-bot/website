@@ -78,7 +78,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
@@ -169,7 +171,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            Verify assembly for strong name signature self consistency.
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -189,6 +195,20 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public static void StrongNameVerify(this ICakeContext context, IEnumerable&lt;string&gt; assemblies, StrongNameToolSettings settings)</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+            <pre><code class="cs">Task("Verify")
+    .IsDependentOn("Clean")
+    .IsDependentOn("Restore")
+    .IsDependentOn("Build")
+    .Does(() =&gt;
+{
+    var file = new string[] { "Core.dll", "Common.dll" };
+    StrongNameVerify(file, new StrongNameToolSettings {
+            ForceVerification = true
+    });
+});</code></pre>
+            </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -224,17 +244,17 @@
 					<tbody><tr>
 						<td>context</td>
 						<td>ICakeContext</td>
-						<td></td>
+						<td>The context.</td>
 					</tr>
 					<tr>
 						<td>assemblies</td>
 						<td>IEnumerable<wbr>&lt;string&gt;<wbr></td>
-						<td></td>
+						<td>The assemblies to verify.</td>
 					</tr>
 					<tr>
 						<td>settings</td>
 						<td><a href="/api/Cake.StrongNameTool/StrongNameToolSettings">Strong<wbr>Name<wbr>Tool<wbr>Settings</a></td>
-						<td></td>
+						<td>The Strong Name tool settings to use.</td>
 					</tr>
 			</tbody></table>
 		</div>

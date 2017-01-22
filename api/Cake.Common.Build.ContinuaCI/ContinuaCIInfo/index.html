@@ -135,13 +135,13 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Common.Build.ContinuaCI">Cake<wbr>.Common<wbr>.Build<wbr>.ContinuaCI</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/api/Cake.Common.Build.ContinuaCI/IContinuaCIProvider">IContinuaCIProvider</a></li>
 			<li class="header">Class Types</li>
 				<li class="selected"><a href="/api/Cake.Common.Build.ContinuaCI/ContinuaCIInfo">ContinuaCIInfo</a></li>
 				<li><a href="/api/Cake.Common.Build.ContinuaCI/ContinuaCIProvider">ContinuaCIProvider</a></li>
 			<li class="header">Enum Types</li>
 				<li><a href="/api/Cake.Common.Build.ContinuaCI/ContinuaCIMessageType">Continua<wbr>C<wbr>I<wbr>Message<wbr>Type</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Cake.Common.Build.ContinuaCI/IContinuaCIProvider">IContinuaCIProvider</a></li>
 
 
                     </ul>
@@ -185,11 +185,11 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIProjectInfo">Continua<wbr>C<wbr>I<wbr>Project<wbr>Info</a></li>								
-											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIBuildInfo">ContinuaCIBuildInfo</a></li>								
-											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIConfigurationInfo">Continua<wbr>C<wbr>I<wbr>Configuration<wbr>Info</a></li>								
 											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIEnvironmentInfo">Continua<wbr>C<wbr>I<wbr>Environment<wbr>Info</a></li>								
+											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIBuildInfo">ContinuaCIBuildInfo</a></li>								
+											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIProjectInfo">Continua<wbr>C<wbr>I<wbr>Project<wbr>Info</a></li>								
 											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIChangesetInfo">Continua<wbr>C<wbr>I<wbr>Changeset<wbr>Info</a></li>								
+											<li><a href="/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIConfigurationInfo">Continua<wbr>C<wbr>I<wbr>Configuration<wbr>Info</a></li>								
 									</ul>
 								</dd>			
 							
@@ -201,16 +201,16 @@
 	Base0["object"]--&gt;Type
 	Type["ContinuaCIInfo"]
 class Type type-node
-	Type--&gt;Derived0["ContinuaCIProjectInfo"]
-	click Derived0 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIProjectInfo"
+	Type--&gt;Derived0["ContinuaCIEnvironmentInfo"]
+	click Derived0 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIEnvironmentInfo"
 	Type--&gt;Derived1["ContinuaCIBuildInfo"]
 	click Derived1 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIBuildInfo"
-	Type--&gt;Derived2["ContinuaCIConfigurationInfo"]
-	click Derived2 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIConfigurationInfo"
-	Type--&gt;Derived3["ContinuaCIEnvironmentInfo"]
-	click Derived3 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIEnvironmentInfo"
-	Type--&gt;Derived4["ContinuaCIChangesetInfo"]
-	click Derived4 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIChangesetInfo"
+	Type--&gt;Derived2["ContinuaCIProjectInfo"]
+	click Derived2 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIProjectInfo"
+	Type--&gt;Derived3["ContinuaCIChangesetInfo"]
+	click Derived3 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIChangesetInfo"
+	Type--&gt;Derived4["ContinuaCIConfigurationInfo"]
+	click Derived4 "/api/Cake.Common.Build.ContinuaCI.Data/ContinuaCIConfigurationInfo"
 
 						</div>
 					</div>
@@ -275,7 +275,7 @@ class Type type-node
 								<td>DateTime?</td>
 								<td>
 									<div>
-    Gets an environment variable as a <code class="cs">System.DateTime</code>.
+    Gets an environment variable as a <code class="cs"><a href="/">DateTime</a></code>.
     </div>
 								</td>
 							</tr>
@@ -329,7 +329,7 @@ class Type type-node
 								<td>TimeSpan?</td>
 								<td>
 									<div>
-    Gets an environment variable as a <code class="cs">System.TimeSpan</code>.
+    Gets an environment variable as a <code class="cs"><a href="/">TimeSpan</a></code>.
     </div>
 								</td>
 							</tr>

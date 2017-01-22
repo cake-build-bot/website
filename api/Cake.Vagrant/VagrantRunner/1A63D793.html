@@ -78,7 +78,10 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
+<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -197,7 +200,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+                This suspends the guest machine Vagrant is managing, rather than shutting it down
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -217,7 +224,16 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public void Suspend(string name = null)</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+                <pre><code class="cs"><!--[CDATA[Vagrant.Suspend();]]--></code></pre>
+            </div>
 
+	<h1 id="Remarks">Remarks</h1>
+	<div>
+                A suspend effectively saves the exact point-in-time state of the machine, so that when you resume it later, it
+                begins running immediately from that point, rather than doing a full boot.
+            </div>
 
 
 
@@ -235,7 +251,7 @@
 					<tbody><tr>
 						<td>name</td>
 						<td>string</td>
-						<td></td>
+						<td>Optional name of the machine to suspend</td>
 					</tr>
 			</tbody></table>
 		</div>

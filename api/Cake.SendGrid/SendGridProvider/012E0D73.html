@@ -78,9 +78,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Examples">Examples</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
@@ -170,11 +168,7 @@
                             </div>
 
 	
-		<h1 id="Summary">Summary</h1>
-	<div class="lead">
-            Send an email through SendGrid
-            </div>
-
+	
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -194,35 +188,6 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public SendGridResult SendEmail(string senderName, string senderAddress, string recipientName, string recipientAddress, string subject, string htmlContent, string textContent, SendGridSettings settings)</code></pre>
 
-	<h1 id="Examples">Examples</h1>
-	<div>
-            var apiKey = "... your api key ...";
-            try
-            {
-                var result = SendGrid.SendEmail(
-                    senderName: "Bob Smith",
-                    senderAddress: "bob@example.com",
-                    recipientName: "Jane Doe",
-                    recipientAddress: "jane@example.com",
-                    subject: "This is a test",
-                    htmlContent: "This is a test",
-                    textContent: "This is a test",
-                    settings: new SendGridEmailSettings { ApiKey = apiKey }
-                );
-                if (result.Ok)
-                {
-                    Information("Email succcessfully sent");
-                }
-                else
-                {
-                    Error("Failed to send email: {0}", result.Error);
-                }
-            }
-            catch(Exception ex)
-            {
-                Error("{0}", ex);
-            }
-            </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -258,42 +223,42 @@
 					<tbody><tr>
 						<td>senderName</td>
 						<td>string</td>
-						<td>The name of the person sending the email</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>senderAddress</td>
 						<td>string</td>
-						<td>The email address of the person sending the email</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>recipientName</td>
 						<td>string</td>
-						<td>The name of the person who will receive the email</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>recipientAddress</td>
 						<td>string</td>
-						<td>The email address of the person who will recieve the email</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>subject</td>
 						<td>string</td>
-						<td>The subject line of the email</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>htmlContent</td>
 						<td>string</td>
-						<td>The HTML content</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>textContent</td>
 						<td>string</td>
-						<td>The text content</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>settings</td>
 						<td><a href="/api/Cake.SendGrid.Email/SendGridSettings">SendGridSettings</a></td>
-						<td>The settings to be used when sending the email</td>
+						<td></td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -311,7 +276,7 @@
 				</thead>
 				<tbody><tr>
 					<td><a href="/api/Cake.SendGrid/SendGridResult">SendGridResult</a></td>
-					<td>An instance of <code class="cs"><a href="/api/Cake.SendGrid/SendGridResult">SendGridResult</a></code> indicating success/failure</td>
+					<td></td>
 				</tr>
 			</tbody></table>
 		</div>

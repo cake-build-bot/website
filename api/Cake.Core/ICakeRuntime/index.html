@@ -134,6 +134,20 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Core">Cake<wbr>.Core</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Cake.Core/ICakeArguments">ICakeArguments</a></li>
+				<li><a href="/api/Cake.Core/ICakeContext">ICakeContext</a></li>
+				<li><a href="/api/Cake.Core/ICakeEngine">ICakeEngine</a></li>
+				<li><a href="/api/Cake.Core/ICakeEnvironment">ICakeEnvironment</a></li>
+				<li><a href="/api/Cake.Core/ICakePlatform">ICakePlatform</a></li>
+				<li><a href="/api/Cake.Core/ICakeReportPrinter">ICakeReportPrinter</a></li>
+				<li class="selected"><a href="/api/Cake.Core/ICakeRuntime">ICakeRuntime</a></li>
+				<li><a href="/api/Cake.Core/ICakeTaskInfo">ICakeTaskInfo</a></li>
+				<li><a href="/api/Cake.Core/IConsole">IConsole</a></li>
+				<li><a href="/api/Cake.Core/IExecutionStrategy">IExecutionStrategy</a></li>
+				<li><a href="/api/Cake.Core/ITaskSetupContext">ITaskSetupContext</a></li>
+				<li><a href="/api/Cake.Core/ITaskTeardownContext">ITaskTeardownContext</a></li>
+				<li><a href="/api/Cake.Core/ITeardownContext">ITeardownContext</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/api/Cake.Core/ActionTask">ActionTask</a></li>
 				<li><a href="/api/Cake.Core/CakeContext">CakeContext</a></li>
@@ -165,20 +179,6 @@
 			<li class="header">Enum Types</li>
 				<li><a href="/api/Cake.Core/CakeTaskExecutionStatus">Cake<wbr>Task<wbr>Execution<wbr>Status</a></li>
 				<li><a href="/api/Cake.Core/PlatformFamily">PlatformFamily</a></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/api/Cake.Core/ICakeArguments">ICakeArguments</a></li>
-				<li><a href="/api/Cake.Core/ICakeContext">ICakeContext</a></li>
-				<li><a href="/api/Cake.Core/ICakeEngine">ICakeEngine</a></li>
-				<li><a href="/api/Cake.Core/ICakeEnvironment">ICakeEnvironment</a></li>
-				<li><a href="/api/Cake.Core/ICakePlatform">ICakePlatform</a></li>
-				<li><a href="/api/Cake.Core/ICakeReportPrinter">ICakeReportPrinter</a></li>
-				<li class="selected"><a href="/api/Cake.Core/ICakeRuntime">ICakeRuntime</a></li>
-				<li><a href="/api/Cake.Core/ICakeTaskInfo">ICakeTaskInfo</a></li>
-				<li><a href="/api/Cake.Core/IConsole">IConsole</a></li>
-				<li><a href="/api/Cake.Core/IExecutionStrategy">IExecutionStrategy</a></li>
-				<li><a href="/api/Cake.Core/ITaskSetupContext">ITaskSetupContext</a></li>
-				<li><a href="/api/Cake.Core/ITaskTeardownContext">ITaskTeardownContext</a></li>
-				<li><a href="/api/Cake.Core/ITeardownContext">ITeardownContext</a></li>
 
 
                     </ul>
@@ -217,8 +217,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Testing/FakeRuntime">FakeRuntime</a></li>								
 											<li><a href="/api/Cake.Core/CakeRuntime">CakeRuntime</a></li>								
+											<li><a href="/api/Cake.Testing/FakeRuntime">FakeRuntime</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -228,10 +228,10 @@
 							graph TD
 	Type["ICakeRuntime"]
 class Type type-node
-	Type-.-&gt;Implementing0["FakeRuntime"]
-	click Implementing0 "/api/Cake.Testing/FakeRuntime"
-	Type-.-&gt;Implementing1["CakeRuntime"]
-	click Implementing1 "/api/Cake.Core/CakeRuntime"
+	Type-.-&gt;Implementing0["CakeRuntime"]
+	click Implementing0 "/api/Cake.Core/CakeRuntime"
+	Type-.-&gt;Implementing1["FakeRuntime"]
+	click Implementing1 "/api/Cake.Testing/FakeRuntime"
 
 						</div>
 					</div>

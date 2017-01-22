@@ -135,6 +135,17 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Core.IO">Cake<wbr>.Core<wbr>.IO</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Cake.Core.IO/IDirectory">IDirectory</a></li>
+				<li><a href="/api/Cake.Core.IO/IFile">IFile</a></li>
+				<li><a href="/api/Cake.Core.IO/IFileSystem">IFileSystem</a></li>
+				<li><a href="/api/Cake.Core.IO/IFileSystemInfo">IFileSystemInfo</a></li>
+				<li><a href="/api/Cake.Core.IO/IGlobber">IGlobber</a></li>
+				<li><a href="/api/Cake.Core.IO/IProcess">IProcess</a></li>
+				<li><a href="/api/Cake.Core.IO/IProcessArgument">IProcessArgument</a></li>
+				<li class="selected"><a href="/api/Cake.Core.IO/IProcessRunner">IProcessRunner</a></li>
+				<li><a href="/api/Cake.Core.IO/IRegistry">IRegistry</a></li>
+				<li><a href="/api/Cake.Core.IO/IRegistryKey">IRegistryKey</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/api/Cake.Core.IO/DirectoryPath">DirectoryPath</a></li>
 				<li><a href="/api/Cake.Core.IO/DirectoryPathCollection">Directory<wbr>Path<wbr>Collection</a></li>
@@ -154,17 +165,6 @@
 			<li class="header">Enum Types</li>
 				<li><a href="/api/Cake.Core.IO/SearchScope">SearchScope</a></li>
 				<li><a href="/api/Cake.Core.IO/SpecialPath">SpecialPath</a></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/api/Cake.Core.IO/IDirectory">IDirectory</a></li>
-				<li><a href="/api/Cake.Core.IO/IFile">IFile</a></li>
-				<li><a href="/api/Cake.Core.IO/IFileSystem">IFileSystem</a></li>
-				<li><a href="/api/Cake.Core.IO/IFileSystemInfo">IFileSystemInfo</a></li>
-				<li><a href="/api/Cake.Core.IO/IGlobber">IGlobber</a></li>
-				<li><a href="/api/Cake.Core.IO/IProcess">IProcess</a></li>
-				<li><a href="/api/Cake.Core.IO/IProcessArgument">IProcessArgument</a></li>
-				<li class="selected"><a href="/api/Cake.Core.IO/IProcessRunner">IProcessRunner</a></li>
-				<li><a href="/api/Cake.Core.IO/IRegistry">IRegistry</a></li>
-				<li><a href="/api/Cake.Core.IO/IRegistryKey">IRegistryKey</a></li>
 
 
                     </ul>
@@ -203,8 +203,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Core.IO/ProcessRunner">ProcessRunner</a></li>								
 											<li><a href="/api/Cake.Testing.Fixtures/ToolFixtureProcessRunner_1">Tool<wbr>Fixture<wbr>Process<wbr>Runner<wbr>&lt;<wbr>T<wbr>Fixture<wbr>Result&gt;<wbr></a></li>								
+											<li><a href="/api/Cake.Core.IO/ProcessRunner">ProcessRunner</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -214,10 +214,10 @@
 							graph TD
 	Type["IProcessRunner"]
 class Type type-node
-	Type-.-&gt;Implementing0["ProcessRunner"]
-	click Implementing0 "/api/Cake.Core.IO/ProcessRunner"
-	Type-.-&gt;Implementing1["ToolFixtureProcessRunner&lt;TFixtureResult&gt;"]
-	click Implementing1 "/api/Cake.Testing.Fixtures/ToolFixtureProcessRunner_1"
+	Type-.-&gt;Implementing0["ToolFixtureProcessRunner&lt;TFixtureResult&gt;"]
+	click Implementing0 "/api/Cake.Testing.Fixtures/ToolFixtureProcessRunner_1"
+	Type-.-&gt;Implementing1["ProcessRunner"]
+	click Implementing1 "/api/Cake.Core.IO/ProcessRunner"
 
 						</div>
 					</div>

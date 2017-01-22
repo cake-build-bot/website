@@ -78,7 +78,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -197,7 +199,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+                The equivalent of running a halt followed by an up.
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -218,6 +224,8 @@
 	<pre><code>public void Reload(string name, Action&lt;VagrantProvisionerSettings&gt; configure)</code></pre>
 
 
+	<h1 id="Remarks">Remarks</h1>
+	<div>This command is usually required for changes made in the Vagrantfile to take effect.</div>
 
 
 
@@ -235,12 +243,12 @@
 					<tbody><tr>
 						<td>name</td>
 						<td>string</td>
-						<td></td>
+						<td>Name of the machine to reload</td>
 					</tr>
 					<tr>
 						<td>configure</td>
 						<td>Action<wbr>&lt;<wbr>Vagrant<wbr>Provisioner<wbr>Settings&gt;<wbr></td>
-						<td></td>
+						<td>Settings to control the execution of provisioners</td>
 					</tr>
 			</tbody></table>
 		</div>

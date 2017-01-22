@@ -78,9 +78,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Examples">Examples</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
@@ -168,11 +166,7 @@
                             </div>
 
 	
-		<h1 id="Summary">Summary</h1>
-	<div class="lead">
-            Get an Yarn runner
-            </div>
-
+	
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -192,54 +186,6 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public static YarnRunner Yarn(this ICakeContext context)</code></pre>
 
-	<h1 id="Examples">Examples</h1>
-	<div>
-            <p>Run 'yarn install'</p>
-            <p>Cake task:</p>
-            <pre><code class="cs"><!--[CDATA[
-Task("Yarn-FromPath")
-    .Does(() =-->
-{
-    Yarn.FromPath("./dir-with-packagejson").Install();
-});
-]]&gt;</code></pre>
-            <p>Run 'yarn install'</p>
-            <p>Cake task:</p>
-            <pre><code class="cs"><!--[CDATA[
-Task("Yarn-Install")
-    .Does(() =-->
-{
-    Yarn.Install();
-});
-]]&gt;</code></pre>
-            <p>Run 'yarn add gulp'</p>
-            <p>Cake task:</p>
-            <pre><code class="cs"><!--[CDATA[
-Task("Yarn-Add-Gulp")
-    .Does(() =-->
-{
-    Yarn.Add(settings =&gt; settings.Package("gulp"));
-});
-]]&gt;</code></pre>
-            <p>Run 'yarn global add gulp'</p>
-            <p>Cake task:</p>
-            <pre><code class="cs"><!--[CDATA[
-Task("Yarn-Add-Gulp")
-    .Does(() =-->
-{
-    Yarn.Add(settings =&gt; settings.Package("gulp").Globally());
-});
-]]&gt;</code></pre>
-            <p>Run 'yarn run hello'</p>
-            <p>Cake task:</p>
-            <pre><code class="cs"><!--[CDATA[
-Task("Yarn-Run")
-    .Does(() =-->
-{
-    Yarn.RunScript("hello");
-});
-]]&gt;</code></pre>
-            </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -275,7 +221,7 @@ Task("Yarn-Run")
 					<tbody><tr>
 						<td>context</td>
 						<td>ICakeContext</td>
-						<td>The context</td>
+						<td></td>
 					</tr>
 			</tbody></table>
 		</div>

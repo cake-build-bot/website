@@ -78,7 +78,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -170,7 +172,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+                Generates a Swagger (Open API) specification at the given path using the specified settings
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -190,6 +196,11 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public AssemblySource ToSwaggerSpecification(FilePath outputFile, SwaggerGeneratorSettings settings)</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+                <pre><code class="cs"><!--[CDATA[NSwag.FromAssembly("./assembly.dll").ToSwaggerSpecification("./swagger.json");]]--></code></pre>
+                <pre><code class="cs"><!--[CDATA[NSwag.FromWebApiAssembly("./apicontroller.dll").ToSwaggerSpecification("./swagger.json");]]--></code></pre>
+            </div>
 
 
 
@@ -208,12 +219,12 @@
 					<tbody><tr>
 						<td>outputFile</td>
 						<td>FilePath</td>
-						<td></td>
+						<td>File path for the generated API specification</td>
 					</tr>
 					<tr>
 						<td>settings</td>
 						<td><a href="/api/Cake.NSwag.Settings/SwaggerGeneratorSettings">Swagger<wbr>Generator<wbr>Settings</a></td>
-						<td></td>
+						<td>Settings to further control the spec generation process</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -231,7 +242,7 @@
 				</thead>
 				<tbody><tr>
 					<td><a href="/api/Cake.NSwag.Sources/AssemblySource">AssemblySource</a></td>
-					<td></td>
+					<td>The metadata source</td>
 				</tr>
 			</tbody></table>
 		</div>

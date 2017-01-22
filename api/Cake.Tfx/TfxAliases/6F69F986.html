@@ -78,9 +78,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Examples">Examples</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
@@ -172,11 +170,7 @@
                             </div>
 
 	
-		<h1 id="Summary">Summary</h1>
-	<div class="lead">
-            Publishes an extension using the Tfx CLI using the specified settings.
-            </div>
-
+	
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -196,15 +190,6 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public static void TfxExtensionPublish(this ICakeContext context, TfxExtensionPublishSettings settings)</code></pre>
 
-	<h1 id="Examples">Examples</h1>
-	<div>
-            <pre><code class="cs">TfxExtensionPublish(new TfxExtensionPublishSettings()
-{
-    ManifestGlobs = new List&lt;string&gt;(){ ".\extension-manifest.json" },
-    AuthType = TfxAuthType.Pat,
-    Token = "abcdef"
-});</code></pre>
-            </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -240,12 +225,12 @@
 					<tbody><tr>
 						<td>context</td>
 						<td>ICakeContext</td>
-						<td>The context.</td>
+						<td></td>
 					</tr>
 					<tr>
 						<td>settings</td>
 						<td><a href="/api/Cake.Tfx.Extension.Publish/TfxExtensionPublishSettings">Tfx<wbr>Extension<wbr>Publish<wbr>Settings</a></td>
-						<td>The settings.</td>
+						<td></td>
 					</tr>
 			</tbody></table>
 		</div>

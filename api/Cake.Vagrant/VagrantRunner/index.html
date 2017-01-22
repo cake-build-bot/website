@@ -78,7 +78,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Properties">Properties</a></p>
 <p><a href="#Methods">Methods</a></p>
@@ -165,7 +166,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+                Wrapper around Vagrant's CLI functionality for creating, starting and managing VMs
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="row">
@@ -221,7 +226,9 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/23814D12">VagrantRunner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator, <wbr>ICakeLog)<wbr></a></td>
-									<td></td>
+									<td>
+                Initializes a new instance of the <code class="cs"><a href="/api/Cake.Vagrant/VagrantRunner">VagrantRunner</a></code> class
+            </td>
 							</tr>
 					</tbody></table>
 				</div>
@@ -245,28 +252,36 @@ class Type type-node
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/A7B06D0E">Box</a></td>
 								<td><a href="/api/Cake.Vagrant.Commands/VagrantBoxRunner">VagrantBoxRunner</a></td>
 								<td>
-									<div></div>
+									<div>
+                Provides access to `vagrant box` subcommands
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/14B9F247">Docker</a></td>
 								<td><a href="/api/Cake.Vagrant.Commands/VagrantDockerRunner">VagrantDockerRunner</a></td>
 								<td>
-									<div></div>
+									<div>
+                Provides access to `vagrant docker` subcommands
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/2D61C95C">Plugin</a></td>
 								<td><a href="/api/Cake.Vagrant.Commands/VagrantPluginRunner">VagrantPluginRunner</a></td>
 								<td>
-									<div></div>
+									<div>
+                Provides access to `vagrant plugin` subcommands
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/C651F586">Snapshot</a></td>
 								<td><a href="/api/Cake.Vagrant.Commands/VagrantSnapshotRunner">Vagrant<wbr>Snapshot<wbr>Runner</a></td>
 								<td>
-									<div></div>
+									<div>
+                Provides access to `vagrant snapshot` subcommands
+            </div>
 								</td>
 							</tr>
 					</tbody></table>
@@ -289,182 +304,233 @@ class Type type-node
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/EDE9335A">Destroy<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command stops the running machine Vagrant is managing and destroys all resources that were created during the
+                machine creation process.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/326EFC01">FromPath<wbr>(DirectoryPath)<wbr></a></td>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner">VagrantRunner</a></td>
 								<td>
-									<div></div>
+									<div>
+                Sets the working directory for vagrant commands
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/82AEE019">Get<wbr>Alternative<wbr>Tool<wbr>Paths<wbr>(VagrantSettings)<wbr></a></td>
 								<td>IEnumerable<wbr>&lt;FilePath&gt;<wbr></td>
 								<td>
-									<div></div>
+									<div>
+                Gets alternative file paths which the tool may exist in
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/2A6EDAE6">Get<wbr>Tool<wbr>Executable<wbr>Names<wbr>()<wbr></a></td>
 								<td>IEnumerable<wbr>&lt;string&gt;<wbr></td>
 								<td>
-									<div></div>
+									<div>Gets the possible names of the tool executable.</div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/68A83249">GetToolName<wbr>()<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>Gets the name of the tool.</div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/C024EEAA">GetWorkingDirectory<wbr>(VagrantSettings)<wbr></a></td>
 								<td>DirectoryPath</td>
 								<td>
-									<div></div>
+									<div>
+                Gets the working directory.
+                Defaults to the currently set working directory.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/8A392AAB">Halt<wbr>(string, <wbr>bool)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command shuts down the running machine Vagrant is managing.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/7CCB2F78">Init<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>Init<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This initializes the current directory to be a Vagrant environment by creating an initial Vagrantfile if one does
+                not already exist.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/7E487918">Init<wbr>(string, <wbr>string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>Init<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                Initializes the current directory for Vagrant by creating an initial Vagrantfile
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/BD31391E">Package<wbr>(Action<wbr>&lt;<wbr>Vagrant<wbr>Package<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This packages a currently running VirtualBox environment into a re-usable box.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/4411B76E">Package<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This packages a currently running VirtualBox environment into a re-usable box.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/D7F3B842">Package<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>Package<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This packages a currently running VirtualBox environment into a re-usable box.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/39DD8880">PowerShell<wbr>(Action<wbr>&lt;<wbr>Vagrant<wbr>Power<wbr>Shell<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command opens a PowerShell connection to your default machine to run the provided command
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/9AFA5FEA">PowerShell<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>Power<wbr>Shell<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command opens a PowerShell connection to the specified machine to run the provided command
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/9675AA4E">Reload<wbr>(Action<wbr>&lt;<wbr>Vagrant<wbr>Provisioner<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                The equivalent of running a halt followed by an up.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/AE7025CF">Reload<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                The equivalent of running a halt followed by an up.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/98B55EB6">Reload<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>Provisioner<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                The equivalent of running a halt followed by an up.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/876ECD3B">Resume<wbr>(Action<wbr>&lt;<wbr>Vagrant<wbr>Provisioner<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This resumes a Vagrant managed machine that was previously suspended.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/3DBDAE98">Resume<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This resumes a Vagrant managed machine that was previously suspended.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/CD0A92CD">Resume<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>Provisioner<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This resumes a Vagrant managed machine that was previously suspended.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/560E2F3F">SSH<wbr>(Action<wbr>&lt;<wbr>Vagrant<wbr>S<wbr>S<wbr>H<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command opens an SSH connection to your default machine to run the provided command
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/733C0B31">SSH<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>S<wbr>S<wbr>H<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command opens an SSH connection to the specified machine to run the provided command
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/1A63D793">Suspend<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This suspends the guest machine Vagrant is managing, rather than shutting it down
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/32B22F17">Up<wbr>(Action<wbr>&lt;<wbr>Vagrant<wbr>Up<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command creates and configures the default machine according to your Vagrantfile, and the specified settings
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/F416CC8A">Up<wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command creates and configures guest machines according to your Vagrantfile, using the default settings
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Vagrant/VagrantRunner/C9C4F69B">Up<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Vagrant<wbr>Up<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+                This command creates and configures guest machines according to your Vagrantfile, and the specified settings.
+            </div>
 								</td>
 							</tr>
 					</tbody></table>
