@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - patriksvensson</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">                    
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+    <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
+        <li><a href="/blog/addins">Addins</a></li>
+        <li><a href="/blog/announcement">Announcement</a></li>
+        <li><a href="/blog/how-tos">How To&#x27;s</a></li>
+        <li><a href="/blog/infrastructure">Infrastructure</a></li>
+        <li><a href="/blog/news">News</a></li>
+        <li><a href="/blog/release-notes">Release Notes</a></li>
+    
+    <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/blog/archive/2017/01">January, 2017</a></li>
+        <li><a href="/blog/archive/2016/12">December, 2016</a></li>
+        <li><a href="/blog/archive/2016/11">November, 2016</a></li>
+        <li><a href="/blog/archive/2016/10">October, 2016</a></li>
+        <li><a href="/blog/archive/2016/09">September, 2016</a></li>
+        <li><a href="/blog/archive/2016/08">August, 2016</a></li>
+        <li><a href="/blog/archive/2016/07">July, 2016</a></li>
+        <li><a href="/blog/archive/2016/06">June, 2016</a></li>
+        <li><a href="/blog/archive/2016/05">May, 2016</a></li>
+        <li><a href="/blog/archive/2016/04">April, 2016</a></li>
+        <li><a href="/blog/archive/2016/03">March, 2016</a></li>
+        <li><a href="/blog/archive/2016/02">February, 2016</a></li>
+        <li><a href="/blog/archive/2016/01">January, 2016</a></li>
+        <li><a href="/blog/archive/2015/12">December, 2015</a></li>
+        <li><a href="/blog/archive/2015/11">November, 2015</a></li>
+        <li><a href="/blog/archive/2015/10">October, 2015</a></li>
+        <li><a href="/blog/archive/2015/09">September, 2015</a></li>
+        <li><a href="/blog/archive/2015/08">August, 2015</a></li>
+        <li><a href="/blog/archive/2015/07">July, 2015</a></li>
+    
+    <li class="header"><i class="fa fa-user"></i> Authors</li>    
+        <li><a href="/blog/author/agc93">agc93</a></li>
+        <li><a href="/blog/author/daveaglick">daveaglick</a></li>
+        <li><a href="/blog/author/devlead">devlead</a></li>
+        <li><a href="/blog/author/gep13">gep13</a></li>
+        <li><a href="/blog/author/jericho">jericho</a></li>
+        <li><a href="/blog/author/mholo65">mholo65</a></li>
+        <li class="selected"><a href="/blog/author/patriksvensson">patriksvensson</a></li>
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+	<section class="content-header">
+		<h1>patriksvensson</h1>
+	</section>
+	<section class="content">
+		
+
+        <h2><a href="/blog/2016/09/cake-v0.16.0-released">Cake v0.16.0 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Saturday, September 17, 2016</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
+</dl>            <div>
+                <p>Version 0.16.0 of Cake has been released, and it's a big release!</p>
+<p>Not only are we supporting the full .NET framework (<em>v4.5</em>), but from this version
+we will also support running Cake on platforms capable of running .NET Core (<em>netstandard1.6</em>).</p>
+<p>For this to work, you will have to install the <code>Cake.CoreCLR</code> package instead
+of the normal <code>Cake</code> package. A blog post describing this more in detail
+will be published soon.</p>
+<p>Please let us know if you run into any issues with this latest release.</p>
+<p>Contributions were included from:</p>
+
+<p>Full details of everything that was included in this release can be seen below.</p>
+                <a href="/blog/2016/09/cake-v0.16.0-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2016/05/cake-v0.11.0-released">Cake v0.11.0 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Sunday, May 1, 2016</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
+</dl>            <div>
+                <p>Version 0.11.0 of Cake has been released.</p>
+<p>There has been a lot of improvements and bug fixes in this release, but other than that we've been mostly focused on getting proper integration tests in place to better find regressions in future versions of Cake.</p>
+<p>We've also (finally) added overloads for the Setup/Teardown methods that provides an <code><a href="/api/Cake.Core/ICakeContext">ICakeContext</a></code>. The old methods will now output an obsoletion warning, so you may want to think about updating the usage of those in your build scripts sooner rather than later.</p>
+<p>Contributions were included from:</p>
+
+<p>Thank you all!</p>
+<p>Please let us know if you run into any issues with this latest release.</p>
+                <a href="/blog/2016/05/cake-v0.11.0-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2016/01/cake-v0.8.0-released">Cake v0.8.0 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Monday, January 18, 2016</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
+</dl>            <div>
+                <p>Version 0.8.0 of Cake has been released.</p>
+<p>In this release we've added support for making the <code>#tool</code> and <code>#addin</code> directives independent from a specific package manager, as well as adding support for fetching specific and prerelease versions of NuGet packages.</p>
+<p>To make this possible we've introduced a URI package format that will allow us to expand the package managment experience in the future. The old syntax for referencing packages is still supported, but will be limited to NuGet only.</p>
+
+<p>In addition to the changes to the addin and tool directive, we also added functionality to support <a href="https://github.com/GitTools/GitLink">GitLink</a> and XmlPeek aliases.  See the linked issues below for more information on these features.</p>
+<p>Please let us know if you run into any issues with this latest release.</p>
+                <a href="/blog/2016/01/cake-v0.8.0-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2015/10/cake-v0.5.5-released">Cake v0.5.5 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Monday, October 12, 2015</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
+</dl>            <div>
+                <p>Version 0.5.5 of Cake has been released.</p>
+<p>New in this release (except all awesome new features and improvements)
+is the  <a href="https://www.nuget.org/packages/Cake.Testing">Cake.Testing</a>
+NuGet package that contains fakes for interfaces like
+<a href="/api/Cake.Core.IO/IFileSystem">IFileSystem</a> and
+<a href="/api/Cake.Core/ICakeEnvironment">ICakeEnvironment</a>. We believe
+that this NuGet package will make testing of your Cake addins
+much easier.</p>
+                <a href="/blog/2015/10/cake-v0.5.5-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2015/09/cake-v0.5.4-released">Cake v0.5.4 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Friday, September 11, 2015</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
+</dl>            <div>
+                <p>Version 0.5.4 of Cake has been released.</p>
+                <a href="/blog/2015/09/cake-v0.5.4-released">Read more...</a>
+            </div>
+        <hr />
+    <nav>
+        <ul class="pager">
+            <li class="previous">                
+            </li>
+            <li class="next">
+                    <a href="/blog/author/patriksvensson/page2">Older <span aria-hidden="true">&rarr;</span></a>
+            </li>
+        </ul>
+    </nav>
+
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br/>
+    Copyright &copy; <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br/>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - Addins - Docker</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li class="active"><a href="/addins">Addins</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+
+                </section>
+                <section class="sidebar">                    
+                    
+                    <ul class="sidebar-menu">
+                            
+    <li class="header">Categories</li>
+    <li><a href="/addins/appveyor">AppVeyor</a></li>    
+    <li><a href="/addins/aws">AWS</a></li>    
+    <li><a href="/addins/azure">Azure</a></li>    
+    <li><a href="/addins/build">Build</a></li>    
+    <li><a href="/addins/cmake">CMake</a></li>    
+    <li><a href="/addins/code-coverage">Code Coverage</a></li>    
+    <li><a href="/addins/code-quality">Code Quality</a></li>    
+    <li><a href="/addins/communication">Communication</a></li>    
+    <li><a href="/addins/compression">Compression</a></li>    
+    <li><a href="/addins/configuration">Configuration</a></li>    
+    <li><a href="/addins/curl">curl</a></li>    
+    <li><a href="/addins/database">Database</a></li>    
+    <li><a href="/addins/deployment">Deployment</a></li>    
+    <li class="selected"><a href="/addins/docker">Docker</a></li>    
+    <li><a href="/addins/documentation">Documentation</a></li>    
+    <li><a href="/addins/email">Email</a></li>    
+    <li><a href="/addins/fluentmigrator">FluentMigrator</a></li>    
+    <li><a href="/addins/gaming">Gaming</a></li>    
+    <li><a href="/addins/git">Git</a></li>    
+    <li><a href="/addins/iis">IIS</a></li>    
+    <li><a href="/addins/io">IO</a></li>    
+    <li><a href="/addins/kudu">Kudu</a></li>    
+    <li><a href="/addins/misc">Misc</a></li>    
+    <li><a href="/addins/mobile">Mobile</a></li>    
+    <li><a href="/addins/msbuild">MSBuild</a></li>    
+    <li><a href="/addins/msdeploy">MsDeploy</a></li>    
+    <li><a href="/addins/node">Node</a></li>    
+    <li><a href="/addins/nuget">NuGet</a></li>    
+    <li><a href="/addins/orchard">Orchard</a></li>    
+    <li><a href="/addins/postman">Postman</a></li>    
+    <li><a href="/addins/powershell">Powershell</a></li>    
+    <li><a href="/addins/reports">Reports</a></li>    
+    <li><a href="/addins/rubygems">RubyGems</a></li>    
+    <li><a href="/addins/serialization">Serialization</a></li>    
+    <li><a href="/addins/signing">Signing</a></li>    
+    <li><a href="/addins/social-media">Social Media</a></li>    
+    <li><a href="/addins/sqlserver">SqlServer</a></li>    
+    <li><a href="/addins/squirrel">Squirrel</a></li>    
+    <li><a href="/addins/static-site-generation">Static Site Generation</a></li>    
+    <li><a href="/addins/swagger">Swagger</a></li>    
+    <li><a href="/addins/testing">Testing</a></li>    
+    <li><a href="/addins/tfs">TFS</a></li>    
+    <li><a href="/addins/unity">Unity</a></li>    
+    <li><a href="/addins/vagrant">Vagrant</a></li>    
+    <li><a href="/addins/versioning">Versioning</a></li>    
+    <li><a href="/addins/vsts">VSTS</a></li>    
+    <li><a href="/addins/windows">Windows</a></li>    
+    <li><a href="/addins/xcode">XCode</a></li>    
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+<section class="content-header">
+	<h1>Docker</h1>
+</section>
+<section class="content">    
+    <p>This page contain third party addins for Cake. If you want to file an issue for any addin listed here, contact the author of the addin.</p>
+<p>If you're an addin author and want your addin listed here, follow the instructions <a href="https://github.com/cake-build/website/blob/develop/README.md#addins">here</a>.</p>
+
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-puzzle-piece"></i> Cake.Docker</h3>
+        </div>
+        <div class="panel-body">
+                <p>A Cake AddIn that extends Cake with Docker command tools.</p>
+            <dl class="dl-horizontal">	
+                    <dt>Author</dt>
+                    <dd>Miha Marki&#x10D;</dd>
+                                    <dt>NuGet</dt>
+                    <dd><a href="https://www.nuget.org/packages/Cake.Docker">Cake.Docker</a></dd>
+                                    <dt>Repository</dt>
+                    <dd><a href="https://github.com/MihaMarkic/Cake.Docker">https://github.com/MihaMarkic/Cake.Docker</a></dd>
+            </dl>
+        </div>
+    </div>
+    
+    
+</section>                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br/>
+    Copyright &copy; <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br/>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

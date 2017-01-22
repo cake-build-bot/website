@@ -1,0 +1,287 @@
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - Visual Studio Team Services</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/src/input/docs/build-systems/vso.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#install-the-vsts-extension">1. Install the VSTS extension</a></p>
+<p><a href="#add-a-build-task">2. Add a build task</a></p>
+<p><a href="#configure-the-build-task">3. Configure the build task</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    
+
+                    <ul class="sidebar-menu">
+                        
+                <li class="treeview">
+                    <a href="/docs/overview">Overview</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/overview/features">Features</a></li>
+                <li><a href="/docs/overview/requirements">Requirements</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/tutorials">Tutorials</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/tutorials/getting-started">Getting Started</a></li>
+                <li><a href="/docs/tutorials/setting-up-a-new-project">Setting Up A New Project</a></li>
+                <li><a href="/docs/tutorials/powershell-security">Powershell Security</a></li>
+                <li><a href="/docs/tutorials/extending-the-bootstrapper">Extending The Bootstrapper</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/fundamentals/tasks">Tasks</a></li>
+                <li><a href="/docs/fundamentals/dependencies">Dependencies</a></li>
+                <li><a href="/docs/fundamentals/criteria">Criteria</a></li>
+                <li><a href="/docs/fundamentals/error-handling">Error Handling</a></li>
+                <li><a href="/docs/fundamentals/finally-block">Finally Block</a></li>
+                <li><a href="/docs/fundamentals/setup-and-teardown">Setup And Teardown</a></li>
+                <li><a href="/docs/fundamentals/running-targets">Running Targets</a></li>
+                <li><a href="/docs/fundamentals/args-and-environment-vars">Arguments And Environment Variables</a></li>
+                <li><a href="/docs/fundamentals/aliases">Script Aliases</a></li>
+                <li><a href="/docs/fundamentals/preprocessor-directives">Preprocessor Directives</a></li>
+                <li><a href="/docs/fundamentals/configuration">Configuration</a></li>
+                <li><a href="/docs/fundamentals/default-configuration-values">Default Configuration Values</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/tools">Tools</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/tools/installing-tools">Installing Tools</a></li>
+                <li><a href="/docs/tools/tool-resolution">Tool Resolution</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/cli">The Command Line</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/cli/usage">Usage Information</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/editors">Editors</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/editors/atom">Atom</a></li>
+                <li><a href="/docs/editors/vscode">Visual Studio Code</a></li>
+                <li><a href="/docs/editors/visualstudio">Visual Studio</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/docs/build-systems">Build Systems</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li class="selected"><a href="/docs/build-systems/vso">Visual Studio Team Services</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/contributing/contribution-guidelines">Contribution Guidelines</a></li>
+                <li><a href="/docs/contributing/documentation">Documentation</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/resources">Resources</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/docs/resources/videos">Videos</a></li>
+                <li><a href="/docs/resources/presentations">Presentations</a></li>
+                <li><a href="/docs/resources/podcasts">Podcasts</a></li>
+                <li><a href="/docs/resources/blogs">Blog Posts</a></li>
+                <li><a href="/docs/resources/in-the-news">In The News</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+	<section class="content-header">
+		<h1>Visual Studio Team Services</h1>
+	</section>
+	<section class="content">
+		<p>The Cake VSTS build task makes it easy to run a Cake script directly, without having to invoke PowerShell or other command line scripts. This makes it easy even for team members that are not familiar with Cake to add or adjust parameters passed to your build scripts.</p>
+<h1 id="install-the-vsts-extension">1. Install the VSTS extension</h1>
+<p>To install the VSTS extension, go to the
+<a href="https://marketplace.visualstudio.com/items/cake-build.cake">Cake Build Task page</a>
+on the Visual Studio Marketplace and click "Install".</p>
+<h1 id="add-a-build-task">2. Add a build task</h1>
+<p>Go to the <code>Build</code> section in your VSTS tenant  and create a build definition, or
+select an existing one. Add a new build step by clicking the
+"Add build step..." button.</p>
+<p><img src="https://raw.githubusercontent.com/cake-build/cake-vso/develop/Images/addbuildstep.png" class="img-fluid" alt="Add build step"></p>
+<p>A dialog should appear with different tasks. Select the "Cake" task and click
+the "Add" button once. After that, click the "Close" button to close the window.</p>
+<p><img src="https://raw.githubusercontent.com/cake-build/cake-vso/develop/Images/addtasks.png" class="img-fluid" alt="Add build step"></p>
+<h1 id="configure-the-build-task">3. Configure the build task</h1>
+<p>You should now be able to edit the build task information such as which
+build script to execute, what build target to run, the amount of logging
+(verbosity) and additional arguments sent to the build script.</p>
+<p>By default, the Cake build step (when added to a build) will try to run the <code>build.cake</code> build script (found in the root of your repository) with the target <code>Default</code>. If you wish to run another build script or build target you can change this in the build step settings.</p>
+<p><img src="https://raw.githubusercontent.com/cake-build/cake-vso/develop/Images/configurebuildstep.png" class="img-fluid" alt="Add build step"></p>
+<p>For those who are already using Cake making use of the <a href="http://cakebuild.net/docs/tutorials/setting-up-a-new-project">Bootstrapper file</a>, this is not called when using the VSO task.
+To use the bootstrapper file you should add a "PowerShell" or "Shell Script" task instead.</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br>
+    Copyright © <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

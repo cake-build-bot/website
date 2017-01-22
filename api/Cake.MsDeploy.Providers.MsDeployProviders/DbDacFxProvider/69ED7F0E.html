@@ -1,0 +1,382 @@
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - API - DbDacFxProvider.IncludeData Property</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/Cake.MsDeploy.dll">Cake<wbr>.MsDeploy<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders">Cake<wbr>.MsDeploy<wbr>.Providers<wbr>.MsDeployProviders</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider">DbDacFxProvider</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Constructors</li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/28D7FA01">DbDacFxProvider<wbr>()<wbr></a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/39C6A613">AdditionalSettings<wbr>(StringBuilder)<wbr></a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/045B1C6D">Append<wbr>Command<wbr>Line<wbr>Argument<wbr>(StringBuilder)<wbr></a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/BBE30A5D">To<wbr>Command<wbr>Line<wbr>Argument<wbr>()<wbr></a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/17C5ADF2">Allow<wbr>Drop<wbr>Blocking<wbr>Assemblies</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/743487D3">Allow<wbr>Incompatible<wbr>Platform</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/9530A303">AppendQuotesToPath</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/C052A8D5">AuthenticationType</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8DDB8242">Backup<wbr>Database<wbr>Before<wbr>Changes</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/71368C89">Block<wbr>On<wbr>Possible<wbr>Data<wbr>Loss</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/F82B14C4">Block<wbr>When<wbr>Drift<wbr>Detected</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/61A446EC">CommandTimeout</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C2A1A3CD">Comment<wbr>Out<wbr>Set<wbr>Var<wbr>Declarations</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/4E55B7FD">Compare<wbr>Using<wbr>Target<wbr>Collation</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/09912B45">ComputerName</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7F5A815D">CreateNewDatabase</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E54EFB34">DacpacAction</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C38577E3">Deploy<wbr>Database<wbr>In<wbr>Single<wbr>User<wbr>Mode</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/5A1FC5BB">Direction</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7C6434CB">Disable<wbr>And<wbr>Reenable<wbr>Ddl<wbr>Triggers</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E10A59F1">Do<wbr>Not<wbr>Alter<wbr>Change<wbr>Data<wbr>Capture<wbr>Objects</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/57C3DF62">Do<wbr>Not<wbr>Alter<wbr>Replicated<wbr>Objects</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B0C7C0F8">Drop<wbr>Constraints<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/5F81EFE4">Drop<wbr>Destination<wbr>Database</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/1DD73122">Drop<wbr>Dml<wbr>Triggers<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/38CC069D">Drop<wbr>Extended<wbr>Properties<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/186A1898">Drop<wbr>Indexes<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B930E563">Drop<wbr>Objects<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/2FF1C835">Drop<wbr>Permissions<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/51276128">Drop<wbr>Role<wbr>Members<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/0681765C">Drop<wbr>Statistics<wbr>Not<wbr>In<wbr>Source</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/5B1150C1">Generate<wbr>Smart<wbr>Defaults</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/AAB00977">IgnoreAnsiNulls</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7EF26795">IgnoreAuthorizer</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E571E928">Ignore<wbr>Column<wbr>Collation</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B474B741">IgnoreComments</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8FF52FAD">Ignore<wbr>Cryptographic<wbr>Provider<wbr>File<wbr>Path</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/FCFE86BD">Ignore<wbr>Ddl<wbr>Trigger<wbr>Order</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9FBF3CEB">Ignore<wbr>Ddl<wbr>Trigger<wbr>State</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/84AEA12D">IgnoreDefaultSchema</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/BC01D013">Ignore<wbr>Dml<wbr>Trigger<wbr>Order</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/DF406A45">Ignore<wbr>Dml<wbr>Trigger<wbr>State</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9AA2FE74">Ignore<wbr>Extended<wbr>Properties</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7EE30EFB">Ignore<wbr>File<wbr>And<wbr>Log<wbr>File<wbr>Path</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C0C53E55">Ignore<wbr>Filegroup<wbr>Placement</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/A9FEF32B">IgnoreFileSize</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/A7CA71FE">IgnoreFillFactor</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/31B65A61">Ignore<wbr>Full<wbr>Text<wbr>Catalog<wbr>File<wbr>Path</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8E184853">IgnoreIdentitySeed</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/EFD12142">IgnoreIncrement</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B8EB95B6">IgnoreIndexOptions</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/31315463">IgnoreIndexPadding</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/DC43341F">IgnoreKeywordCasing</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/1FA61E1A">Ignore<wbr>Lock<wbr>Hints<wbr>On<wbr>Indexes</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/BB78F753">IgnoreLoginSids</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9808A487">Ignore<wbr>Not<wbr>For<wbr>Replication</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/63D7BB3C">Ignore<wbr>Object<wbr>Placement<wbr>On<wbr>Partition<wbr>Scheme</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/879D35D0">Ignore<wbr>Partition<wbr>Schemes</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/89509AF4">IgnorePermissions</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/79ED61A9">Ignore<wbr>Quoted<wbr>Identifiers</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/D62E306B">IgnoreRoleMembership</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/49BC17B9">IgnoreRouteLifetime</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E37EB568">Ignore<wbr>Semicolon<wbr>Between<wbr>Statements</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8A11D9F1">IgnoreTableOptions</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/299E004B">Ignore<wbr>User<wbr>Settings<wbr>Objects</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/A40888D1">IgnoreWhitespace</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/98318E0D">Ignore<wbr>With<wbr>Nocheck<wbr>On<wbr>Check<wbr>Constraints</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/92E7541F">Ignore<wbr>With<wbr>Nocheck<wbr>On<wbr>Foreign<wbr>Keys</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/6B03608B">IncludeAcls</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/84D98B99">Include<wbr>Composite<wbr>Objects</a></li>
+				<li class="selected"><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/69ED7F0E">IncludeData</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9C68D29F">Include<wbr>Transactional<wbr>Scripts</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/4F386AAE">No<wbr>Alter<wbr>Statements<wbr>To<wbr>Change<wbr>Clr<wbr>Types</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/87773CDF">Password</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/40361581">Path</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/02878CBB">Populate<wbr>Files<wbr>On<wbr>File<wbr>Groups</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/69815361">PublishSettings</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/12B08F0D">Register<wbr>Data<wbr>Tier<wbr>Application</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/F9593B89">RequirePath</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/38E2479C">Run<wbr>Deployment<wbr>Plan<wbr>Executors</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/EE713381">Script<wbr>Database<wbr>Collation</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E081DD8A">Script<wbr>Database<wbr>Compatibility</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/FFF5721F">Script<wbr>Database<wbr>Options</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C4BDB06A">Script<wbr>Deploy<wbr>State<wbr>Checks</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/F99E2601">ScriptFileSize</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E3C5C73F">Script<wbr>New<wbr>Constraint<wbr>Validation</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/651E490F">ScriptRefreshModule</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/2182E996">TempAgent</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/704A91E9">Treat<wbr>Verification<wbr>Errors<wbr>As<wbr>Warnings</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/BDD0BEAF">Type</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/6CF43C76">Unmodifiable<wbr>Object<wbr>Warnings</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/2537A012">Username</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/F8574A11">Verify<wbr>Collation<wbr>Compatibility</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7175CFCD">VerifyDeployment</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/23B63508">WebManagementService</a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider">DbDacFxProvider</a>.</h3>
+	<h1>IncludeData <small>Property</small></h1>
+</section>
+<section class="content">
+	        <div class="alert alert-info" role="alert">
+            <i class="fa fa-info-circle"></i> This content is part of a third party addin that is not supported by the Cake project.
+
+                        For more information about this project, please visit 
+                        <a href="https://github.com/cake-contrib/Cake.MsDeploy" class="alert-link">https://github.com/cake-contrib/Cake.MsDeploy</a>.
+                            </div>
+
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            A true or false value for the 'includeData' setting.
+            </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/api/Cake.MsDeploy.dll">Cake<wbr>.MsDeploy<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders">Cake<wbr>.MsDeploy<wbr>.Providers<wbr>.MsDeployProviders</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider">DbDacFxProvider</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public bool? IncludeData { get; set; }</code></pre>
+
+
+
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>bool?</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br>
+    Copyright © <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

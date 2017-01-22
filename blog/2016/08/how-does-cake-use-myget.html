@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - How does Cake use MyGet?</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/src/input/blog/2016-08-25-how-does-cake-use-myget.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">                    
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+    <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
+        <li><a href="/blog/addins">Addins</a></li>
+        <li><a href="/blog/announcement">Announcement</a></li>
+        <li><a href="/blog/how-tos">How To&#x27;s</a></li>
+        <li><a href="/blog/infrastructure">Infrastructure</a></li>
+        <li><a href="/blog/news">News</a></li>
+        <li><a href="/blog/release-notes">Release Notes</a></li>
+    
+    <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/blog/archive/2017/01">January, 2017</a></li>
+        <li><a href="/blog/archive/2016/12">December, 2016</a></li>
+        <li><a href="/blog/archive/2016/11">November, 2016</a></li>
+        <li><a href="/blog/archive/2016/10">October, 2016</a></li>
+        <li><a href="/blog/archive/2016/09">September, 2016</a></li>
+        <li><a href="/blog/archive/2016/08">August, 2016</a></li>
+        <li><a href="/blog/archive/2016/07">July, 2016</a></li>
+        <li><a href="/blog/archive/2016/06">June, 2016</a></li>
+        <li><a href="/blog/archive/2016/05">May, 2016</a></li>
+        <li><a href="/blog/archive/2016/04">April, 2016</a></li>
+        <li><a href="/blog/archive/2016/03">March, 2016</a></li>
+        <li><a href="/blog/archive/2016/02">February, 2016</a></li>
+        <li><a href="/blog/archive/2016/01">January, 2016</a></li>
+        <li><a href="/blog/archive/2015/12">December, 2015</a></li>
+        <li><a href="/blog/archive/2015/11">November, 2015</a></li>
+        <li><a href="/blog/archive/2015/10">October, 2015</a></li>
+        <li><a href="/blog/archive/2015/09">September, 2015</a></li>
+        <li><a href="/blog/archive/2015/08">August, 2015</a></li>
+        <li><a href="/blog/archive/2015/07">July, 2015</a></li>
+    
+    <li class="header"><i class="fa fa-user"></i> Authors</li>    
+        <li><a href="/blog/author/agc93">agc93</a></li>
+        <li><a href="/blog/author/daveaglick">daveaglick</a></li>
+        <li><a href="/blog/author/devlead">devlead</a></li>
+        <li><a href="/blog/author/gep13">gep13</a></li>
+        <li><a href="/blog/author/jericho">jericho</a></li>
+        <li><a href="/blog/author/mholo65">mholo65</a></li>
+        <li><a href="/blog/author/patriksvensson">patriksvensson</a></li>
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+	<section class="content-header">
+		<h1>How does Cake use MyGet?</h1>
+	</section>
+	<section class="content">
+		
+
+
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Thursday, August 25, 2016</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/infrastructure">Infrastructure</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/gep13">gep13</a></dd>
+</dl>
+
+<p>This the first in a series of blog posts which will attempt to explain how Cake uses a number of different online services in order to develop, build, and deploy Cake.</p>
+<h3 id="what-is-myget">What is MyGet?</h3>
+<p><a href="https://www.myget.org">MyGet</a> is a hosted package server that allows hosting of the following package types:</p>
+<ul>
+<li>NuGet</li>
+<li>Chocolatey</li>
+<li>Npm</li>
+<li>Bower</li>
+<li>Vsix</li>
+<li>Symbols</li>
+<li>PowerShell Modules</li>
+</ul>
+<p>In addition MyGet also offers a build service to allow for the execution of build scripts.</p>
+<!--excerpt-->
+<h3 id="how-does-cake-use-myget">How does Cake use MyGet?</h3>
+<h4 id="package-hosting">Package Hosting</h4>
+<p>Each time a commit is made on the develop or master branch, an <a href="https://www.appveyor.com/">AppVeyor</a> build is triggered (<strong>NOTE:</strong> this could equally be a MyGet Build as mentioned below, it's just that back when the Cake project was started AppVeyor was chosen as the main Continuous Integration system that deployments would be triggered from), the end result of which is a number of NuGet packages are created.  These NuGet packages are then immediately pushed to the <a href="https://www.myget.org/gallery/cake">Cake feed</a> on MyGet.  You can see this in action here:</p>
+<p><img src="/assets/img/how-does-cake-use-myget/MyGet-Packages.png" class="img-fluid" alt="Package Hosting" /></p>
+<p>Each of those badges (which are shown on the project <a href="https://github.com/cake-build/cake/blob/develop/README.md">readme</a> file) show what that latest package version is in each location.</p>
+<p>In the above screenshot, you can see that version 0.15.2 of Cake is the latest version on NuGet, Chocolatey and Homebrew.  However, in the MyGet feed, we have version 0.16.0-alpha0046.  All of the stable releases of Cake come from the <a href="https://github.com/cake-build/cake/tree/main">main</a> branch and all of our work in progress work is done on the <a href="https://github.com/cake-build/cake/tree/develop">develop</a> branch.  This segregation is a very common practice, and something that Cake has done since the project was first started.  This means that we, and anyone who is interested, can immediately start using the latest pre-release version of Cake as soon as a commit is made to the develop branch, and those who want to wait for an official release can wait until a merge is done in the master branch and the packages are pushed to NuGet.org.</p>
+<p>Put simply, we want to make sure (or at least as sure as we can be) that the next version of Cake works as we expect it to, before publishing it to the wider community.  MyGet allows us to do exactly that by consuming Cake in the &quot;normal&quot; way, i.e. as a NuGet Package, however simply coming from an alternative source.  If you want to find out more about hosting your own packages on a MyGet feed of your own, check out the documentation <a href="http://docs.myget.org/docs/walkthrough/getting-started-with-nuget">here</a>.</p>
+<h4 id="build-service">Build service</h4>
+<p>In addition to the Package Hosting, we also take advantage of the MyGet Build Services.  Actually, we take advantage of a number of build services, as you can see in the below screenshot:</p>
+<p><img src="/assets/img/how-does-cake-use-myget/Build-Services.png" class="img-fluid" alt="Build Services" /></p>
+<p>Bottom line is, we want to make sure that Cake works, and has been tested on, as many Continuous Integration services as possible.  To that end, we build Cake using Cake, on all on the online services that you can see in screenshot above, including MyGet.</p>
+<p>By doing this, we can make sure ahead of time, if there are any issues running Cake.  The MyGet Build Service (affectionately known as Wonka) is perfectly suited at executing a Cake script (other build systems do exist :-)).  If you want to find out more about the MyGet Build Services, be sure to check out the documentation <a href="http://docs.myget.org/docs/reference/build-services">here</a>.</p>
+
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br/>
+    Copyright &copy; <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br/>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

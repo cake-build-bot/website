@@ -1,0 +1,924 @@
+<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - API - Cake.Genymotion.License Namespace</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#EnumTypes">Enum Types</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+	<li class="header">Namespaces</li>   
+
+				<li class="treeview active">
+				<a href="/api/Cake">Cake</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.AndroidAppManifest">Cake<wbr>.AndroidAppManifest</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.AppleSimulator">Cake<wbr>.AppleSimulator</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.AppleSimulator.Extensions">Cake<wbr>.AppleSimulator<wbr>.Extensions</a></li>
+			<li><a href="/api/Cake.AppleSimulator.SimCtl">Cake<wbr>.AppleSimulator<wbr>.SimCtl</a></li>
+			<li><a href="/api/Cake.AppleSimulator.Simulator">Cake<wbr>.AppleSimulator<wbr>.Simulator</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.AppPackager">Cake<wbr>.AppPackager</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.AppPackager.Bundle">Cake<wbr>.AppPackager<wbr>.Bundle</a></li>
+			<li><a href="/api/Cake.AppPackager.Decrypt">Cake<wbr>.AppPackager<wbr>.Decrypt</a></li>
+			<li><a href="/api/Cake.AppPackager.Encrypt">Cake<wbr>.AppPackager<wbr>.Encrypt</a></li>
+			<li><a href="/api/Cake.AppPackager.Pack">Cake<wbr>.AppPackager<wbr>.Pack</a></li>
+			<li><a href="/api/Cake.AppPackager.Unbundle">Cake<wbr>.AppPackager<wbr>.Unbundle</a></li>
+			<li><a href="/api/Cake.AppPackager.Unpack">Cake<wbr>.AppPackager<wbr>.Unpack</a></li>
+</ul></li>			<li><a href="/api/Cake.AppVeyor">Cake<wbr>.AppVeyor</a></li>
+			<li><a href="/api/Cake.Arguments">Cake<wbr>.Arguments</a></li>
+			<li><a href="/api/Cake.AutoRest">Cake<wbr>.AutoRest</a></li>
+			<li><a href="/api/Cake.AzureStorage">Cake<wbr>.AzureStorage</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.CakeMail">Cake<wbr>.CakeMail</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.CakeMail.Email">Cake<wbr>.CakeMail<wbr>.Email</a></li>
+</ul></li>			<li><a href="/api/Cake.CMake">Cake<wbr>.CMake</a></li>
+			<li><a href="/api/Cake.CocoaPods">Cake<wbr>.CocoaPods</a></li>
+			<li><a href="/api/Cake.Commands">Cake<wbr>.Commands</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common">Cake<wbr>.Common</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build">Cake<wbr>.Common<wbr>.Build</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.AppVeyor">Cake<wbr>.Common<wbr>.Build<wbr>.AppVeyor</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.AppVeyor.Data">Cake<wbr>.Common<wbr>.Build<wbr>.AppVeyor<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.Bamboo">Cake<wbr>.Common<wbr>.Build<wbr>.Bamboo</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.Bamboo.Data">Cake<wbr>.Common<wbr>.Build<wbr>.Bamboo<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.BitbucketPipelines">Cake<wbr>.Common<wbr>.Build<wbr>.BitbucketPipelines</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.BitbucketPipelines.Data">Cake<wbr>.Common<wbr>.Build<wbr>.BitbucketPipelines<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.Bitrise">Cake<wbr>.Common<wbr>.Build<wbr>.Bitrise</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.Bitrise.Data">Cake<wbr>.Common<wbr>.Build<wbr>.Bitrise<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.ContinuaCI">Cake<wbr>.Common<wbr>.Build<wbr>.ContinuaCI</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.ContinuaCI.Data">Cake<wbr>.Common<wbr>.Build<wbr>.ContinuaCI<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.GitLabCI">Cake<wbr>.Common<wbr>.Build<wbr>.GitLabCI</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.GitLabCI.Data">Cake<wbr>.Common<wbr>.Build<wbr>.GitLabCI<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.GoCD">Cake<wbr>.Common<wbr>.Build<wbr>.GoCD</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.GoCD.Data">Cake<wbr>.Common<wbr>.Build<wbr>.GoCD<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.Jenkins">Cake<wbr>.Common<wbr>.Build<wbr>.Jenkins</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.Jenkins.Data">Cake<wbr>.Common<wbr>.Build<wbr>.Jenkins<wbr>.Data</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Build.MyGet">Cake<wbr>.Common<wbr>.Build<wbr>.MyGet</a></li>
+			<li><a href="/api/Cake.Common.Build.TeamCity">Cake<wbr>.Common<wbr>.Build<wbr>.TeamCity</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.TFBuild">Cake<wbr>.Common<wbr>.Build<wbr>.TFBuild</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.TFBuild.Data">Cake<wbr>.Common<wbr>.Build<wbr>.TFBuild<wbr>.Data</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Build.TravisCI">Cake<wbr>.Common<wbr>.Build<wbr>.TravisCI</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Build.TravisCI.Data">Cake<wbr>.Common<wbr>.Build<wbr>.TravisCI<wbr>.Data</a></li>
+</ul></li></ul></li>			<li><a href="/api/Cake.Common.Diagnostics">Cake<wbr>.Common<wbr>.Diagnostics</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.IO">Cake<wbr>.Common<wbr>.IO</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.IO.Net">Cake<wbr>.Common<wbr>.IO<wbr>.Net</a></li>
+			<li><a href="/api/Cake.Common.IO.Paths">Cake<wbr>.Common<wbr>.IO<wbr>.Paths</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Modules">Cake<wbr>.Common<wbr>.Modules</a></li>
+			<li><a href="/api/Cake.Common.Net">Cake<wbr>.Common<wbr>.Net</a></li>
+			<li><a href="/api/Cake.Common.Polyfill">Cake<wbr>.Common<wbr>.Polyfill</a></li>
+			<li><a href="/api/Cake.Common.Security">Cake<wbr>.Common<wbr>.Security</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Solution">Cake<wbr>.Common<wbr>.Solution</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Cake.Common.Solution.Project">Cake<wbr>.Common<wbr>.Solution<wbr>.Project</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Solution.Project.Properties">Cake<wbr>.Common<wbr>.Solution<wbr>.Project<wbr>.Properties</a></li>
+			<li><a href="/api/Cake.Common.Solution.Project.XmlDoc">Cake<wbr>.Common<wbr>.Solution<wbr>.Project<wbr>.XmlDoc</a></li>
+</ul></li></ul></li>			<li><a href="/api/Cake.Common.Text">Cake<wbr>.Common<wbr>.Text</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools">Cake<wbr>.Common<wbr>.Tools</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.Cake">Cake<wbr>.Common<wbr>.Tools<wbr>.Cake</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.Chocolatey">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.Chocolatey.ApiKey">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.ApiKey</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Config">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Config</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Features">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Features</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Install">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Install</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Pack">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Pack</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Pin">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Pin</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Push">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Push</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Sources">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Sources</a></li>
+			<li><a href="/api/Cake.Common.Tools.Chocolatey.Upgrade">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey<wbr>.Upgrade</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.DNU">Cake<wbr>.Common<wbr>.Tools<wbr>.DNU</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.DNU.Build">Cake<wbr>.Common<wbr>.Tools<wbr>.DNU<wbr>.Build</a></li>
+			<li><a href="/api/Cake.Common.Tools.DNU.Pack">Cake<wbr>.Common<wbr>.Tools<wbr>.DNU<wbr>.Pack</a></li>
+			<li><a href="/api/Cake.Common.Tools.DNU.Restore">Cake<wbr>.Common<wbr>.Tools<wbr>.DNU<wbr>.Restore</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.DotCover">Cake<wbr>.Common<wbr>.Tools<wbr>.DotCover</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.DotCover.Analyse">Cake<wbr>.Common<wbr>.Tools<wbr>.DotCover<wbr>.Analyse</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotCover.Cover">Cake<wbr>.Common<wbr>.Tools<wbr>.DotCover<wbr>.Cover</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotCover.Report">Cake<wbr>.Common<wbr>.Tools<wbr>.DotCover<wbr>.Report</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.DotNetCore">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.DotNetCore.Build">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore<wbr>.Build</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotNetCore.Execute">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore<wbr>.Execute</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotNetCore.Pack">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore<wbr>.Pack</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotNetCore.Publish">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore<wbr>.Publish</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotNetCore.Restore">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore<wbr>.Restore</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotNetCore.Run">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore<wbr>.Run</a></li>
+			<li><a href="/api/Cake.Common.Tools.DotNetCore.Test">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore<wbr>.Test</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Tools.DupFinder">Cake<wbr>.Common<wbr>.Tools<wbr>.DupFinder</a></li>
+			<li><a href="/api/Cake.Common.Tools.Fixie">Cake<wbr>.Common<wbr>.Tools<wbr>.Fixie</a></li>
+			<li><a href="/api/Cake.Common.Tools.GitLink">Cake<wbr>.Common<wbr>.Tools<wbr>.GitLink</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.GitReleaseManager">Cake<wbr>.Common<wbr>.Tools<wbr>.GitReleaseManager</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.GitReleaseManager.AddAssets">Cake<wbr>.Common<wbr>.Tools<wbr>.GitReleaseManager<wbr>.AddAssets</a></li>
+			<li><a href="/api/Cake.Common.Tools.GitReleaseManager.Close">Cake<wbr>.Common<wbr>.Tools<wbr>.GitReleaseManager<wbr>.Close</a></li>
+			<li><a href="/api/Cake.Common.Tools.GitReleaseManager.Create">Cake<wbr>.Common<wbr>.Tools<wbr>.GitReleaseManager<wbr>.Create</a></li>
+			<li><a href="/api/Cake.Common.Tools.GitReleaseManager.Export">Cake<wbr>.Common<wbr>.Tools<wbr>.GitReleaseManager<wbr>.Export</a></li>
+			<li><a href="/api/Cake.Common.Tools.GitReleaseManager.Publish">Cake<wbr>.Common<wbr>.Tools<wbr>.GitReleaseManager<wbr>.Publish</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Tools.GitReleaseNotes">Cake<wbr>.Common<wbr>.Tools<wbr>.GitReleaseNotes</a></li>
+			<li><a href="/api/Cake.Common.Tools.GitVersion">Cake<wbr>.Common<wbr>.Tools<wbr>.GitVersion</a></li>
+			<li><a href="/api/Cake.Common.Tools.ILMerge">Cake<wbr>.Common<wbr>.Tools<wbr>.ILMerge</a></li>
+			<li><a href="/api/Cake.Common.Tools.ILRepack">Cake<wbr>.Common<wbr>.Tools<wbr>.ILRepack</a></li>
+			<li><a href="/api/Cake.Common.Tools.InnoSetup">Cake<wbr>.Common<wbr>.Tools<wbr>.InnoSetup</a></li>
+			<li><a href="/api/Cake.Common.Tools.InspectCode">Cake<wbr>.Common<wbr>.Tools<wbr>.InspectCode</a></li>
+			<li><a href="/api/Cake.Common.Tools.MSBuild">Cake<wbr>.Common<wbr>.Tools<wbr>.MSBuild</a></li>
+			<li><a href="/api/Cake.Common.Tools.MSTest">Cake<wbr>.Common<wbr>.Tools<wbr>.MSTest</a></li>
+			<li><a href="/api/Cake.Common.Tools.NSIS">Cake<wbr>.Common<wbr>.Tools<wbr>.NSIS</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.NuGet">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.NuGet.Install">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.Install</a></li>
+			<li><a href="/api/Cake.Common.Tools.NuGet.Pack">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.Pack</a></li>
+			<li><a href="/api/Cake.Common.Tools.NuGet.Push">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.Push</a></li>
+			<li><a href="/api/Cake.Common.Tools.NuGet.Restore">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.Restore</a></li>
+			<li><a href="/api/Cake.Common.Tools.NuGet.SetApiKey">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.SetApiKey</a></li>
+			<li><a href="/api/Cake.Common.Tools.NuGet.SetProxy">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.SetProxy</a></li>
+			<li><a href="/api/Cake.Common.Tools.NuGet.Sources">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.Sources</a></li>
+			<li><a href="/api/Cake.Common.Tools.NuGet.Update">Cake<wbr>.Common<wbr>.Tools<wbr>.NuGet<wbr>.Update</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Tools.NUnit">Cake<wbr>.Common<wbr>.Tools<wbr>.NUnit</a></li>
+			<li><a href="/api/Cake.Common.Tools.OctopusDeploy">Cake<wbr>.Common<wbr>.Tools<wbr>.OctopusDeploy</a></li>
+			<li><a href="/api/Cake.Common.Tools.OpenCover">Cake<wbr>.Common<wbr>.Tools<wbr>.OpenCover</a></li>
+			<li><a href="/api/Cake.Common.Tools.ReportGenerator">Cake<wbr>.Common<wbr>.Tools<wbr>.ReportGenerator</a></li>
+			<li><a href="/api/Cake.Common.Tools.ReportUnit">Cake<wbr>.Common<wbr>.Tools<wbr>.ReportUnit</a></li>
+			<li><a href="/api/Cake.Common.Tools.Roundhouse">Cake<wbr>.Common<wbr>.Tools<wbr>.Roundhouse</a></li>
+			<li><a href="/api/Cake.Common.Tools.SignTool">Cake<wbr>.Common<wbr>.Tools<wbr>.SignTool</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.SpecFlow">Cake<wbr>.Common<wbr>.Tools<wbr>.SpecFlow</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.SpecFlow.StepDefinitionReport">Cake<wbr>.Common<wbr>.Tools<wbr>.SpecFlow<wbr>.<wbr>Step<wbr>Definition<wbr>Report</a></li>
+			<li><a href="/api/Cake.Common.Tools.SpecFlow.TestExecutionReport">Cake<wbr>.Common<wbr>.Tools<wbr>.SpecFlow<wbr>.TestExecutionReport</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Tools.TextTransform">Cake<wbr>.Common<wbr>.Tools<wbr>.TextTransform</a></li>
+			<li><a href="/api/Cake.Common.Tools.VSTest">Cake<wbr>.Common<wbr>.Tools<wbr>.VSTest</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Common.Tools.WiX">Cake<wbr>.Common<wbr>.Tools<wbr>.WiX</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Common.Tools.WiX.Heat">Cake<wbr>.Common<wbr>.Tools<wbr>.WiX<wbr>.Heat</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Tools.XBuild">Cake<wbr>.Common<wbr>.Tools<wbr>.XBuild</a></li>
+			<li><a href="/api/Cake.Common.Tools.Xml">Cake<wbr>.Common<wbr>.Tools<wbr>.Xml</a></li>
+			<li><a href="/api/Cake.Common.Tools.XUnit">Cake<wbr>.Common<wbr>.Tools<wbr>.XUnit</a></li>
+</ul></li>			<li><a href="/api/Cake.Common.Xml">Cake<wbr>.Common<wbr>.Xml</a></li>
+</ul></li>			<li><a href="/api/Cake.Composition">Cake<wbr>.Composition</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Compression">Cake<wbr>.Compression</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Compression.Classes">Cake<wbr>.Compression<wbr>.Classes</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Core">Cake<wbr>.Core</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Core.Annotations">Cake<wbr>.Core<wbr>.Annotations</a></li>
+			<li><a href="/api/Cake.Core.Composition">Cake<wbr>.Core<wbr>.Composition</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Core.Configuration">Cake<wbr>.Core<wbr>.Configuration</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Core.Configuration.Parser">Cake<wbr>.Core<wbr>.Configuration<wbr>.Parser</a></li>
+</ul></li>			<li><a href="/api/Cake.Core.Diagnostics">Cake<wbr>.Core<wbr>.Diagnostics</a></li>
+			<li><a href="/api/Cake.Core.Graph">Cake<wbr>.Core<wbr>.Graph</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Core.IO">Cake<wbr>.Core<wbr>.IO</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Core.IO.Arguments">Cake<wbr>.Core<wbr>.IO<wbr>.Arguments</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Core.IO.Globbing">Cake<wbr>.Core<wbr>.IO<wbr>.Globbing</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Core.IO.Globbing.Nodes">Cake<wbr>.Core<wbr>.IO<wbr>.Globbing<wbr>.Nodes</a></li>
+</ul></li>			<li><a href="/api/Cake.Core.IO.NuGet">Cake<wbr>.Core<wbr>.IO<wbr>.NuGet</a></li>
+</ul></li>			<li><a href="/api/Cake.Core.Modules">Cake<wbr>.Core<wbr>.Modules</a></li>
+			<li><a href="/api/Cake.Core.Packaging">Cake<wbr>.Core<wbr>.Packaging</a></li>
+			<li><a href="/api/Cake.Core.Polyfill">Cake<wbr>.Core<wbr>.Polyfill</a></li>
+			<li><a href="/api/Cake.Core.Reflection">Cake<wbr>.Core<wbr>.Reflection</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Core.Scripting">Cake<wbr>.Core<wbr>.Scripting</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Core.Scripting.Analysis">Cake<wbr>.Core<wbr>.Scripting<wbr>.Analysis</a></li>
+			<li><a href="/api/Cake.Core.Scripting.CodeGen">Cake<wbr>.Core<wbr>.Scripting<wbr>.CodeGen</a></li>
+			<li><a href="/api/Cake.Core.Scripting.Processors">Cake<wbr>.Core<wbr>.Scripting<wbr>.Processors</a></li>
+</ul></li>			<li><a href="/api/Cake.Core.Text">Cake<wbr>.Core<wbr>.Text</a></li>
+			<li><a href="/api/Cake.Core.Tooling">Cake<wbr>.Core<wbr>.Tooling</a></li>
+			<li><a href="/api/Cake.Core.Utilities">Cake<wbr>.Core<wbr>.Utilities</a></li>
+</ul></li>			<li><a href="/api/Cake.Coveralls">Cake<wbr>.Coveralls</a></li>
+			<li><a href="/api/Cake.Curl">Cake<wbr>.Curl</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Diagnostics">Cake<wbr>.Diagnostics</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Diagnostics.Formatting">Cake<wbr>.Diagnostics<wbr>.Formatting</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.DocFx">Cake<wbr>.DocFx</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.DocFx.Helper">Cake<wbr>.DocFx<wbr>.Helper</a></li>
+</ul></li>			<li><a href="/api/Cake.Docker">Cake<wbr>.Docker</a></li>
+			<li><a href="/api/Cake.DoInDirectory">Cake<wbr>.DoInDirectory</a></li>
+			<li><a href="/api/Cake.Email">Cake<wbr>.Email</a></li>
+			<li><a href="/api/Cake.ExtendedNuGet">Cake<wbr>.ExtendedNuGet</a></li>
+			<li><a href="/api/Cake.Figlet">Cake<wbr>.Figlet</a></li>
+			<li><a href="/api/Cake.FileHelpers">Cake<wbr>.FileHelpers</a></li>
+			<li><a href="/api/Cake.FluentMigrator">Cake<wbr>.FluentMigrator</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Ftp">Cake<wbr>.Ftp</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Ftp.Services">Cake<wbr>.Ftp<wbr>.Services</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Gem">Cake<wbr>.Gem</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Gem.Build">Cake<wbr>.Gem<wbr>.Build</a></li>
+			<li><a href="/api/Cake.Gem.Push">Cake<wbr>.Gem<wbr>.Push</a></li>
+</ul></li>
+				<li class="treeview active">
+				<a href="/api/Cake.Genymotion">Cake<wbr>.Genymotion</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Genymotion.Admin">Cake<wbr>.Genymotion<wbr>.Admin</a></li>
+			<li><a href="/api/Cake.Genymotion.Config">Cake<wbr>.Genymotion<wbr>.Config</a></li>
+			<li><a href="/api/Cake.Genymotion.Device">Cake<wbr>.Genymotion<wbr>.Device</a></li>
+			<li class=" selected"><a href="/api/Cake.Genymotion.License">Cake<wbr>.Genymotion<wbr>.License</a></li>
+			<li><a href="/api/Cake.Genymotion.Version">Cake<wbr>.Genymotion<wbr>.Version</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Git">Cake<wbr>.Git</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Git.Extensions">Cake<wbr>.Git<wbr>.Extensions</a></li>
+</ul></li>			<li><a href="/api/Cake.GitPackager">Cake<wbr>.GitPackager</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Gitter">Cake<wbr>.Gitter</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Gitter.Chat">Cake<wbr>.Gitter<wbr>.Chat</a></li>
+			<li><a href="/api/Cake.Gitter.Include">Cake<wbr>.Gitter<wbr>.Include</a></li>
+			<li><a href="/api/Cake.Gitter.LitJson">Cake<wbr>.Gitter<wbr>.LitJson</a></li>
+</ul></li>			<li><a href="/api/Cake.Gulp">Cake<wbr>.Gulp</a></li>
+			<li><a href="/api/Cake.HipChat">Cake<wbr>.HipChat</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.HockeyApp">Cake<wbr>.HockeyApp</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.HockeyApp.Internal">Cake<wbr>.HockeyApp<wbr>.Internal</a></li>
+</ul></li>			<li><a href="/api/Cake.Json">Cake<wbr>.Json</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Kudu">Cake<wbr>.Kudu</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Kudu.Helpers">Cake<wbr>.Kudu<wbr>.Helpers</a></li>
+			<li><a href="/api/Cake.Kudu.KuduSync">Cake<wbr>.Kudu<wbr>.KuduSync</a></li>
+			<li><a href="/api/Cake.Kudu.Provider">Cake<wbr>.Kudu<wbr>.Provider</a></li>
+</ul></li>			<li><a href="/api/Cake.Modules">Cake<wbr>.Modules</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.MsDeploy">Cake<wbr>.MsDeploy</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.MsDeploy.Directives">Cake<wbr>.MsDeploy<wbr>.Directives</a></li>
+			<li><a href="/api/Cake.MsDeploy.Parameters">Cake<wbr>.MsDeploy<wbr>.Parameters</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.MsDeploy.Providers">Cake<wbr>.MsDeploy<wbr>.Providers</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders">Cake<wbr>.MsDeploy<wbr>.Providers<wbr>.MsDeployProviders</a></li>
+</ul></li>			<li><a href="/api/Cake.MsDeploy.Rules">Cake<wbr>.MsDeploy<wbr>.Rules</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Newman">Cake<wbr>.Newman</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Newman.Reporters">Cake<wbr>.Newman<wbr>.Reporters</a></li>
+</ul></li>			<li><a href="/api/Cake.Npm">Cake<wbr>.Npm</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.NSwag">Cake<wbr>.NSwag</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.NSwag.Settings">Cake<wbr>.NSwag<wbr>.Settings</a></li>
+			<li><a href="/api/Cake.NSwag.Sources">Cake<wbr>.NSwag<wbr>.Sources</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.NuGet">Cake<wbr>.NuGet</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.NuGet.V2">Cake<wbr>.NuGet<wbr>.V2</a></li>
+</ul></li>			<li><a href="/api/Cake.Orchard">Cake<wbr>.Orchard</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Paket">Cake<wbr>.Paket</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Cake.Paket.Addin">Cake<wbr>.Paket<wbr>.Addin</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Paket.Addin.Pack">Cake<wbr>.Paket<wbr>.Addin<wbr>.Pack</a></li>
+			<li><a href="/api/Cake.Paket.Addin.Push">Cake<wbr>.Paket<wbr>.Addin<wbr>.Push</a></li>
+			<li><a href="/api/Cake.Paket.Addin.Restore">Cake<wbr>.Paket<wbr>.Addin<wbr>.Restore</a></li>
+			<li><a href="/api/Cake.Paket.Addin.Tooling">Cake<wbr>.Paket<wbr>.Addin<wbr>.Tooling</a></li>
+</ul></li></ul></li>			<li><a href="/api/Cake.Plist">Cake<wbr>.Plist</a></li>
+			<li><a href="/api/Cake.Polyfill">Cake<wbr>.Polyfill</a></li>
+			<li><a href="/api/Cake.ProjHelpers">Cake<wbr>.ProjHelpers</a></li>
+			<li><a href="/api/Cake.Putty">Cake<wbr>.Putty</a></li>
+			<li><a href="/api/Cake.Raygun">Cake<wbr>.Raygun</a></li>
+			<li><a href="/api/Cake.ReSharperReports">Cake<wbr>.ReSharperReports</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Scripting">Cake<wbr>.Scripting</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Cake.Scripting.Mono">Cake<wbr>.Scripting<wbr>.Mono</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Cake.Scripting.Mono.CodeGen">Cake<wbr>.Scripting<wbr>.Mono<wbr>.CodeGen</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Scripting.Mono.CodeGen.Parsing">Cake<wbr>.Scripting<wbr>.Mono<wbr>.CodeGen<wbr>.Parsing</a></li>
+</ul></li></ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Scripting.Roslyn">Cake<wbr>.Scripting<wbr>.Roslyn</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Scripting.Roslyn.Nightly">Cake<wbr>.Scripting<wbr>.Roslyn<wbr>.Nightly</a></li>
+			<li><a href="/api/Cake.Scripting.Roslyn.Stable">Cake<wbr>.Scripting<wbr>.Roslyn<wbr>.Stable</a></li>
+</ul></li></ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.SemVer">Cake<wbr>.SemVer</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.SemVer.FromAssembly">Cake<wbr>.SemVer<wbr>.FromAssembly</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.SendGrid">Cake<wbr>.SendGrid</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.SendGrid.Email">Cake<wbr>.SendGrid<wbr>.Email</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Sonar">Cake<wbr>.Sonar</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Sonar.Attributes">Cake<wbr>.Sonar<wbr>.Attributes</a></li>
+</ul></li>			<li><a href="/api/Cake.SqlServer">Cake<wbr>.SqlServer</a></li>
+			<li><a href="/api/Cake.SqlServerPackager">Cake<wbr>.SqlServerPackager</a></li>
+			<li><a href="/api/Cake.Squirrel">Cake<wbr>.Squirrel</a></li>
+			<li><a href="/api/Cake.StrongNameTool">Cake<wbr>.StrongNameTool</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Testing">Cake<wbr>.Testing</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Testing.Extensions">Cake<wbr>.Testing<wbr>.Extensions</a></li>
+			<li><a href="/api/Cake.Testing.Fixtures">Cake<wbr>.Testing<wbr>.Fixtures</a></li>
+			<li><a href="/api/Cake.Testing.Xunit">Cake<wbr>.Testing<wbr>.Xunit</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Cake.Tfx">Cake<wbr>.Tfx</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Cake.Tfx.Extension">Cake<wbr>.Tfx<wbr>.Extension</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Tfx.Extension.Create">Cake<wbr>.Tfx<wbr>.Extension<wbr>.Create</a></li>
+			<li><a href="/api/Cake.Tfx.Extension.Install">Cake<wbr>.Tfx<wbr>.Extension<wbr>.Install</a></li>
+			<li><a href="/api/Cake.Tfx.Extension.Publish">Cake<wbr>.Tfx<wbr>.Extension<wbr>.Publish</a></li>
+			<li><a href="/api/Cake.Tfx.Extension.Share">Cake<wbr>.Tfx<wbr>.Extension<wbr>.Share</a></li>
+</ul></li></ul></li>			<li><a href="/api/Cake.Twitter">Cake<wbr>.Twitter</a></li>
+
+				<li class="treeview">
+				<a href="/api/Cake.Vagrant">Cake<wbr>.Vagrant</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Cake.Vagrant.Commands">Cake<wbr>.Vagrant<wbr>.Commands</a></li>
+			<li><a href="/api/Cake.Vagrant.Settings">Cake<wbr>.Vagrant<wbr>.Settings</a></li>
+</ul></li>			<li><a href="/api/Cake.VersionReader">Cake<wbr>.VersionReader</a></li>
+			<li><a href="/api/Cake.VsCode">Cake<wbr>.VsCode</a></li>
+			<li><a href="/api/Cake.Watch">Cake<wbr>.Watch</a></li>
+			<li><a href="/api/Cake.Webpack">Cake<wbr>.Webpack</a></li>
+			<li><a href="/api/Cake.WinSCP">Cake<wbr>.WinSCP</a></li>
+			<li><a href="/api/Cake.Wyam">Cake<wbr>.Wyam</a></li>
+			<li><a href="/api/Cake.Xamarin">Cake<wbr>.Xamarin</a></li>
+			<li><a href="/api/Cake.XCode">Cake<wbr>.XCode</a></li>
+			<li><a href="/api/Cake.XdtTransform">Cake<wbr>.XdtTransform</a></li>
+			<li><a href="/api/Cake.Yaml">Cake<wbr>.Yaml</a></li>
+			<li><a href="/api/Cake.Yarn">Cake<wbr>.Yarn</a></li>
+</ul></li>			<li><a href="/api/Costura">Costura</a></li>
+			<li><a href="/api/global">global</a></li>
+
+				<li class="treeview">
+				<a href="/api/MagicChunks">MagicChunks</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/MagicChunks.Cake">MagicChunks<wbr>.Cake</a></li>
+			<li><a href="/api/MagicChunks.Core">MagicChunks<wbr>.Core</a></li>
+			<li><a href="/api/MagicChunks.Documents">MagicChunks<wbr>.Documents</a></li>
+			<li><a href="/api/MagicChunks.Helpers">MagicChunks<wbr>.Helpers</a></li>
+			<li><a href="/api/MagicChunks.MSBuild">MagicChunks<wbr>.MSBuild</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft">Microsoft</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Microsoft.Azure">Microsoft<wbr>.Azure</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Microsoft.Azure.KeyVault">Microsoft<wbr>.Azure<wbr>.KeyVault</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Azure.KeyVault.Core">Microsoft<wbr>.Azure<wbr>.KeyVault<wbr>.Core</a></li>
+</ul></li></ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.Data">Microsoft<wbr>.Data</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.Edm">Microsoft<wbr>.Data<wbr>.Edm</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Data.Edm.Annotations">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Annotations</a></li>
+
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.Edm.Csdl">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Csdl</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.Edm.Csdl.Internal">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Csdl<wbr>.Internal</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Data.Edm.Csdl.Internal.CsdlSemantics">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Csdl<wbr>.Internal<wbr>.CsdlSemantics</a></li>
+
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.Edm.Csdl.Internal.Parsing">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Csdl<wbr>.Internal<wbr>.Parsing</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Data.Edm.Csdl.Internal.Parsing.Ast">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Csdl<wbr>.Internal<wbr>.Parsing<wbr>.Ast</a></li>
+			<li><a href="/api/Microsoft.Data.Edm.Csdl.Internal.Parsing.Common">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Csdl<wbr>.Internal<wbr>.Parsing<wbr>.Common</a></li>
+</ul></li>			<li><a href="/api/Microsoft.Data.Edm.Csdl.Internal.Serialization">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Csdl<wbr>.Internal<wbr>.Serialization</a></li>
+</ul></li></ul></li>			<li><a href="/api/Microsoft.Data.Edm.EdmToClrConversion">Microsoft<wbr>.Data<wbr>.Edm<wbr>.EdmToClrConversion</a></li>
+			<li><a href="/api/Microsoft.Data.Edm.Evaluation">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Evaluation</a></li>
+			<li><a href="/api/Microsoft.Data.Edm.Expressions">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Expressions</a></li>
+			<li><a href="/api/Microsoft.Data.Edm.Internal">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Internal</a></li>
+
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.Edm.Library">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Library</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Data.Edm.Library.Annotations">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Library<wbr>.Annotations</a></li>
+			<li><a href="/api/Microsoft.Data.Edm.Library.Expressions">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Library<wbr>.Expressions</a></li>
+			<li><a href="/api/Microsoft.Data.Edm.Library.Internal">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Library<wbr>.Internal</a></li>
+			<li><a href="/api/Microsoft.Data.Edm.Library.Values">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Library<wbr>.Values</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.Edm.Validation">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Validation</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Data.Edm.Validation.Internal">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Validation<wbr>.Internal</a></li>
+</ul></li>			<li><a href="/api/Microsoft.Data.Edm.Values">Microsoft<wbr>.Data<wbr>.Edm<wbr>.Values</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.OData">Microsoft<wbr>.Data<wbr>.OData</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Data.OData.Atom">Microsoft<wbr>.Data<wbr>.OData<wbr>.Atom</a></li>
+			<li><a href="/api/Microsoft.Data.OData.Evaluation">Microsoft<wbr>.Data<wbr>.OData<wbr>.Evaluation</a></li>
+			<li><a href="/api/Microsoft.Data.OData.Json">Microsoft<wbr>.Data<wbr>.OData<wbr>.Json</a></li>
+			<li><a href="/api/Microsoft.Data.OData.JsonLight">Microsoft<wbr>.Data<wbr>.OData<wbr>.JsonLight</a></li>
+			<li><a href="/api/Microsoft.Data.OData.Metadata">Microsoft<wbr>.Data<wbr>.OData<wbr>.Metadata</a></li>
+
+				<li class="treeview">
+				<a href="/api/Microsoft.Data.OData.Query">Microsoft<wbr>.Data<wbr>.OData<wbr>.Query</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.Data.OData.Query.Metadata">Microsoft<wbr>.Data<wbr>.OData<wbr>.Query<wbr>.Metadata</a></li>
+			<li><a href="/api/Microsoft.Data.OData.Query.SemanticAst">Microsoft<wbr>.Data<wbr>.OData<wbr>.Query<wbr>.SemanticAst</a></li>
+			<li><a href="/api/Microsoft.Data.OData.Query.SyntacticAst">Microsoft<wbr>.Data<wbr>.OData<wbr>.Query<wbr>.SyntacticAst</a></li>
+</ul></li>			<li><a href="/api/Microsoft.Data.OData.VerboseJson">Microsoft<wbr>.Data<wbr>.OData<wbr>.VerboseJson</a></li>
+</ul></li>			<li><a href="/api/Microsoft.Data.Spatial">Microsoft<wbr>.Data<wbr>.Spatial</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure">Microsoft<wbr>.WindowsAzure</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage">Microsoft<wbr>.WindowsAzure<wbr>.Storage</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.Analytics">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Analytics</a></li>
+
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage.Auth">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Auth</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.Auth.Protocol">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Auth<wbr>.Protocol</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage.Blob">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Blob</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.Blob.Protocol">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Blob<wbr>.Protocol</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage.Core">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Core</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.Core.Auth">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Core<wbr>.Auth</a></li>
+			<li><a href="/api/Microsoft.WindowsAzure.Storage.Core.Executor">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Core<wbr>.Executor</a></li>
+			<li><a href="/api/Microsoft.WindowsAzure.Storage.Core.Util">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Core<wbr>.Util</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage.File">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.File</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.File.Protocol">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.File<wbr>.Protocol</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage.Queue">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Queue</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.Queue.Protocol">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Queue<wbr>.Protocol</a></li>
+</ul></li>			<li><a href="/api/Microsoft.WindowsAzure.Storage.RetryPolicies">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.RetryPolicies</a></li>
+
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage.Shared">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Shared</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.Shared.Protocol">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Shared<wbr>.Protocol</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/Microsoft.WindowsAzure.Storage.Table">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Table</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Microsoft.WindowsAzure.Storage.Table.DataServices">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Table<wbr>.DataServices</a></li>
+			<li><a href="/api/Microsoft.WindowsAzure.Storage.Table.Protocol">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Table<wbr>.Protocol</a></li>
+			<li><a href="/api/Microsoft.WindowsAzure.Storage.Table.Queryable">Microsoft<wbr>.WindowsAzure<wbr>.Storage<wbr>.Table<wbr>.Queryable</a></li>
+</ul></li></ul></li></ul></li></ul></li>
+				<li class="treeview">
+				<a href="/api/Newtonsoft">Newtonsoft</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/Newtonsoft.Json">Newtonsoft<wbr>.Json</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Newtonsoft.Json.Bson">Newtonsoft<wbr>.Json<wbr>.Bson</a></li>
+			<li><a href="/api/Newtonsoft.Json.Converters">Newtonsoft<wbr>.Json<wbr>.Converters</a></li>
+
+				<li class="treeview">
+				<a href="/api/Newtonsoft.Json.Linq">Newtonsoft<wbr>.Json<wbr>.Linq</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/Newtonsoft.Json.Linq.JsonPath">Newtonsoft<wbr>.Json<wbr>.Linq<wbr>.JsonPath</a></li>
+</ul></li>			<li><a href="/api/Newtonsoft.Json.Schema">Newtonsoft<wbr>.Json<wbr>.Schema</a></li>
+			<li><a href="/api/Newtonsoft.Json.Serialization">Newtonsoft<wbr>.Json<wbr>.Serialization</a></li>
+			<li><a href="/api/Newtonsoft.Json.Utilities">Newtonsoft<wbr>.Json<wbr>.Utilities</a></li>
+</ul></li></ul></li>			<li><a href="/api/RefitInternalGenerated">Refit<wbr>Internal<wbr>Generated</a></li>
+
+				<li class="treeview">
+				<a href="/api/System">System</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/System.Data">System<wbr>.Data</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/System.Data.Services">System<wbr>.Data<wbr>.Services</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/System.Data.Services.Client">System<wbr>.Data<wbr>.Services<wbr>.Client</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/System.Data.Services.Client.Materialization">System<wbr>.Data<wbr>.Services<wbr>.Client<wbr>.Materialization</a></li>
+			<li><a href="/api/System.Data.Services.Client.Metadata">System<wbr>.Data<wbr>.Services<wbr>.Client<wbr>.Metadata</a></li>
+			<li><a href="/api/System.Data.Services.Client.Providers">System<wbr>.Data<wbr>.Services<wbr>.Client<wbr>.Providers</a></li>
+			<li><a href="/api/System.Data.Services.Client.Serializers">System<wbr>.Data<wbr>.Services<wbr>.Client<wbr>.Serializers</a></li>
+</ul></li>			<li><a href="/api/System.Data.Services.Common">System<wbr>.Data<wbr>.Services<wbr>.Common</a></li>
+</ul></li></ul></li>			<li><a href="/api/System.Spatial">System<wbr>.Spatial</a></li>
+</ul></li>			<li><a href="/api/Xunit">Xunit</a></li>
+
+				<li class="treeview">
+				<a href="/api/YamlDotNet">YamlDotNet</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/YamlDotNet.Core">YamlDotNet<wbr>.Core</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/YamlDotNet.Core.Events">YamlDotNet<wbr>.Core<wbr>.Events</a></li>
+			<li><a href="/api/YamlDotNet.Core.Tokens">YamlDotNet<wbr>.Core<wbr>.Tokens</a></li>
+</ul></li>			<li><a href="/api/YamlDotNet.Helpers">YamlDotNet<wbr>.Helpers</a></li>
+			<li><a href="/api/YamlDotNet.RepresentationModel">YamlDotNet<wbr>.RepresentationModel</a></li>
+
+				<li class="treeview">
+				<a href="/api/YamlDotNet.Serialization">YamlDotNet<wbr>.Serialization</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/YamlDotNet.Serialization.Converters">YamlDotNet<wbr>.Serialization<wbr>.Converters</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.EventEmitters">YamlDotNet<wbr>.Serialization<wbr>.EventEmitters</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.NamingConventions">YamlDotNet<wbr>.Serialization<wbr>.NamingConventions</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.NodeDeserializers">YamlDotNet<wbr>.Serialization<wbr>.NodeDeserializers</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.NodeTypeResolvers">YamlDotNet<wbr>.Serialization<wbr>.NodeTypeResolvers</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.ObjectFactories">YamlDotNet<wbr>.Serialization<wbr>.ObjectFactories</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.ObjectGraphTraversalStrategies">YamlDotNet<wbr>.Serialization<wbr>.<wbr>Object<wbr>Graph<wbr>Traversal<wbr>Strategies</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.ObjectGraphVisitors">YamlDotNet<wbr>.Serialization<wbr>.ObjectGraphVisitors</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.TypeInspectors">YamlDotNet<wbr>.Serialization<wbr>.TypeInspectors</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.TypeResolvers">YamlDotNet<wbr>.Serialization<wbr>.TypeResolvers</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.Utilities">YamlDotNet<wbr>.Serialization<wbr>.Utilities</a></li>
+			<li><a href="/api/YamlDotNet.Serialization.ValueDeserializers">YamlDotNet<wbr>.Serialization<wbr>.ValueDeserializers</a></li>
+</ul></li></ul></li>      
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Cake<wbr>.Genymotion<wbr>.License <small>Namespace</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Genymotion.License/GenymotionLicense">GenymotionLicense</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Genymotion.License/GenymotionLicenseRunner">Genymotion<wbr>License<wbr>Runner</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Genymotion.License/GenymotionLicenseSettings">Genymotion<wbr>License<wbr>Settings</a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+			<h1 id="EnumTypes">Enum Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Enum</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Genymotion.License/GenymotionLicenseType">Genymotion<wbr>License<wbr>Type</a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br>
+    Copyright © <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

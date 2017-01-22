@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<link rel="self" href="http://cakebuild.net/" />
+	<id>http://cakebuild.net/</id>
+	<title>Cake</title>
+	<rights>2017</rights>
+	<updated>2017-01-22T15:54:21Z</updated>
+	<entry>
+		<author>
+			<name>daveaglick</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2017/01/new-static-site" />
+		<id>http://cakebuild.net/blog/2017/01/new-static-site</id>
+		<title>New Static Cake Website</title>
+		<updated>2017-01-13T00:00:00Z</updated>
+		<summary>&lt;p&gt;Hi! My name is Dave Glick and I run the &lt;a href="http://wyam.io"&gt;Wyam static site engine&lt;/a&gt; project. I'm also a big Cake fanboy, and over the last couple months I've been privileged to work with the rest of the Cake team on transitioning the Cake website from a dynamic ASP.NET website to a static one built by &lt;a href="http://wyam.io"&gt;Wyam&lt;/a&gt;. This effort was more than mere window dressing; the new site goes beyond the old one in some interesting ways:&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>devlead</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/12/icing-on-the-cake" />
+		<id>http://cakebuild.net/blog/2016/12/icing-on-the-cake</id>
+		<title>Icing on the Cake – reviewing the recipe for 2016</title>
+		<updated>2016-12-31T00:00:00Z</updated>
+		<summary>&lt;p&gt;As 2016 is just about to be fully baked, the year has been packed with many ingredients, with this post we would like to take the opportunity to reflect on a few of the essences of what's been a truly amazing and eventful Cake year.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>agc93</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/12/cake-vs-prerelease" />
+		<id>http://cakebuild.net/blog/2016/12/cake-vs-prerelease</id>
+		<title>Installing prerelease versions of Cake for Visual Studio</title>
+		<updated>2016-12-13T00:00:00Z</updated>
+		<summary>&lt;p&gt;We released the Cake for Visual Studio extension back in September and have been thrilled with the response from the whole community. There's been plenty of activity over &lt;a href="https://github.com/cake-build/cake-vs"&gt;on the GitHub repo&lt;/a&gt; with new issues, bug reports, features and even PRs. Now, you can get the benefits of all the brand new features as they arrive, right in Visual Studio.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/11/cake-v0.17.0-released" />
+		<id>http://cakebuild.net/blog/2016/11/cake-v0.17.0-released</id>
+		<title>Cake v0.17.0 released</title>
+		<updated>2016-11-09T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.17.0 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;This release of Cake sees a number of new features added, as well as some bug fixes, however, most importantly, there was a breaking change.&lt;/p&gt;
+&lt;p&gt;This breaking change centred around the &lt;code&gt;&lt;a href="/api/Cake.Common.Tools.VSTest/VSTestSettings"&gt;VSTestSettings&lt;/a&gt;&lt;/code&gt; class, where the decision was wait to allow custom loggers to be passed into the &lt;code&gt;&lt;a href="/api/Cake.Common.Tools.VSTest/VSTestRunner"&gt;VSTestRunner&lt;/a&gt;&lt;/code&gt;.  As a result, the previous enumeration named &lt;code&gt;VSTestLogger&lt;/code&gt; has been removed, and replaced with a fully customizable string.  If you are using this enumeration in your scripts then you will see errors being generated if you update to the latest version of Cake.  You should be able to make use of the new extension methods called &lt;code&gt;WithVisualStudioLogger&lt;/code&gt; and &lt;code&gt;WithAppVeyorLogger&lt;/code&gt; on the &lt;code&gt;&lt;a href="/api/Cake.Common.Tools.VSTest/VSTestSettings"&gt;VSTestSettings&lt;/a&gt;&lt;/code&gt; to replace the enumeration values.&lt;/p&gt;
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Once again, the Cake Team have been overwhelmed by the number of contributions from our Community Members.  Simply put... THANK YOU!&lt;/p&gt;
+&lt;p&gt;Contributions were included from:&lt;/p&gt;
+
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>jericho</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/10/email-addins-released" />
+		<id>http://cakebuild.net/blog/2016/10/email-addins-released</id>
+		<title>Email addins released</title>
+		<updated>2016-10-31T00:00:00Z</updated>
+		<summary>&lt;p&gt;There are many scenarios where you need to send notifications during your build process, such as notifying colleagues that a build has passed/failed, notifying stakeholders that a package has been published to nuget, etc. One of the most popular ways to send such notification is, of course, email. That's why we recently released three new addins to send emails.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>devlead</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/10/cake-v0.16.2-released" />
+		<id>http://cakebuild.net/blog/2016/10/cake-v0.16.2-released</id>
+		<title>Cake v0.16.2 released</title>
+		<updated>2016-10-11T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.16.2 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;Following the release of Cake v0.16.1, &lt;a href="https://github.com/Redth"&gt;Redth&lt;/a&gt; identified an issue with Cake not being identified as a .NET assembly when launched from a Mono process. With the help of &lt;a href="https://github.com/akoeplinger"&gt;akoeplinger&lt;/a&gt; we identified the issue in the Mono runtime and the PE32+ format assemblies generated by Roslyn/csc.exe when targeting x64 (&lt;em&gt;which is the default in .NET Core project.json toolchain&lt;/em&gt;). &lt;a href="https://github.com/akoeplinger"&gt;akoeplinger&lt;/a&gt; has already submitted a &lt;a href="https://github.com/mono/mono/pull/3745"&gt;pull request&lt;/a&gt; to Mono for this, so we expect this to be fixed in future versions of Mono, meanwhile the workaround is to set platform to use &lt;em&gt;AnyCPU&lt;/em&gt; explicitly in the &lt;em&gt;project.json&lt;/em&gt; file.&lt;/p&gt;
+&lt;p&gt;As a result, v0.16.2 of Cake is now available.&lt;/p&gt;
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>mholo65</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/09/debug-cake-vscode" />
+		<id>http://cakebuild.net/blog/2016/09/debug-cake-vscode</id>
+		<title>How to debug a Cake file using Visual Studio Code</title>
+		<updated>2016-09-27T00:00:00Z</updated>
+		<summary>&lt;p&gt;As you might already know, debugging Cake scripts using Visual Studio has been supported since the v0.12.0 release of Cake. But since the v0.16.1 release of Cake, thanks to &lt;a href="https://github.com/cake-build/cake/issues/1015"&gt;porting Cake to .NET Core&lt;/a&gt;, it is now also possible to debug Cake files using Visual Studio Code.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>agc93</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/09/cake-for-visual-studio" />
+		<id>http://cakebuild.net/blog/2016/09/cake-for-visual-studio</id>
+		<title>Cake for Visual Studio released</title>
+		<updated>2016-09-25T00:00:00Z</updated>
+		<summary>&lt;p&gt;I am very proud to announce the first release of the Cake for Visual Studio extension for Visual Studio 2015. This extension brings full syntax highlighting, integration with the Task Runner Explorer, special commands to get you started with Cake on new projects and new templates.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/09/cake-v0.16.1-released" />
+		<id>http://cakebuild.net/blog/2016/09/cake-v0.16.1-released</id>
+		<title>Cake v0.16.1 released</title>
+		<updated>2016-09-25T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.16.1 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;Following the release of Cake v0.16.0 last week, &lt;a href="https://github.com/mholo65"&gt;mholo65&lt;/a&gt; identified an issue with debugging in Visual Studio Code.  In addition, we also noticed that we were missing some properties in the generated assemblies.&lt;/p&gt;
+&lt;p&gt;As a result, v0.16.1 of Cake is now available.&lt;/p&gt;
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>agc93</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/09/cake-for-yeoman" />
+		<id>http://cakebuild.net/blog/2016/09/cake-for-yeoman</id>
+		<title>Announcing Cake for Yeoman</title>
+		<updated>2016-09-23T00:00:00Z</updated>
+		<summary>&lt;p&gt;Yeoman users rejoice! You can now bootstrap your project for Cake with &lt;a href="http://yeoman.io"&gt;Yeoman&lt;/a&gt; and the new &lt;code&gt;generator-cake&lt;/code&gt; generator.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>patriksvensson</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/09/cake-v0.16.0-released" />
+		<id>http://cakebuild.net/blog/2016/09/cake-v0.16.0-released</id>
+		<title>Cake v0.16.0 released</title>
+		<updated>2016-09-17T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.16.0 of Cake has been released, and it's a big release!&lt;/p&gt;
+&lt;p&gt;Not only are we supporting the full .NET framework (&lt;em&gt;v4.5&lt;/em&gt;), but from this version
+we will also support running Cake on platforms capable of running .NET Core (&lt;em&gt;netstandard1.6&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;For this to work, you will have to install the &lt;code&gt;Cake.CoreCLR&lt;/code&gt; package instead
+of the normal &lt;code&gt;Cake&lt;/code&gt; package. A blog post describing this more in detail
+will be published soon.&lt;/p&gt;
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Contributions were included from:&lt;/p&gt;
+
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/08/cake-contribution-organization" />
+		<id>http://cakebuild.net/blog/2016/08/cake-contribution-organization</id>
+		<title>Cake Contribution Organization</title>
+		<updated>2016-08-31T00:00:00Z</updated>
+		<summary>&lt;p&gt;As some of you may know, we recently opened an issue on GitHub to discuss the problem of &lt;a href="https://github.com/cake-build/cake/issues/1136"&gt;Cake addins becoming stale&lt;/a&gt;.  This blog post aims to recap the discussion that was had within that issue, as well as the plan going forward.&lt;/p&gt;
+&lt;p&gt;The first thing that I want to re-iterate is that the Cake Team are not attempting to throttle or take over the development of Cake addins/modules in anyway.  We love the fact that there is a thriving Community behind Cake, and we want to encourage that.  However, we do have a responsibility to the wider Cake Community and we want to ensure that any addins and modules that are created, can continue to be maintained, should the original developer no longer be in a position to maintain it.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/08/how-does-cake-use-myget" />
+		<id>http://cakebuild.net/blog/2016/08/how-does-cake-use-myget</id>
+		<title>How does Cake use MyGet?</title>
+		<updated>2016-08-25T00:00:00Z</updated>
+		<summary>&lt;p&gt;This the first in a series of blog posts which will attempt to explain how Cake uses a number of different online services in order to develop, build, and deploy Cake.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.myget.org"&gt;MyGet&lt;/a&gt; is a hosted package server that allows hosting of the following package types:&lt;/p&gt;
+
+&lt;p&gt;In addition MyGet also offers a build service to allow for the execution of build scripts.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/07/cake-v0.15.2-released" />
+		<id>http://cakebuild.net/blog/2016/07/cake-v0.15.2-released</id>
+		<title>Cake v0.15.2 released</title>
+		<updated>2016-07-30T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.15.2 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;Hot on the heels of the 0.15.1 release, we have just finished another bug fix release.  This time, it was to correct two issues that were identified with the WiX aliases within Cake.&lt;/p&gt;
+&lt;p&gt;Both of these issues were identified and corrected by community members, and we would like to thank &lt;a href="https://github.com/galpin"&gt;galpin&lt;/a&gt; and &lt;a href="https://github.com/RLittlesII"&gt;RLittlesII&lt;/a&gt; for their help.&lt;/p&gt;
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/07/cake-v0.15.1-released" />
+		<id>http://cakebuild.net/blog/2016/07/cake-v0.15.1-released</id>
+		<title>Cake v0.15.1 released</title>
+		<updated>2016-07-28T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.15.1 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;Following the release of Cake v0.15.0 a couple days ago, a problem was identified with regard to the AppVeyor functionality of uploading artifacts and pushing test results.&lt;/p&gt;
+&lt;p&gt;Fortunately, &lt;a href="https://github.com/Philo"&gt;Philo&lt;/a&gt; identified the issue very quickly and submitted a PR request to correct the problem.&lt;/p&gt;
+&lt;p&gt;As a result, v0.15.1 of Cake is now available.&lt;/p&gt;
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/07/cake-v0.15.0-released" />
+		<id>http://cakebuild.net/blog/2016/07/cake-v0.15.0-released</id>
+		<title>Cake v0.15.0 released</title>
+		<updated>2016-07-26T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.15.0 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;The Cake Team is happy once again to announce the latest version of Cake, 0.15.0.  This release was intended to be a small release to tidy up a few small issues that had been identified in Cake prior to starting work on our port to CoreClr.  However, once again, our amazing community contributors have stepped up with 6 Features, 6 Bugs, and 14 Improvements, being shipped in this release.  Thank you to everyone who has helped with this release!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/patriksvensson"&gt;Patrik&lt;/a&gt; has been very busy working on the port of Cake to run on the CoreClr (you might have been following his work on the CoreClr Branch), and it is looking like that will be included in the next release of Cake, 0.16.0.  While we are working on this next version, it is unlikely that we will be pulling in any other Pull Requests as we want to ensure that the transition goes as smoothly as possible.  If you have any ideas about new features/improvements that you would like to see in Cake, please reach out to us in the &lt;a href="https://gitter.im/cake-build/cake"&gt;Gitter Room&lt;/a&gt; prior to starting any work.&lt;/p&gt;
+&lt;p&gt;Contributions were included from:&lt;/p&gt;
+
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/07/cake-v0.14.0-released" />
+		<id>http://cakebuild.net/blog/2016/07/cake-v0.14.0-released</id>
+		<title>Cake v0.14.0 released</title>
+		<updated>2016-07-11T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.14.0 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;We are very happy to announce the first release of Cake as a member of the .NET Foundation.  If you missed this announcement, you can read more about it &lt;a href="http://cakebuild.net/blog/2016/06/cake-joins-dotnetfoundation"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this release, we made a number of improvements and squashed some bugs which had been reported.  In addition, we saw four new features added to Cake, including support for the Wix Heat command line tool, and also for Octopus Deploy Push command.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; Within this release, we also had one breaking change, namely the removal of the obsoleted XmlPoke Aliases.  These had been marked as obsolete in a previous release of Cake, and we have now taken the steps to remove them completely.  Cake does follow the semantic versioning principles, however, since we have not yet reached the 1.0.0 release, this breaking change appears here, in a minor version number change.&lt;/p&gt;
+&lt;p&gt;Contributions were included from:&lt;/p&gt;
+
+&lt;p&gt;Please let us know if you run into any issues with this latest release.&lt;/p&gt;
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>devlead</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/06/cake-joins-dotnetfoundation" />
+		<id>http://cakebuild.net/blog/2016/06/cake-joins-dotnetfoundation</id>
+		<title>Cake joins the .NET foundation</title>
+		<updated>2016-06-09T00:00:00Z</updated>
+		<summary>&lt;p&gt;It’s been an amazing journey since the push of the first public commit of Cake in May 2014, in just two years we’ve seen 72 releases, had more than 60 contributors, over a thousand issues and pull requests proposed. And on top of that a small eco system of more than 50 community provided Cake addins.&lt;/p&gt;
+&lt;p&gt;So firstly a huge thank you to all our contributors and adopters! This wouldn’t have been possible without you! It’s truly amazing to see the increase in contribution and adoption of Cake.&lt;/p&gt;
+&lt;p&gt;Today we’re really excited and happy to share that Cake is joining the .NET foundation!&lt;/p&gt;
+&lt;p&gt;So what does this mean for Cake? It’ll still be maintained and governed by the same team as now, but with the support and guidance of the .NET foundation, ensuring the longevity of the project.&lt;/p&gt;
+&lt;p&gt;Read more about Cake joining on the .NET foundation &lt;a href="http://www.dotnetfoundation.org/blog/cake-welcome"&gt;blog&lt;/a&gt;.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/06/cake-v0.13.0-released" />
+		<id>http://cakebuild.net/blog/2016/06/cake-v0.13.0-released</id>
+		<title>Cake v0.13.0 released</title>
+		<updated>2016-06-07T00:00:00Z</updated>
+		<summary>&lt;p&gt;Version 0.13.0 of Cake has been released.&lt;/p&gt;
+&lt;p&gt;In addition to squashing a number of bugs within this release, we are happy to announce a few new features including supporting the uploading of Test Results to AppVeyor in bulk, and also a set of aliases to support VSTest.&lt;/p&gt;
+&lt;p&gt;Once again, we have been very lucky to accept a number of contributions for our amazing community members in order to help Cake moving forward.&lt;/p&gt;
+&lt;p&gt;Contributions were included from:&lt;/p&gt;
+
+&lt;p&gt;Full details of everything that was included in this release can be seen below.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<author>
+			<name>gep13</name>
+		</author>
+		<link href="http://cakebuild.net/blog/2016/05/debug-cake-file" />
+		<id>http://cakebuild.net/blog/2016/05/debug-cake-file</id>
+		<title>How to debug a Cake file</title>
+		<updated>2016-05-26T00:00:00Z</updated>
+		<summary>&lt;p&gt;As you might have noticed, as part of the v0.12.0 release of Cake, thanks to a &lt;a href="https://github.com/cake-build/cake/pull/858"&gt;community contribution&lt;/a&gt; from &lt;a href="https://github.com/mholo65"&gt;mholo65&lt;/a&gt;, Cake now has debug support for Cake files.&lt;/p&gt;</summary>
+	</entry>
+</feed>
