@@ -78,7 +78,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Value">Value</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -169,7 +171,12 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            Gets or sets a value indicating whether to display a simple progress bar
+            instead of the standard progress meter.
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<dl class="dl-horizontal">	
@@ -190,6 +197,15 @@
 	<pre><code>public bool ProgressBar { get; set; }</code></pre>
 
 
+	<h1 id="Remarks">Remarks</h1>
+	<div>
+            By default, curl displays a progress meter during its operations. This meter
+            contains information such as the amount of transferred data, transfer speed
+            and the estimated time left. When the <code class="cs">ProgressBar</code> property
+            is set to <code class="cs"></code>, curl displays a single line of <em>#</em>
+            characters instead. This may be preferrable when running the build script
+            in a terminal where we want to keep the amount of output to a minimum.
+            </div>
 
 
 

@@ -840,11 +840,20 @@
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.Tfx/TfxAliases">TfxAliases</a></td>
-									<td></td>
+									<td>
+            <p>Contains functionality related to the <a href="https://github.com/Microsoft/tfs-cli#install">TFS Cross Platform Command Line Interface</a>.</p>
+            <p>
+            In order to use the commands for this addin, the tfx-cli utility will need to be installed and available, or you will need to provide a ToolPath to where it can be located, and also you will need to include the following in your build.cake file to download and
+            reference the addin from NuGet.org:
+            </p><pre><code class="cs">#addin Cake.Tfx</code></pre>
+            <p></p>
+            </td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Tfx/TfxArgumentBuilder">TfxArgumentBuilder</a></td>
-									<td></td>
+									<td>
+            The top level argument builder for the Tfx CLI Tool
+            </td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Tfx/TfxServerSettings">TfxServerSettings</a></td>

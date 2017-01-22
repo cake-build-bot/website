@@ -78,7 +78,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
@@ -171,7 +172,16 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            <p>Contains functionality related to the <a href="https://github.com/Microsoft/tfs-cli#install">TFS Cross Platform Command Line Interface</a>.</p>
+            <p>
+            In order to use the commands for this addin, the tfx-cli utility will need to be installed and available, or you will need to provide a ToolPath to where it can be located, and also you will need to include the following in your build.cake file to download and
+            reference the addin from NuGet.org:
+            </p><pre><code class="cs">#addin Cake.Tfx</code></pre>
+            <p></p>
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="row">
@@ -267,7 +277,9 @@ class Type type-node
 								<td><a href="/api/Cake.Tfx/TfxAliases/8855EC96">TfxExtensionCreate<wbr>(ICakeContext, <wbr>Tfx<wbr>Extension<wbr>Create<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Creates an extension using the Tfx CLI using the specified settings.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -275,7 +287,9 @@ class Type type-node
 								<td><a href="/api/Cake.Tfx/TfxAliases/DF7CCCDF">TfxExtensionInstall<wbr>(ICakeContext, <wbr>FilePath, <wbr>ICollection<wbr>&lt;string&gt;<wbr>, <wbr>Tfx<wbr>Extension<wbr>Install<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Installs an extension using the Tfx CLI using the specified settings.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -283,7 +297,9 @@ class Type type-node
 								<td><a href="/api/Cake.Tfx/TfxAliases/D835F890">TfxExtensionPublish<wbr>(ICakeContext, <wbr>FilePath, <wbr>Tfx<wbr>Extension<wbr>Publish<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Publishes an extension using the Tfx CLI using the specified settings.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -291,7 +307,9 @@ class Type type-node
 								<td><a href="/api/Cake.Tfx/TfxAliases/6F69F986">TfxExtensionPublish<wbr>(ICakeContext, <wbr>Tfx<wbr>Extension<wbr>Publish<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Publishes an extension using the Tfx CLI using the specified settings.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -299,7 +317,9 @@ class Type type-node
 								<td><a href="/api/Cake.Tfx/TfxAliases/BB57A47C">TfxExtensionShare<wbr>(ICakeContext, <wbr>FilePath, <wbr>ICollection<wbr>&lt;string&gt;<wbr>, <wbr>Tfx<wbr>Extension<wbr>Share<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Shares an extension using the Tfx CLI using the specified settings.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>

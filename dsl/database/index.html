@@ -78,7 +78,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#General">General</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#General">General</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -228,7 +229,12 @@
                             </div>
 
 
-    
+            <h1 id="Summary">Summary</h1>
+        <div>
+            Cake AddIn that packages multiple SQL Scripts into one file to speed up deployment and minimize the probability of errors.
+            <pre><code class="cs">#addin Cake.SqlServerPackager</code></pre>
+            </div>
+
 
         <h1 id="General">General</h1>  
         <div class="box">
@@ -239,6 +245,8 @@
 <a href="/api/Cake.SqlServerPackager/SqlServerPackagerExtensions/35CB6661">SqlServerPackager<wbr>(ICakeContext, <wbr>Sql<wbr>Server<wbr>Packager<wbr>Settings)<wbr></a>                            </td>
                             <td>
                                 
+            Merge multiple SQL scripts into one SQL script.
+            
 
                                             <br>
                                             <small><i>Addin from <a href="/api/Cake.SqlServerPackager.dll">Cake<wbr>.SqlServerPackager<wbr>.dll</a></i></small>

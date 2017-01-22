@@ -78,7 +78,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
@@ -166,7 +167,19 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            <p>
+            Contains functionality to deal with SQL Server: DropDatabase, CreateDatabase, execute SQL, execute SQL from files, etc. 
+            Also provides functionality to manage LocalDb instances: Create, Start, Stop, Delete instances.
+            </p>
+            <p>
+            In order to use the commands for this addin, include the following in your build.cake file to download and
+            reference from NuGet.org:
+            </p><pre><code class="cs">#addin "nuget:?package=Cake.SqlServer"</code></pre>
+            <p></p>
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="row">
@@ -246,7 +259,10 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/698DA7E9">CreateDatabase<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Creates an empty database. If database with this name already exists, throws a SqlException.
+            <code class="cs">Cake.SqlServer.SqlServerAliases.CreateDatabaseIfNotExists(Cake.Core.ICakeContext,System.String,System.String)</code> if you would like to check if database already exists.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -254,7 +270,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/ECCAEFC0">Create<wbr>Database<wbr>If<wbr>Not<wbr>Exists<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Creates an empty database if another database with the same does not already exist.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -262,7 +280,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/241A5A8D">Drop<wbr>And<wbr>Create<wbr>Database<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+             First drops, then recreates the database
+             </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -270,7 +290,11 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/AC2ED47F">DropDatabase<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Drops database. Before dropping the DB, database is set to be offline, then online again.
+            This is to be sure that there are no live connections, otherwise the script will fail.
+            Also if the database does not exist - it will not do anything.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -278,7 +302,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/E1E3A471">ExecuteSqlCommand<wbr>(ICakeContext, <wbr>SqlConnection, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Execute any SQL command.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -286,7 +312,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/9358AEA2">ExecuteSqlCommand<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Execute any SQL command.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -294,7 +322,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/0C0D9E92">ExecuteSqlFile<wbr>(ICakeContext, <wbr>SqlConnection, <wbr>FilePath)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+             Reads SQL commands from a file and executes them.
+             </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -302,7 +332,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/362AE44A">ExecuteSqlFile<wbr>(ICakeContext, <wbr>string, <wbr>FilePath)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Reads SQL commands from a file and executes them.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -310,7 +342,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/E3BF74B0">OpenSqlConnection<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
 								<td>SqlConnection</td>
 								<td>
-									<div></div>
+									<div>
+             Opens a new <code class="cs">System.Data.SqlClient.SqlConnection</code> with the given connection string.
+             </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -318,7 +352,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/7E011849">RestoreSqlBackup<wbr>(ICakeContext, <wbr>string, <wbr>FilePath)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Restores a database from a backup file.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -326,7 +362,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/2267E853">RestoreSqlBackup<wbr>(ICakeContext, <wbr>string, <wbr>FilePath, <wbr>Restore<wbr>Sql<wbr>Backup<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+            Restores a database from a backup file.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -334,7 +372,9 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServer/SqlServerAliases/AE3CED99">SetSqlCommandTimeout<wbr>(ICakeContext, <wbr>int)<wbr></a></td>
 								<td>void</td>
 								<td>
-									<div></div>
+									<div>
+             Sets the CommandTimeout property for all SqlCommands used internally
+             </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>

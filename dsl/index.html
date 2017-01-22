@@ -283,8 +283,8 @@
                 <tr>
                     <td><a href="/dsl/compression">Compression</a></td>
                     <td>
-            Contains functionality related to compress files.
-            </td>
+    Contains functionality related to compress files to Zip.
+    </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/directory-operations">Directory Operations</a></td>
@@ -336,14 +336,8 @@
                 <tr>
                     <td><a href="/dsl/file-operations">File Operations</a></td>
                     <td>
-            Contains functionality for working with Plink.
-            
-
-            Aliases for Putty.
-            
-
-            Contains functionality for working with PSCP.
-            </td>
+    Contains functionality related to file operations.
+    </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/fixie">Fixie</a></td>
@@ -626,7 +620,12 @@
                 <tr>
                     <td><a href="/dsl/text">Text</a></td>
                     <td>
-    Contains functionality related to text transformation.
+    <p>Contains functionality related to <a href="https://github.com/mono/monodevelop/tree/master/main/src/addins/TextTemplating/TextTransform">TextTransform</a>.</p>
+    <p>
+    In order to use the commands for this alias, include the following in your build.cake file to download and
+    install from NuGet.org, or specify the ToolPath within the <code class="cs"><a href="/api/Cake.Common.Tools.TextTransform/TextTransformSettings">TextTransformSettings</a></code> class:
+    <pre><code class="cs">#tool "nuget:?package=Mono.TextTransform"</code></pre>
+    </p>
     </td>
                 </tr>
                 <tr>
@@ -718,11 +717,15 @@
                 </tr>
                 <tr>
                     <td><a href="/dsl/autorest">AutoRest</a></td>
-                    <td></td>
+                    <td>
+            Provides a wrapper around AutoRest functinoality for use in Cake scripts
+            </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/azurestorage">AzureStorage</a></td>
-                    <td></td>
+                    <td>
+            Contains functionality for workign with Azure Storage
+            </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/cakemail">CakeMail</a></td>
@@ -757,8 +760,8 @@
                 <tr>
                     <td><a href="/dsl/compression">Compression</a></td>
                     <td>
-            Contains functionality related to compress files.
-            </td>
+    Contains functionality related to compress files to Zip.
+    </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/configuration">Configuration</a></td>
@@ -796,7 +799,10 @@
                 </tr>
                 <tr>
                     <td><a href="/dsl/database">Database</a></td>
-                    <td></td>
+                    <td>
+            Cake AddIn that packages multiple SQL Scripts into one file to speed up deployment and minimize the probability of errors.
+            <pre><code class="cs">#addin Cake.SqlServerPackager</code></pre>
+            </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/deployment">Deployment</a></td>
@@ -935,7 +941,7 @@
                 <tr>
                     <td><a href="/dsl/email">Email</a></td>
                     <td>
-            The result of SendGridProvider API post
+            Class that lets you override default API settings
             </td>
                 </tr>
                 <tr>
@@ -953,14 +959,8 @@
                 <tr>
                     <td><a href="/dsl/file-operations">File Operations</a></td>
                     <td>
-            Contains functionality for working with Plink.
-            
-
-            Aliases for Putty.
-            
-
-            Contains functionality for working with PSCP.
-            </td>
+    Contains functionality related to file operations.
+    </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/fluentmigrator">FluentMigrator</a></td>
@@ -1145,7 +1145,7 @@
                 <tr>
                     <td><a href="/dsl/sendgrid">SendGrid</a></td>
                     <td>
-            Contains functionality related to SendGrid API
+            Class that lets you override default API settings
             </td>
                 </tr>
                 <tr>
@@ -1164,7 +1164,17 @@
                 </tr>
                 <tr>
                     <td><a href="/dsl/sqlserver">SqlServer</a></td>
-                    <td></td>
+                    <td>
+            <p>
+            Contains functionality to deal with SQL Server: DropDatabase, CreateDatabase, execute SQL, execute SQL from files, etc. 
+            Also provides functionality to manage LocalDb instances: Create, Start, Stop, Delete instances.
+            </p>
+            <p>
+            In order to use the commands for this addin, include the following in your build.cake file to download and
+            reference from NuGet.org:
+            <pre><code class="cs">#addin "nuget:?package=Cake.SqlServer"</code></pre>
+            </p>
+            </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/squirrel">Squirrel</a></td>
@@ -1186,7 +1196,14 @@
                 </tr>
                 <tr>
                     <td><a href="/dsl/tfx">Tfx</a></td>
-                    <td></td>
+                    <td>
+            <p>Contains functionality related to the <a href="https://github.com/Microsoft/tfs-cli#install">TFS Cross Platform Command Line Interface</a>.</p>
+            <p>
+            In order to use the commands for this addin, the tfx-cli utility will need to be installed and available, or you will need to provide a ToolPath to where it can be located, and also you will need to include the following in your build.cake file to download and
+            reference the addin from NuGet.org:
+            <pre><code class="cs">#addin Cake.Tfx</code></pre>
+            </p>
+            </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/twitter">Twitter</a></td>
@@ -1212,13 +1229,18 @@
                 </tr>
                 <tr>
                     <td><a href="/dsl/vsce">Vsce</a></td>
-                    <td></td>
+                    <td>
+            <p>Contains aliases related to <a href="https://code.visualstudio.com/docs/tools/vscecli">VSCode Extension Manager</a>.</p>
+            <p>
+            In order to use the commands for this addin, you will need to include the following in your build.cake file to download and
+            reference from NuGet.org:
+            <pre><code class="cs">#addin Cake.VsCode</code></pre>
+            </p>
+            </td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/watch">Watch</a></td>
-                    <td>
-            Contains functionality for watching file changes.
-            </td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><a href="/dsl/webpack">Webpack</a></td>

@@ -78,7 +78,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
@@ -177,7 +179,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+             Sets the CommandTimeout property for all SqlCommands used internally
+             </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -197,6 +203,21 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public static void SetSqlCommandTimeout(this ICakeContext context, int commandTimeout)</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+             <pre><code class="cs">     #addin "nuget:?package=Cake.SqlServer"
+
+     Task("Sql-Operations")
+         .Does(() =&gt;
+         {
+             SetCommandTimeout(60);
+             using (var connection = OpenSqlConnection(@"Data Source=(LocalDb)\v12.0;Initial Catalog=MyDatabase"))
+             {
+                 ExecuteSqlCommand(connection, "...");
+                 ExecuteSqlFile(connection, "./somePath/MyScript.sql");
+             }
+         });</code></pre>
+             </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -232,12 +253,12 @@
 					<tbody><tr>
 						<td>context</td>
 						<td>ICakeContext</td>
-						<td></td>
+						<td>The Cake context.</td>
 					</tr>
 					<tr>
 						<td>commandTimeout</td>
 						<td>int</td>
-						<td></td>
+						<td>The time in seconds to wait for the command to execute. Used to set CommandTimeout property to when creating <code class="cs">System.Data.SqlClient.SqlCommand</code></td>
 					</tr>
 			</tbody></table>
 		</div>

@@ -78,7 +78,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Package">Package</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Package">Package</a></p>
 <p><a href="#Publish">Publish</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -229,7 +230,16 @@
                             </div>
 
 
-    
+            <h1 id="Summary">Summary</h1>
+        <div>
+            <p>Contains aliases related to <a href="https://code.visualstudio.com/docs/tools/vscecli">VSCode Extension Manager</a>.</p>
+            <p>
+            In order to use the commands for this addin, you will need to include the following in your build.cake file to download and
+            reference from NuGet.org:
+            </p><pre><code class="cs">#addin Cake.VsCode</code></pre>
+            <p></p>
+            </div>
+
 
         <h1 id="Package">Package</h1>  
         <div class="box">
@@ -240,6 +250,8 @@
 <a href="/api/Cake.VsCode/VsceAliases/EA4C9B6E">VscePackage<wbr>(ICakeContext)<wbr></a>                            </td>
                             <td>
                                 
+            Packages a VsCode Extension.
+            
 
                                             <br>
                                             <small><i>Addin from <a href="/api/Cake.VsCode.dll">Cake<wbr>.VsCode<wbr>.dll</a></i></small>

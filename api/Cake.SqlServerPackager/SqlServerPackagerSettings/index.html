@@ -78,7 +78,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Properties">Properties</a></p>
 <hr class="infobar-hidden">
@@ -169,7 +170,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            SQL Server packager settings
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="row">
@@ -249,49 +254,66 @@ class Type type-node
 								<td><a href="/api/Cake.SqlServerPackager/SqlServerPackagerSettings/32E8721D">Commit</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets Git commit. Only SQL scripts added or modified after the tagged version
+            will be packaged. This option has higher priority than the tag.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.SqlServerPackager/SqlServerPackagerSettings/DFBBD929">ExcludedChagesets</a></td>
 								<td></td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets excluded commits.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.SqlServerPackager/SqlServerPackagerSettings/FCB4EDCB">Extension</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets SQL scripts extensions, e.g. '.sql'
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.SqlServerPackager/SqlServerPackagerSettings/FFC91BCB">Overwrite<wbr>Existing<wbr>Script</a></td>
 								<td>bool</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets whether user wants to overwrite existing SQL script or not.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.SqlServerPackager/SqlServerPackagerSettings/EF26217B">ScriptsFolder</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets SQL scripts folder. It has to be inside Git repository
+            if Git-based packaging is used.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.SqlServerPackager/SqlServerPackagerSettings/5F15ACE4">Tag</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets Git Tag. Only SQL scripts added or modified after the tagged version
+            will be packaged.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.SqlServerPackager/SqlServerPackagerSettings/2198C693">TargetFilename</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets target SQL script full filename.
+            </div>
 								</td>
 							</tr>
 					</tbody></table>

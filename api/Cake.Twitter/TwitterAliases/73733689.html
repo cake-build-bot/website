@@ -78,7 +78,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
@@ -166,7 +168,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+             Send a Tweet using the Twitter REST API.
+             </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -186,6 +192,15 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public static void TwitterSendTweet(this ICakeContext context, string oAuthConsumerKey, string oAuthConsumerSecret, string accessToken, string accessTokenSecret, string message)</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+             <pre><code class="cs">     var oAuthConsumerKey        = EnvironmentVariable("TWITTER_CONSUMER_KEY");
+     var oAuthConsumerSecret = EnvironmentVariable("TWITTER_CONSUMER_SECRET");
+     var accessToken = EnvironmentVariable("TWITTER_ACCESS_TOKEN");
+     var accessTokenSecret = EnvironmentVariable("TWITTER_ACCESS_TOKEN_SECRET");
+
+     TwitterSendTweet(oAuthConsumerKey, oAuthConsumerSecret, accessToken, accessTokenSecret, "Testing, 1, 2, 3");</code></pre>
+             </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -225,32 +240,32 @@
 					<tbody><tr>
 						<td>context</td>
 						<td>ICakeContext</td>
-						<td></td>
+						<td>The Cake Context</td>
 					</tr>
 					<tr>
 						<td>oAuthConsumerKey</td>
 						<td>string</td>
-						<td></td>
+						<td>The Twitter Consumer Key</td>
 					</tr>
 					<tr>
 						<td>oAuthConsumerSecret</td>
 						<td>string</td>
-						<td></td>
+						<td>The Twitter Consumer Secret</td>
 					</tr>
 					<tr>
 						<td>accessToken</td>
 						<td>string</td>
-						<td></td>
+						<td>The Twitter Application Access Token</td>
 					</tr>
 					<tr>
 						<td>accessTokenSecret</td>
 						<td>string</td>
-						<td></td>
+						<td>The Twitter Application Token Secret</td>
 					</tr>
 					<tr>
 						<td>message</td>
 						<td>string</td>
-						<td></td>
+						<td>The message to tweet.</td>
 					</tr>
 			</tbody></table>
 		</div>
