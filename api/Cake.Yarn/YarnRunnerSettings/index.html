@@ -212,13 +212,13 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Yarn/YarnInstallSettings">YarnInstallSettings</a></li>								
-											<li><a href="/api/Cake.Yarn/YarnPackSettings">YarnPackSettings</a></li>								
-											<li><a href="/api/Cake.Yarn/YarnAddSettings">YarnAddSettings</a></li>								
-											<li><a href="/api/Cake.Yarn/YarnRemoveSettings">YarnRemoveSettings</a></li>								
-											<li><a href="/api/Cake.Yarn/YarnVersionSettings">YarnVersionSettings</a></li>								
 											<li><a href="/api/Cake.Yarn/YarnRunSettings">YarnRunSettings</a></li>								
+											<li><a href="/api/Cake.Yarn/YarnPackSettings">YarnPackSettings</a></li>								
+											<li><a href="/api/Cake.Yarn/YarnRemoveSettings">YarnRemoveSettings</a></li>								
 											<li><a href="/api/Cake.Yarn/YarnCacheSettings">YarnCacheSettings</a></li>								
+											<li><a href="/api/Cake.Yarn/YarnAddSettings">YarnAddSettings</a></li>								
+											<li><a href="/api/Cake.Yarn/YarnInstallSettings">YarnInstallSettings</a></li>								
+											<li><a href="/api/Cake.Yarn/YarnVersionSettings">YarnVersionSettings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -230,20 +230,20 @@
 	Base0["ToolSettings"]--&gt;Type
 	Type["YarnRunnerSettings"]
 class Type type-node
-	Type--&gt;Derived0["YarnInstallSettings"]
-	click Derived0 "/api/Cake.Yarn/YarnInstallSettings"
+	Type--&gt;Derived0["YarnRunSettings"]
+	click Derived0 "/api/Cake.Yarn/YarnRunSettings"
 	Type--&gt;Derived1["YarnPackSettings"]
 	click Derived1 "/api/Cake.Yarn/YarnPackSettings"
-	Type--&gt;Derived2["YarnAddSettings"]
-	click Derived2 "/api/Cake.Yarn/YarnAddSettings"
-	Type--&gt;Derived3["YarnRemoveSettings"]
-	click Derived3 "/api/Cake.Yarn/YarnRemoveSettings"
-	Type--&gt;Derived4["YarnVersionSettings"]
-	click Derived4 "/api/Cake.Yarn/YarnVersionSettings"
-	Type--&gt;Derived5["YarnRunSettings"]
-	click Derived5 "/api/Cake.Yarn/YarnRunSettings"
-	Type--&gt;Derived6["YarnCacheSettings"]
-	click Derived6 "/api/Cake.Yarn/YarnCacheSettings"
+	Type--&gt;Derived2["YarnRemoveSettings"]
+	click Derived2 "/api/Cake.Yarn/YarnRemoveSettings"
+	Type--&gt;Derived3["YarnCacheSettings"]
+	click Derived3 "/api/Cake.Yarn/YarnCacheSettings"
+	Type--&gt;Derived4["YarnAddSettings"]
+	click Derived4 "/api/Cake.Yarn/YarnAddSettings"
+	Type--&gt;Derived5["YarnInstallSettings"]
+	click Derived5 "/api/Cake.Yarn/YarnInstallSettings"
+	Type--&gt;Derived6["YarnVersionSettings"]
+	click Derived6 "/api/Cake.Yarn/YarnVersionSettings"
 
 						</div>
 					</div>
@@ -367,17 +367,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Yarn<wbr>Runner<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Yarn<wbr>Runner<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -386,6 +375,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Yarn<wbr>Runner<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

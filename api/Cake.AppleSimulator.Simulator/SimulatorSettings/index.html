@@ -194,8 +194,8 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.AppleSimulator/AppleSimulatorConfigurationSettings">Apple<wbr>Simulator<wbr>Configuration<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.AppleSimulator/AppleSimulatorLaunchSettings">Apple<wbr>Simulator<wbr>Launch<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.AppleSimulator/AppleSimulatorConfigurationSettings">Apple<wbr>Simulator<wbr>Configuration<wbr>Settings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -207,10 +207,10 @@
 	Base0["ToolSettings"]--&gt;Type
 	Type["SimulatorSettings"]
 class Type type-node
-	Type--&gt;Derived0["AppleSimulatorConfigurationSettings"]
-	click Derived0 "/api/Cake.AppleSimulator/AppleSimulatorConfigurationSettings"
-	Type--&gt;Derived1["AppleSimulatorLaunchSettings"]
-	click Derived1 "/api/Cake.AppleSimulator/AppleSimulatorLaunchSettings"
+	Type--&gt;Derived0["AppleSimulatorLaunchSettings"]
+	click Derived0 "/api/Cake.AppleSimulator/AppleSimulatorLaunchSettings"
+	Type--&gt;Derived1["AppleSimulatorConfigurationSettings"]
+	click Derived1 "/api/Cake.AppleSimulator/AppleSimulatorConfigurationSettings"
 
 						</div>
 					</div>
@@ -284,17 +284,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Simulator<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Simulator<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -303,6 +292,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Simulator<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

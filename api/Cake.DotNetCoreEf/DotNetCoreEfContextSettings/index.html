@@ -200,8 +200,8 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemoveSettings">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remove<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseDropSettings">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Database<wbr>Drop<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemoveSettings">Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Migration<wbr>Remove<wbr>Settings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -215,10 +215,10 @@
 	Base1["DotNetCoreSettings"]--&gt;Base0
 	Type["DotNetCoreEfContextSettings"]
 class Type type-node
-	Type--&gt;Derived0["DotNetCoreEfMigrationRemoveSettings"]
-	click Derived0 "/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemoveSettings"
-	Type--&gt;Derived1["DotNetCoreEfDatabaseDropSettings"]
-	click Derived1 "/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseDropSettings"
+	Type--&gt;Derived0["DotNetCoreEfDatabaseDropSettings"]
+	click Derived0 "/api/Cake.DotNetCoreEf.Database/DotNetCoreEfDatabaseDropSettings"
+	Type--&gt;Derived1["DotNetCoreEfMigrationRemoveSettings"]
+	click Derived1 "/api/Cake.DotNetCoreEf.Migration/DotNetCoreEfMigrationRemoveSettings"
 
 						</div>
 					</div>
@@ -418,17 +418,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Context<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Context<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -437,6 +426,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Dot<wbr>Net<wbr>Core<wbr>Ef<wbr>Context<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

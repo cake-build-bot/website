@@ -200,12 +200,12 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.AppPackager.Pack/AppPacker">AppPacker</a></li>								
-											<li><a href="/api/Cake.AppPackager.Unbundle/AppUnbundler">AppUnbundler</a></li>								
-											<li><a href="/api/Cake.AppPackager.Bundle/AppBundler">AppBundler</a></li>								
 											<li><a href="/api/Cake.AppPackager.Unpack/AppUnpacker">AppUnpacker</a></li>								
-											<li><a href="/api/Cake.AppPackager.Decrypt/AppDecrypter">AppDecrypter</a></li>								
+											<li><a href="/api/Cake.AppPackager.Unbundle/AppUnbundler">AppUnbundler</a></li>								
+											<li><a href="/api/Cake.AppPackager.Pack/AppPacker">AppPacker</a></li>								
+											<li><a href="/api/Cake.AppPackager.Bundle/AppBundler">AppBundler</a></li>								
 											<li><a href="/api/Cake.AppPackager.Encrypt/AppEncrypter">AppEncrypter</a></li>								
+											<li><a href="/api/Cake.AppPackager.Decrypt/AppDecrypter">AppDecrypter</a></li>								
 									</ul>
 								</dd>			
 							
@@ -217,18 +217,18 @@
 	Base0["Tool&lt;&gt;"]--&gt;Type
 	Type["AppPackagerTool&lt;TSettings&gt;"]
 class Type type-node
-	Type--&gt;Derived0["AppPacker"]
-	click Derived0 "/api/Cake.AppPackager.Pack/AppPacker"
+	Type--&gt;Derived0["AppUnpacker"]
+	click Derived0 "/api/Cake.AppPackager.Unpack/AppUnpacker"
 	Type--&gt;Derived1["AppUnbundler"]
 	click Derived1 "/api/Cake.AppPackager.Unbundle/AppUnbundler"
-	Type--&gt;Derived2["AppBundler"]
-	click Derived2 "/api/Cake.AppPackager.Bundle/AppBundler"
-	Type--&gt;Derived3["AppUnpacker"]
-	click Derived3 "/api/Cake.AppPackager.Unpack/AppUnpacker"
-	Type--&gt;Derived4["AppDecrypter"]
-	click Derived4 "/api/Cake.AppPackager.Decrypt/AppDecrypter"
-	Type--&gt;Derived5["AppEncrypter"]
-	click Derived5 "/api/Cake.AppPackager.Encrypt/AppEncrypter"
+	Type--&gt;Derived2["AppPacker"]
+	click Derived2 "/api/Cake.AppPackager.Pack/AppPacker"
+	Type--&gt;Derived3["AppBundler"]
+	click Derived3 "/api/Cake.AppPackager.Bundle/AppBundler"
+	Type--&gt;Derived4["AppEncrypter"]
+	click Derived4 "/api/Cake.AppPackager.Encrypt/AppEncrypter"
+	Type--&gt;Derived5["AppDecrypter"]
+	click Derived5 "/api/Cake.AppPackager.Decrypt/AppDecrypter"
 
 						</div>
 					</div>
@@ -355,17 +355,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;AppPackagerTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;AppPackagerTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -374,6 +363,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;AppPackagerTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

@@ -202,10 +202,10 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Vagrant.Commands/VagrantBoxRunner">VagrantBoxRunner</a></li>								
-											<li><a href="/api/Cake.Vagrant.Commands/VagrantPluginRunner">VagrantPluginRunner</a></li>								
-											<li><a href="/api/Cake.Vagrant.Commands/VagrantDockerRunner">VagrantDockerRunner</a></li>								
 											<li><a href="/api/Cake.Vagrant.Commands/VagrantSnapshotRunner">Vagrant<wbr>Snapshot<wbr>Runner</a></li>								
+											<li><a href="/api/Cake.Vagrant.Commands/VagrantDockerRunner">VagrantDockerRunner</a></li>								
+											<li><a href="/api/Cake.Vagrant.Commands/VagrantPluginRunner">VagrantPluginRunner</a></li>								
+											<li><a href="/api/Cake.Vagrant.Commands/VagrantBoxRunner">VagrantBoxRunner</a></li>								
 									</ul>
 								</dd>			
 							
@@ -217,14 +217,14 @@
 	Base0["object"]--&gt;Type
 	Type["VagrantCommandRunner"]
 class Type type-node
-	Type--&gt;Derived0["VagrantBoxRunner"]
-	click Derived0 "/api/Cake.Vagrant.Commands/VagrantBoxRunner"
-	Type--&gt;Derived1["VagrantPluginRunner"]
-	click Derived1 "/api/Cake.Vagrant.Commands/VagrantPluginRunner"
-	Type--&gt;Derived2["VagrantDockerRunner"]
-	click Derived2 "/api/Cake.Vagrant.Commands/VagrantDockerRunner"
-	Type--&gt;Derived3["VagrantSnapshotRunner"]
-	click Derived3 "/api/Cake.Vagrant.Commands/VagrantSnapshotRunner"
+	Type--&gt;Derived0["VagrantSnapshotRunner"]
+	click Derived0 "/api/Cake.Vagrant.Commands/VagrantSnapshotRunner"
+	Type--&gt;Derived1["VagrantDockerRunner"]
+	click Derived1 "/api/Cake.Vagrant.Commands/VagrantDockerRunner"
+	Type--&gt;Derived2["VagrantPluginRunner"]
+	click Derived2 "/api/Cake.Vagrant.Commands/VagrantPluginRunner"
+	Type--&gt;Derived3["VagrantBoxRunner"]
+	click Derived3 "/api/Cake.Vagrant.Commands/VagrantBoxRunner"
 
 						</div>
 					</div>
@@ -322,17 +322,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Vagrant<wbr>Command<wbr>Runner&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Vagrant<wbr>Command<wbr>Runner&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -341,6 +330,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Vagrant<wbr>Command<wbr>Runner&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

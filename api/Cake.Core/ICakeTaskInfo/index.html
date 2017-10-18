@@ -233,8 +233,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Core/CakeTask">CakeTask</a></li>								
 											<li><a href="/api/Cake.Core/ActionTask">ActionTask</a></li>								
+											<li><a href="/api/Cake.Core/CakeTask">CakeTask</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -244,10 +244,10 @@
 							graph TD
 	Type["ICakeTaskInfo"]
 class Type type-node
-	Type-.-&gt;Implementing0["CakeTask"]
-	click Implementing0 "/api/Cake.Core/CakeTask"
-	Type-.-&gt;Implementing1["ActionTask"]
-	click Implementing1 "/api/Cake.Core/ActionTask"
+	Type-.-&gt;Implementing0["ActionTask"]
+	click Implementing0 "/api/Cake.Core/ActionTask"
+	Type-.-&gt;Implementing1["CakeTask"]
+	click Implementing1 "/api/Cake.Core/CakeTask"
 
 						</div>
 					</div>
@@ -354,17 +354,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>I<wbr>Cake<wbr>Task<wbr>Info&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>I<wbr>Cake<wbr>Task<wbr>Info&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -373,6 +362,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>I<wbr>Cake<wbr>Task<wbr>Info&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

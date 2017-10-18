@@ -195,17 +195,17 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Common.Tools.NuGet.Sources/NuGetSources">NuGetSources</a></li>								
-											<li><a href="/api/Cake.Common.Tools.NuGet.Init/NuGetIniter">NuGetIniter</a></li>								
-											<li><a href="/api/Cake.Common.Tools.NuGet.Restore/NuGetRestorer">NuGetRestorer</a></li>								
-											<li><a href="/api/Cake.Common.Tools.NuGet.Pack/NuGetPacker">NuGetPacker</a></li>								
-											<li><a href="/api/Cake.Common.Tools.NuGet.Add/NuGetAdder">NuGetAdder</a></li>								
-											<li><a href="/api/Cake.Common.Tools.NuGet.SetProxy/NuGetSetProxy">NuGetSetProxy</a></li>								
 											<li><a href="/api/Cake.Common.Tools.NuGet.SetApiKey/NuGetSetApiKey">NuGetSetApiKey</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.Sources/NuGetSources">NuGetSources</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.List/NuGetList">NuGetList</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.Push/NuGetPusher">NuGetPusher</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.Init/NuGetIniter">NuGetIniter</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.SetProxy/NuGetSetProxy">NuGetSetProxy</a></li>								
 											<li><a href="/api/Cake.Common.Tools.NuGet.Update/NuGetUpdater">NuGetUpdater</a></li>								
 											<li><a href="/api/Cake.Common.Tools.NuGet.Install/NuGetInstaller">NuGetInstaller</a></li>								
-											<li><a href="/api/Cake.Common.Tools.NuGet.Push/NuGetPusher">NuGetPusher</a></li>								
-											<li><a href="/api/Cake.Common.Tools.NuGet.List/NuGetList">NuGetList</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.Add/NuGetAdder">NuGetAdder</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.Restore/NuGetRestorer">NuGetRestorer</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet.Pack/NuGetPacker">NuGetPacker</a></li>								
 									</ul>
 								</dd>			
 							
@@ -219,28 +219,28 @@
 	Base1["object"]--&gt;Base0
 	Type["NuGetTool&lt;TSettings&gt;"]
 class Type type-node
-	Type--&gt;Derived0["NuGetSources"]
-	click Derived0 "/api/Cake.Common.Tools.NuGet.Sources/NuGetSources"
-	Type--&gt;Derived1["NuGetIniter"]
-	click Derived1 "/api/Cake.Common.Tools.NuGet.Init/NuGetIniter"
-	Type--&gt;Derived2["NuGetRestorer"]
-	click Derived2 "/api/Cake.Common.Tools.NuGet.Restore/NuGetRestorer"
-	Type--&gt;Derived3["NuGetPacker"]
-	click Derived3 "/api/Cake.Common.Tools.NuGet.Pack/NuGetPacker"
-	Type--&gt;Derived4["NuGetAdder"]
-	click Derived4 "/api/Cake.Common.Tools.NuGet.Add/NuGetAdder"
+	Type--&gt;Derived0["NuGetSetApiKey"]
+	click Derived0 "/api/Cake.Common.Tools.NuGet.SetApiKey/NuGetSetApiKey"
+	Type--&gt;Derived1["NuGetSources"]
+	click Derived1 "/api/Cake.Common.Tools.NuGet.Sources/NuGetSources"
+	Type--&gt;Derived2["NuGetList"]
+	click Derived2 "/api/Cake.Common.Tools.NuGet.List/NuGetList"
+	Type--&gt;Derived3["NuGetPusher"]
+	click Derived3 "/api/Cake.Common.Tools.NuGet.Push/NuGetPusher"
+	Type--&gt;Derived4["NuGetIniter"]
+	click Derived4 "/api/Cake.Common.Tools.NuGet.Init/NuGetIniter"
 	Type--&gt;Derived5["NuGetSetProxy"]
 	click Derived5 "/api/Cake.Common.Tools.NuGet.SetProxy/NuGetSetProxy"
-	Type--&gt;Derived6["NuGetSetApiKey"]
-	click Derived6 "/api/Cake.Common.Tools.NuGet.SetApiKey/NuGetSetApiKey"
-	Type--&gt;Derived7["NuGetUpdater"]
-	click Derived7 "/api/Cake.Common.Tools.NuGet.Update/NuGetUpdater"
-	Type--&gt;Derived8["NuGetInstaller"]
-	click Derived8 "/api/Cake.Common.Tools.NuGet.Install/NuGetInstaller"
-	Type--&gt;Derived9["NuGetPusher"]
-	click Derived9 "/api/Cake.Common.Tools.NuGet.Push/NuGetPusher"
-	Type--&gt;Derived10["NuGetList"]
-	click Derived10 "/api/Cake.Common.Tools.NuGet.List/NuGetList"
+	Type--&gt;Derived6["NuGetUpdater"]
+	click Derived6 "/api/Cake.Common.Tools.NuGet.Update/NuGetUpdater"
+	Type--&gt;Derived7["NuGetInstaller"]
+	click Derived7 "/api/Cake.Common.Tools.NuGet.Install/NuGetInstaller"
+	Type--&gt;Derived8["NuGetAdder"]
+	click Derived8 "/api/Cake.Common.Tools.NuGet.Add/NuGetAdder"
+	Type--&gt;Derived9["NuGetRestorer"]
+	click Derived9 "/api/Cake.Common.Tools.NuGet.Restore/NuGetRestorer"
+	Type--&gt;Derived10["NuGetPacker"]
+	click Derived10 "/api/Cake.Common.Tools.NuGet.Pack/NuGetPacker"
 
 						</div>
 					</div>
@@ -457,17 +457,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;NuGetTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;NuGetTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -476,6 +465,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;NuGetTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

@@ -192,11 +192,11 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooCommitInfo">BambooCommitInfo</a></li>								
 											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooRepositoryInfo">BambooRepositoryInfo</a></li>								
-											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooCustomBuildInfo">Bamboo<wbr>Custom<wbr>Build<wbr>Info</a></li>								
 											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooEnvironmentInfo">Bamboo<wbr>Environment<wbr>Info</a></li>								
 											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooBuildInfo">BambooBuildInfo</a></li>								
+											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooCommitInfo">BambooCommitInfo</a></li>								
+											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooCustomBuildInfo">Bamboo<wbr>Custom<wbr>Build<wbr>Info</a></li>								
 											<li><a href="/api/Cake.Common.Build.Bamboo.Data/BambooPlanInfo">BambooPlanInfo</a></li>								
 									</ul>
 								</dd>			
@@ -209,16 +209,16 @@
 	Base0["object"]--&gt;Type
 	Type["BambooInfo"]
 class Type type-node
-	Type--&gt;Derived0["BambooCommitInfo"]
-	click Derived0 "/api/Cake.Common.Build.Bamboo.Data/BambooCommitInfo"
-	Type--&gt;Derived1["BambooRepositoryInfo"]
-	click Derived1 "/api/Cake.Common.Build.Bamboo.Data/BambooRepositoryInfo"
-	Type--&gt;Derived2["BambooCustomBuildInfo"]
-	click Derived2 "/api/Cake.Common.Build.Bamboo.Data/BambooCustomBuildInfo"
-	Type--&gt;Derived3["BambooEnvironmentInfo"]
-	click Derived3 "/api/Cake.Common.Build.Bamboo.Data/BambooEnvironmentInfo"
-	Type--&gt;Derived4["BambooBuildInfo"]
-	click Derived4 "/api/Cake.Common.Build.Bamboo.Data/BambooBuildInfo"
+	Type--&gt;Derived0["BambooRepositoryInfo"]
+	click Derived0 "/api/Cake.Common.Build.Bamboo.Data/BambooRepositoryInfo"
+	Type--&gt;Derived1["BambooEnvironmentInfo"]
+	click Derived1 "/api/Cake.Common.Build.Bamboo.Data/BambooEnvironmentInfo"
+	Type--&gt;Derived2["BambooBuildInfo"]
+	click Derived2 "/api/Cake.Common.Build.Bamboo.Data/BambooBuildInfo"
+	Type--&gt;Derived3["BambooCommitInfo"]
+	click Derived3 "/api/Cake.Common.Build.Bamboo.Data/BambooCommitInfo"
+	Type--&gt;Derived4["BambooCustomBuildInfo"]
+	click Derived4 "/api/Cake.Common.Build.Bamboo.Data/BambooCustomBuildInfo"
 	Type--&gt;Derived5["BambooPlanInfo"]
 	click Derived5 "/api/Cake.Common.Build.Bamboo.Data/BambooPlanInfo"
 
@@ -338,17 +338,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;BambooInfo&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;BambooInfo&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -357,6 +346,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;BambooInfo&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

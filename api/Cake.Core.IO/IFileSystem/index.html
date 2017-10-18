@@ -211,8 +211,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Testing/FakeFileSystem">FakeFileSystem</a></li>								
 											<li><a href="/api/Cake.Core.IO/FileSystem">FileSystem</a></li>								
+											<li><a href="/api/Cake.Testing/FakeFileSystem">FakeFileSystem</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -222,10 +222,10 @@
 							graph TD
 	Type["IFileSystem"]
 class Type type-node
-	Type-.-&gt;Implementing0["FakeFileSystem"]
-	click Implementing0 "/api/Cake.Testing/FakeFileSystem"
-	Type-.-&gt;Implementing1["FileSystem"]
-	click Implementing1 "/api/Cake.Core.IO/FileSystem"
+	Type-.-&gt;Implementing0["FileSystem"]
+	click Implementing0 "/api/Cake.Core.IO/FileSystem"
+	Type-.-&gt;Implementing1["FakeFileSystem"]
+	click Implementing1 "/api/Cake.Testing/FakeFileSystem"
 
 						</div>
 					</div>
@@ -334,17 +334,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;IFileSystem&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;IFileSystem&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -353,6 +342,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;IFileSystem&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

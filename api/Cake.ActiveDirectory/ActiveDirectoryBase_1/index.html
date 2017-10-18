@@ -202,10 +202,10 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.ActiveDirectory.Users/UserDelete">UserDelete</a></li>								
-											<li><a href="/api/Cake.ActiveDirectory.Users/UserUpdate">UserUpdate</a></li>								
 											<li><a href="/api/Cake.ActiveDirectory.Users/UserCreate">UserCreate</a></li>								
 											<li><a href="/api/Cake.ActiveDirectory.Users/UserDisable">UserDisable</a></li>								
+											<li><a href="/api/Cake.ActiveDirectory.Users/UserDelete">UserDelete</a></li>								
+											<li><a href="/api/Cake.ActiveDirectory.Users/UserUpdate">UserUpdate</a></li>								
 											<li><a href="/api/Cake.ActiveDirectory.Users/UserFind">UserFind</a></li>								
 									</ul>
 								</dd>			
@@ -218,14 +218,14 @@
 	Base0["object"]--&gt;Type
 	Type["ActiveDirectoryBase&lt;TSettings&gt;"]
 class Type type-node
-	Type--&gt;Derived0["UserDelete"]
-	click Derived0 "/api/Cake.ActiveDirectory.Users/UserDelete"
-	Type--&gt;Derived1["UserUpdate"]
-	click Derived1 "/api/Cake.ActiveDirectory.Users/UserUpdate"
-	Type--&gt;Derived2["UserCreate"]
-	click Derived2 "/api/Cake.ActiveDirectory.Users/UserCreate"
-	Type--&gt;Derived3["UserDisable"]
-	click Derived3 "/api/Cake.ActiveDirectory.Users/UserDisable"
+	Type--&gt;Derived0["UserCreate"]
+	click Derived0 "/api/Cake.ActiveDirectory.Users/UserCreate"
+	Type--&gt;Derived1["UserDisable"]
+	click Derived1 "/api/Cake.ActiveDirectory.Users/UserDisable"
+	Type--&gt;Derived2["UserDelete"]
+	click Derived2 "/api/Cake.ActiveDirectory.Users/UserDelete"
+	Type--&gt;Derived3["UserUpdate"]
+	click Derived3 "/api/Cake.ActiveDirectory.Users/UserUpdate"
 	Type--&gt;Derived4["UserFind"]
 	click Derived4 "/api/Cake.ActiveDirectory.Users/UserFind"
 
@@ -344,17 +344,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Active<wbr>Directory<wbr>Base<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Active<wbr>Directory<wbr>Base<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -363,6 +352,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Active<wbr>Directory<wbr>Base<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

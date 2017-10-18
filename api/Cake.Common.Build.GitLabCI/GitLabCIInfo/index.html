@@ -144,11 +144,11 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Common.Build.GitLabCI">Cake<wbr>.Common<wbr>.Build<wbr>.GitLabCI</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Cake.Common.Build.GitLabCI/IGitLabCIProvider">IGitLabCIProvider</a></li>
 			<li class="header">Class Types</li>
 				<li class="selected"><a href="/api/Cake.Common.Build.GitLabCI/GitLabCIInfo">GitLabCIInfo</a></li>
 				<li><a href="/api/Cake.Common.Build.GitLabCI/GitLabCIProvider">GitLabCIProvider</a></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/api/Cake.Common.Build.GitLabCI/IGitLabCIProvider">IGitLabCIProvider</a></li>
 
 
                     </ul>
@@ -192,11 +192,11 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIRunnerInfo">GitLabCIRunnerInfo</a></li>								
-											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIBuildInfo">GitLabCIBuildInfo</a></li>								
-											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIEnvironmentInfo">Git<wbr>Lab<wbr>C<wbr>I<wbr>Environment<wbr>Info</a></li>								
-											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIServerInfo">GitLabCIServerInfo</a></li>								
 											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIProjectInfo">GitLabCIProjectInfo</a></li>								
+											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIServerInfo">GitLabCIServerInfo</a></li>								
+											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIRunnerInfo">GitLabCIRunnerInfo</a></li>								
+											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIEnvironmentInfo">Git<wbr>Lab<wbr>C<wbr>I<wbr>Environment<wbr>Info</a></li>								
+											<li><a href="/api/Cake.Common.Build.GitLabCI.Data/GitLabCIBuildInfo">GitLabCIBuildInfo</a></li>								
 									</ul>
 								</dd>			
 							
@@ -208,16 +208,16 @@
 	Base0["object"]--&gt;Type
 	Type["GitLabCIInfo"]
 class Type type-node
-	Type--&gt;Derived0["GitLabCIRunnerInfo"]
-	click Derived0 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIRunnerInfo"
-	Type--&gt;Derived1["GitLabCIBuildInfo"]
-	click Derived1 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIBuildInfo"
-	Type--&gt;Derived2["GitLabCIEnvironmentInfo"]
-	click Derived2 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIEnvironmentInfo"
-	Type--&gt;Derived3["GitLabCIServerInfo"]
-	click Derived3 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIServerInfo"
-	Type--&gt;Derived4["GitLabCIProjectInfo"]
-	click Derived4 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIProjectInfo"
+	Type--&gt;Derived0["GitLabCIProjectInfo"]
+	click Derived0 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIProjectInfo"
+	Type--&gt;Derived1["GitLabCIServerInfo"]
+	click Derived1 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIServerInfo"
+	Type--&gt;Derived2["GitLabCIRunnerInfo"]
+	click Derived2 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIRunnerInfo"
+	Type--&gt;Derived3["GitLabCIEnvironmentInfo"]
+	click Derived3 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIEnvironmentInfo"
+	Type--&gt;Derived4["GitLabCIBuildInfo"]
+	click Derived4 "/api/Cake.Common.Build.GitLabCI.Data/GitLabCIBuildInfo"
 
 						</div>
 					</div>
@@ -362,17 +362,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;GitLabCIInfo&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;GitLabCIInfo&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -381,6 +370,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;GitLabCIInfo&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

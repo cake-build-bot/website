@@ -244,16 +244,16 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Docker/DockerComposeCreateSettings">Docker<wbr>Compose<wbr>Create<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.Docker/DockerComposeBuildSettings">Docker<wbr>Compose<wbr>Build<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.Docker/DockerComposeRunSettings">Docker<wbr>Compose<wbr>Run<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.Docker/DockerComposeDownSettings">Docker<wbr>Compose<wbr>Down<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.Docker/DockerComposePullSettings">Docker<wbr>Compose<wbr>Pull<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.Docker/DockerComposeRestartSettings">Docker<wbr>Compose<wbr>Restart<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Docker/DockerComposeCreateSettings">Docker<wbr>Compose<wbr>Create<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.Docker/DockerComposeRmSettings">Docker<wbr>Compose<wbr>Rm<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.Docker/DockerComposeUpSettings">Docker<wbr>Compose<wbr>Up<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.Docker/DockerComposeKillSettings">Docker<wbr>Compose<wbr>Kill<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Docker/DockerComposeDownSettings">Docker<wbr>Compose<wbr>Down<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.Docker/DockerComposeStopSettings">Docker<wbr>Compose<wbr>Stop<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Docker/DockerComposeKillSettings">Docker<wbr>Compose<wbr>Kill<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Docker/DockerComposePullSettings">Docker<wbr>Compose<wbr>Pull<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Docker/DockerComposeUpSettings">Docker<wbr>Compose<wbr>Up<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Docker/DockerComposeRunSettings">Docker<wbr>Compose<wbr>Run<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.Docker/DockerComposeBuildSettings">Docker<wbr>Compose<wbr>Build<wbr>Settings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -267,26 +267,26 @@
 	Base1["ToolSettings"]--&gt;Base0
 	Type["DockerComposeSettings"]
 class Type type-node
-	Type--&gt;Derived0["DockerComposeCreateSettings"]
-	click Derived0 "/api/Cake.Docker/DockerComposeCreateSettings"
-	Type--&gt;Derived1["DockerComposeBuildSettings"]
-	click Derived1 "/api/Cake.Docker/DockerComposeBuildSettings"
-	Type--&gt;Derived2["DockerComposeRunSettings"]
-	click Derived2 "/api/Cake.Docker/DockerComposeRunSettings"
+	Type--&gt;Derived0["DockerComposeRestartSettings"]
+	click Derived0 "/api/Cake.Docker/DockerComposeRestartSettings"
+	Type--&gt;Derived1["DockerComposeCreateSettings"]
+	click Derived1 "/api/Cake.Docker/DockerComposeCreateSettings"
+	Type--&gt;Derived2["DockerComposeRmSettings"]
+	click Derived2 "/api/Cake.Docker/DockerComposeRmSettings"
 	Type--&gt;Derived3["DockerComposeDownSettings"]
 	click Derived3 "/api/Cake.Docker/DockerComposeDownSettings"
-	Type--&gt;Derived4["DockerComposePullSettings"]
-	click Derived4 "/api/Cake.Docker/DockerComposePullSettings"
-	Type--&gt;Derived5["DockerComposeRestartSettings"]
-	click Derived5 "/api/Cake.Docker/DockerComposeRestartSettings"
-	Type--&gt;Derived6["DockerComposeRmSettings"]
-	click Derived6 "/api/Cake.Docker/DockerComposeRmSettings"
+	Type--&gt;Derived4["DockerComposeStopSettings"]
+	click Derived4 "/api/Cake.Docker/DockerComposeStopSettings"
+	Type--&gt;Derived5["DockerComposeKillSettings"]
+	click Derived5 "/api/Cake.Docker/DockerComposeKillSettings"
+	Type--&gt;Derived6["DockerComposePullSettings"]
+	click Derived6 "/api/Cake.Docker/DockerComposePullSettings"
 	Type--&gt;Derived7["DockerComposeUpSettings"]
 	click Derived7 "/api/Cake.Docker/DockerComposeUpSettings"
-	Type--&gt;Derived8["DockerComposeKillSettings"]
-	click Derived8 "/api/Cake.Docker/DockerComposeKillSettings"
-	Type--&gt;Derived9["DockerComposeStopSettings"]
-	click Derived9 "/api/Cake.Docker/DockerComposeStopSettings"
+	Type--&gt;Derived8["DockerComposeRunSettings"]
+	click Derived8 "/api/Cake.Docker/DockerComposeRunSettings"
+	Type--&gt;Derived9["DockerComposeBuildSettings"]
+	click Derived9 "/api/Cake.Docker/DockerComposeBuildSettings"
 
 						</div>
 					</div>
@@ -486,17 +486,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -505,6 +494,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

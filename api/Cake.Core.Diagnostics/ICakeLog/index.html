@@ -194,8 +194,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.Core.Diagnostics/CakeBuildLog">CakeBuildLog</a></li>								
 											<li><a href="/api/Cake.Core.Diagnostics/NullLog">NullLog</a></li>								
+											<li><a href="/api/Cake.Core.Diagnostics/CakeBuildLog">CakeBuildLog</a></li>								
 											<li><a href="/api/Cake.Testing/FakeLog">FakeLog</a></li>								
 									</ul>
 								</dd>				
@@ -206,10 +206,10 @@
 							graph TD
 	Type["ICakeLog"]
 class Type type-node
-	Type-.-&gt;Implementing0["CakeBuildLog"]
-	click Implementing0 "/api/Cake.Core.Diagnostics/CakeBuildLog"
-	Type-.-&gt;Implementing1["NullLog"]
-	click Implementing1 "/api/Cake.Core.Diagnostics/NullLog"
+	Type-.-&gt;Implementing0["NullLog"]
+	click Implementing0 "/api/Cake.Core.Diagnostics/NullLog"
+	Type-.-&gt;Implementing1["CakeBuildLog"]
+	click Implementing1 "/api/Cake.Core.Diagnostics/CakeBuildLog"
 	Type-.-&gt;Implementing2["FakeLog"]
 	click Implementing2 "/api/Cake.Testing/FakeLog"
 
@@ -502,17 +502,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;ICakeLog&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;ICakeLog&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -521,6 +510,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;ICakeLog&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>

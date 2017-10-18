@@ -206,12 +206,12 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/api/Cake.SqlPackage/SqlPackageScriptSettings">Sql<wbr>Package<wbr>Script<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.SqlPackage/SqlPackageExtractSettings">Sql<wbr>Package<wbr>Extract<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.SqlPackage/SqlPackageDriftReportSettings">Sql<wbr>Package<wbr>Drift<wbr>Report<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.SqlPackage/SqlPackageDeployReportSettings">Sql<wbr>Package<wbr>Deploy<wbr>Report<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.SqlPackage/SqlPackageImportSettings">Sql<wbr>Package<wbr>Import<wbr>Settings</a></li>								
-											<li><a href="/api/Cake.SqlPackage/SqlPackageExportSettings">Sql<wbr>Package<wbr>Export<wbr>Settings</a></li>								
 											<li><a href="/api/Cake.SqlPackage/SqlPackagePublishSettings">Sql<wbr>Package<wbr>Publish<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.SqlPackage/SqlPackageExportSettings">Sql<wbr>Package<wbr>Export<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.SqlPackage/SqlPackageDeployReportSettings">Sql<wbr>Package<wbr>Deploy<wbr>Report<wbr>Settings</a></li>								
+											<li><a href="/api/Cake.SqlPackage/SqlPackageExtractSettings">Sql<wbr>Package<wbr>Extract<wbr>Settings</a></li>								
 									</ul>
 								</dd>			
 							
@@ -225,18 +225,18 @@
 class Type type-node
 	Type--&gt;Derived0["SqlPackageScriptSettings"]
 	click Derived0 "/api/Cake.SqlPackage/SqlPackageScriptSettings"
-	Type--&gt;Derived1["SqlPackageExtractSettings"]
-	click Derived1 "/api/Cake.SqlPackage/SqlPackageExtractSettings"
-	Type--&gt;Derived2["SqlPackageDriftReportSettings"]
-	click Derived2 "/api/Cake.SqlPackage/SqlPackageDriftReportSettings"
-	Type--&gt;Derived3["SqlPackageDeployReportSettings"]
-	click Derived3 "/api/Cake.SqlPackage/SqlPackageDeployReportSettings"
-	Type--&gt;Derived4["SqlPackageImportSettings"]
-	click Derived4 "/api/Cake.SqlPackage/SqlPackageImportSettings"
-	Type--&gt;Derived5["SqlPackageExportSettings"]
-	click Derived5 "/api/Cake.SqlPackage/SqlPackageExportSettings"
-	Type--&gt;Derived6["SqlPackagePublishSettings"]
-	click Derived6 "/api/Cake.SqlPackage/SqlPackagePublishSettings"
+	Type--&gt;Derived1["SqlPackageDriftReportSettings"]
+	click Derived1 "/api/Cake.SqlPackage/SqlPackageDriftReportSettings"
+	Type--&gt;Derived2["SqlPackageImportSettings"]
+	click Derived2 "/api/Cake.SqlPackage/SqlPackageImportSettings"
+	Type--&gt;Derived3["SqlPackagePublishSettings"]
+	click Derived3 "/api/Cake.SqlPackage/SqlPackagePublishSettings"
+	Type--&gt;Derived4["SqlPackageExportSettings"]
+	click Derived4 "/api/Cake.SqlPackage/SqlPackageExportSettings"
+	Type--&gt;Derived5["SqlPackageDeployReportSettings"]
+	click Derived5 "/api/Cake.SqlPackage/SqlPackageDeployReportSettings"
+	Type--&gt;Derived6["SqlPackageExtractSettings"]
+	click Derived6 "/api/Cake.SqlPackage/SqlPackageExtractSettings"
 
 						</div>
 					</div>
@@ -536,17 +536,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Sql<wbr>Package<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Sql<wbr>Package<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -555,6 +544,17 @@ class Type type-node
             </div>
 										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
                                             <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Sql<wbr>Package<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
 								</td>
 							</tr>
 							<tr>
