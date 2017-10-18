@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -78,7 +79,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-build/website/blob/develop/src/input/docs/tutorials/getting-started.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/input/docs/tutorials/getting-started.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#clone-the-example-repo">1. Clone the example repo</a></p>
 <p><a href="#run-the-build-script">2. Run the build script</a></p>
 <p><a href="#bonus-points">3. Bonus points!</a></p>
@@ -106,6 +107,7 @@
                 <li><a href="/docs/tutorials/setting-up-a-new-project">Setting Up A New Project</a></li>
                 <li><a href="/docs/tutorials/powershell-security">Powershell Security</a></li>
                 <li><a href="/docs/tutorials/extending-the-bootstrapper">Extending The Bootstrapper</a></li>
+                <li><a href="/docs/tutorials/pinning-cake-version">Pinning Cake Version</a></li>
 
                     </ul>
                 </li>
@@ -117,6 +119,7 @@
                 <li><a href="/docs/fundamentals/criteria">Criteria</a></li>
                 <li><a href="/docs/fundamentals/error-handling">Error Handling</a></li>
                 <li><a href="/docs/fundamentals/finally-block">Finally Block</a></li>
+                <li><a href="/docs/fundamentals/asynchronous-tasks">Asynchronous Tasks</a></li>
                 <li><a href="/docs/fundamentals/setup-and-teardown">Setup And Teardown</a></li>
                 <li><a href="/docs/fundamentals/running-targets">Running Targets</a></li>
                 <li><a href="/docs/fundamentals/args-and-environment-vars">Arguments And Environment Variables</a></li>
@@ -202,18 +205,18 @@ is <a href="http://www.howtogeek.com/70012/what-causes-the-file-downloaded-from-
 otherwise you will run into issues when attempting to execute Cake.</p>
 <h2 id="files-of-interest">Files of interest</h2>
 <p>You need three files for a build (these will be the only files you need to
-commit to your repo to use Cake):</p>
+commit to your repo to use Cake, see how to <a href="/docs/tutorials/pinning-cake-version">pinning cake version</a> for further guidance.):</p>
 <ul class="fa-ul" style="padding-left: 0px; padding-top: 10px;">
     <li style="padding-left: 0px">
-        <i class="fa-li fa fa-file-o"></i><b>build.ps1</b>
+        <i class="fa-li fa fa-file-o"></i><b>build.ps1 and build.sh</b>
         <ul style="padding-left: 0px; list-style-type: none;">
             <li style="padding-left: 3px; margin-top: 5px;">
-                This is a bootstrapper powershell script that ensures you have 
-                Cake and required dependencies installed. The bootstrapper 
-                script is also responsible for invoking Cake.  This file is optional, 
-                and not a hard requirement.  If you would prefer not to use PowerShell
+                These are bootstrapper scripts that ensure you have
+                Cake and other required dependencies installed. The bootstrapper
+                scripts are also responsible for invoking Cake. These files are optional,
+                and not a hard requirement.  If you would prefer not to use these scripts
                 you can invoke Cake directly from the command line, once you have downloaded
-                and extracted it. 
+                and extracted it.
             </li>
         </ul>
     </li>
@@ -221,7 +224,7 @@ commit to your repo to use Cake):</p>
         <i class="fa-li fa fa-file-o"></i><b>build.cake</b>
         <ul style="padding-left: 0px; list-style-type: none;">
             <li style="padding-left: 3px; margin-top: 5px;">
-                This is the actual build script. It doesn't have to be named 
+                This is the actual build script. It doesn't have to be named
                 this but this will be found by default.
             </li>
         </ul>
@@ -230,9 +233,9 @@ commit to your repo to use Cake):</p>
         <i class="fa-li fa fa-file-o"></i><b>tools/packages.config</b>
         <ul style="padding-left: 0px; list-style-type: none;">
             <li style="padding-left: 3px; margin-top: 5px;">
-                This is the package configuration that tells the 
-                bootstrapper script what NuGet packages to install in 
-                the tools folder. An example of this is Cake itself or 
+                This is the package configuration that tells the
+                bootstrapper script what NuGet packages to install in
+                the tools folder. An example of this is Cake itself or
                 additional tools such as unit test runners, ILMerge etc.
             </li>
         </ul>
@@ -313,6 +316,17 @@ available at <a href="https://github.com/marcosnz/Cake-Example">https://github.c
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

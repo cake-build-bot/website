@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -78,7 +79,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -113,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -125,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -140,12 +149,16 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
 				<li><a href="/api/Cake.Yarn/YarnRunner/BC86705D">Add<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Add<wbr>Settings&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/Cake.Yarn/YarnRunner/3BC466FC">Cache<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Yarn<wbr>Cache<wbr>Settings&gt;<wbr>)<wbr></a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunner/89C5A559">FromPath<wbr>(DirectoryPath)<wbr></a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunner/D4484EC6">Get<wbr>Tool<wbr>Executable<wbr>Names<wbr>()<wbr></a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunner/54A01A3D">GetToolName<wbr>()<wbr></a></li>
 				<li class="selected"><a href="/api/Cake.Yarn/YarnRunner/EAEE36BE">GetWorkingDirectory<wbr>(YarnRunnerSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunner/60274249">Install<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Install<wbr>Settings&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/Cake.Yarn/YarnRunner/7C95E066">Pack<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Pack<wbr>Settings&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/Cake.Yarn/YarnRunner/28382560">Remove<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Remove<wbr>Settings&gt;<wbr>)<wbr></a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunner/76B1210F">RunScript<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Yarn<wbr>Run<wbr>Settings&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/Cake.Yarn/YarnRunner/92FFC39F">Version<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Version<wbr>Settings&gt;<wbr>)<wbr></a></li>
 
 
                     </ul>
@@ -171,7 +184,12 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            Gets the working directory from the YarnRunnerSettings
+                        Defaults to the currently set working directory.
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
@@ -209,7 +227,7 @@
 					<tbody><tr>
 						<td>settings</td>
 						<td><a href="/api/Cake.Yarn/YarnRunnerSettings">YarnRunnerSettings</a></td>
-						<td></td>
+						<td>The settings.</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -227,7 +245,9 @@
 				</thead>
 				<tbody><tr>
 					<td>DirectoryPath</td>
-					<td></td>
+					<td>
+            The working directory for the tool.
+            </td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -266,6 +286,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

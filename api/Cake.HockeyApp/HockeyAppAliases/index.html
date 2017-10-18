@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -80,6 +81,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#fields">Fields</a></p>
 <p><a href="#Methods">Methods</a></p>
@@ -115,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -127,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -138,15 +147,15 @@
 		<li class="header">Namespace</li>
 		<li><a href="/api/Cake.HockeyApp">Cake<wbr>.HockeyApp</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Enum Types</li>
+			<li class="header">Class Types</li>
 				<li><a href="/api/Cake.HockeyApp/DownloadStatus">DownloadStatus</a></li>
+				<li class="selected"><a href="/api/Cake.HockeyApp/HockeyAppAliases">HockeyAppAliases</a></li>
+				<li><a href="/api/Cake.HockeyApp/HockeyAppUploadResult">Hockey<wbr>App<wbr>Upload<wbr>Result</a></li>
+				<li><a href="/api/Cake.HockeyApp/HockeyAppUploadSettings">Hockey<wbr>App<wbr>Upload<wbr>Settings</a></li>
 				<li><a href="/api/Cake.HockeyApp/MandatoryOption">MandatoryOption</a></li>
 				<li><a href="/api/Cake.HockeyApp/NoteType">NoteType</a></li>
 				<li><a href="/api/Cake.HockeyApp/NotifyOption">NotifyOption</a></li>
 				<li><a href="/api/Cake.HockeyApp/ReleaseType">ReleaseType</a></li>
-			<li class="header">Class Types</li>
-				<li class="selected"><a href="/api/Cake.HockeyApp/HockeyAppAliases">HockeyAppAliases</a></li>
-				<li><a href="/api/Cake.HockeyApp/HockeyAppUploadSettings">Hockey<wbr>App<wbr>Upload<wbr>Settings</a></li>
 
 
                     </ul>
@@ -173,8 +182,13 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Contains functionality related to <a href="http://hockeyapp.net">HockeyApp</a>
-            </div>
+             <p>Contains functionality related to <a href="http://hockeyapp.net">HockeyApp</a>.</p>
+             <p>
+             It allows you to upload an app package to HockeyApp with just one line of code. In order to use the exposed
+             commands you have to add the following line at top of your build.cake file.
+             </p>
+             <pre><code class="cs">#addin Cake.HockeyApp</code></pre>
+             </div>
 
 		<div class="panel panel-default">
   			<div class="panel-body">
@@ -191,7 +205,7 @@
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>object</li>								
+											<li>Object</li>								
 									</ul>
 								</dd>				
 							
@@ -201,7 +215,7 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["object"]--&gt;Type
+	Base0["Object"]--&gt;Type
 	Type["HockeyAppAliases"]
 class Type type-node
 
@@ -214,6 +228,47 @@ class Type type-node
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public static class HockeyAppAliases</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+             <p>Upload an apk to HockeyApp:</p>
+             <pre><code class="cs">Task("Upload-To-HockeyApp")
+    .IsDependentOn("Build-APK")
+    .Does(() =&gt; UploadToHockeyApp("./output/myApp.apk"));</code></pre>
+            
+             <p>Upload an apk to HockeyApp with result.</p>
+             <pre><code class="cs">Task("Upload-To-HockeyApp")
+    .IsDependentOn("Build-APK")
+    .Does(() =&gt;
+{
+    var result = UploadToHockeyApp("./output/myApp.apk"));
+    // Use result.PublicUrl to inform others where they can download the newly uploaded package.
+}</code></pre>
+            
+             <p>Upload a Windows package.</p>
+             <p>
+             Unfortunately, HockeyApp currently does only support metadata discovering for Android, iOS and macOS packages.
+             Therefore you have to specify a version AND app id your self. This means that you have to create the app once
+             before uploading. <a href="http://rink.hockeyapp.net/manage/apps/new">Create new App</a>. Creating a new
+             version is automatically done by this addin.
+             </p>
+             <pre><code class="cs">Task("Upload-To-HockeyApp")
+    .IsDependentOn("Build-AppX")
+    .Does(() =&gt;
+{
+    UploadToHockeyApp( "./output/myWindowsApp.appx", new HockeyAppUploadSettings
+    {
+        AppId = appIdFromHockeyApp,
+        Version = "1.0.160901.1",
+        ShortVersion = "1.0-beta2",
+        Notes = "Uploaded via continuous integration."
+    });
+}</code></pre>
+            
+             <p>
+             For all request you make you either have to set your API token from HockeyApp as environment variable: HOCKEYAPP_API_TOKEN
+             or pass it into the call via <code class="cs"><a href="/api/Cake.HockeyApp/HockeyAppUploadSettings/6E5B2095">AppId</a></code>
+             </p>
+             </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
@@ -275,8 +330,30 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/api/Cake.HockeyApp/HockeyAppAliases/45C40F46">UploadToHockeyApp<wbr>(ICakeContext, <wbr>FilePath, <wbr>Hockey<wbr>App<wbr>Upload<wbr>Settings, <wbr>FilePath)<wbr></a></td>
-								<td>void</td>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppAliases/21C01AD4">UploadToHockeyApp<wbr>(ICakeContext, <wbr>FilePath)<wbr></a></td>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppUploadResult">Hockey<wbr>App<wbr>Upload<wbr>Result</a></td>
+								<td>
+									<div>
+            Uploads the specified package and symbols file to HockeyApp. The version is automatically detected from the package metadata.
+            This only works with *.ipa for iOS, *.app.zip for OS X, or *.apk files for Android.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppAliases/4AB39C6D">UploadToHockeyApp<wbr>(ICakeContext, <wbr>FilePath, <wbr>FilePath)<wbr></a></td>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppUploadResult">Hockey<wbr>App<wbr>Upload<wbr>Result</a></td>
+								<td>
+									<div>
+            Uploads the specified package and symbols file to HockeyApp. The version is automatically detected from the package metadata.
+            This only works with *.ipa for iOS, *.app.zip for OS X, or *.apk files for Android.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppAliases/BAB28637">UploadToHockeyApp<wbr>(ICakeContext, <wbr>FilePath, <wbr>FilePath, <wbr>Hockey<wbr>App<wbr>Upload<wbr>Settings)<wbr></a></td>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppUploadResult">Hockey<wbr>App<wbr>Upload<wbr>Result</a></td>
 								<td>
 									<div>
             Uploads the specified package to HockeyApp. Currently it is required to specify the AppId and the
@@ -285,10 +362,30 @@ class Type type-node
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
+							<tr>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppAliases/089608CE">UploadToHockeyApp<wbr>(ICakeContext, <wbr>FilePath, <wbr>Hockey<wbr>App<wbr>Upload<wbr>Settings)<wbr></a></td>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppUploadResult">Hockey<wbr>App<wbr>Upload<wbr>Result</a></td>
+								<td>
+									<div>
+            Uploads the specified package to HockeyApp. If you don't upload an apk or ipa, it is required to specify the AppId and the
+            Version property of <code class="cs"><a href="/api/Cake.HockeyApp/HockeyAppUploadSettings">HockeyAppUploadSettings</a></code>.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.HockeyApp/HockeyAppAliases/45C40F46">UploadToHockeyApp<wbr>(ICakeContext, <wbr>FilePath, <wbr>Hockey<wbr>App<wbr>Upload<wbr>Settings, <wbr>FilePath)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
+
 
 
 	
@@ -323,6 +420,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

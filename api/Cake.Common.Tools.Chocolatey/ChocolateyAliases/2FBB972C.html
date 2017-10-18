@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -116,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -128,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -148,6 +156,8 @@
 				<li class="selected"><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/2FBB972C">Chocolatey<wbr>Disable<wbr>Feature<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Feature<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/4D04B2D6">Chocolatey<wbr>Disable<wbr>Source<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/7B911F2B">Chocolatey<wbr>Disable<wbr>Source<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Sources<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/CDC6B63D">ChocolateyDownload<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/B134C6A8">ChocolateyDownload<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Download<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/5B7DE762">Chocolatey<wbr>Enable<wbr>Feature<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/9F8B8CDA">Chocolatey<wbr>Enable<wbr>Feature<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Feature<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/0F8608BE">Chocolatey<wbr>Enable<wbr>Source<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
@@ -156,12 +166,20 @@
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/8C95B2C5">ChocolateyInstall<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Install<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/8F2AB958">Chocolatey<wbr>Install<wbr>From<wbr>Config<wbr>(ICakeContext, <wbr>FilePath)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/454FA50A">Chocolatey<wbr>Install<wbr>From<wbr>Config<wbr>(ICakeContext, <wbr>FilePath, <wbr>Chocolatey<wbr>Install<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/CA0EDDF7">ChocolateyNew<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/9FCA6B0E">ChocolateyNew<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>New<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/45FF3C54">ChocolateyPack<wbr>(ICakeContext, <wbr>FilePath, <wbr>Chocolatey<wbr>Pack<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/CD11D0BB">ChocolateyPack<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;FilePath&gt;<wbr>, <wbr>Chocolatey<wbr>Pack<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/0BBB2CFE">ChocolateyPack<wbr>(ICakeContext, <wbr>Chocolatey<wbr>Pack<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/CB02A7BC">ChocolateyPin<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Pin<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/D12F9252">ChocolateyPush<wbr>(ICakeContext, <wbr>FilePath, <wbr>Chocolatey<wbr>Push<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/4190BA6B">ChocolateyPush<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;FilePath&gt;<wbr>, <wbr>Chocolatey<wbr>Push<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/AE8CB05D">Chocolatey<wbr>Remove<wbr>Source<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/868AFC9F">Chocolatey<wbr>Remove<wbr>Source<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Sources<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/F0D9E777">ChocolateyUninstall<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/8CC40847">ChocolateyUninstall<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Uninstall<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/AB635CDE">ChocolateyUninstall<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;string&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/5B29EEDF">ChocolateyUninstall<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;string&gt;<wbr>, <wbr>Chocolatey<wbr>Uninstall<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/F50E6D84">ChocolateyUpgrade<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases/56C563D4">ChocolateyUpgrade<wbr>(ICakeContext, <wbr>string, <wbr>Chocolatey<wbr>Upgrade<wbr>Settings)<wbr></a></li>
 
@@ -250,7 +268,7 @@ public static void ChocolateyDisableFeature(this ICakeContext context, string na
 						<td>
     An attribute used to hint Cake about additional namespaces that need
     to be imported for an alias to work. This attribute can mark an
-    extension method or the extension method class.
+    extension method, the extension method class, or the assembly to provide a global set of imports
     </td>
 					</tr>
 			</tbody></table>
@@ -339,6 +357,17 @@ public static void ChocolateyDisableFeature(this ICakeContext context, string na
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

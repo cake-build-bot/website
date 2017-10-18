@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -17,7 +17,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet" />
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -38,11 +38,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -80,7 +81,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-build/website/blob/develop/src/input/docs/fundamentals/configuration.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/input/docs/fundamentals/configuration.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -104,6 +105,7 @@
                 <li><a href="/docs/tutorials/setting-up-a-new-project">Setting Up A New Project</a></li>
                 <li><a href="/docs/tutorials/powershell-security">Powershell Security</a></li>
                 <li><a href="/docs/tutorials/extending-the-bootstrapper">Extending The Bootstrapper</a></li>
+                <li><a href="/docs/tutorials/pinning-cake-version">Pinning Cake Version</a></li>
 
                     </ul>
                 </li>
@@ -115,6 +117,7 @@
                 <li><a href="/docs/fundamentals/criteria">Criteria</a></li>
                 <li><a href="/docs/fundamentals/error-handling">Error Handling</a></li>
                 <li><a href="/docs/fundamentals/finally-block">Finally Block</a></li>
+                <li><a href="/docs/fundamentals/asynchronous-tasks">Asynchronous Tasks</a></li>
                 <li><a href="/docs/fundamentals/setup-and-teardown">Setup And Teardown</a></li>
                 <li><a href="/docs/fundamentals/running-targets">Running Targets</a></li>
                 <li><a href="/docs/fundamentals/args-and-environment-vars">Arguments And Environment Variables</a></li>
@@ -198,19 +201,19 @@
 </ul>
 <p><strong>NOTE:</strong> These configuration options are prioritised in the order shown above.  i.e. The configuration file overrides any Environment variables, and arguments passed directly into cake.exe override both Environment variables and configuration file settings.</p>
 <h2 id="where-can-this-configuration-be-applied">Where can this configuration be applied?</h2>
-<p>As an example of where this overridable configuration can be applied, let's look at how Cake determines where the required Roslyn assemblies (which Cake requires in order to function) are downloaded from.  By default, it does this by downloading the nuget packages from the following URL <code>https://packages.nuget.org/api/v2</code>.  However, it may be necessary (for example, when running in an offline/local environment) to download these nuget packaages from an alternative source.  This is where the Cake Configuration comes into play.</p>
-<p>By creating an Environment variable with the name of <code>CAKE_ROSLYN_NUGETSOURCE</code> and setting the value to the URL that is required, Cake will use this alternative download source, rather than the default.</p>
+<p>As an example of where this overridable configuration can be applied, let's look at how Cake determines where to download NuGet packages from. By default, it does this by downloading the nuget packages user configured sources.  However, it may be necessary (for example, when running in an offline/local environment) to download these nuget packages from an alternative source.  This is where the Cake Configuration comes into play.</p>
+<p>By creating an Environment variable with the name of <code>CAKE_NUGET_SOURCE</code> and setting the value to the URL that is required, Cake will use this alternative download source, rather than the defaults.</p>
 <p>Alternatively, you can create a <code>cake.config</code> file with the following content:</p>
 <pre><code class="language-sh">; The configuration file for Cake.
 
-[Roslyn]
-NuGetSource=https://mycustomurl
+[Nuget]
+Source=https://mycustomurl
 </code></pre>
 <br/>
 Specifying a configuration value within a configuration file will override the same configuration value stored within an equivalent Environment variable.
 <p><strong>NOTE:</strong> This configuration file should be located in the same directory as your <code>build.cake</code> file.</p>
 <p>Finally, you can specify an input parameter directly to the Cake.exe, in the following format:</p>
-<pre><code class="language-sh">cake.exe --roslyn_nugetsource=http://mycustomurl
+<pre><code class="language-sh">cake.exe --nuget_source=http://mycustomurl
 </code></pre>
 <br/>
 Passing a configuration value directly to the Cake.exe will override the same configuration value stored within an Environment variable and also any stored in a local configuration file.
@@ -247,6 +250,17 @@ Passing a configuration value directly to the Cake.exe will override the same co
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

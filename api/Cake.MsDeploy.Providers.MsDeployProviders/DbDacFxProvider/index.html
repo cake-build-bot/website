@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -83,6 +84,7 @@
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Properties">Properties</a></p>
 <p><a href="#Methods">Methods</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -115,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -127,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -152,6 +161,7 @@
 				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupSettingsProvider">Backup<wbr>Settings<wbr>Provider</a></li>
 				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CertProvider">CertProvider</a></li>
 				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CertStoreSettingsProvider">Cert<wbr>Store<wbr>Settings<wbr>Provider</a></li>
+				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CommandProvider">CommandProvider</a></li>
 				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject32Provider">ComObject32Provider</a></li>
 				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject64Provider">ComObject64Provider</a></li>
 				<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathAspNetCoreProvider">Content<wbr>Path<wbr>Asp<wbr>Net<wbr>Core<wbr>Provider</a></li>
@@ -307,7 +317,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/17C5ADF2">Allow<wbr>Drop<wbr>Blocking<wbr>Assemblies</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'AllowDropBlockingAssemblies' setting.
@@ -316,7 +326,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/743487D3">Allow<wbr>Incompatible<wbr>Platform</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'AllowIncompatiblePlatform' setting.
@@ -335,7 +345,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/C052A8D5">AuthenticationType</a></td>
-								<td>Authentication<wbr>Scheme?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
              Authentication scheme to use. NTLM is the default setting. If the wmsvc option is specified, then Basic is the default setting.
@@ -345,7 +355,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8DDB8242">Backup<wbr>Database<wbr>Before<wbr>Changes</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'BackupDatabaseBeforeChanges' setting.
@@ -354,7 +364,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/71368C89">Block<wbr>On<wbr>Possible<wbr>Data<wbr>Loss</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'BlockOnPossibleDataLoss' setting.
@@ -363,7 +373,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/F82B14C4">Block<wbr>When<wbr>Drift<wbr>Detected</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'BlockWhenDriftDetected' setting.
@@ -372,7 +382,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/61A446EC">CommandTimeout</a></td>
-								<td>int?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             An integer value for the 'commandTimeout' setting.
@@ -381,7 +391,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C2A1A3CD">Comment<wbr>Out<wbr>Set<wbr>Var<wbr>Declarations</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'CommentOutSetVarDeclarations' setting.
@@ -390,7 +400,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/4E55B7FD">Compare<wbr>Using<wbr>Target<wbr>Collation</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'CompareUsingTargetCollation' setting.
@@ -409,7 +419,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7F5A815D">CreateNewDatabase</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'CreateNewDatabase' setting.
@@ -427,7 +437,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C38577E3">Deploy<wbr>Database<wbr>In<wbr>Single<wbr>User<wbr>Mode</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DeployDatabaseInSingleUserMode' setting.
@@ -446,7 +456,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7C6434CB">Disable<wbr>And<wbr>Reenable<wbr>Ddl<wbr>Triggers</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DisableAndReenableDdlTriggers' setting.
@@ -455,7 +465,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E10A59F1">Do<wbr>Not<wbr>Alter<wbr>Change<wbr>Data<wbr>Capture<wbr>Objects</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DoNotAlterChangeDataCaptureObjects' setting.
@@ -464,7 +474,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/57C3DF62">Do<wbr>Not<wbr>Alter<wbr>Replicated<wbr>Objects</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DoNotAlterReplicatedObjects' setting.
@@ -473,7 +483,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B0C7C0F8">Drop<wbr>Constraints<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropConstraintsNotInSource' setting.
@@ -482,7 +492,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/5F81EFE4">Drop<wbr>Destination<wbr>Database</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'dropDestinationDatabase' setting.
@@ -491,7 +501,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/1DD73122">Drop<wbr>Dml<wbr>Triggers<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropDmlTriggersNotInSource' setting.
@@ -500,7 +510,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/38CC069D">Drop<wbr>Extended<wbr>Properties<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropExtendedPropertiesNotInSource' setting.
@@ -509,7 +519,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/186A1898">Drop<wbr>Indexes<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropIndexesNotInSource' setting.
@@ -518,7 +528,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B930E563">Drop<wbr>Objects<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropObjectsNotInSource' setting.
@@ -527,7 +537,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/2FF1C835">Drop<wbr>Permissions<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropPermissionsNotInSource' setting.
@@ -536,7 +546,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/51276128">Drop<wbr>Role<wbr>Members<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropRoleMembersNotInSource' setting.
@@ -545,7 +555,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/0681765C">Drop<wbr>Statistics<wbr>Not<wbr>In<wbr>Source</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'DropStatisticsNotInSource' setting.
@@ -554,7 +564,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/5B1150C1">Generate<wbr>Smart<wbr>Defaults</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'GenerateSmartDefaults' setting.
@@ -563,7 +573,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/AAB00977">IgnoreAnsiNulls</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreAnsiNulls' setting.
@@ -572,7 +582,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7EF26795">IgnoreAuthorizer</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreAuthorizer' setting.
@@ -581,7 +591,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E571E928">Ignore<wbr>Column<wbr>Collation</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreColumnCollation' setting.
@@ -590,7 +600,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B474B741">IgnoreComments</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreComments' setting.
@@ -599,7 +609,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8FF52FAD">Ignore<wbr>Cryptographic<wbr>Provider<wbr>File<wbr>Path</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreCryptographicProviderFilePath' setting.
@@ -608,7 +618,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/FCFE86BD">Ignore<wbr>Ddl<wbr>Trigger<wbr>Order</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreDdlTriggerOrder' setting.
@@ -617,7 +627,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9FBF3CEB">Ignore<wbr>Ddl<wbr>Trigger<wbr>State</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreDdlTriggerState' setting.
@@ -626,7 +636,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/84AEA12D">IgnoreDefaultSchema</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreDefaultSchema' setting.
@@ -635,7 +645,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/BC01D013">Ignore<wbr>Dml<wbr>Trigger<wbr>Order</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreDmlTriggerOrder' setting.
@@ -644,7 +654,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/DF406A45">Ignore<wbr>Dml<wbr>Trigger<wbr>State</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreDmlTriggerState' setting.
@@ -653,7 +663,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9AA2FE74">Ignore<wbr>Extended<wbr>Properties</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreExtendedProperties' setting.
@@ -662,7 +672,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7EE30EFB">Ignore<wbr>File<wbr>And<wbr>Log<wbr>File<wbr>Path</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreFileAndLogFilePath' setting.
@@ -671,7 +681,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C0C53E55">Ignore<wbr>Filegroup<wbr>Placement</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreFilegroupPlacement' setting.
@@ -680,7 +690,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/A9FEF32B">IgnoreFileSize</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreFileSize' setting.
@@ -689,7 +699,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/A7CA71FE">IgnoreFillFactor</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreFillFactor' setting.
@@ -698,7 +708,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/31B65A61">Ignore<wbr>Full<wbr>Text<wbr>Catalog<wbr>File<wbr>Path</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreFullTextCatalogFilePath' setting.
@@ -707,7 +717,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8E184853">IgnoreIdentitySeed</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreIdentitySeed' setting.
@@ -716,7 +726,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/EFD12142">IgnoreIncrement</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreIncrement' setting.
@@ -725,7 +735,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/B8EB95B6">IgnoreIndexOptions</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreIndexOptions' setting.
@@ -734,7 +744,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/31315463">IgnoreIndexPadding</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreIndexPadding' setting.
@@ -743,7 +753,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/DC43341F">IgnoreKeywordCasing</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreKeywordCasing' setting.
@@ -752,7 +762,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/1FA61E1A">Ignore<wbr>Lock<wbr>Hints<wbr>On<wbr>Indexes</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreLockHintsOnIndexes' setting.
@@ -761,7 +771,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/BB78F753">IgnoreLoginSids</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreLoginSids' setting.
@@ -770,7 +780,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9808A487">Ignore<wbr>Not<wbr>For<wbr>Replication</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreNotForReplication' setting.
@@ -779,7 +789,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/63D7BB3C">Ignore<wbr>Object<wbr>Placement<wbr>On<wbr>Partition<wbr>Scheme</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreObjectPlacementOnPartitionScheme' setting.
@@ -788,7 +798,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/879D35D0">Ignore<wbr>Partition<wbr>Schemes</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnorePartitionSchemes' setting.
@@ -797,7 +807,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/89509AF4">IgnorePermissions</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnorePermissions' setting.
@@ -806,7 +816,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/79ED61A9">Ignore<wbr>Quoted<wbr>Identifiers</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreQuotedIdentifiers' setting.
@@ -815,7 +825,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/D62E306B">IgnoreRoleMembership</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreRoleMembership' setting.
@@ -824,7 +834,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/49BC17B9">IgnoreRouteLifetime</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreRouteLifetime' setting.
@@ -833,7 +843,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E37EB568">Ignore<wbr>Semicolon<wbr>Between<wbr>Statements</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreSemicolonBetweenStatements' setting.
@@ -842,7 +852,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/8A11D9F1">IgnoreTableOptions</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreTableOptions' setting.
@@ -851,7 +861,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/299E004B">Ignore<wbr>User<wbr>Settings<wbr>Objects</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreUserSettingsObjects' setting.
@@ -860,7 +870,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/A40888D1">IgnoreWhitespace</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreWhitespace' setting.
@@ -869,7 +879,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/98318E0D">Ignore<wbr>With<wbr>Nocheck<wbr>On<wbr>Check<wbr>Constraints</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreWithNocheckOnCheckConstraints' setting.
@@ -878,7 +888,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/92E7541F">Ignore<wbr>With<wbr>Nocheck<wbr>On<wbr>Foreign<wbr>Keys</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IgnoreWithNocheckOnForeignKeys' setting.
@@ -887,7 +897,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/6B03608B">IncludeAcls</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             If true, include ACLs in the operation (applies to the file system, registry, and  metabase).
@@ -897,7 +907,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/84D98B99">Include<wbr>Composite<wbr>Objects</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IncludeCompositeObjects' setting.
@@ -906,7 +916,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/69ED7F0E">IncludeData</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'includeData' setting.
@@ -915,7 +925,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/9C68D29F">Include<wbr>Transactional<wbr>Scripts</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'IncludeTransactionalScripts' setting.
@@ -924,7 +934,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/4F386AAE">No<wbr>Alter<wbr>Statements<wbr>To<wbr>Change<wbr>Clr<wbr>Types</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'NoAlterStatementsToChangeClrTypes' setting.
@@ -953,7 +963,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/02878CBB">Populate<wbr>Files<wbr>On<wbr>File<wbr>Groups</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'PopulateFilesOnFileGroups' setting.
@@ -972,7 +982,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/12B08F0D">Register<wbr>Data<wbr>Tier<wbr>Application</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'RegisterDataTierApplication' setting.
@@ -991,7 +1001,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/38E2479C">Run<wbr>Deployment<wbr>Plan<wbr>Executors</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'RunDeploymentPlanExecutors' setting.
@@ -1000,7 +1010,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/EE713381">Script<wbr>Database<wbr>Collation</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'ScriptDatabaseCollation' setting.
@@ -1009,7 +1019,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E081DD8A">Script<wbr>Database<wbr>Compatibility</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'ScriptDatabaseCompatibility' setting.
@@ -1018,7 +1028,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/FFF5721F">Script<wbr>Database<wbr>Options</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'ScriptDatabaseOptions' setting.
@@ -1027,7 +1037,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/C4BDB06A">Script<wbr>Deploy<wbr>State<wbr>Checks</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'ScriptDeployStateChecks' setting.
@@ -1036,7 +1046,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/F99E2601">ScriptFileSize</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'ScriptFileSize' setting.
@@ -1045,7 +1055,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/E3C5C73F">Script<wbr>New<wbr>Constraint<wbr>Validation</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'ScriptNewConstraintValidation' setting.
@@ -1054,7 +1064,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/651E490F">ScriptRefreshModule</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'ScriptRefreshModule' setting.
@@ -1063,7 +1073,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider/2182E996">TempAgent</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             
@@ -1073,7 +1083,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/704A91E9">Treat<wbr>Verification<wbr>Errors<wbr>As<wbr>Warnings</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'TreatVerificationErrorsAsWarnings' setting.
@@ -1089,7 +1099,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/6CF43C76">Unmodifiable<wbr>Object<wbr>Warnings</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'UnmodifiableObjectWarnings' setting.
@@ -1108,7 +1118,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/F8574A11">Verify<wbr>Collation<wbr>Compatibility</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'VerifyCollationCompatibility' setting.
@@ -1117,7 +1127,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider/7175CFCD">VerifyDeployment</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             A true or false value for the 'VerifyDeployment' setting.
@@ -1183,6 +1193,88 @@ class Type type-node
 		
 
 
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;<wbr>Db<wbr>Dac<wbr>Fx<wbr>Provider&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;<wbr>Db<wbr>Dac<wbr>Fx<wbr>Provider&gt;<wbr><wbr>(DbDacFxProvider[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Db<wbr>Dac<wbr>Fx<wbr>Provider&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Db<wbr>Dac<wbr>Fx<wbr>Provider&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;<wbr>Db<wbr>Dac<wbr>Fx<wbr>Provider&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;<wbr>Db<wbr>Dac<wbr>Fx<wbr>Provider&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
 	
 </section>
                 
@@ -1215,6 +1307,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

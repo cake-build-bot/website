@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -113,7 +114,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -125,6 +126,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -141,10 +149,13 @@
 			<li class="header">Constructors</li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/0DFDF243">Docker<wbr>Network<wbr>Create<wbr>Settings<wbr>()<wbr></a></li>
 			<li class="header">Property Members</li>
+				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/E72CC6F0">Attachable</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/F59C37D9">AuxAddress</a></li>
+				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/AA6884D5">ConfigFrom</a></li>
+				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/8AFA478C">ConfigOnly</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/699DF97E">Driver</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/12F1F0DF">Gateway</a></li>
-				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/900DAAF1">Help</a></li>
+				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/3D549413">Ingress</a></li>
 				<li class="selected"><a href="/api/Cake.Docker/DockerNetworkCreateSettings/CA0E3B38">Internal</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/44CF75F1">IpamDriver</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/E980E12D">IpamOpt</a></li>
@@ -152,6 +163,7 @@
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/1015697C">Ipv6</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/3E013121">Label</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/40CA1350">Opt</a></li>
+				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/0504392F">Scope</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings/A6A35DFE">Subnet</a></li>
 
 
@@ -180,7 +192,9 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            restricts external access to the network
+            --internal
+            default: false
+            Restrict external access to the network
             </div>
 
 		<div class="panel panel-default">
@@ -200,7 +214,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public bool Internal { get; set; }</code></pre>
+	<pre><code>public Nullable&lt;bool&gt; Internal { get; set; }</code></pre>
 
 
 
@@ -217,7 +231,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>bool</td>
+					<td>Nullable<wbr>&lt;&gt;<wbr></td>
 					<td></td>
 				</tr>
 			</tbody></table>
@@ -257,6 +271,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

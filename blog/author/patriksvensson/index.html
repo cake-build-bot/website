@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -17,7 +17,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet" />
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -38,11 +38,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -90,14 +91,22 @@
                         
 
     <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
-        <li><a href="/blog/addins">Addins</a></li>
-        <li><a href="/blog/announcement">Announcement</a></li>
-        <li><a href="/blog/how-tos">How To&#x27;s</a></li>
-        <li><a href="/blog/infrastructure">Infrastructure</a></li>
-        <li><a href="/blog/news">News</a></li>
-        <li><a href="/blog/release-notes">Release Notes</a></li>
+        <li><a href="/blog/Addins">Addins</a></li>
+        <li><a href="/blog/Announcement">Announcement</a></li>
+        <li><a href="/blog/How-Tos">How To&#x27;s</a></li>
+        <li><a href="/blog/Infrastructure">Infrastructure</a></li>
+        <li><a href="/blog/News">News</a></li>
+        <li><a href="/blog/Release-Notes">Release Notes</a></li>
     
     <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/blog/archive/2017/10">October, 2017</a></li>
+        <li><a href="/blog/archive/2017/09">September, 2017</a></li>
+        <li><a href="/blog/archive/2017/08">August, 2017</a></li>
+        <li><a href="/blog/archive/2017/07">July, 2017</a></li>
+        <li><a href="/blog/archive/2017/06">June, 2017</a></li>
+        <li><a href="/blog/archive/2017/05">May, 2017</a></li>
+        <li><a href="/blog/archive/2017/04">April, 2017</a></li>
+        <li><a href="/blog/archive/2017/03">March, 2017</a></li>
         <li><a href="/blog/archive/2017/01">January, 2017</a></li>
         <li><a href="/blog/archive/2016/12">December, 2016</a></li>
         <li><a href="/blog/archive/2016/11">November, 2016</a></li>
@@ -124,8 +133,11 @@
         <li><a href="/blog/author/devlead">devlead</a></li>
         <li><a href="/blog/author/gep13">gep13</a></li>
         <li><a href="/blog/author/jericho">jericho</a></li>
+        <li><a href="/blog/author/Larz-White">Larz White</a></li>
         <li><a href="/blog/author/mholo65">mholo65</a></li>
         <li class="selected"><a href="/blog/author/patriksvensson">patriksvensson</a></li>
+        <li><a href="/blog/author/phillipsj">phillipsj</a></li>
+        <li><a href="/blog/author/RLittlesII">RLittlesII</a></li>
 
                     </ul>
                 </section>                
@@ -143,12 +155,44 @@
 	<section class="content">
 		
 
+        <h2><a href="/blog/2017/10/cake-v0.23.0-released">Cake v0.23.0 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Sunday, October 15, 2017</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
+</dl>            <div>
+                <p>Version 0.23.0 has been released!</p>
+<p>This release contains three new features specially worth highlighting and a lot of bugfixes and improvements.</p>
+
+<p>Cake now supports asynchronous tasks. This will let you use the <code>async</code> and <code>await</code> C# features within a task.</p>
+<p>Tasks will still execute single threaded and in order as before, but this really simplifies asynchronous programming and utilizing asynchronous APIs within your Cake scripts.</p>
+
+
+<p>Ever wished you could define your task as a dependency of another task - i.e. a reversed dependency relationship? The good news is that you now can.</p>
+
+<p>Since task <code>A</code> is configured to be a dependee of <code>B</code> the task definition will be identical to the following:</p>
+
+
+<p>You can now explicitly specify whether or not a dependency (or dependee) is optional or required.
+This is useful if you want to create "extension points" in your build script.</p>
+
+<p>In the above example, <code>Bar</code> is dependent on <code>Foo</code> while <code>Baz</code> is dependent on <code>Qux</code>.
+The difference between the two dependencies above is that Cake will throw an exception if no task called <code>Foo</code> was found.</p>
+<p>Contributions were included from:</p>
+
+<p>Full details of everything that was included in these releases can be seen below.</p>
+                <a href="/blog/2017/10/cake-v0.23.0-released">Read more...</a>
+            </div>
+        <hr />
         <h2><a href="/blog/2016/09/cake-v0.16.0-released">Cake v0.16.0 released</a></h2>
 <dl class="dl-horizontal">
     <dt><i class="fa fa-calendar"></i> Published</dt>
     <dd>Saturday, September 17, 2016</dd>
         <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
             <dt><i class="fa fa-user"></i> Author</dt>
         <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
 </dl>            <div>
@@ -170,7 +214,7 @@ will be published soon.</p>
     <dt><i class="fa fa-calendar"></i> Published</dt>
     <dd>Sunday, May 1, 2016</dd>
         <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
             <dt><i class="fa fa-user"></i> Author</dt>
         <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
 </dl>            <div>
@@ -189,7 +233,7 @@ will be published soon.</p>
     <dt><i class="fa fa-calendar"></i> Published</dt>
     <dd>Monday, January 18, 2016</dd>
         <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
             <dt><i class="fa fa-user"></i> Author</dt>
         <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
 </dl>            <div>
@@ -207,7 +251,7 @@ will be published soon.</p>
     <dt><i class="fa fa-calendar"></i> Published</dt>
     <dd>Monday, October 12, 2015</dd>
         <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
             <dt><i class="fa fa-user"></i> Author</dt>
         <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
 </dl>            <div>
@@ -220,19 +264,6 @@ NuGet package that contains fakes for interfaces like
 that this NuGet package will make testing of your Cake addins
 much easier.</p>
                 <a href="/blog/2015/10/cake-v0.5.5-released">Read more...</a>
-            </div>
-        <hr />
-        <h2><a href="/blog/2015/09/cake-v0.5.4-released">Cake v0.5.4 released</a></h2>
-<dl class="dl-horizontal">
-    <dt><i class="fa fa-calendar"></i> Published</dt>
-    <dd>Friday, September 11, 2015</dd>
-        <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
-            <dt><i class="fa fa-user"></i> Author</dt>
-        <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
-</dl>            <div>
-                <p>Version 0.5.4 of Cake has been released.</p>
-                <a href="/blog/2015/09/cake-v0.5.4-released">Read more...</a>
             </div>
         <hr />
     <nav>
@@ -277,6 +308,17 @@ much easier.</p>
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

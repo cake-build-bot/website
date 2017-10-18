@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -116,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -128,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -140,10 +148,14 @@
 		<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases">NuGetAliases</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
+				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/22664610">NuGetAdd<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/278882B5">NuGetAdd<wbr>(ICakeContext, <wbr>string, <wbr>NuGetAddSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/45A5D0C0">NuGetAddSource<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/8B9ADF68">NuGetAddSource<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>Nu<wbr>Get<wbr>Sources<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/818C0717">NuGetHasSource<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/9606D1D8">NuGetHasSource<wbr>(ICakeContext, <wbr>string, <wbr>Nu<wbr>Get<wbr>Sources<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/44FD4AFB">NuGetInit<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/11FD6BD2">NuGetInit<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>NuGetInitSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/C013EBFA">NuGetInstall<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/F1E1076D">NuGetInstall<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;string&gt;<wbr>)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/343A93DB">NuGetInstall<wbr>(ICakeContext, <wbr>string, <wbr>Nu<wbr>Get<wbr>Install<wbr>Settings)<wbr></a></li>
@@ -152,6 +164,9 @@
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/83F9182E">Nu<wbr>Get<wbr>Install<wbr>From<wbr>Config<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;FilePath&gt;<wbr>)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/E9204FB6">Nu<wbr>Get<wbr>Install<wbr>From<wbr>Config<wbr>(ICakeContext, <wbr>FilePath, <wbr>Nu<wbr>Get<wbr>Install<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/49217368">Nu<wbr>Get<wbr>Install<wbr>From<wbr>Config<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;FilePath&gt;<wbr>, <wbr>Nu<wbr>Get<wbr>Install<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/4196A558">NuGetList<wbr>(ICakeContext, <wbr>string, <wbr>NuGetListSettings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/20FD7D58">NuGetList<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/CD21260C">NuGetList<wbr>(ICakeContext, <wbr>NuGetListSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/EF4ED944">NuGetPack<wbr>(ICakeContext, <wbr>FilePath, <wbr>NuGetPackSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/811F8B9C">NuGetPack<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;FilePath&gt;<wbr>, <wbr>NuGetPackSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.NuGet/NuGetAliases/9C675079">NuGetPack<wbr>(ICakeContext, <wbr>NuGetPackSettings)<wbr></a></li>
@@ -248,7 +263,7 @@ public static void NuGetUpdate(this ICakeContext context, FilePath targetFile)</
 						<td>
     An attribute used to hint Cake about additional namespaces that need
     to be imported for an alias to work. This attribute can mark an
-    extension method or the extension method class.
+    extension method, the extension method class, or the assembly to provide a global set of imports
     </td>
 					</tr>
 			</tbody></table>
@@ -332,6 +347,17 @@ public static void NuGetUpdate(this ICakeContext context, FilePath targetFile)</
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

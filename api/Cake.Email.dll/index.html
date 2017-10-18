@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -111,7 +112,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -123,6 +124,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -130,24 +138,47 @@
                     <ul class="sidebar-menu">
                         
 	<li class="header">Assemblies</li>   
+        <li><a href="/api/Cake.ActiveDirectory.dll">Cake<wbr>.ActiveDirectory<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Android.Adb.dll">Cake<wbr>.Android<wbr>.Adb<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Android.SdkManager.dll">Cake<wbr>.Android<wbr>.SdkManager<wbr>.dll</a></li>
         <li><a href="/api/Cake.AndroidAppManifest.dll">Cake<wbr>.AndroidAppManifest<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Apigee.dll">Cake<wbr>.Apigee<wbr>.dll</a></li>
         <li><a href="/api/Cake.AppleSimulator.dll">Cake<wbr>.AppleSimulator<wbr>.dll</a></li>
         <li><a href="/api/Cake.AppPackager.dll">Cake<wbr>.AppPackager<wbr>.dll</a></li>
         <li><a href="/api/Cake.AppVeyor.dll">Cake<wbr>.AppVeyor<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AssemblyInfoReflector.dll">Cake<wbr>.<wbr>Assembly<wbr>Info<wbr>Reflector<wbr>.dll</a></li>
         <li><a href="/api/Cake.AutoRest.dll">Cake<wbr>.AutoRest<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AWS.CloudFront.dll">Cake<wbr>.AWS<wbr>.CloudFront<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AWS.CodeDeploy.dll">Cake<wbr>.AWS<wbr>.CodeDeploy<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AWS.EC2.dll">Cake<wbr>.AWS<wbr>.EC2<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AWS.ElasticBeanstalk.dll">Cake<wbr>.AWS<wbr>.ElasticBeanstalk<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AWS.ElasticLoadBalancing.dll">Cake<wbr>.AWS<wbr>.<wbr>Elastic<wbr>Load<wbr>Balancing<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AWS.Route53.dll">Cake<wbr>.AWS<wbr>.Route53<wbr>.dll</a></li>
+        <li><a href="/api/Cake.AWS.S3.dll">Cake<wbr>.AWS<wbr>.S3<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Azure.dll">Cake<wbr>.Azure<wbr>.dll</a></li>
         <li><a href="/api/Cake.AzureStorage.dll">Cake<wbr>.AzureStorage<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Bumpy.dll">Cake<wbr>.Bumpy<wbr>.dll</a></li>
         <li><a href="/api/Cake.CakeMail.dll">Cake<wbr>.CakeMail<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Chutzpah.dll">Cake<wbr>.Chutzpah<wbr>.dll</a></li>
         <li><a href="/api/Cake.CMake.dll">Cake<wbr>.CMake<wbr>.dll</a></li>
+        <li><a href="/api/Cake.CodeAnalysisReporting.dll">Cake<wbr>.<wbr>Code<wbr>Analysis<wbr>Reporting<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Codecov.dll">Cake<wbr>.Codecov<wbr>.dll</a></li>
         <li><a href="/api/Cake.Compression.dll">Cake<wbr>.Compression<wbr>.dll</a></li>
         <li><a href="/api/Cake.Coveralls.dll">Cake<wbr>.Coveralls<wbr>.dll</a></li>
+        <li><a href="/api/Cake.CsvHelper.dll">Cake<wbr>.CsvHelper<wbr>.dll</a></li>
         <li><a href="/api/Cake.Curl.dll">Cake<wbr>.Curl<wbr>.dll</a></li>
         <li><a href="/api/Cake.DocFx.dll">Cake<wbr>.DocFx<wbr>.dll</a></li>
         <li><a href="/api/Cake.Docker.dll">Cake<wbr>.Docker<wbr>.dll</a></li>
         <li><a href="/api/Cake.DoInDirectory.dll">Cake<wbr>.DoInDirectory<wbr>.dll</a></li>
+        <li><a href="/api/Cake.DotNetCoreEf.dll">Cake<wbr>.DotNetCoreEf<wbr>.dll</a></li>
         <li class="selected"><a href="/api/Cake.Email.dll">Cake<wbr>.Email<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Ember.dll">Cake<wbr>.Ember<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Endpoint.dll">Cake<wbr>.Endpoint<wbr>.dll</a></li>
+        <li><a href="/api/Cake.EntityFramework.dll">Cake<wbr>.EntityFramework<wbr>.dll</a></li>
         <li><a href="/api/Cake.ExtendedNuGet.dll">Cake<wbr>.ExtendedNuGet<wbr>.dll</a></li>
         <li><a href="/api/Cake.Figlet.dll">Cake<wbr>.Figlet<wbr>.dll</a></li>
         <li><a href="/api/Cake.FileHelpers.dll">Cake<wbr>.FileHelpers<wbr>.dll</a></li>
+        <li><a href="/api/Cake.FileSet.dll">Cake<wbr>.FileSet<wbr>.dll</a></li>
         <li><a href="/api/Cake.FluentMigrator.dll">Cake<wbr>.FluentMigrator<wbr>.dll</a></li>
         <li><a href="/api/Cake.Ftp.dll">Cake<wbr>.Ftp<wbr>.dll</a></li>
         <li><a href="/api/Cake.Gem.dll">Cake<wbr>.Gem<wbr>.dll</a></li>
@@ -158,43 +189,80 @@
         <li><a href="/api/Cake.Gulp.dll">Cake<wbr>.Gulp<wbr>.dll</a></li>
         <li><a href="/api/Cake.HipChat.dll">Cake<wbr>.HipChat<wbr>.dll</a></li>
         <li><a href="/api/Cake.HockeyApp.dll">Cake<wbr>.HockeyApp<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Hosts.dll">Cake<wbr>.Hosts<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Http.dll">Cake<wbr>.Http<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Incubator.dll">Cake<wbr>.Incubator<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.dll">Cake<wbr>.Issues<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.DocFx.dll">Cake<wbr>.Issues<wbr>.DocFx<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.EsLint.dll">Cake<wbr>.Issues<wbr>.EsLint<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.InspectCode.dll">Cake<wbr>.Issues<wbr>.InspectCode<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.Markdownlint.dll">Cake<wbr>.Issues<wbr>.Markdownlint<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.MsBuild.dll">Cake<wbr>.Issues<wbr>.MsBuild<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.PullRequests.dll">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.PullRequests.Tfs.dll">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.Tfs<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Issues.Testing.dll">Cake<wbr>.Issues<wbr>.Testing<wbr>.dll</a></li>
+        <li><a href="/api/Cake.JMeter.dll">Cake<wbr>.JMeter<wbr>.dll</a></li>
         <li><a href="/api/Cake.Json.dll">Cake<wbr>.Json<wbr>.dll</a></li>
+        <li><a href="/api/Cake.KeePass.dll">Cake<wbr>.KeePass<wbr>.dll</a></li>
         <li><a href="/api/Cake.Kudu.dll">Cake<wbr>.Kudu<wbr>.dll</a></li>
+        <li><a href="/api/Cake.MarkdownToPdf.dll">Cake<wbr>.MarkdownToPdf<wbr>.dll</a></li>
+        <li><a href="/api/Cake.MicrosoftTeams.dll">Cake<wbr>.MicrosoftTeams<wbr>.dll</a></li>
+        <li><a href="/api/Cake.MobileCenter.dll">Cake<wbr>.MobileCenter<wbr>.dll</a></li>
         <li><a href="/api/Cake.MsDeploy.dll">Cake<wbr>.MsDeploy<wbr>.dll</a></li>
         <li><a href="/api/Cake.Newman.dll">Cake<wbr>.Newman<wbr>.dll</a></li>
         <li><a href="/api/Cake.Npm.dll">Cake<wbr>.Npm<wbr>.dll</a></li>
         <li><a href="/api/Cake.NSwag.dll">Cake<wbr>.NSwag<wbr>.dll</a></li>
+        <li><a href="/api/Cake.OctoDeploy.dll">Cake<wbr>.OctoDeploy<wbr>.dll</a></li>
+        <li><a href="/api/Cake.OctoVariapus.dll">Cake<wbr>.OctoVariapus<wbr>.dll</a></li>
         <li><a href="/api/Cake.Orchard.dll">Cake<wbr>.Orchard<wbr>.dll</a></li>
         <li><a href="/api/Cake.Paket.Addin.dll">Cake<wbr>.Paket<wbr>.Addin<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Path.dll">Cake<wbr>.Path<wbr>.dll</a></li>
         <li><a href="/api/Cake.Plist.dll">Cake<wbr>.Plist<wbr>.dll</a></li>
         <li><a href="/api/Cake.ProjHelpers.dll">Cake<wbr>.ProjHelpers<wbr>.dll</a></li>
         <li><a href="/api/Cake.Putty.dll">Cake<wbr>.Putty<wbr>.dll</a></li>
         <li><a href="/api/Cake.Raygun.dll">Cake<wbr>.Raygun<wbr>.dll</a></li>
         <li><a href="/api/Cake.ReSharperReports.dll">Cake<wbr>.ReSharperReports<wbr>.dll</a></li>
+        <li><a href="/api/Cake.ResxConverter.dll">Cake<wbr>.ResxConverter<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Scripty.dll">Cake<wbr>.Scripty<wbr>.dll</a></li>
         <li><a href="/api/Cake.SemVer.dll">Cake<wbr>.SemVer<wbr>.dll</a></li>
-        <li><a href="/api/Cake.SemVer.FromAssembly.dll">Cake<wbr>.SemVer<wbr>.FromAssembly<wbr>.dll</a></li>
         <li><a href="/api/Cake.SendGrid.dll">Cake<wbr>.SendGrid<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Services.dll">Cake<wbr>.Services<wbr>.dll</a></li>
         <li><a href="/api/Cake.Sonar.dll">Cake<wbr>.Sonar<wbr>.dll</a></li>
+        <li><a href="/api/Cake.SonarScanner.dll">Cake<wbr>.SonarScanner<wbr>.dll</a></li>
+        <li><a href="/api/Cake.SqlPackage.dll">Cake<wbr>.SqlPackage<wbr>.dll</a></li>
         <li><a href="/api/Cake.SqlServer.dll">Cake<wbr>.SqlServer<wbr>.dll</a></li>
         <li><a href="/api/Cake.SqlServerPackager.dll">Cake<wbr>.SqlServerPackager<wbr>.dll</a></li>
+        <li><a href="/api/Cake.SqlTools.dll">Cake<wbr>.SqlTools<wbr>.dll</a></li>
         <li><a href="/api/Cake.Squirrel.dll">Cake<wbr>.Squirrel<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Storyteller.dll">Cake<wbr>.Storyteller<wbr>.dll</a></li>
         <li><a href="/api/cake.strongnametool.dll">cake<wbr>.strongnametool<wbr>.dll</a></li>
+        <li><a href="/api/Cake.SynVer.dll">Cake<wbr>.SynVer<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Terraform.dll">Cake<wbr>.Terraform<wbr>.dll</a></li>
         <li><a href="/api/Cake.Tfx.dll">Cake<wbr>.Tfx<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Topshelf.dll">Cake<wbr>.Topshelf<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Transifex.dll">Cake<wbr>.Transifex<wbr>.dll</a></li>
         <li><a href="/api/Cake.Twitter.dll">Cake<wbr>.Twitter<wbr>.dll</a></li>
         <li><a href="/api/Cake.Vagrant.dll">Cake<wbr>.Vagrant<wbr>.dll</a></li>
         <li><a href="/api/Cake.VersionReader.dll">Cake<wbr>.VersionReader<wbr>.dll</a></li>
         <li><a href="/api/Cake.VsCode.dll">Cake<wbr>.VsCode<wbr>.dll</a></li>
+        <li><a href="/api/Cake.VsixSignTool.dll">Cake<wbr>.VsixSignTool<wbr>.dll</a></li>
+        <li><a href="/api/Cake.VsMetrics.dll">Cake<wbr>.VsMetrics<wbr>.dll</a></li>
         <li><a href="/api/Cake.Watch.dll">Cake<wbr>.Watch<wbr>.dll</a></li>
+        <li><a href="/api/Cake.WebDeploy.dll">Cake<wbr>.WebDeploy<wbr>.dll</a></li>
         <li><a href="/api/Cake.Webpack.dll">Cake<wbr>.Webpack<wbr>.dll</a></li>
         <li><a href="/api/Cake.WinSCP.dll">Cake<wbr>.WinSCP<wbr>.dll</a></li>
         <li><a href="/api/Cake.Wyam.dll">Cake<wbr>.Wyam<wbr>.dll</a></li>
         <li><a href="/api/Cake.Xamarin.dll">Cake<wbr>.Xamarin<wbr>.dll</a></li>
         <li><a href="/api/Cake.XCode.dll">Cake<wbr>.XCode<wbr>.dll</a></li>
+        <li><a href="/api/Cake.XComponent.dll">Cake<wbr>.XComponent<wbr>.dll</a></li>
         <li><a href="/api/Cake.XdtTransform.dll">Cake<wbr>.XdtTransform<wbr>.dll</a></li>
         <li><a href="/api/Cake.Yaml.dll">Cake<wbr>.Yaml<wbr>.dll</a></li>
         <li><a href="/api/Cake.Yarn.dll">Cake<wbr>.Yarn<wbr>.dll</a></li>
+        <li><a href="/api/Cake.Yeoman.dll">Cake<wbr>.Yeoman<wbr>.dll</a></li>
         <li><a href="/api/MagicChunks.Cake.dll">MagicChunks<wbr>.Cake<wbr>.dll</a></li>
         <li><a href="/api/MagicChunks.dll">MagicChunks<wbr>.dll</a></li>
+        <li><a href="/api/ResxConverter.Core.dll">ResxConverter<wbr>.Core<wbr>.dll</a></li>
+        <li><a href="/api/ResxConverter.Mobile.dll">ResxConverter<wbr>.Mobile<wbr>.dll</a></li>
 
 
                     </ul>
@@ -244,7 +312,7 @@
 							<tr>
 								<td><a href="/api/Cake.Email/EmailResult">EmailResult</a></td>
 									<td>
-            The result of SendGridProvider API post
+            The result of EmailProvider
             </td>
 							</tr>
 							<tr>
@@ -289,6 +357,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

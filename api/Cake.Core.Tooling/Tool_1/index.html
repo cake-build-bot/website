@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -83,6 +84,7 @@
 <p><a href="#TypeParameters">Type Parameters</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Methods">Methods</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -115,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -127,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -186,6 +195,51 @@
 									</ul>
 								</dd>				
 							
+								<dt>Derived Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/Cake.Common.Tools.ReportUnit/ReportUnitRunner">ReportUnitRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployPacker">OctopusDeployPacker</a></li>								
+											<li><a href="/api/Cake.Common.Tools.ILMerge/ILMergeRunner">ILMergeRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.VSTest/VSTestRunner">VSTestRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.GitReleaseNotes/GitReleaseNotesRunner">Git<wbr>Release<wbr>Notes<wbr>Runner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildRunner">MSBuildRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseDeployer">Octopus<wbr>Deploy<wbr>Release<wbr>Deployer</a></li>								
+											<li><a href="/api/Cake.Common.Tools.GitReleaseManager/GitReleaseManagerTool_1">Git<wbr>Release<wbr>Manager<wbr>Tool<wbr>&lt;TSettings&gt;<wbr></a></li>								
+											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseCreator">Octopus<wbr>Deploy<wbr>Release<wbr>Creator</a></li>								
+											<li><a href="/api/Cake.Common.Tools.WiX.Heat/HeatRunner">HeatRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.ILRepack/ILRepackRunner">ILRepackRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.XUnit/XUnitRunner">XUnitRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.ReportGenerator/ReportGeneratorRunner">Report<wbr>Generator<wbr>Runner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Cake/CakeRunner">CakeRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.DotCover/DotCoverTool_1">DotCoverTool<wbr>&lt;TSettings&gt;<wbr></a></li>								
+											<li><a href="/api/Cake.Common.Tools.XUnit/XUnit2Runner">XUnit2Runner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Fixie/FixieRunner">FixieRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.GitLink/GitLink3Runner">GitLink3Runner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.GitLink/GitLinkRunner">GitLinkRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.MSTest/MSTestRunner">MSTestRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NSIS/MakeNSISRunner">MakeNSISRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NUnit/NUnitRunner">NUnitRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.TextTransform/TextTransformRunner">TextTransformRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.InnoSetup/InnoSetupRunner">InnoSetupRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Roundhouse/RoundhouseRunner">RoundhouseRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.WiX/CandleRunner">CandleRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.WiX/LightRunner">LightRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NuGet/NuGetTool_1">NuGetTool<wbr>&lt;TSettings&gt;<wbr></a></li>								
+											<li><a href="/api/Cake.Common.Tools.InspectCode/InspectCodeRunner">InspectCodeRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.XBuild/XBuildRunner">XBuildRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreTool_1">DotNetCoreTool<wbr>&lt;TSettings&gt;<wbr></a></li>								
+											<li><a href="/api/Cake.Common.Tools.DupFinder/DupFinderRunner">DupFinderRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.VSWhere/VSWhereTool_1">VSWhereTool<wbr>&lt;TSettings&gt;<wbr></a></li>								
+											<li><a href="/api/Cake.Common.Tools.GitVersion/GitVersionRunner">GitVersionRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyTool_1">ChocolateyTool<wbr>&lt;TSettings&gt;<wbr></a></li>								
+											<li><a href="/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployPusher">OctopusDeployPusher</a></li>								
+											<li><a href="/api/Cake.Common.Tools.SignTool/SignToolSignRunner">SignToolSignRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.NUnit/NUnit3Runner">NUnit3Runner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverRunner">OpenCoverRunner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.SpecFlow/SpecFlowTool_1">SpecFlowTool<wbr>&lt;TSettings&gt;<wbr></a></li>								
+									</ul>
+								</dd>			
 							
 						</dl>
 					</div>		
@@ -195,6 +249,86 @@
 	Base0["object"]--&gt;Type
 	Type["Tool&lt;TSettings&gt;"]
 class Type type-node
+	Type--&gt;Derived0["ReportUnitRunner"]
+	click Derived0 "/api/Cake.Common.Tools.ReportUnit/ReportUnitRunner"
+	Type--&gt;Derived1["OctopusDeployPacker"]
+	click Derived1 "/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployPacker"
+	Type--&gt;Derived2["ILMergeRunner"]
+	click Derived2 "/api/Cake.Common.Tools.ILMerge/ILMergeRunner"
+	Type--&gt;Derived3["VSTestRunner"]
+	click Derived3 "/api/Cake.Common.Tools.VSTest/VSTestRunner"
+	Type--&gt;Derived4["GitReleaseNotesRunner"]
+	click Derived4 "/api/Cake.Common.Tools.GitReleaseNotes/GitReleaseNotesRunner"
+	Type--&gt;Derived5["MSBuildRunner"]
+	click Derived5 "/api/Cake.Common.Tools.MSBuild/MSBuildRunner"
+	Type--&gt;Derived6["OctopusDeployReleaseDeployer"]
+	click Derived6 "/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseDeployer"
+	Type--&gt;Derived7["GitReleaseManagerTool&lt;TSettings&gt;"]
+	click Derived7 "/api/Cake.Common.Tools.GitReleaseManager/GitReleaseManagerTool_1"
+	Type--&gt;Derived8["OctopusDeployReleaseCreator"]
+	click Derived8 "/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployReleaseCreator"
+	Type--&gt;Derived9["HeatRunner"]
+	click Derived9 "/api/Cake.Common.Tools.WiX.Heat/HeatRunner"
+	Type--&gt;Derived10["ILRepackRunner"]
+	click Derived10 "/api/Cake.Common.Tools.ILRepack/ILRepackRunner"
+	Type--&gt;Derived11["XUnitRunner"]
+	click Derived11 "/api/Cake.Common.Tools.XUnit/XUnitRunner"
+	Type--&gt;Derived12["ReportGeneratorRunner"]
+	click Derived12 "/api/Cake.Common.Tools.ReportGenerator/ReportGeneratorRunner"
+	Type--&gt;Derived13["CakeRunner"]
+	click Derived13 "/api/Cake.Common.Tools.Cake/CakeRunner"
+	Type--&gt;Derived14["DotCoverTool&lt;TSettings&gt;"]
+	click Derived14 "/api/Cake.Common.Tools.DotCover/DotCoverTool_1"
+	Type--&gt;Derived15["XUnit2Runner"]
+	click Derived15 "/api/Cake.Common.Tools.XUnit/XUnit2Runner"
+	Type--&gt;Derived16["FixieRunner"]
+	click Derived16 "/api/Cake.Common.Tools.Fixie/FixieRunner"
+	Type--&gt;Derived17["GitLink3Runner"]
+	click Derived17 "/api/Cake.Common.Tools.GitLink/GitLink3Runner"
+	Type--&gt;Derived18["GitLinkRunner"]
+	click Derived18 "/api/Cake.Common.Tools.GitLink/GitLinkRunner"
+	Type--&gt;Derived19["MSTestRunner"]
+	click Derived19 "/api/Cake.Common.Tools.MSTest/MSTestRunner"
+	Type--&gt;Derived20["MakeNSISRunner"]
+	click Derived20 "/api/Cake.Common.Tools.NSIS/MakeNSISRunner"
+	Type--&gt;Derived21["NUnitRunner"]
+	click Derived21 "/api/Cake.Common.Tools.NUnit/NUnitRunner"
+	Type--&gt;Derived22["TextTransformRunner"]
+	click Derived22 "/api/Cake.Common.Tools.TextTransform/TextTransformRunner"
+	Type--&gt;Derived23["InnoSetupRunner"]
+	click Derived23 "/api/Cake.Common.Tools.InnoSetup/InnoSetupRunner"
+	Type--&gt;Derived24["RoundhouseRunner"]
+	click Derived24 "/api/Cake.Common.Tools.Roundhouse/RoundhouseRunner"
+	Type--&gt;Derived25["CandleRunner"]
+	click Derived25 "/api/Cake.Common.Tools.WiX/CandleRunner"
+	Type--&gt;Derived26["LightRunner"]
+	click Derived26 "/api/Cake.Common.Tools.WiX/LightRunner"
+	Type--&gt;Derived27["NuGetTool&lt;TSettings&gt;"]
+	click Derived27 "/api/Cake.Common.Tools.NuGet/NuGetTool_1"
+	Type--&gt;Derived28["InspectCodeRunner"]
+	click Derived28 "/api/Cake.Common.Tools.InspectCode/InspectCodeRunner"
+	Type--&gt;Derived29["XBuildRunner"]
+	click Derived29 "/api/Cake.Common.Tools.XBuild/XBuildRunner"
+	Type--&gt;Derived30["DotNetCoreTool&lt;TSettings&gt;"]
+	click Derived30 "/api/Cake.Common.Tools.DotNetCore/DotNetCoreTool_1"
+	Type--&gt;Derived31["DupFinderRunner"]
+	click Derived31 "/api/Cake.Common.Tools.DupFinder/DupFinderRunner"
+	Type--&gt;Derived32["VSWhereTool&lt;TSettings&gt;"]
+	click Derived32 "/api/Cake.Common.Tools.VSWhere/VSWhereTool_1"
+	Type--&gt;Derived33["GitVersionRunner"]
+	click Derived33 "/api/Cake.Common.Tools.GitVersion/GitVersionRunner"
+	Type--&gt;Derived34["ChocolateyTool&lt;TSettings&gt;"]
+	click Derived34 "/api/Cake.Common.Tools.Chocolatey/ChocolateyTool_1"
+	Type--&gt;Derived35["OctopusDeployPusher"]
+	click Derived35 "/api/Cake.Common.Tools.OctopusDeploy/OctopusDeployPusher"
+	Type--&gt;Derived36["SignToolSignRunner"]
+	click Derived36 "/api/Cake.Common.Tools.SignTool/SignToolSignRunner"
+	Type--&gt;Derived37["NUnit3Runner"]
+	click Derived37 "/api/Cake.Common.Tools.NUnit/NUnit3Runner"
+	Type--&gt;Derived38["OpenCoverRunner"]
+	click Derived38 "/api/Cake.Common.Tools.OpenCover/OpenCoverRunner"
+	Type--&gt;Derived39["SpecFlowTool&lt;TSettings&gt;"]
+	click Derived39 "/api/Cake.Common.Tools.SpecFlow/SpecFlowTool_1"
 
 						</div>
 					</div>
@@ -270,7 +404,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.Core.Tooling/Tool_1/9B12C97A">Get<wbr>Alternative<wbr>Tool<wbr>Paths<wbr>(TSettings)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;FilePath&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets alternative file paths which the tool may exist in
@@ -279,7 +413,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/Tool_1/32C94032">Get<wbr>Environment<wbr>Variables<wbr>(TSettings)<wbr></a></td>
-								<td>IDictionary<wbr>&lt;string, <wbr>string&gt;<wbr></td>
+								<td>IDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr></td>
 								<td>
 									<div>
     Gets the environment variables.
@@ -288,7 +422,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/Tool_1/F1ED295A">Get<wbr>Tool<wbr>Executable<wbr>Names<wbr>()<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;string&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets the possible names of the tool executable.
@@ -301,6 +435,15 @@ class Type type-node
 								<td>
 									<div>
     Gets the name of the tool.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/FAB95BAD">GetToolPath<wbr>(TSettings)<wbr></a></td>
+								<td><a href="/api/Cake.Core.IO/FilePath">FilePath</a></td>
+								<td>
+									<div>
+    Gets the resolved tool path.
     </div>
 								</td>
 							</tr>
@@ -366,6 +509,88 @@ class Type type-node
 		
 
 
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;Tool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;Tool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(Tool<wbr>&lt;TSettings&gt;<wbr>[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;Tool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;Tool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;Tool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;Tool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
 	
 </section>
                 
@@ -398,6 +623,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

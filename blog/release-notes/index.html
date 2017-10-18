@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -17,7 +17,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet" />
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -38,11 +38,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -90,14 +91,22 @@
                         
 
     <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
-        <li><a href="/blog/addins">Addins</a></li>
-        <li><a href="/blog/announcement">Announcement</a></li>
-        <li><a href="/blog/how-tos">How To&#x27;s</a></li>
-        <li><a href="/blog/infrastructure">Infrastructure</a></li>
-        <li><a href="/blog/news">News</a></li>
-        <li class="selected"><a href="/blog/release-notes">Release Notes</a></li>
+        <li><a href="/blog/Addins">Addins</a></li>
+        <li><a href="/blog/Announcement">Announcement</a></li>
+        <li><a href="/blog/How-Tos">How To&#x27;s</a></li>
+        <li><a href="/blog/Infrastructure">Infrastructure</a></li>
+        <li><a href="/blog/News">News</a></li>
+        <li class="selected"><a href="/blog/Release-Notes">Release Notes</a></li>
     
     <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/blog/archive/2017/10">October, 2017</a></li>
+        <li><a href="/blog/archive/2017/09">September, 2017</a></li>
+        <li><a href="/blog/archive/2017/08">August, 2017</a></li>
+        <li><a href="/blog/archive/2017/07">July, 2017</a></li>
+        <li><a href="/blog/archive/2017/06">June, 2017</a></li>
+        <li><a href="/blog/archive/2017/05">May, 2017</a></li>
+        <li><a href="/blog/archive/2017/04">April, 2017</a></li>
+        <li><a href="/blog/archive/2017/03">March, 2017</a></li>
         <li><a href="/blog/archive/2017/01">January, 2017</a></li>
         <li><a href="/blog/archive/2016/12">December, 2016</a></li>
         <li><a href="/blog/archive/2016/11">November, 2016</a></li>
@@ -124,8 +133,11 @@
         <li><a href="/blog/author/devlead">devlead</a></li>
         <li><a href="/blog/author/gep13">gep13</a></li>
         <li><a href="/blog/author/jericho">jericho</a></li>
+        <li><a href="/blog/author/Larz-White">Larz White</a></li>
         <li><a href="/blog/author/mholo65">mholo65</a></li>
         <li><a href="/blog/author/patriksvensson">patriksvensson</a></li>
+        <li><a href="/blog/author/phillipsj">phillipsj</a></li>
+        <li><a href="/blog/author/RLittlesII">RLittlesII</a></li>
 
                     </ul>
                 </section>                
@@ -143,97 +155,127 @@
 	<section class="content">
 		
 
-        <h2><a href="/blog/2016/11/cake-v0.17.0-released">Cake v0.17.0 released</a></h2>
+        <h2><a href="/blog/2017/10/cake-v0.23.0-released">Cake v0.23.0 released</a></h2>
 <dl class="dl-horizontal">
     <dt><i class="fa fa-calendar"></i> Published</dt>
-    <dd>Wednesday, November 9, 2016</dd>
+    <dd>Sunday, October 15, 2017</dd>
         <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
-            <dt><i class="fa fa-user"></i> Author</dt>
-        <dd><a href="/blog/author/gep13">gep13</a></dd>
-</dl>            <div>
-                <p>Version 0.17.0 of Cake has been released.</p>
-<p>This release of Cake sees a number of new features added, as well as some bug fixes, however, most importantly, there was a breaking change.</p>
-<p>This breaking change centred around the <code><a href="/api/Cake.Common.Tools.VSTest/VSTestSettings">VSTestSettings</a></code> class, where the decision was wait to allow custom loggers to be passed into the <code><a href="/api/Cake.Common.Tools.VSTest/VSTestRunner">VSTestRunner</a></code>.  As a result, the previous enumeration named <code>VSTestLogger</code> has been removed, and replaced with a fully customizable string.  If you are using this enumeration in your scripts then you will see errors being generated if you update to the latest version of Cake.  You should be able to make use of the new extension methods called <code>WithVisualStudioLogger</code> and <code>WithAppVeyorLogger</code> on the <code><a href="/api/Cake.Common.Tools.VSTest/VSTestSettings">VSTestSettings</a></code> to replace the enumeration values.</p>
-<p>Please let us know if you run into any issues with this latest release.</p>
-<p>Once again, the Cake Team have been overwhelmed by the number of contributions from our Community Members.  Simply put... THANK YOU!</p>
-<p>Contributions were included from:</p>
-
-<p>Full details of everything that was included in this release can be seen below.</p>
-                <a href="/blog/2016/11/cake-v0.17.0-released">Read more...</a>
-            </div>
-        <hr />
-        <h2><a href="/blog/2016/10/cake-v0.16.2-released">Cake v0.16.2 released</a></h2>
-<dl class="dl-horizontal">
-    <dt><i class="fa fa-calendar"></i> Published</dt>
-    <dd>Tuesday, October 11, 2016</dd>
-        <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
-            <dt><i class="fa fa-user"></i> Author</dt>
-        <dd><a href="/blog/author/devlead">devlead</a></dd>
-</dl>            <div>
-                <p>Version 0.16.2 of Cake has been released.</p>
-<p>Following the release of Cake v0.16.1, <a href="https://github.com/Redth">Redth</a> identified an issue with Cake not being identified as a .NET assembly when launched from a Mono process. With the help of <a href="https://github.com/akoeplinger">akoeplinger</a> we identified the issue in the Mono runtime and the PE32+ format assemblies generated by Roslyn/csc.exe when targeting x64 (<em>which is the default in .NET Core project.json toolchain</em>). <a href="https://github.com/akoeplinger">akoeplinger</a> has already submitted a <a href="https://github.com/mono/mono/pull/3745">pull request</a> to Mono for this, so we expect this to be fixed in future versions of Mono, meanwhile the workaround is to set platform to use <em>AnyCPU</em> explicitly in the <em>project.json</em> file.</p>
-<p>As a result, v0.16.2 of Cake is now available.</p>
-<p>Please let us know if you run into any issues with this latest release.</p>
-<p>Full details of everything that was included in this release can be seen below.</p>
-                <a href="/blog/2016/10/cake-v0.16.2-released">Read more...</a>
-            </div>
-        <hr />
-        <h2><a href="/blog/2016/09/cake-v0.16.1-released">Cake v0.16.1 released</a></h2>
-<dl class="dl-horizontal">
-    <dt><i class="fa fa-calendar"></i> Published</dt>
-    <dd>Sunday, September 25, 2016</dd>
-        <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
-            <dt><i class="fa fa-user"></i> Author</dt>
-        <dd><a href="/blog/author/gep13">gep13</a></dd>
-</dl>            <div>
-                <p>Version 0.16.1 of Cake has been released.</p>
-<p>Following the release of Cake v0.16.0 last week, <a href="https://github.com/mholo65">mholo65</a> identified an issue with debugging in Visual Studio Code.  In addition, we also noticed that we were missing some properties in the generated assemblies.</p>
-<p>As a result, v0.16.1 of Cake is now available.</p>
-<p>Please let us know if you run into any issues with this latest release.</p>
-<p>Full details of everything that was included in this release can be seen below.</p>
-                <a href="/blog/2016/09/cake-v0.16.1-released">Read more...</a>
-            </div>
-        <hr />
-        <h2><a href="/blog/2016/09/cake-v0.16.0-released">Cake v0.16.0 released</a></h2>
-<dl class="dl-horizontal">
-    <dt><i class="fa fa-calendar"></i> Published</dt>
-    <dd>Saturday, September 17, 2016</dd>
-        <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
             <dt><i class="fa fa-user"></i> Author</dt>
         <dd><a href="/blog/author/patriksvensson">patriksvensson</a></dd>
 </dl>            <div>
-                <p>Version 0.16.0 of Cake has been released, and it's a big release!</p>
-<p>Not only are we supporting the full .NET framework (<em>v4.5</em>), but from this version
-we will also support running Cake on platforms capable of running .NET Core (<em>netstandard1.6</em>).</p>
-<p>For this to work, you will have to install the <code>Cake.CoreCLR</code> package instead
-of the normal <code>Cake</code> package. A blog post describing this more in detail
-will be published soon.</p>
-<p>Please let us know if you run into any issues with this latest release.</p>
+                <p>Version 0.23.0 has been released!</p>
+<p>This release contains three new features specially worth highlighting and a lot of bugfixes and improvements.</p>
+
+<p>Cake now supports asynchronous tasks. This will let you use the <code>async</code> and <code>await</code> C# features within a task.</p>
+<p>Tasks will still execute single threaded and in order as before, but this really simplifies asynchronous programming and utilizing asynchronous APIs within your Cake scripts.</p>
+
+
+<p>Ever wished you could define your task as a dependency of another task - i.e. a reversed dependency relationship? The good news is that you now can.</p>
+
+<p>Since task <code>A</code> is configured to be a dependee of <code>B</code> the task definition will be identical to the following:</p>
+
+
+<p>You can now explicitly specify whether or not a dependency (or dependee) is optional or required.
+This is useful if you want to create "extension points" in your build script.</p>
+
+<p>In the above example, <code>Bar</code> is dependent on <code>Foo</code> while <code>Baz</code> is dependent on <code>Qux</code>.
+The difference between the two dependencies above is that Cake will throw an exception if no task called <code>Foo</code> was found.</p>
+<p>Contributions were included from:</p>
+
+<p>Full details of everything that was included in these releases can be seen below.</p>
+                <a href="/blog/2017/10/cake-v0.23.0-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2017/09/cake-v0.22.1-and-v0.22.2-released">Cake v0.22.1 and v0.22.2 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Sunday, September 17, 2017</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/devlead">devlead</a></dd>
+</dl>            <div>
+                <p>Version 0.22.1 and 0.22.2 of Cake have been released.</p>
+<p>Following the release of Cake 0.22.0 the 13th of September, an issue with the GitVersion alias and deserializing certain integer properties the tools output was uncovered, and the decision was taken to quickly correct it.</p>
+<p>A little too quickly, but fortunately David Driscoll caught, reported and supplied a pull request quickly, so huge thanks for that!</p>
+<p>In these releases it's corrected in a non breaking way and for the next release these properties will be corrected from integer to nullable integers, which potentially will be a breaking change for anyone using those properties.</p>
+<p>And as always thanks to all Cake contributors and users, Cake wouldn't have been possible without you!</p>
+<p>Contributions were included from:</p>
+
+<p>Full details of everything that was included in these releases can be seen below.</p>
+                <a href="/blog/2017/09/cake-v0.22.1-and-v0.22.2-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2017/09/cake-v0.22.0-released">Cake v0.22.0 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Wednesday, September 13, 2017</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/mholo65">mholo65</a></dd>
+</dl>            <div>
+                <p>Version 0.22.0 of Cake has been released.</p>
+<p>So, let's be clear, this release will break things - but it is all intentional!</p>
+<p>This release was initially about updating Roslyn, unifying scripting engines, and targeting .NET 4.6. But one thing led to another which resulted in better support for tool and addin versioning when using preprocessor directives, and an optional in-process NuGet client.</p>
+<p>Updating Roslyn and unifying scripting engines has been a long-awaited improvement for many of you. This brings you C# 7 features (without need for <code>--experimental</code> switch), debugging with Mono (as we completely removed the old Mono scripting engine), and much, much more. It also allows us to ship Roslyn with Cake, so there's no need for Cake to actually download Roslyn anymore. In order for us to update Roslyn, we also needed to change target framework to .NET 4.6.</p>
+<p>Tool and addin versioning when using preprocessor directives has been an issue, which has caused many questions. E.g. you may have noted that when changing version for a tool or addin, the old version was still used. Prior to this release, the only solution was to delete the tool/addin from the <code>tools</code> folder. This is now fixed as Cake supports side-by-side downloading of different versions of tools and addins.</p>
+<p>Due to unpredictable results when downloading packages using <code>nuget.exe</code>, tool/addin versioning was solved by adding a intermediate directory containing the version number. This intermediate directory can however cause <code>MAX_PATH</code> issues when downloading some specific packages. To address this issue, we implemented functionality in <code>Cake.NuGet</code> to allow Cake to download tools and addins without the need for <code>nuget.exe</code>. This functionality is currently optional through <a href="/docs/fundamentals/configuration">configuration</a>, and is the first step towards removing need for <code>nuget.exe</code> in Cake. Example usage to opt-in for the in-process NuGet client:</p>
+
+<p>The in-process NuGet client also gives the possibility to load assemblies from NuGet dependencies. This behaviour can be enabled either via <a href="/docs/fundamentals/configuration">configuration</a> or directive. Example usage for loading dependencies:</p>
+
+<p>or</p>
+
+<p>As 0.22.0 has several breaking changes, it will require addins to reference Cake.Core 0.22.0 or newer to be loaded, there's a "you're on your own anything can happen" setting to skip verification but we recommend to start targeting the newer version as soon as possible. Example usage to skip verification:</p>
+
+<p>We have said it before, but here it comes again. Regardless of intentional or unintentional breaking changes, the possibility of new releases breaking something is why we always recommend you pin the version of Cake you're running, thus avoiding any unplanned broken builds. You can read more about pinning Cake version <a href="/docs/tutorials/pinning-cake-version">here</a>. We always try to avoid breaking changes, but we think these new features and improvements justify the friction, and we hope you will too!</p>
+<p>And as always thanks to all Cake contributors and users, Cake wouldn't have been possible without you!</p>
 <p>Contributions were included from:</p>
 
 <p>Full details of everything that was included in this release can be seen below.</p>
-                <a href="/blog/2016/09/cake-v0.16.0-released">Read more...</a>
+                <a href="/blog/2017/09/cake-v0.22.0-released">Read more...</a>
             </div>
         <hr />
-        <h2><a href="/blog/2016/07/cake-v0.15.2-released">Cake v0.15.2 released</a></h2>
+        <h2><a href="/blog/2017/07/cake-v0.21.1-released">Cake v0.21.1 released</a></h2>
 <dl class="dl-horizontal">
     <dt><i class="fa fa-calendar"></i> Published</dt>
-    <dd>Saturday, July 30, 2016</dd>
+    <dd>Saturday, July 15, 2017</dd>
         <dt><i class="fa fa-bookmark"></i> Category</dt>
-        <dd><a href="/blog/release-notes">Release Notes</a></dd>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
             <dt><i class="fa fa-user"></i> Author</dt>
         <dd><a href="/blog/author/gep13">gep13</a></dd>
 </dl>            <div>
-                <p>Version 0.15.2 of Cake has been released.</p>
-<p>Hot on the heels of the 0.15.1 release, we have just finished another bug fix release.  This time, it was to correct two issues that were identified with the WiX aliases within Cake.</p>
-<p>Both of these issues were identified and corrected by community members, and we would like to thank <a href="https://github.com/galpin">galpin</a> and <a href="https://github.com/RLittlesII">RLittlesII</a> for their help.</p>
-<p>Please let us know if you run into any issues with this latest release.</p>
+                <p>Version 0.21.1 of Cake has been released.</p>
+<p>Following the release of Cake 0.21.0 yesterday, a couple of issues were uncovered, and the decision was taken to correct them immediately.  These are minor issues, and are not expected to cause any major problems.  Please let us know if you have any issues.</p>
+<p>And as always thanks to all Cake contributors and users, Cake wouldn't have been possible without you!</p>
+<p>Contributions were included from:</p>
+
 <p>Full details of everything that was included in this release can be seen below.</p>
-                <a href="/blog/2016/07/cake-v0.15.2-released">Read more...</a>
+                <a href="/blog/2017/07/cake-v0.21.1-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2017/07/cake-v0.21.0-released">Cake v0.21.0 released</a></h2>
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Friday, July 14, 2017</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/devlead">devlead</a></dd>
+</dl>            <div>
+                <p>Version 0.21.0 of Cake has been released.</p>
+<p>So, let's be clear, this release will break things - but it is all intentional!</p>
+<p>This release is mostly about bringing the .NET Core aliases up-to-date with .NET Core SDK 1.0.4, which is the latest RTM/stable version.
+The shift to using MSBuild and from <code>project.json</code> to <code>csproj</code> project system has resulted in many breaking changes and additions to the .NET CLI.</p>
+<p>Regardless of intentional or unintentional breaking changes, the possibility of new releases breaking something is why we always recommend you pin the version of Cake you're running, thus avoiding any unplanned broken builds. You can read more about pinning Cake version <a href="https://cakebuild.net/docs/tutorials/pinning-cake-version">here</a>.</p>
+<p>Huge thanks to <a href="https://github.com/JonCubed">Jonathan Kuleff</a>, who has done a brilliant job and epic effort in methodically going through the .NET CLI and Cake aliases identifying what's been changed, removed or added! It's been great working with you through these pull-requests.</p>
+<p><img src="https://user-images.githubusercontent.com/1647294/28214695-9a6aea90-68ab-11e7-810a-6324ccef154e.png" class="img-fluid" alt="image"></p>
+<p>And as always thanks to all Cake contributors and users, Cake wouldn't have been possible without you!</p>
+<p>Contributions were included from:</p>
+
+<p>Full details of everything that was included in this release can be seen below.</p>
+                <a href="/blog/2017/07/cake-v0.21.0-released">Read more...</a>
             </div>
         <hr />
     <nav>
@@ -241,7 +283,7 @@ will be published soon.</p>
             <li class="previous">                
             </li>
             <li class="next">
-                    <a href="/blog/release-notes/page2">Older <span aria-hidden="true">&rarr;</span></a>
+                    <a href="/blog/Release-Notes/page2">Older <span aria-hidden="true">&rarr;</span></a>
             </li>
         </ul>
     </nav>
@@ -278,6 +320,17 @@ will be published soon.</p>
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

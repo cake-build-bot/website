@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -116,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -128,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -193,70 +201,58 @@ public static string XmlPokeString(this ICakeContext context, string sourceXml, 
       to <code class="cs">productionhost.somecompany.com</code>.
       </p>
       <p>XML string:</p>
-      <pre><code class="cs"><!--[CDATA[
-<?xml version="1.0" encoding="utf-8" ?-->
-<configuration>
-    <appsettings>
-        <add key="server" value="testhost.somecompany.com">
-    </add></appsettings>
-</configuration>
-    ]]&gt;</code></pre>
+      <pre><code class="cs">    &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;configuration&gt;
+    &lt;appSettings&gt;
+        &lt;add key="server" value="testhost.somecompany.com" /&gt;
+    &lt;/appSettings&gt;
+&lt;/configuration&gt;</code></pre>
       <p>Cake Task:</p>
-      <pre><code class="cs"><!--[CDATA[
-Task("Transform")
-    .Does(() =-->
+      <pre><code class="cs">    Task("Transform")
+    .Does(() =&gt;
 {
     var result = XmlPokeString(xmlString, "/configuration/appSettings/add[@key = 'server']/@value", "productionhost.somecompany.com");
-});
-    ]]&gt;</code></pre>
+});</code></pre>
     
 
       <p>
       Modify the <code class="cs">noNamespaceSchemaLocation</code> in an XML file.
       </p>
       <p>XML string:</p>
-      <pre><code class="cs"><!--[CDATA[
-<?xml version="1.0" encoding="utf-8" ?-->
-<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nonamespaceschemalocation="Path Value">
-</commands>
-    ]]&gt;</code></pre>
+      <pre><code class="cs">    &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;Commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Path Value"&gt;
+&lt;/Commands&gt;</code></pre>
       <p>Cake Task:</p>
-      <pre><code class="cs"><!--[CDATA[
-Task("Transform")
-    .Does(() =-->
+      <pre><code class="cs">    Task("Transform")
+    .Does(() =&gt;
 {
     var result = XmlPokeString(xmlString, "/Commands/@xsi:noNamespaceSchemaLocation", "d:\\Commands.xsd", new XmlPokeSettings {
-        Namespaces = new Dictionary<string, string=""> {
+        Namespaces = new Dictionary&lt;string, string&gt; {
             { /* Prefix */ "xsi", /* URI */ "http://www.w3.org/2001/XMLSchema-instance" }
         }
     });
-});
-    ]]&gt;</string,></code></pre>
+});</code></pre>
     <example>
       <para>
       Remove an app setting from a config file.
       </para>
       <para>XML string:</para>
       <code class="cs">
-        <!--[CDATA[
-    <?xml version="1.0" encoding="utf-8" ?-->
-    <configuration>
-        <appsettings>
-            <add key="server" value="testhost.somecompany.com">
-            <add key="testing" value="true">
-        </add></add></appsettings>
-    </configuration>
-        ]]&gt;
+        &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+    &lt;configuration&gt;
+        &lt;appSettings&gt;
+            &lt;add key="server" value="testhost.somecompany.com" /&gt;
+            &lt;add key="testing" value="true" /&gt;
+        &lt;/appSettings&gt;
+    &lt;/configuration&gt;
       </code>
       <para>Cake Task:</para>
       <code class="cs">
-        <!--[CDATA[
-    Task("Transform")
-        .Does(() =-->
+        Task("Transform")
+        .Does(() =&gt;
     {
         var result = XmlPokeString(xmlString, "/configuration/appSettings/add[@testing]", null);
     });
-        ]]&gt;
       </code>
     </example>
     <p>
@@ -373,6 +369,17 @@ Task("Transform")
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -83,6 +84,7 @@
 <p><a href="#TypeParameters">Type Parameters</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Methods">Methods</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -115,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -127,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -136,12 +145,13 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Common.Tools.Chocolatey">Cake<wbr>.Common<wbr>.Tools<wbr>.Chocolatey</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Class Types</li>
-				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases">ChocolateyAliases</a></li>
-				<li class="selected"><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyTool_1">ChocolateyTool<wbr>&lt;TSettings&gt;<wbr></a></li>
-				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyToolResolver">Chocolatey<wbr>Tool<wbr>Resolver</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/api/Cake.Common.Tools.Chocolatey/IChocolateyToolResolver">I<wbr>Chocolatey<wbr>Tool<wbr>Resolver</a></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyAliases">ChocolateyAliases</a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></li>
+				<li class="selected"><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyTool_1">ChocolateyTool<wbr>&lt;TSettings&gt;<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyToolResolver">Chocolatey<wbr>Tool<wbr>Resolver</a></li>
 
 
                     </ul>
@@ -179,10 +189,27 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>object</li>								
-											<li>Tool<wbr>&lt;TSettings&gt;<wbr></li>								
+											<li><a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></li>								
 									</ul>
 								</dd>				
 							
+								<dt>Derived Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Download/ChocolateyDownloader">ChocolateyDownloader</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Uninstall/ChocolateyUninstaller">Chocolatey<wbr>Uninstaller</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.New/ChocolateyScaffolder">ChocolateyScaffolder</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.ApiKey/ChocolateyApiKeySetter">Chocolatey<wbr>Api<wbr>Key<wbr>Setter</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Features/ChocolateyFeatureToggler">Chocolatey<wbr>Feature<wbr>Toggler</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Pin/ChocolateyPinner">ChocolateyPinner</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Upgrade/ChocolateyUpgrader">ChocolateyUpgrader</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Pack/ChocolateyPacker">ChocolateyPacker</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstaller">ChocolateyInstaller</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Sources/ChocolateySources">ChocolateySources</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Push/ChocolateyPusher">ChocolateyPusher</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey.Config/ChocolateyConfigSetter">Chocolatey<wbr>Config<wbr>Setter</a></li>								
+									</ul>
+								</dd>			
 							
 						</dl>
 					</div>		
@@ -190,9 +217,34 @@
 						<div class="mermaid">
 							graph TD
 	Base0["Tool&lt;TSettings&gt;"]--&gt;Type
+	click Base0 "/api/Cake.Core.Tooling/Tool_1"
 	Base1["object"]--&gt;Base0
 	Type["ChocolateyTool&lt;TSettings&gt;"]
 class Type type-node
+	Type--&gt;Derived0["ChocolateyDownloader"]
+	click Derived0 "/api/Cake.Common.Tools.Chocolatey.Download/ChocolateyDownloader"
+	Type--&gt;Derived1["ChocolateyUninstaller"]
+	click Derived1 "/api/Cake.Common.Tools.Chocolatey.Uninstall/ChocolateyUninstaller"
+	Type--&gt;Derived2["ChocolateyScaffolder"]
+	click Derived2 "/api/Cake.Common.Tools.Chocolatey.New/ChocolateyScaffolder"
+	Type--&gt;Derived3["ChocolateyApiKeySetter"]
+	click Derived3 "/api/Cake.Common.Tools.Chocolatey.ApiKey/ChocolateyApiKeySetter"
+	Type--&gt;Derived4["ChocolateyFeatureToggler"]
+	click Derived4 "/api/Cake.Common.Tools.Chocolatey.Features/ChocolateyFeatureToggler"
+	Type--&gt;Derived5["ChocolateyPinner"]
+	click Derived5 "/api/Cake.Common.Tools.Chocolatey.Pin/ChocolateyPinner"
+	Type--&gt;Derived6["ChocolateyUpgrader"]
+	click Derived6 "/api/Cake.Common.Tools.Chocolatey.Upgrade/ChocolateyUpgrader"
+	Type--&gt;Derived7["ChocolateyPacker"]
+	click Derived7 "/api/Cake.Common.Tools.Chocolatey.Pack/ChocolateyPacker"
+	Type--&gt;Derived8["ChocolateyInstaller"]
+	click Derived8 "/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstaller"
+	Type--&gt;Derived9["ChocolateySources"]
+	click Derived9 "/api/Cake.Common.Tools.Chocolatey.Sources/ChocolateySources"
+	Type--&gt;Derived10["ChocolateyPusher"]
+	click Derived10 "/api/Cake.Common.Tools.Chocolatey.Push/ChocolateyPusher"
+	Type--&gt;Derived11["ChocolateyConfigSetter"]
+	click Derived11 "/api/Cake.Common.Tools.Chocolatey.Config/ChocolateyConfigSetter"
 
 						</div>
 					</div>
@@ -261,8 +313,17 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyTool_1/AB6A9E39">AddCommonArguments<wbr>(<wbr>Chocolatey<wbr>Settings, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td><a href="/api/Cake.Core.IO/ProcessArgumentBuilder">Process<wbr>Argument<wbr>Builder</a></td>
+								<td>
+									<div>
+    Adds common arguments to the process builder.
+    </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyTool_1/27F480CE">Get<wbr>Alternative<wbr>Tool<wbr>Paths<wbr>(TSettings)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;FilePath&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets alternative file paths which the tool may exist in
@@ -270,8 +331,18 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/32C94032">Get<wbr>Environment<wbr>Variables<wbr>(TSettings)<wbr></a></td>
+								<td>IDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr></td>
+								<td>
+									<div>
+    Gets the environment variables.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateyTool_1/DB01D628">Get<wbr>Tool<wbr>Executable<wbr>Names<wbr>()<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;string&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets the possible names of the tool executable.
@@ -287,11 +358,165 @@ class Type type-node
     </div>
 								</td>
 							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/FAB95BAD">GetToolPath<wbr>(TSettings)<wbr></a></td>
+								<td><a href="/api/Cake.Core.IO/FilePath">FilePath</a></td>
+								<td>
+									<div>
+    Gets the resolved tool path.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/9C92E157">GetWorkingDirectory<wbr>(TSettings)<wbr></a></td>
+								<td><a href="/api/Cake.Core.IO/DirectoryPath">DirectoryPath</a></td>
+								<td>
+									<div>
+    Gets the working directory.
+    Defaults to the currently set working directory.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/5E8C62B8">ProcessExitCode<wbr>(int)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Customized exit code handling.
+    Standard behavior is to fail when non zero.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/7C97BC0F">Run<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Runs the tool using the specified settings.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/8253AA41">Run<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>ProcessSettings, <wbr>Action<wbr>&lt;IProcess&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Runs the tool using a custom tool path and the specified settings.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/A736B09F">RunProcess<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td><a href="/api/Cake.Core.IO/IProcess">IProcess</a></td>
+								<td>
+									<div>
+    Runs the tool using a custom tool path and the specified settings.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Core.Tooling/Tool_1/225385F4">RunProcess<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>ProcessSettings)<wbr></a></td>
+								<td><a href="/api/Cake.Core.IO/IProcess">IProcess</a></td>
+								<td>
+									<div>
+    Runs the tool using a custom tool path and the specified settings.
+    </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/Tool_1">Tool<wbr>&lt;TSettings&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
 
+
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;ChocolateyTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;ChocolateyTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(ChocolateyTool<wbr>&lt;TSettings&gt;<wbr>[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;ChocolateyTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;ChocolateyTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;ChocolateyTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;ChocolateyTool<wbr>&lt;TSettings&gt;<wbr>&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 	
 </section>
@@ -325,6 +550,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

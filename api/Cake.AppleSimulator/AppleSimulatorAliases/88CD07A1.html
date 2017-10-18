@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -146,8 +154,14 @@
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/3E1DDA50">Erase<wbr>All<wbr>Apple<wbr>Simulators<wbr>(ICakeContext, <wbr>SimCtlSettings)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/6EB3600C">EraseAppleSimulator<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/CCB8BF31">EraseAppleSimulator<wbr>(ICakeContext, <wbr>string, <wbr>SimCtlSettings)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/38259380">FindXCodeTool<wbr>(ICakeContext, <wbr>string, <wbr>XCRunSettings)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/668F1AF0">FindXCodeTool<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/A03C9271">Installi<wbr>O<wbr>S<wbr>Application<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/59C78A3F">Installi<wbr>O<wbr>S<wbr>Application<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>SimCtlSettings)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/5EAD4E79">LaunchAppleSimulator<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/282F7CE2">LaunchAppleSimulator<wbr>(ICakeContext, <wbr>string, <wbr>SimulatorSettings)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/AD7622BE">LaunchiOSApplication<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/DE966147">LaunchiOSApplication<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>SimCtlSettings)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/50C270CA">List<wbr>Apple<wbr>Simulator<wbr>Device<wbr>Types<wbr>(ICakeContext, <wbr>SimCtlSettings)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/6570639A">List<wbr>Apple<wbr>Simulator<wbr>Device<wbr>Types<wbr>(ICakeContext)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/6754421B">List<wbr>Apple<wbr>Simulator<wbr>Pairs<wbr>(ICakeContext, <wbr>SimCtlSettings)<wbr></a></li>
@@ -158,6 +172,10 @@
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/EFAF5373">ListAppleSimulators<wbr>(ICakeContext)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/CF167F76">Shutdown<wbr>All<wbr>Apple<wbr>Simulators<wbr>(ICakeContext, <wbr>SimCtlSettings)<wbr></a></li>
 				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/AB3BA616">Shutdown<wbr>All<wbr>Apple<wbr>Simulators<wbr>(ICakeContext)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/660924CD">TestiOSApplication<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/FA3C6338">TestiOSApplication<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>SimCtlSettings)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/97DF377B">Uninstalli<wbr>O<wbr>S<wbr>Application<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.AppleSimulator/AppleSimulatorAliases/5B93D584">Uninstalli<wbr>O<wbr>S<wbr>Application<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>SimCtlSettings)<wbr></a></li>
 
 
                     </ul>
@@ -305,6 +323,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

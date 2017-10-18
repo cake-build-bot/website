@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -78,12 +79,15 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-build/website/blob/develop/src/input/docs/fundamentals/default-configuration-values.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/input/docs/fundamentals/default-configuration-values.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#nuget-download-url">NuGet Download Url</a></p>
-<p><a href="#roslyn-nuget-download-url">Roslyn NuGet Download Url</a></p>
 <p><a href="#tools-path">Tools Path</a></p>
 <p><a href="#addins-path">Addins Path</a></p>
 <p><a href="#modules-path">Modules Path</a></p>
+<p><a href="#skip-verification">Skip Verification</a></p>
+<p><a href="#in-process-nuget-installation">In-Process NuGet installation</a></p>
+<p><a href="#addin-nuget-dependencies">Addin NuGet dependencies</a></p>
+<p><a href="#roslyn-nuget-download-url">Roslyn NuGet Download Url</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -108,6 +112,7 @@
                 <li><a href="/docs/tutorials/setting-up-a-new-project">Setting Up A New Project</a></li>
                 <li><a href="/docs/tutorials/powershell-security">Powershell Security</a></li>
                 <li><a href="/docs/tutorials/extending-the-bootstrapper">Extending The Bootstrapper</a></li>
+                <li><a href="/docs/tutorials/pinning-cake-version">Pinning Cake Version</a></li>
 
                     </ul>
                 </li>
@@ -119,6 +124,7 @@
                 <li><a href="/docs/fundamentals/criteria">Criteria</a></li>
                 <li><a href="/docs/fundamentals/error-handling">Error Handling</a></li>
                 <li><a href="/docs/fundamentals/finally-block">Finally Block</a></li>
+                <li><a href="/docs/fundamentals/asynchronous-tasks">Asynchronous Tasks</a></li>
                 <li><a href="/docs/fundamentals/setup-and-teardown">Setup And Teardown</a></li>
                 <li><a href="/docs/fundamentals/running-targets">Running Targets</a></li>
                 <li><a href="/docs/fundamentals/args-and-environment-vars">Arguments And Environment Variables</a></li>
@@ -201,7 +207,7 @@
 <pre><code class="language-sh">https://packages.nuget.org/api/v2
 </code></pre>
 <h2 id="environment-variable-name">Environment Variable Name</h2>
-<pre><code class="language-sh">NUGET_SOURCE
+<pre><code class="language-sh">CAKE_NUGET_SOURCE
 </code></pre>
 <h2 id="ini-file-contents">ini File Contents</h2>
 <pre><code class="language-sh">[Nuget]
@@ -211,69 +217,136 @@ Source=http://myfeed/nuget/
 <pre><code class="language-sh">cake.exe --nuget_source=http://myfeed/nuget/
 </code></pre>
 <hr>
-<h1 id="roslyn-nuget-download-url">Roslyn NuGet Download Url</h1>
-<p>This allows the control of where Cake downloads the required Roslyn NuGet packages.  This can be useful when it is necessary to work in an offline mode, where direct access to nuget.org is not available.</p>
-<h2 id="default-value-1">Default Value</h2>
-<pre><code class="language-sh">https://packages.nuget.org/api/v2
-</code></pre>
-<h2 id="environment-variable-name-1">Environment Variable Name</h2>
-<pre><code class="language-sh">CAKE_ROSLYN_NUGETSOURCE
-</code></pre>
-<h2 id="ini-file-contents-1">ini File Contents</h2>
-<pre><code class="language-sh">[Roslyn]
-NuGetSource=https://mycustomurl
-</code></pre>
-<h2 id="direct-argument-1">Direct Argument</h2>
-<pre><code class="language-sh">cake.exe --roslyn_nugetsource=http://mycustomurl
-</code></pre>
-<hr>
 <h1 id="tools-path">Tools Path</h1>
 <p>This allows the configuration of the tools folder which is used by Cake when restoring tools.</p>
-<h2 id="default-value-2">Default Value</h2>
+<h2 id="default-value-1">Default Value</h2>
 <pre><code class="language-sh">./tools
 </code></pre>
-<h2 id="environment-variable-name-2">Environment Variable Name</h2>
+<h2 id="environment-variable-name-1">Environment Variable Name</h2>
 <pre><code class="language-sh">CAKE_PATHS_TOOLS
 </code></pre>
-<h2 id="ini-file-contents-2">ini File Contents</h2>
+<h2 id="ini-file-contents-1">ini File Contents</h2>
 <pre><code class="language-sh">[Paths]
 Tools=./tools
 </code></pre>
-<h2 id="direct-argument-2">Direct Argument</h2>
+<h2 id="direct-argument-1">Direct Argument</h2>
 <pre><code class="language-sh">cake.exe --paths_tools=./tools
 </code></pre>
 <hr>
 <h1 id="addins-path">Addins Path</h1>
 <p>This allows the configuration of the Addins folder which is used by Cake when restoring Addins.</p>
-<h2 id="default-value-3">Default Value</h2>
+<h2 id="default-value-2">Default Value</h2>
 <pre><code class="language-sh">./tools/Addins
 </code></pre>
-<h2 id="environment-variable-name-3">Environment Variable Name</h2>
+<h2 id="environment-variable-name-2">Environment Variable Name</h2>
 <pre><code class="language-sh">CAKE_PATHS_ADDINS
 </code></pre>
-<h2 id="ini-file-contents-3">ini File Contents</h2>
+<h2 id="ini-file-contents-2">ini File Contents</h2>
 <pre><code class="language-sh">[Paths]
 Addins=./tools/Addins
 </code></pre>
-<h2 id="direct-argument-3">Direct Argument</h2>
+<h2 id="direct-argument-2">Direct Argument</h2>
 <pre><code class="language-sh">cake.exe --paths_addins=./tools/Addins
 </code></pre>
 <hr>
 <h1 id="modules-path">Modules Path</h1>
 <p>This allows the configuration of the Modules folder which is used by Cake when loading custom Modules.</p>
-<h2 id="default-value-4">Default Value</h2>
+<h2 id="default-value-3">Default Value</h2>
 <pre><code class="language-sh">./tools/Modules
 </code></pre>
-<h2 id="environment-variable-name-4">Environment Variable Name</h2>
+<h2 id="environment-variable-name-3">Environment Variable Name</h2>
 <pre><code class="language-sh">CAKE_PATHS_MODULES
 </code></pre>
-<h2 id="ini-file-contents-4">ini File Contents</h2>
+<h2 id="ini-file-contents-3">ini File Contents</h2>
 <pre><code class="language-sh">[Paths]
 Modules=./tools/Modules
 </code></pre>
-<h2 id="direct-argument-4">Direct Argument</h2>
+<h2 id="direct-argument-3">Direct Argument</h2>
 <pre><code class="language-sh">cake.exe --paths_modules=./tools/Modules
 </code></pre>
+<hr>
+<h1 id="skip-verification">Skip Verification</h1>
+<p>If any breaking changes are introduced to Cake, we'll set the minimum supported version of the <code>Cake.Core</code> assembly, any addin/assembly that references an older version of <code>Cake.Core</code> will generate an exception and ultimately abort the execution of the script. This is to avoid runtime errors during execution of the script.</p>
+<p>But if you really need to use an addin/assembly and have verified that the breaking change introduced doesn't concern the addin/assembly directly, i.e. it doesn't use a removed property or changed interface, for this scenario we'll allow you to temporarily opt-out of the assembly verification until addin/assembly author has released a version of the assembly targeting the minimum required version of <code>Cake.Core</code>.</p>
+<p>A word of <strong>caution</strong>, this setting is global for all addins/assemblies your script references and should therefore be considered a temporary quick fix.</p>
+<h2 id="default-value-4">Default Value</h2>
+<pre><code class="language-sh">false
+</code></pre>
+<h2 id="valid-values">Valid Values</h2>
+<pre><code class="language-sh">true
+or
+false
+</code></pre>
+<h2 id="environment-variable-name-4">Environment Variable Name</h2>
+<pre><code class="language-sh">CAKE_SETTINGS_SKIPVERIFICATION
+</code></pre>
+<h2 id="ini-file-contents-4">ini File Contents</h2>
+<pre><code class="language-sh">[Settings]
+SkipVerification=true
+</code></pre>
+<h2 id="direct-argument-4">Direct Argument</h2>
+<pre><code class="language-sh">cake.exe --settings_skipverification=true
+</code></pre>
+<hr>
+<h1 id="in-process-nuget-installation">In-Process NuGet installation</h1>
+<p>From Cake version <code>0.22.0</code> you can opt-in to not use <code>NuGet.exe</code> but instead let Cake handle the installation of addins, tools and scripts in-process.</p>
+<h2 id="default-value-5">Default Value</h2>
+<pre><code class="language-sh">false
+</code></pre>
+<h2 id="valid-values-1">Valid Values</h2>
+<pre><code class="language-sh">true
+or
+false
+</code></pre>
+<h2 id="environment-variable-name-5">Environment Variable Name</h2>
+<pre><code class="language-sh">CAKE_NUGET_USEINPROCESSCLIENT
+</code></pre>
+<h2 id="ini-file-contents-5">ini File Contents</h2>
+<pre><code class="language-sh">[NuGet]
+UseInProcessClient=true
+</code></pre>
+<h2 id="direct-argument-5">Direct Argument</h2>
+<pre><code class="language-sh">cake.exe --nuget_useinprocessclient=true
+</code></pre>
+<hr>
+<h1 id="addin-nuget-dependencies">Addin NuGet dependencies</h1>
+<p>When using In-Process NuGet installation available since Cake <code>0.22.0</code>, you now got the option to opt-in to installing and referencing NuGet package dependencies.</p>
+<h2 id="default-value-6">Default Value</h2>
+<pre><code class="language-sh">false
+</code></pre>
+<h2 id="valid-values-2">Valid Values</h2>
+<pre><code class="language-sh">true
+or
+false
+</code></pre>
+<h2 id="environment-variable-name-6">Environment Variable Name</h2>
+<pre><code class="language-sh">CAKE_NUGET_LOADDEPENDENCIES
+</code></pre>
+<h2 id="ini-file-contents-6">ini File Contents</h2>
+<pre><code class="language-sh">[NuGet]
+LoadDependencies=true
+</code></pre>
+<h2 id="direct-argument-6">Direct Argument</h2>
+<pre><code class="language-sh">cake.exe --nuget_loaddependencies=true
+</code></pre>
+<hr>
+<h1 id="roslyn-nuget-download-url">Roslyn NuGet Download Url</h1>
+<p><strong><em>This only applies to Cake version <code>0.21.1</code> and older, Roslyn ships with Cake from version <code>0.22.0</code>.</em></strong></p>
+<p>This allows the control of where Cake downloads the required Roslyn NuGet packages.  This can be useful when it is necessary to work in an offline mode, where direct access to nuget.org is not available.</p>
+<h2 id="default-value-7">Default Value</h2>
+<pre><code class="language-sh">https://packages.nuget.org/api/v2
+</code></pre>
+<h2 id="environment-variable-name-7">Environment Variable Name</h2>
+<pre><code class="language-sh">CAKE_ROSLYN_NUGETSOURCE
+</code></pre>
+<h2 id="ini-file-contents-7">ini File Contents</h2>
+<pre><code class="language-sh">[Roslyn]
+NuGetSource=https://mycustomurl
+</code></pre>
+<h2 id="direct-argument-7">Direct Argument</h2>
+<pre><code class="language-sh">cake.exe --roslyn_nugetsource=http://mycustomurl
+</code></pre>
+<hr>
 
 	</section>
                 
@@ -306,6 +379,17 @@ Modules=./tools/Modules
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

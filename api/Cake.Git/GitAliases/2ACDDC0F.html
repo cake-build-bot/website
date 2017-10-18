@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -116,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -128,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -161,7 +169,10 @@
 				<li><a href="/api/Cake.Git/GitAliases/6D2E6120">GitDiff<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/CAD727C5">GitDiff<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/374CC460">GitFindRootFromPath<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/api/Cake.Git/GitAliases/2922099A">GitHasStagedChanges<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/api/Cake.Git/GitAliases/8F86A2DE">Git<wbr>Has<wbr>Uncommited<wbr>Changes<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/C5552E3F">GitInit<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/api/Cake.Git/GitAliases/91F00FBE">GitIsValidRepository<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/469FCAAF">GitLog<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>int)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/9F14EF4E">GitLog<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/F7011232">GitLogLookup<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string)<wbr></a></li>
@@ -178,6 +189,9 @@
 				<li><a href="/api/Cake.Git/GitAliases/FAD060EA">GitReset<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>GitResetMode)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/7C26C21C">GitTag<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Git/GitAliases/8E668149">GitTag<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Git/GitAliases/0A452041">GitTags<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/api/Cake.Git/GitAliases/92A9EAE1">GitUnstage<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>FilePath[])<wbr></a></li>
+				<li><a href="/api/Cake.Git/GitAliases/112629F9">GitUnstageAll<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></li>
 
 
                     </ul>
@@ -358,6 +372,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

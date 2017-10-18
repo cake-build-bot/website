@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -78,8 +79,10 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Methods">Methods</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -112,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -124,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -140,11 +150,15 @@
 				<li><a href="/api/Cake.Yarn/IYarnRunnerConfiguration">I<wbr>Yarn<wbr>Runner<wbr>Configuration</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/api/Cake.Yarn/YarnAddSettings">YarnAddSettings</a></li>
+				<li><a href="/api/Cake.Yarn/YarnCacheSettings">YarnCacheSettings</a></li>
 				<li><a href="/api/Cake.Yarn/YarnInstallSettings">YarnInstallSettings</a></li>
+				<li><a href="/api/Cake.Yarn/YarnPackSettings">YarnPackSettings</a></li>
+				<li><a href="/api/Cake.Yarn/YarnRemoveSettings">YarnRemoveSettings</a></li>
 				<li class="selected"><a href="/api/Cake.Yarn/YarnRunner">YarnRunner</a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunnerAliases">YarnRunnerAliases</a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunnerSettings">YarnRunnerSettings</a></li>
 				<li><a href="/api/Cake.Yarn/YarnRunSettings">YarnRunSettings</a></li>
+				<li><a href="/api/Cake.Yarn/YarnVersionSettings">YarnVersionSettings</a></li>
 
 
                     </ul>
@@ -169,7 +183,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            A wrapper around the Yarn package manager
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="row">
@@ -192,7 +210,7 @@
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>Tool<wbr>&lt;<wbr>Yarn<wbr>Runner<wbr>Settings&gt;<wbr></li>								
+											<li>Tool<wbr>&lt;&gt;<wbr></li>								
 									</ul>
 								</dd>				
 							
@@ -202,7 +220,7 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["Tool&lt;YarnRunnerSettings&gt;"]--&gt;Type
+	Base0["Tool&lt;&gt;"]--&gt;Type
 	Interface0["IYarnRunnerCommands"]-.-&gt;Type
 	click Interface0 "/api/Cake.Yarn/IYarnRunnerCommands"
 	Interface1["IYarnRunnerConfiguration"]-.-&gt;Type
@@ -243,49 +261,100 @@ class Type type-node
 								<td><a href="/api/Cake.Yarn/YarnRunner/BC86705D">Add<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Add<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
 								<td>
-									<div></div>
+									<div>
+            execute 'yarn add' with options
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Yarn/YarnRunner/3BC466FC">Cache<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Yarn<wbr>Cache<wbr>Settings&gt;<wbr>)<wbr></a></td>
+								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
+								<td>
+									<div>
+            execute 'yarn run' with arguments
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Yarn/YarnRunner/89C5A559">FromPath<wbr>(DirectoryPath)<wbr></a></td>
 								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the working directory for yarn commands
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Yarn/YarnRunner/D4484EC6">Get<wbr>Tool<wbr>Executable<wbr>Names<wbr>()<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;string&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
-									<div></div>
+									<div>
+            Gets the name of the tool executable
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Yarn/YarnRunner/54A01A3D">GetToolName<wbr>()<wbr></a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the name of the tool
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Yarn/YarnRunner/EAEE36BE">GetWorkingDirectory<wbr>(YarnRunnerSettings)<wbr></a></td>
 								<td>DirectoryPath</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the working directory from the YarnRunnerSettings
+                        Defaults to the currently set working directory.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Yarn/YarnRunner/60274249">Install<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Install<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
 								<td>
-									<div></div>
+									<div>
+            execute 'yarn install' with options
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Yarn/YarnRunner/7C95E066">Pack<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Pack<wbr>Settings&gt;<wbr>)<wbr></a></td>
+								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
+								<td>
+									<div>
+            execute 'yarn pack' with options
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Yarn/YarnRunner/28382560">Remove<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Remove<wbr>Settings&gt;<wbr>)<wbr></a></td>
+								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
+								<td>
+									<div>
+            execute 'yarn add' with options
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Yarn/YarnRunner/76B1210F">RunScript<wbr>(string, <wbr>Action<wbr>&lt;<wbr>Yarn<wbr>Run<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
 								<td>
-									<div></div>
+									<div>
+            execute 'yarn run' with arguments
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Yarn/YarnRunner/92FFC39F">Version<wbr>(Action<wbr>&lt;<wbr>Yarn<wbr>Version<wbr>Settings&gt;<wbr>)<wbr></a></td>
+								<td><a href="/api/Cake.Yarn/IYarnRunnerCommands">IYarnRunnerCommands</a></td>
+								<td>
+									<div>
+            execute 'yarn version' with options
+            </div>
 								</td>
 							</tr>
 					</tbody></table>
@@ -293,6 +362,88 @@ class Type type-node
 			</div>
 		
 
+
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;YarnRunner&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;YarnRunner&gt;<wbr><wbr>(YarnRunner[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;YarnRunner&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;YarnRunner&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;YarnRunner&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;YarnRunner&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 	
 </section>
@@ -326,6 +477,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

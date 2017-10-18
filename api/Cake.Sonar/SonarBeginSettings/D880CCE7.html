@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -141,18 +149,27 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Constructors</li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/1C1E266D">SonarBeginSettings<wbr>()<wbr></a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/Cake.Sonar/SonarSettings/FEEDA88F">AppendArguments<wbr>(SonarSettings, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>ICakeEnvironment)<wbr></a></li>
+				<li><a href="/api/Cake.Sonar/SonarBeginSettings/D9584A76">GetArguments<wbr>(ICakeEnvironment)<wbr></a></li>
+				<li><a href="/api/Cake.Sonar/SonarBeginSettings/783260C9">GetEndSettings<wbr>()<wbr></a></li>
 			<li class="header">Property Members</li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/A3F918FA">Branch</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/1AFE9AD4">DotCoverReportsPath</a></li>
+				<li><a href="/api/Cake.Sonar/SonarBeginSettings/ECB43613">Duplication<wbr>Exclusions</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/6E30DC4C">Exclusions</a></li>
 				<li class="selected"><a href="/api/Cake.Sonar/SonarBeginSettings/D880CCE7">Key</a></li>
-				<li><a href="/api/Cake.Sonar/SonarBeginSettings/BB179030">Login</a></li>
+				<li><a href="/api/Cake.Sonar/SonarSettings/7A645DB8">Login</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/87634C79">Name</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/91971B9C">NCover3ReportsPath</a></li>
+				<li><a href="/api/Cake.Sonar/SonarBeginSettings/41C593A4">NDependProjectPath</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/74F516C8">NUnitReportsPath</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/AB24ADA2">OpenCoverReportsPath</a></li>
-				<li><a href="/api/Cake.Sonar/SonarBeginSettings/AB65B633">Password</a></li>
-				<li><a href="/api/Cake.Sonar/SonarBeginSettings/309B327A">Silent</a></li>
+				<li><a href="/api/Cake.Sonar/SonarBeginSettings/AD5535D2">Organization</a></li>
+				<li><a href="/api/Cake.Sonar/SonarSettings/6C0D1C42">Password</a></li>
+				<li><a href="/api/Cake.Sonar/SonarBeginSettings/1C41F3FA">SettingsFile</a></li>
+				<li><a href="/api/Cake.Sonar/SonarSettings/65A4D996">Silent</a></li>
+				<li><a href="/api/Cake.Sonar/SonarBeginSettings/0B54C288">TestExclusions</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/DF6E2A99">Url</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/1B7A07E0">Verbose</a></li>
 				<li><a href="/api/Cake.Sonar/SonarBeginSettings/86B28A7D">Version</a></li>
@@ -280,6 +297,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

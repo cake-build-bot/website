@@ -1,0 +1,831 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - API - UploadSettings Class</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Constructors">Constructors</a></p>
+<p><a href="#Properties">Properties</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/Cake.AWS.S3.dll">Cake<wbr>.AWS<wbr>.S3<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/Cake.AWS.S3">Cake<wbr>.AWS<wbr>.S3</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/Cake.AWS.S3/CakeContextExtensions">Cake<wbr>Context<wbr>Extensions</a></li>
+				<li><a href="/api/Cake.AWS.S3/CakeEnvironmentExtensions">Cake<wbr>Environment<wbr>Extensions</a></li>
+				<li><a href="/api/Cake.AWS.S3/DownloadSettings">DownloadSettings</a></li>
+				<li><a href="/api/Cake.AWS.S3/DownloadSettingsExtensions">Download<wbr>Settings<wbr>Extensions</a></li>
+				<li><a href="/api/Cake.AWS.S3/S3Aliases">S3Aliases</a></li>
+				<li><a href="/api/Cake.AWS.S3/S3Manager">S3Manager</a></li>
+				<li><a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></li>
+				<li><a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></li>
+				<li><a href="/api/Cake.AWS.S3/SyncPath">SyncPath</a></li>
+				<li><a href="/api/Cake.AWS.S3/SyncSettings">SyncSettings</a></li>
+				<li><a href="/api/Cake.AWS.S3/SyncSettingsExtensions">Sync<wbr>Settings<wbr>Extensions</a></li>
+				<li class="selected"><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></li>
+				<li><a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Cake.AWS.S3/IS3Manager">IS3Manager</a></li>
+			<li class="header">Enum Types</li>
+				<li><a href="/api/Cake.AWS.S3/ModifiedCheck">ModifiedCheck</a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>UploadSettings <small>Class</small></h1>
+</section>
+<section class="content">
+	        <div class="alert alert-info" role="alert">
+            <i class="fa fa-info-circle"></i> This content is part of a third party addin that is not supported by the Cake project.
+
+                        For more information about this project, please visit 
+                        <a href="https://github.com/SharpeRAD/Cake.AWS.S3" class="alert-link">https://github.com/SharpeRAD/Cake.AWS.S3</a>.
+                            </div>
+
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            The settings to use with upload requests to Amazon S3
+            </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/Cake.AWS.S3.dll">Cake<wbr>.AWS<wbr>.S3<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/Cake.AWS.S3">Cake<wbr>.AWS<wbr>.S3</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>object</li>								
+											<li><a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></li>								
+									</ul>
+								</dd>				
+							
+								<dt>Derived Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/Cake.AWS.S3/SyncSettings">SyncSettings</a></li>								
+									</ul>
+								</dd>			
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph TD
+	Base0["S3Settings"]--&gt;Type
+	click Base0 "/api/Cake.AWS.S3/S3Settings"
+	Base1["object"]--&gt;Base0
+	Type["UploadSettings"]
+class Type type-node
+	Type--&gt;Derived0["SyncSettings"]
+	click Derived0 "/api/Cake.AWS.S3/SyncSettings"
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public class UploadSettings : S3Settings</code></pre>
+
+
+
+
+
+
+			<h1 id="Constructors">Constructors</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/3EE45B30">UploadSettings<wbr>()<wbr></a></td>
+									<td>
+            Initializes a new instance of the <code class="cs"><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></code> class.
+            </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/C04A6218">AccessKey</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            The AWS Access Key ID
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/2893A269">BucketName</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Gets or sets the name of the S3 bucket.
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/27F476C6">CacheControl</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            How objects should be cached
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/23DE7091">CannedACL</a></td>
+								<td>S3CannedACL</td>
+								<td>
+									<div>
+            The ACL to be used for S3 Buckets or S3 Objects.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/EDAA13C0">CompressContent</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Gzip the content of css / js
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/FAAC7D46">CompressExtensions</a></td>
+								<td>IList<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+            List of file extensions to compress
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/A4156D83">DefaultContentType</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Content type to use when no mime type is found
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/62174ABE">EncryptionKey</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            The base64-encoded encryption key for Amazon S3 to use to decrypt the object
+                Using the encryption key you provide as part of your request Amazon S3 manages
+                both the encryption, as it writes to disks, and decryption, when you access your
+                objects. Therefore, you don't need to maintain any data encryption code. The
+                only thing you do is manage the encryption keys you provide.
+                When you retrieve an object, you must provide the same encryption key as part
+                of your request. Amazon S3 first verifies the encryption key you provided matches,
+                and then decrypts the object before returning the object data to you.
+                Important: Amazon S3 does not store the encryption key you provide.
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/4BBA7C9D">EncryptionKeyMD5</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            The MD5 of the customer encryption key. The MD5 is base 64 encoded. This field is optional, 
+            the SDK will calculate the MD5 if this is not set.
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/8B99D5ED">EncryptionMethod</a></td>
+								<td>Server<wbr>Side<wbr>Encryption<wbr>Customer<wbr>Method</td>
+								<td>
+									<div>
+            The Server-side encryption algorithm to be used with the customer provided key.
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/4A513CB8">Generate<wbr>Content<wbr>Length</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Generate the ContentLength based on the file size in bytes
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/588B6E95">GenerateContentType</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Generate the ContentType based on the file extension
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/6352833C">GenerateETag</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Generate an ETag based on the hash of the file
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/004A4AFA">GenerateHashTag</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Generate a custom meta-data field based on the hash of the file
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/3EAA3F76">Headers</a></td>
+								<td>HeadersCollection</td>
+								<td>
+									<div>
+            Used to set the http-headers for an S3 object.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/E9FC817C">Key<wbr>Management<wbr>Service<wbr>Key<wbr>Id</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            The id of the AWS Key Management Service key that Amazon S3 should use to encrypt
+            and decrypt the object. If a key id is not specified, the default key will be
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/02AF747E">Region</a></td>
+								<td>RegionEndpoint</td>
+								<td>
+									<div>
+            The endpoints available to AWS clients.
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/08419F30">SecretKey</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            The AWS Secret Access Key.
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings/64B0DDF1">StorageClass</a></td>
+								<td>S3StorageClass</td>
+								<td>
+									<div>
+            Specifies the Storage Class of of an S3 object. Possible values are: ReducedRedundancy:
+            provides a 99.99% durability guarantee Standard: provides a 99.999999999% durability guarantee
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3Settings/1EEEB229">WorkingDirectory</a></td>
+								<td>DirectoryPath</td>
+								<td>
+									<div>
+            Gets or sets the working directory for the process to be started.
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.AWS.S3/S3Settings">S3Settings</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(UploadSettings[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/8431525E">SetAccessKey<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Specifies the AWS Access Key to use as credentials.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/B244C3DC">SetBucketName<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Specifies the name of the load balancer.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettingsExtensions/0955F042">SetCannedACL<wbr>(S3CannedACL)<wbr></a></td>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></td>
+								<td>
+									<div>
+            Specifies the ACL to be used for S3 Buckets or S3 Objects.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettingsExtensions/2AC59BD7">SetCannedACL<wbr>(string)<wbr></a></td>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></td>
+								<td>
+									<div>
+            Specifies the ACL to be used for S3 Buckets or S3 Objects.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/4FD00059">SetEncryptionKey<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            The base64-encoded encryption key for Amazon S3 to use to decrypt the object
+                Using the encryption key you provide as part of your request Amazon S3 manages
+                both the encryption, as it writes to disks, and decryption, when you access your
+                objects. Therefore, you don't need to maintain any data encryption code. The
+                only thing you do is manage the encryption keys you provide.
+                When you retrieve an object, you must provide the same encryption key as part
+                of your request. Amazon S3 first verifies the encryption key you provided matches,
+                and then decrypts the object before returning the object data to you.
+                Important: Amazon S3 does not store the encryption key you provide.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/F1ABB945">SetEncryptionKeyMD5<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            The MD5 of the customer encryption key. The MD5 is base 64 encoded. This field is optional, 
+            the SDK will calculate the MD5 if this is not set.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/78363912">SetEncryptionMethod<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(<wbr>Server<wbr>Side<wbr>Encryption<wbr>Customer<wbr>Method)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Specifies the Server-side encryption algorithm to be used with the customer provided key.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettingsExtensions/37492A04">Set<wbr>Generate<wbr>Content<wbr>Type<wbr>(bool)<wbr></a></td>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></td>
+								<td>
+									<div>
+            Generate the ContentType based on the file extension
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettingsExtensions/E0E70ED6">SetGenerateETag<wbr>(bool)<wbr></a></td>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></td>
+								<td>
+									<div>
+            Generate an ETag based on the hash of the file
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettingsExtensions/47A0BC13">Set<wbr>Key<wbr>Management<wbr>Service<wbr>Key<wbr>Id<wbr>(string)<wbr></a></td>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></td>
+								<td>
+									<div>
+            The id of the AWS Key Management Service key that Amazon S3 should use to encrypt
+            and decrypt the object. If a key id is not specified, the default key will be
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/4AD2311B">SetRegion<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(RegionEndpoint)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Specifies the endpoints available to AWS clients.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/A39B785F">SetRegion<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Specifies the endpoints available to AWS clients.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/S3SettingsExtensions/31881901">SetSecretKey<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Specifies the AWS Secret Key to use as credentials.
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/S3SettingsExtensions">S3SettingsExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettingsExtensions/F2C94A3A">SetStorageClass<wbr>(S3StorageClass)<wbr></a></td>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></td>
+								<td>
+									<div>
+            Specifies the Storage Class of of an S3 object. Possible values are: ReducedRedundancy:
+             provides a 99.99% durability guarantee Standard: provides a 99.999999999% durability guarantee
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.AWS.S3/UploadSettingsExtensions/C49D5887">SetStorageClass<wbr>(string)<wbr></a></td>
+								<td><a href="/api/Cake.AWS.S3/UploadSettings">UploadSettings</a></td>
+								<td>
+									<div>
+            Specifies the Storage Class of of an S3 object. Possible values are: ReducedRedundancy:
+             provides a 99.99% durability guarantee Standard: provides a 99.999999999% durability guarantee
+            </div>
+										<div><small><em>From <a href="/api/Cake.AWS.S3/UploadSettingsExtensions">Upload<wbr>Settings<wbr>Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.AWS.S3 addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;<wbr>Upload<wbr>Settings&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br>
+    Copyright © <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
+
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -78,9 +79,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-build/website/blob/develop/src/input/docs/fundamentals/aliases.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/input/docs/fundamentals/aliases.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#creating-an-alias">Creating an alias</a></p>
-<p><a href="#using-the-alias">Using the alias</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -105,6 +105,7 @@
                 <li><a href="/docs/tutorials/setting-up-a-new-project">Setting Up A New Project</a></li>
                 <li><a href="/docs/tutorials/powershell-security">Powershell Security</a></li>
                 <li><a href="/docs/tutorials/extending-the-bootstrapper">Extending The Bootstrapper</a></li>
+                <li><a href="/docs/tutorials/pinning-cake-version">Pinning Cake Version</a></li>
 
                     </ul>
                 </li>
@@ -116,6 +117,7 @@
                 <li><a href="/docs/fundamentals/criteria">Criteria</a></li>
                 <li><a href="/docs/fundamentals/error-handling">Error Handling</a></li>
                 <li><a href="/docs/fundamentals/finally-block">Finally Block</a></li>
+                <li><a href="/docs/fundamentals/asynchronous-tasks">Asynchronous Tasks</a></li>
                 <li><a href="/docs/fundamentals/setup-and-teardown">Setup And Teardown</a></li>
                 <li><a href="/docs/fundamentals/running-targets">Running Targets</a></li>
                 <li><a href="/docs/fundamentals/args-and-environment-vars">Arguments And Environment Variables</a></li>
@@ -206,7 +208,7 @@
 <p>Start by creating a new class library project and add a reference to the <a href="/api/Cake.Core/">Cake.Core</a> NuGet package via the package manager.</p>
 <pre><code class="language-powershell">PM&gt; Install-Package Cake.Core
 </code></pre>
-<p>Add the alias method that you want to expose to your Cake script. A script alias method is simply an extension method for <a href="/api/Cake.Core/ICakeContext">ICakeContext</a> that's been marked with the <a href="/api/Cake.Core.Annotations/CakeMethodAliasAttribute">CakeMethodAliasAttribute</a> attribute.</p>
+<p>Add the alias method that you want to expose to your Cake script. A script alias method is simply an extension method for <a href="/api/Cake.Core/ICakeContext">ICakeContext</a> that's been marked with the <a href="/api/Cake.Core.Annotations/CakeMethodAliasAttribute">CakeMethodAliasAttribute</a> attribute.  The method can make use of any standard CLR features, including optional parameters.</p>
 <p>You could also add a script alias property, which works the same way as a script alias method, except that it accepts no arguments and is marked with the <a href="/api/Cake.Core.Annotations/CakePropertyAliasAttribute">CakePropertyAliasAttribute</a> attribute.</p>
 <pre><code class="language-csharp">using Cake.Core;
 using Cake.Core.Annotations;
@@ -216,7 +218,18 @@ public static class MyCakeExtension
     [CakeMethodAlias]
     public static int GetMagicNumber(this <a href="/api/Cake.Core/ICakeContext">ICakeContext</a> context, bool value)
     {
-        return value? int.MinValue : int.MaxValue;
+        return value ? int.MinValue : int.MaxValue;
+    }
+
+    [CakeMethodAlias]
+    public static int GetMagicNumberOrDefault(this <a href="/api/Cake.Core/ICakeContext">ICakeContext</a> context, bool value, Func&lt;int&gt; defaultValueProvider = null)
+    {
+        if (value)
+        {
+            return int.MinValue;
+        }
+
+        return defaultValueProvider == null ? int.MaxValue : defaultValueProvider();
     }
 
     [CakePropertyAlias]
@@ -226,7 +239,23 @@ public static class MyCakeExtension
     }
 }
 </code></pre>
-<h1 id="using-the-alias">Using the alias</h1>
+<h3 id="importing-namespaces">Importing Namespaces</h3>
+<p>Your script alias may need to import one or more namespaces into your Cake script.  Cake supports the automatic import of namespaces with attributes.</p>
+<p>The <a href="/api/Cake.Core.Annotations/CakeNamespaceImportAttribute">CakeNamespaceImportAttribute</a> can be applied at the method, class, or assembly level, or any combination thereof.</p>
+<pre><code class="language-csharp">// Imports the Cake.Common.IO.Paths namespace into the Cake script for this method only
+[CakeNamespaceImport("Cake.Common.IO.Paths")]
+public static <a href="/api/Cake.Common.IO.Paths/ConvertableDirectoryPath">ConvertableDirectoryPath</a> Directory(this <a href="/api/Cake.Core/ICakeContext">ICakeContext</a> context, string path)
+{...}
+</code></pre>
+<pre><code class="language-csharp">// Imports the Cake.Common.IO.Paths namespace into the Cake script for any alias method used in the class.
+[CakeNamespaceImport("Cake.Common.IO.Paths")]
+public static class <a href="/api/Cake.Common.IO/DirectoryAliases">DirectoryAliases</a>
+{...}
+</code></pre>
+<pre><code class="language-csharp">// Imports the Cake.Common.IO.Paths namespace into the Cake script for any alias method used in the assembly.
+[assembly: CakeNamespaceImport("Cake.Common.IO.Paths")]
+</code></pre>
+<h3 id="using-the-alias">Using the alias</h3>
 <p>Compile the assembly and add a reference to it in the build script via the <code>#r</code> directive.</p>
 <pre><code class="language-csharp">#r "tools/MyCakeExtension.dll"
 </code></pre>
@@ -234,7 +263,7 @@ public static class MyCakeExtension
 <pre><code class="language-csharp">Task("GetSomeAnswers")
     .Does(() =&gt;
 {
-    // Write the values to the console. 
+    // Write the values to the console.
     Information("Magic number: {0}", GetMagicNumber(false));
     Information("The answer to life: {0}", TheAnswerToLife);
 });
@@ -271,6 +300,17 @@ public static class MyCakeExtension
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

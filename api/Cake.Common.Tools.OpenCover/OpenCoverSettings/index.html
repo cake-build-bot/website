@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -115,7 +116,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -127,6 +128,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -136,6 +144,8 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Common.Tools.OpenCover">Cake<wbr>.Common<wbr>.Tools<wbr>.OpenCover</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Enum Types</li>
+				<li><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverLogLevel">OpenCoverLogLevel</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverAliases">OpenCoverAliases</a></li>
 				<li><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverRunner">OpenCoverRunner</a></li>
@@ -244,7 +254,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/50AAB3A8">Argument<wbr>Customization</a></td>
-								<td>Func<wbr>&lt;<wbr>Process<wbr>Argument<wbr>Builder, <wbr>Process<wbr>Argument<wbr>Builder&gt;<wbr></td>
+								<td>Func<wbr>&lt;T, <wbr>TResult&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets the argument customization.
@@ -256,7 +266,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/ACBC8906">EnvironmentVariables</a></td>
-								<td>IDictionary<wbr>&lt;string, <wbr>string&gt;<wbr></td>
+								<td>IDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets search paths for files, directories for temporary files, application-specific options, and other similar information.
@@ -266,7 +276,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/F3E9697E">Excluded<wbr>Attribute<wbr>Filters</a></td>
-								<td>ISet<wbr>&lt;string&gt;<wbr></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
     Gets attribute filters used to exclude classes or methods.
@@ -276,7 +286,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/F44FACD0">ExcludedFileFilters</a></td>
-								<td>ISet<wbr>&lt;string&gt;<wbr></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
     Gets file filters used to excluded classes or methods.
@@ -285,12 +295,50 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/98253EBC">ExcludeDirectories</a></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
+								<td>
+									<div>
+    Gets a list of directories where assemblies being loaded from will be ignored.
+    </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/FC8D125E">Filters</a></td>
-								<td>ISet<wbr>&lt;string&gt;<wbr></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
     Gets the filters.
     This represents the <code class="cs">-filter</code> option.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/A6ACA1F1">IsService</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether if the value provided in the target parameter
+    is the name of a service rather than a name of a process.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/39594430">LogLevel</a></td>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverLogLevel">OpenCoverLogLevel</a></td>
+								<td>
+									<div>
+    Gets or sets the log level of OpenCover.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/87371141">MergeByHash</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether to merge the coverage results for an assembly
+    regardless of where it was loaded assuming it has the same file-hash in each location.
     </div>
 								</td>
 							</tr>
@@ -300,6 +348,15 @@ class Type type-node
 								<td>
 									<div>
     Gets or sets a value indicating whether to merge the results with an existing file
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/8F6E0AAB">NoDefaultFilters</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether the default filters should be applied or not.
     </div>
 								</td>
 							</tr>
@@ -323,10 +380,19 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/29D697C9">Return<wbr>Target<wbr>Code<wbr>Offset</a></td>
-								<td>int?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets the Return target code offset to be used
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/40E88B39">SearchDirectories</a></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
+								<td>
+									<div>
+    Gets a list of directories with alternative locations to look for PDBs.
     </div>
 								</td>
 							</tr>
@@ -336,6 +402,17 @@ class Type type-node
 								<td>
 									<div>
     Gets or sets a value indicating whether or not auto-implemented properties should be skipped.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings/6A7F70E1">TargetDirectory</a></td>
+								<td><a href="/api/Cake.Core.IO/DirectoryPath">DirectoryPath</a></td>
+								<td>
+									<div>
+    Gets or sets a value indicating the path to the target directory.
+    If the target already contains a path, this parameter can be used
+    as additional path where PDBs may be found.
     </div>
 								</td>
 							</tr>
@@ -351,7 +428,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/B98A10B0">ToolTimeout</a></td>
-								<td>TimeSpan?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets optional timeout for tool execution.
@@ -375,6 +452,7 @@ class Type type-node
 		
 
 
+
 			<h1 id="ExtensionMethods">Extension Methods</h1>
 			<div class="box">
 				<div class="box-body no-padding table-responsive">
@@ -387,6 +465,17 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;<wbr>Open<wbr>Cover<wbr>Settings&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettingsExtensions/DE358A24">ExcludeByAttribute<wbr>(string)<wbr></a></td>
 								<td><a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettings">OpenCoverSettings</a></td>
 								<td>
@@ -405,6 +494,61 @@ class Type type-node
     Exclude a class (or methods) by filter that match the filenames.
     </div>
 										<div><small><em>From <a href="/api/Cake.Common.Tools.OpenCover/OpenCoverSettingsExtensions">Open<wbr>Cover<wbr>Settings<wbr>Extensions</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;<wbr>Open<wbr>Cover<wbr>Settings&gt;<wbr><wbr>(<wbr>Open<wbr>Cover<wbr>Settings[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Open<wbr>Cover<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Open<wbr>Cover<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;<wbr>Open<wbr>Cover<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;<wbr>Open<wbr>Cover<wbr>Settings&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -454,6 +598,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

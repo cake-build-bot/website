@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -149,13 +157,13 @@
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/18EA6FC1">AppVeyorEnvironments<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/ADDD5132">App<wbr>Veyor<wbr>Project<wbr>Build<wbr>By<wbr>Version<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/6314B5D3">App<wbr>Veyor<wbr>Project<wbr>Deployments<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/2C3663E7">App<wbr>Veyor<wbr>Project<wbr>History<wbr>(ICakeContext, <wbr>AppVeyorSettings, <wbr>string, <wbr>string, <wbr>int, <wbr>int?, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/5D7206A3">App<wbr>Veyor<wbr>Project<wbr>History<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string, <wbr>int, <wbr>int?, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/2C3663E7">App<wbr>Veyor<wbr>Project<wbr>History<wbr>(ICakeContext, <wbr>AppVeyorSettings, <wbr>string, <wbr>string, <wbr>int, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/5D7206A3">App<wbr>Veyor<wbr>Project<wbr>History<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string, <wbr>int, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string)<wbr></a></li>
 				<li class="selected"><a href="/api/Cake.AppVeyor/AppVeyorAliases/77A35ED8">App<wbr>Veyor<wbr>Project<wbr>Last<wbr>Branch<wbr>Build<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/21587140">App<wbr>Veyor<wbr>Project<wbr>Last<wbr>Build<wbr>(ICakeContext, <wbr>AppVeyorSettings, <wbr>string, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/9BFE3F2C">App<wbr>Veyor<wbr>Project<wbr>Last<wbr>Build<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/5C28200A">App<wbr>Veyor<wbr>Project<wbr>Last<wbr>Successful<wbr>Build<wbr>(ICakeContext, <wbr>AppVeyorSettings, <wbr>string, <wbr>string, <wbr>string, <wbr>int?)<wbr></a></li>
-				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/3F90191A">App<wbr>Veyor<wbr>Project<wbr>Last<wbr>Successful<wbr>Build<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string, <wbr>string, <wbr>int?)<wbr></a></li>
+				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/5C28200A">App<wbr>Veyor<wbr>Project<wbr>Last<wbr>Successful<wbr>Build<wbr>(ICakeContext, <wbr>AppVeyorSettings, <wbr>string, <wbr>string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/3F90191A">App<wbr>Veyor<wbr>Project<wbr>Last<wbr>Successful<wbr>Build<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>)<wbr></a></li>
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/453325F0">AppVeyorProjects<wbr>(ICakeContext, <wbr>AppVeyorSettings)<wbr></a></li>
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/0499F8B9">AppVeyorProjects<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.AppVeyor/AppVeyorAliases/5B7E6383">App<wbr>Veyor<wbr>Start<wbr>Build<wbr>Latest<wbr>Commit<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string, <wbr>string, <wbr>Dictionary<wbr>&lt;string, <wbr>string&gt;<wbr>)<wbr></a></li>
@@ -306,6 +314,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -78,7 +79,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -112,7 +114,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -124,6 +126,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -169,7 +178,11 @@
                             </div>
 
 	
-	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            Extension methods to enable fluent configuration of <code class="cs"><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></code>
+            </div>
+
 		<div class="panel panel-default">
   			<div class="panel-body">
 				<div class="row">
@@ -232,7 +245,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/6C81566D">AddCredentials<wbr>(AutoRestSettings, <wbr>bool)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Enables the inclusion of a ServiceClientCredentials property and constructor parameter in generated code
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -240,7 +255,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/9340A69F">AddHeaderComment<wbr>(AutoRestSettings, <wbr>string)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the generated code header comment
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -248,7 +265,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/71E460A0">OutputToDirectory<wbr>(AutoRestSettings, <wbr>DirectoryPath)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the output directory for generated code
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -256,7 +275,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/D621B16D">OutputToFile<wbr>(AutoRestSettings, <wbr>FilePath)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Will cause generated code to be output to the specified single file. Not supported by all code generators.
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -264,7 +285,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/0A393B51">UseClientName<wbr>(AutoRestSettings, <wbr>string)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the client name to use in generated code
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -272,7 +295,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/00B76175">UseFlattenThreshold<wbr>(AutoRestSettings, <wbr>int)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the property flattening threshold (see <code class="cs"><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></code>)
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -280,7 +305,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/B711B50B">UseNamespace<wbr>(AutoRestSettings, <wbr>string)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the client namespace
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -288,7 +315,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/D52F2CBC">WithGenerator<wbr>(AutoRestSettings, <wbr>CodeGenerator, <wbr>IGeneratorSettings)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the Generator used by AutoRest
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -296,7 +325,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/017E3288">WithModeler<wbr>(AutoRestSettings, <wbr>string)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Sets the modeler used by AutoRest
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -304,7 +335,9 @@ class Type type-node
 								<td><a href="/api/Cake.AutoRest/AutoRestSettingsExtensions/6A11E73D">WithVerboseOutput<wbr>(AutoRestSettings)<wbr></a></td>
 								<td><a href="/api/Cake.AutoRest/AutoRestSettings">AutoRestSettings</a></td>
 								<td>
-									<div></div>
+									<div>
+            Enables verbose/diagnostic messages
+            </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
@@ -312,6 +345,7 @@ class Type type-node
 				</div>
 			</div>
 		
+
 
 
 	
@@ -346,6 +380,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

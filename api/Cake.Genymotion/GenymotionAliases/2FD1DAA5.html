@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -141,16 +149,24 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
 				<li><a href="/api/Cake.Genymotion/GenymotionAliases/426AF372">Adb<wbr>Connect<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Device<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/4EABC41D">Adb<wbr>Connect<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li class="selected"><a href="/api/Cake.Genymotion/GenymotionAliases/2FD1DAA5">Adb<wbr>Disconnect<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Device<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/42EF1B2C">Adb<wbr>Disconnect<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Genymotion/GenymotionAliases/67D8E1A4">ConfigureGenymotion<wbr>(ICakeContext, <wbr>Genymotion<wbr>Config<wbr>Settings)<wbr></a></li>
-				<li><a href="/api/Cake.Genymotion/GenymotionAliases/81447E96">Factory<wbr>Reset<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
-				<li><a href="/api/Cake.Genymotion/GenymotionAliases/C50CB8CA">List<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/D5C15EE0">Factory<wbr>Reset<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/770D16B4">Factory<wbr>Reset<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/B812EBEB">List<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/0D4C8815">List<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext)<wbr></a></li>
 				<li><a href="/api/Cake.Genymotion/GenymotionAliases/ADE3B313">Register<wbr>Genymotion<wbr>License<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>License<wbr>Settings)<wbr></a></li>
-				<li><a href="/api/Cake.Genymotion/GenymotionAliases/240FD785">Reset<wbr>All<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
-				<li><a href="/api/Cake.Genymotion/GenymotionAliases/CD8ABB56">Reset<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
-				<li><a href="/api/Cake.Genymotion/GenymotionAliases/C1863819">Start<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
-				<li><a href="/api/Cake.Genymotion/GenymotionAliases/BC6EC952">Stop<wbr>All<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
-				<li><a href="/api/Cake.Genymotion/GenymotionAliases/E5C98AC8">Stop<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/19C20C0D">Register<wbr>Genymotion<wbr>License<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/F6744BDC">Reset<wbr>All<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/533214F9">Reset<wbr>All<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/B2387619">Start<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/5D909C2B">Start<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/821E62BD">Stop<wbr>All<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/6CCE5789">Stop<wbr>All<wbr>Genymotion<wbr>Simulators<wbr>(ICakeContext)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/834ACE73">Stop<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string, <wbr>Genymotion<wbr>Admin<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Genymotion/GenymotionAliases/5F9F0F41">Stop<wbr>Genymotion<wbr>Simulator<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 
 
                     </ul>
@@ -194,7 +210,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public static void AdbDisconnectGenymotionSimulator(this ICakeContext context, string deviceIdentifier, GenymotionDeviceSettings settings = null)</code></pre>
+	<pre><code>public static void AdbDisconnectGenymotionSimulator(this ICakeContext context, string deviceIdentifier, GenymotionDeviceSettings settings)</code></pre>
 
 
 
@@ -298,6 +314,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -81,6 +82,7 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Properties">Properties</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -113,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -125,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -195,50 +204,51 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CertStoreSettingsProvider">Cert<wbr>Store<wbr>Settings<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AutoProvider">AutoProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RecycleAppProvider">RecycleAppProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ArchiveDirProvider">ArchiveDirProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/GacInstallProvider">GacInstallProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolPipelineProvider">App<wbr>Pool<wbr>Pipeline<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ManifestProvider">ManifestProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathProvider">ContentPathProvider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/WebServer60Provider">WebServer60Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbFullSqlProvider">DbFullSqlProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CreateAppProvider">CreateAppProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/FilePathProvider">FilePathProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DirPathProvider">DirPathProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostSchemaProvider">App<wbr>Host<wbr>Schema<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RegKeyProvider">RegKeyProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathAspNetCoreProvider">Content<wbr>Path<wbr>Asp<wbr>Net<wbr>Core<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RootWebConfig64Provider">Root<wbr>Web<wbr>Config64<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolPipelineProvider">App<wbr>Pool<wbr>Pipeline<wbr>Provider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbSqliteProvider">DbSqliteProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject64Provider">ComObject64Provider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/UrlScanConfigProvider">Url<wbr>Scan<wbr>Config<wbr>Provider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider">DbDacFxProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RootWebConfig64Provider">Root<wbr>Web<wbr>Config64<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/PackageProvider">PackageProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolEnable32BitProvider">App<wbr>Pool<wbr>Enable32<wbr>Bit<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostSchemaProvider">App<wbr>Host<wbr>Schema<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RunCommandProvider">RunCommandProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject64Provider">ComObject64Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject32Provider">ComObject32Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/SetAclProvider">SetAclProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostConfigProvider">App<wbr>Host<wbr>Config<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RegValueProvider">RegValueProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/MachineConfig64Provider">Machine<wbr>Config64<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupManagerProvider">Backup<wbr>Manager<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathAspNetCoreProvider">Content<wbr>Path<wbr>Asp<wbr>Net<wbr>Core<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/WebServerProvider">WebServerProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CertProvider">CertProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupSettingsProvider">Backup<wbr>Settings<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider">MsDeployProvider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathLibProvider">Content<wbr>Path<wbr>Lib<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostAuthOverrideProvider">App<wbr>Host<wbr>Auth<wbr>Override<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/MetaKeyProvider">MetaKeyProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolConfigProvider">App<wbr>Pool<wbr>Config<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/MachineConfig32Provider">Machine<wbr>Config32<wbr>Provider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/GacAssemblyProvider">GacAssemblyProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RegKeyProvider">RegKeyProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RunCommandProvider">RunCommandProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CertProvider">CertProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/MachineConfig64Provider">Machine<wbr>Config64<wbr>Provider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/IisAppProvider">IisAppProvider</a></li>								
-											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbMySqlProvider">DbMySqlProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers/MsDeployProvider">MsDeployProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolEnable32BitProvider">App<wbr>Pool<wbr>Enable32<wbr>Bit<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RegValueProvider">RegValueProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbFullSqlProvider">DbFullSqlProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/GacAssemblyProvider">GacAssemblyProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RecycleAppProvider">RecycleAppProvider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/RootWebConfig32Provider">Root<wbr>Web<wbr>Config32<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/WebServerProvider">WebServerProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DbMySqlProvider">DbMySqlProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CreateAppProvider">CreateAppProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/FilePathProvider">FilePathProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostAuthOverrideProvider">App<wbr>Host<wbr>Auth<wbr>Override<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupManagerProvider">Backup<wbr>Manager<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/MetaKeyProvider">MetaKeyProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostConfigProvider">App<wbr>Host<wbr>Config<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/DirPathProvider">DirPathProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ArchiveDirProvider">ArchiveDirProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CommandProvider">CommandProvider</a></li>								
 											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolNetFxProvider">AppPoolNetFxProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/CertStoreSettingsProvider">Cert<wbr>Store<wbr>Settings<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ManifestProvider">ManifestProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/GacInstallProvider">GacInstallProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/MachineConfig32Provider">Machine<wbr>Config32<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/PackageProvider">PackageProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathProvider">ContentPathProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AutoProvider">AutoProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/SetAclProvider">SetAclProvider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupSettingsProvider">Backup<wbr>Settings<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolConfigProvider">App<wbr>Pool<wbr>Config<wbr>Provider</a></li>								
+											<li><a href="/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject32Provider">ComObject32Provider</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -250,94 +260,96 @@
 	click Interface0 "/api/Cake.MsDeploy/IMsDeployArgument"
 	Type["IMsDeployProvider"]
 class Type type-node
-	Type-.-&gt;Implementing0["CertStoreSettingsProvider"]
-	click Implementing0 "/api/Cake.MsDeploy.Providers.MsDeployProviders/CertStoreSettingsProvider"
-	Type-.-&gt;Implementing1["AutoProvider"]
-	click Implementing1 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AutoProvider"
-	Type-.-&gt;Implementing2["RecycleAppProvider"]
-	click Implementing2 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RecycleAppProvider"
-	Type-.-&gt;Implementing3["ArchiveDirProvider"]
-	click Implementing3 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ArchiveDirProvider"
-	Type-.-&gt;Implementing4["GacInstallProvider"]
-	click Implementing4 "/api/Cake.MsDeploy.Providers.MsDeployProviders/GacInstallProvider"
+	Type-.-&gt;Implementing0["WebServer60Provider"]
+	click Implementing0 "/api/Cake.MsDeploy.Providers.MsDeployProviders/WebServer60Provider"
+	Type-.-&gt;Implementing1["AppHostSchemaProvider"]
+	click Implementing1 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostSchemaProvider"
+	Type-.-&gt;Implementing2["RegKeyProvider"]
+	click Implementing2 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RegKeyProvider"
+	Type-.-&gt;Implementing3["ContentPathAspNetCoreProvider"]
+	click Implementing3 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathAspNetCoreProvider"
+	Type-.-&gt;Implementing4["RootWebConfig64Provider"]
+	click Implementing4 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RootWebConfig64Provider"
 	Type-.-&gt;Implementing5["AppPoolPipelineProvider"]
 	click Implementing5 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolPipelineProvider"
-	Type-.-&gt;Implementing6["ManifestProvider"]
-	click Implementing6 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ManifestProvider"
-	Type-.-&gt;Implementing7["ContentPathProvider"]
-	click Implementing7 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathProvider"
-	Type-.-&gt;Implementing8["WebServer60Provider"]
-	click Implementing8 "/api/Cake.MsDeploy.Providers.MsDeployProviders/WebServer60Provider"
-	Type-.-&gt;Implementing9["DbFullSqlProvider"]
-	click Implementing9 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbFullSqlProvider"
-	Type-.-&gt;Implementing10["CreateAppProvider"]
-	click Implementing10 "/api/Cake.MsDeploy.Providers.MsDeployProviders/CreateAppProvider"
-	Type-.-&gt;Implementing11["FilePathProvider"]
-	click Implementing11 "/api/Cake.MsDeploy.Providers.MsDeployProviders/FilePathProvider"
-	Type-.-&gt;Implementing12["DirPathProvider"]
-	click Implementing12 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DirPathProvider"
-	Type-.-&gt;Implementing13["DbSqliteProvider"]
-	click Implementing13 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbSqliteProvider"
-	Type-.-&gt;Implementing14["UrlScanConfigProvider"]
-	click Implementing14 "/api/Cake.MsDeploy.Providers.MsDeployProviders/UrlScanConfigProvider"
-	Type-.-&gt;Implementing15["DbDacFxProvider"]
-	click Implementing15 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider"
-	Type-.-&gt;Implementing16["RootWebConfig64Provider"]
-	click Implementing16 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RootWebConfig64Provider"
-	Type-.-&gt;Implementing17["PackageProvider"]
-	click Implementing17 "/api/Cake.MsDeploy.Providers.MsDeployProviders/PackageProvider"
-	Type-.-&gt;Implementing18["AppPoolEnable32BitProvider"]
-	click Implementing18 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolEnable32BitProvider"
-	Type-.-&gt;Implementing19["AppHostSchemaProvider"]
-	click Implementing19 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostSchemaProvider"
-	Type-.-&gt;Implementing20["RunCommandProvider"]
-	click Implementing20 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RunCommandProvider"
-	Type-.-&gt;Implementing21["ComObject64Provider"]
-	click Implementing21 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject64Provider"
-	Type-.-&gt;Implementing22["ComObject32Provider"]
-	click Implementing22 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject32Provider"
-	Type-.-&gt;Implementing23["SetAclProvider"]
-	click Implementing23 "/api/Cake.MsDeploy.Providers.MsDeployProviders/SetAclProvider"
-	Type-.-&gt;Implementing24["AppHostConfigProvider"]
-	click Implementing24 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostConfigProvider"
-	Type-.-&gt;Implementing25["RegValueProvider"]
-	click Implementing25 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RegValueProvider"
-	Type-.-&gt;Implementing26["MachineConfig64Provider"]
-	click Implementing26 "/api/Cake.MsDeploy.Providers.MsDeployProviders/MachineConfig64Provider"
+	Type-.-&gt;Implementing6["DbSqliteProvider"]
+	click Implementing6 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbSqliteProvider"
+	Type-.-&gt;Implementing7["ComObject64Provider"]
+	click Implementing7 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject64Provider"
+	Type-.-&gt;Implementing8["UrlScanConfigProvider"]
+	click Implementing8 "/api/Cake.MsDeploy.Providers.MsDeployProviders/UrlScanConfigProvider"
+	Type-.-&gt;Implementing9["DbDacFxProvider"]
+	click Implementing9 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbDacFxProvider"
+	Type-.-&gt;Implementing10["ContentPathLibProvider"]
+	click Implementing10 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathLibProvider"
+	Type-.-&gt;Implementing11["RunCommandProvider"]
+	click Implementing11 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RunCommandProvider"
+	Type-.-&gt;Implementing12["CertProvider"]
+	click Implementing12 "/api/Cake.MsDeploy.Providers.MsDeployProviders/CertProvider"
+	Type-.-&gt;Implementing13["MachineConfig64Provider"]
+	click Implementing13 "/api/Cake.MsDeploy.Providers.MsDeployProviders/MachineConfig64Provider"
+	Type-.-&gt;Implementing14["IisAppProvider"]
+	click Implementing14 "/api/Cake.MsDeploy.Providers.MsDeployProviders/IisAppProvider"
+	Type-.-&gt;Implementing15["MsDeployProvider"]
+	click Implementing15 "/api/Cake.MsDeploy.Providers/MsDeployProvider"
+	Type-.-&gt;Implementing16["AppPoolEnable32BitProvider"]
+	click Implementing16 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolEnable32BitProvider"
+	Type-.-&gt;Implementing17["RegValueProvider"]
+	click Implementing17 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RegValueProvider"
+	Type-.-&gt;Implementing18["DbFullSqlProvider"]
+	click Implementing18 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbFullSqlProvider"
+	Type-.-&gt;Implementing19["GacAssemblyProvider"]
+	click Implementing19 "/api/Cake.MsDeploy.Providers.MsDeployProviders/GacAssemblyProvider"
+	Type-.-&gt;Implementing20["RecycleAppProvider"]
+	click Implementing20 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RecycleAppProvider"
+	Type-.-&gt;Implementing21["RootWebConfig32Provider"]
+	click Implementing21 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RootWebConfig32Provider"
+	Type-.-&gt;Implementing22["WebServerProvider"]
+	click Implementing22 "/api/Cake.MsDeploy.Providers.MsDeployProviders/WebServerProvider"
+	Type-.-&gt;Implementing23["DbMySqlProvider"]
+	click Implementing23 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbMySqlProvider"
+	Type-.-&gt;Implementing24["CreateAppProvider"]
+	click Implementing24 "/api/Cake.MsDeploy.Providers.MsDeployProviders/CreateAppProvider"
+	Type-.-&gt;Implementing25["FilePathProvider"]
+	click Implementing25 "/api/Cake.MsDeploy.Providers.MsDeployProviders/FilePathProvider"
+	Type-.-&gt;Implementing26["AppHostAuthOverrideProvider"]
+	click Implementing26 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostAuthOverrideProvider"
 	Type-.-&gt;Implementing27["BackupManagerProvider"]
 	click Implementing27 "/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupManagerProvider"
-	Type-.-&gt;Implementing28["ContentPathAspNetCoreProvider"]
-	click Implementing28 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathAspNetCoreProvider"
-	Type-.-&gt;Implementing29["WebServerProvider"]
-	click Implementing29 "/api/Cake.MsDeploy.Providers.MsDeployProviders/WebServerProvider"
-	Type-.-&gt;Implementing30["CertProvider"]
-	click Implementing30 "/api/Cake.MsDeploy.Providers.MsDeployProviders/CertProvider"
-	Type-.-&gt;Implementing31["BackupSettingsProvider"]
-	click Implementing31 "/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupSettingsProvider"
-	Type-.-&gt;Implementing32["MsDeployProvider"]
-	click Implementing32 "/api/Cake.MsDeploy.Providers/MsDeployProvider"
-	Type-.-&gt;Implementing33["ContentPathLibProvider"]
-	click Implementing33 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathLibProvider"
-	Type-.-&gt;Implementing34["AppHostAuthOverrideProvider"]
-	click Implementing34 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostAuthOverrideProvider"
-	Type-.-&gt;Implementing35["MetaKeyProvider"]
-	click Implementing35 "/api/Cake.MsDeploy.Providers.MsDeployProviders/MetaKeyProvider"
-	Type-.-&gt;Implementing36["AppPoolConfigProvider"]
-	click Implementing36 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolConfigProvider"
+	Type-.-&gt;Implementing28["MetaKeyProvider"]
+	click Implementing28 "/api/Cake.MsDeploy.Providers.MsDeployProviders/MetaKeyProvider"
+	Type-.-&gt;Implementing29["AppHostConfigProvider"]
+	click Implementing29 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppHostConfigProvider"
+	Type-.-&gt;Implementing30["DirPathProvider"]
+	click Implementing30 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DirPathProvider"
+	Type-.-&gt;Implementing31["ArchiveDirProvider"]
+	click Implementing31 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ArchiveDirProvider"
+	Type-.-&gt;Implementing32["CommandProvider"]
+	click Implementing32 "/api/Cake.MsDeploy.Providers.MsDeployProviders/CommandProvider"
+	Type-.-&gt;Implementing33["AppPoolNetFxProvider"]
+	click Implementing33 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolNetFxProvider"
+	Type-.-&gt;Implementing34["CertStoreSettingsProvider"]
+	click Implementing34 "/api/Cake.MsDeploy.Providers.MsDeployProviders/CertStoreSettingsProvider"
+	Type-.-&gt;Implementing35["ManifestProvider"]
+	click Implementing35 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ManifestProvider"
+	Type-.-&gt;Implementing36["GacInstallProvider"]
+	click Implementing36 "/api/Cake.MsDeploy.Providers.MsDeployProviders/GacInstallProvider"
 	Type-.-&gt;Implementing37["MachineConfig32Provider"]
 	click Implementing37 "/api/Cake.MsDeploy.Providers.MsDeployProviders/MachineConfig32Provider"
-	Type-.-&gt;Implementing38["GacAssemblyProvider"]
-	click Implementing38 "/api/Cake.MsDeploy.Providers.MsDeployProviders/GacAssemblyProvider"
-	Type-.-&gt;Implementing39["RegKeyProvider"]
-	click Implementing39 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RegKeyProvider"
-	Type-.-&gt;Implementing40["IisAppProvider"]
-	click Implementing40 "/api/Cake.MsDeploy.Providers.MsDeployProviders/IisAppProvider"
-	Type-.-&gt;Implementing41["DbMySqlProvider"]
-	click Implementing41 "/api/Cake.MsDeploy.Providers.MsDeployProviders/DbMySqlProvider"
-	Type-.-&gt;Implementing42["RootWebConfig32Provider"]
-	click Implementing42 "/api/Cake.MsDeploy.Providers.MsDeployProviders/RootWebConfig32Provider"
-	Type-.-&gt;Implementing43["AppPoolNetFxProvider"]
-	click Implementing43 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolNetFxProvider"
+	Type-.-&gt;Implementing38["PackageProvider"]
+	click Implementing38 "/api/Cake.MsDeploy.Providers.MsDeployProviders/PackageProvider"
+	Type-.-&gt;Implementing39["ContentPathProvider"]
+	click Implementing39 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ContentPathProvider"
+	Type-.-&gt;Implementing40["AutoProvider"]
+	click Implementing40 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AutoProvider"
+	Type-.-&gt;Implementing41["SetAclProvider"]
+	click Implementing41 "/api/Cake.MsDeploy.Providers.MsDeployProviders/SetAclProvider"
+	Type-.-&gt;Implementing42["BackupSettingsProvider"]
+	click Implementing42 "/api/Cake.MsDeploy.Providers.MsDeployProviders/BackupSettingsProvider"
+	Type-.-&gt;Implementing43["AppPoolConfigProvider"]
+	click Implementing43 "/api/Cake.MsDeploy.Providers.MsDeployProviders/AppPoolConfigProvider"
+	Type-.-&gt;Implementing44["ComObject32Provider"]
+	click Implementing44 "/api/Cake.MsDeploy.Providers.MsDeployProviders/ComObject32Provider"
 
 						</div>
 					</div>
@@ -369,7 +381,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.MsDeploy.Providers/IMsDeployProvider/61077442">AuthenticationType</a></td>
-								<td>Authentication<wbr>Scheme?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
              Authentication scheme to use. NTLM is the default setting. If the wmsvc option is specified, then Basic is the default setting.
@@ -396,7 +408,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers/IMsDeployProvider/CC9A3B32">IncludeAcls</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             If true, include ACLs in the operation (applies to the file system, registry, and  metabase).
@@ -432,7 +444,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.MsDeploy.Providers/IMsDeployProvider/4423D203">TempAgent</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
              Temporarily install the remote agent for the duration of a remote operation.
@@ -473,6 +485,88 @@ class Type type-node
 
 
 
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;<wbr>I<wbr>Ms<wbr>Deploy<wbr>Provider&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;<wbr>I<wbr>Ms<wbr>Deploy<wbr>Provider&gt;<wbr><wbr>(<wbr>I<wbr>Ms<wbr>Deploy<wbr>Provider[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>I<wbr>Ms<wbr>Deploy<wbr>Provider&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>I<wbr>Ms<wbr>Deploy<wbr>Provider&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;<wbr>I<wbr>Ms<wbr>Deploy<wbr>Provider&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;<wbr>I<wbr>Ms<wbr>Deploy<wbr>Provider&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
 	
 </section>
                 
@@ -505,6 +599,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -78,7 +79,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-build/website/blob/develop/src/input/docs/fundamentals/preprocessor-directives.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/input/docs/fundamentals/preprocessor-directives.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#add-in-directive">Add-in directive</a></p>
 <p><a href="#load-directive">Load directive</a></p>
 <p><a href="#reference-directive">Reference directive</a></p>
@@ -109,6 +110,7 @@
                 <li><a href="/docs/tutorials/setting-up-a-new-project">Setting Up A New Project</a></li>
                 <li><a href="/docs/tutorials/powershell-security">Powershell Security</a></li>
                 <li><a href="/docs/tutorials/extending-the-bootstrapper">Extending The Bootstrapper</a></li>
+                <li><a href="/docs/tutorials/pinning-cake-version">Pinning Cake Version</a></li>
 
                     </ul>
                 </li>
@@ -120,6 +122,7 @@
                 <li><a href="/docs/fundamentals/criteria">Criteria</a></li>
                 <li><a href="/docs/fundamentals/error-handling">Error Handling</a></li>
                 <li><a href="/docs/fundamentals/finally-block">Finally Block</a></li>
+                <li><a href="/docs/fundamentals/asynchronous-tasks">Asynchronous Tasks</a></li>
                 <li><a href="/docs/fundamentals/setup-and-teardown">Setup And Teardown</a></li>
                 <li><a href="/docs/fundamentals/running-targets">Running Targets</a></li>
                 <li><a href="/docs/fundamentals/args-and-environment-vars">Arguments And Environment Variables</a></li>
@@ -207,6 +210,13 @@ Right now, only NuGet packages are supported.</p>
 #addin nuget:?package=Cake.Foo&amp;prerelease
 #addin nuget:https://myget.org/f/Cake/?package=Cake.Foo&amp;prerelease
 </code></pre>
+<h3 id="dependencies">Dependencies</h3>
+<p>From Cake version 0.22.0 there's an option to fetch and load NuGet dependencies</p>
+<pre><code class="language-csharp">#addin nuget:?package=foo&amp;loaddependencies=true
+or
+#addin nuget:?package=foo.bar&amp;loaddependencies=false
+</code></pre>
+<p>This feature requires Cake to be <a href="/fundamentals/configuration.md">configured</a> to not use <code>nuget.exe</code> but instead let Cake handle NuGet installation in-process.</p>
 <h1 id="load-directive">Load directive</h1>
 <p>The load directive is used to reference external Cake scripts. Useful i.e. if you have common utility functions.
 Starting from 0.18.0 you can also load cake scripts from nuget.</p>
@@ -242,11 +252,13 @@ or
 <p>The tool directive installs external command-line tools using NuGet.</p>
 <h2 id="usage-3">Usage</h2>
 <p>The directive takes a single package URI parameter
-Right now, only NuGet packages are supported.</p>
+Right now, only NuGet packages are supported.
+Specify the <code>include</code> parameter if the executable does not end with .exe</p>
 <pre><code class="language-csharp">#tool nuget:?package=Cake.Foo
 #tool nuget:?package=Cake.Foo&amp;version=1.2.3
 #tool nuget:?package=Cake.Foo&amp;prerelease
 #tool nuget:https://myget.org/f/Cake/?package=Cake.Foo&amp;prerelease
+#tool nuget:?package=Cake.Foo&amp;include=path/to/foo.cmd
 </code></pre>
 <h1 id="shebang-directive">Shebang directive</h1>
 <p>Under Unix-like operating systems, when a script with a shebang is run as a program, the program loader parses the rest of the script's initial line as an interpreter directive; the specified interpreter program is run instead, passing to it as an argument the path that was initially used when attempting to run the script.</p>
@@ -292,6 +304,17 @@ Right now, only NuGet packages are supported.</p>
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

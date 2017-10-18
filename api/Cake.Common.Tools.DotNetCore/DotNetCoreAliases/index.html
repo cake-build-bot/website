@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -135,6 +143,8 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Common.Tools.DotNetCore">Cake<wbr>.Common<wbr>.Tools<wbr>.DotNetCore</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Enum Types</li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreVerbosity">DotNetCoreVerbosity</a></li>
 			<li class="header">Class Types</li>
 				<li class="selected"><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases">DotNetCoreAliases</a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreSettings">DotNetCoreSettings</a></li>
@@ -264,6 +274,26 @@ public static class DotNetCoreAliases</code></pre>
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/75949DF3">DotNetCoreClean<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Cleans a project's output.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/E9691F43">DotNetCoreClean<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Clean<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Cleans a project's output.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/C7890987">DotNetCoreExecute<wbr>(ICakeContext, <wbr>FilePath)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -284,11 +314,131 @@ public static class DotNetCoreAliases</code></pre>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/1E1BF146">DotNetCoreExecute<wbr>(ICakeContext, <wbr>FilePath, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>DotNetCoreSettings)<wbr></a></td>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/980E2761">DotNetCoreExecute<wbr>(ICakeContext, <wbr>FilePath, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>Dot<wbr>Net<wbr>Core<wbr>Execute<wbr>Settings)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
      Execute an assembly with arguments in the specific path with settings.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/E4F74647">DotNetCoreMSBuild<wbr>(ICakeContext)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Builds the specified targets in a project file found in the current working directory.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/B1AC2D04">DotNetCoreMSBuild<wbr>(ICakeContext, <wbr>Dot<wbr>Net<wbr>Core<wbr>M<wbr>S<wbr>Build<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Builds the specified targets in a project file found in the current working directory.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/2A6E31D3">DotNetCoreMSBuild<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Builds the specified targets in the project file.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/9789CA99">DotNetCoreMSBuild<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>M<wbr>S<wbr>Build<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Builds the specified targets in the project file.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/E5078DE9">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Delete a NuGet Package from a server.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/1406E50B">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Deletes a package from a server using the specified settings.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/9F3B9DD6">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Deletes a package from the NuGet.org.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/708E2F89">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Deletes a package from a server
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/B3548CC4">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Deletes a specific version of a package from the NuGet.org.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/17C42973">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Deletes a package from a server using the specified settings.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/C02DD80A">DotNetCoreNuGetPush<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Pushes one or more packages to a server.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/813030CA">DotNetCoreNuGetPush<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Push<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Pushes one or more packages to a server using the specified settings.
      </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -443,10 +593,71 @@ public static class DotNetCoreAliases</code></pre>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/2E865230">DotNetCoreTool<wbr>(ICakeContext, <wbr>FilePath, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    /// Execute an .NET Core Extensibility Tool.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/0C29BCC5">DotNetCoreTool<wbr>(ICakeContext, <wbr>FilePath, <wbr>string, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Execute an .NET Core Extensibility Tool.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/F55DA2CB">DotNetCoreTool<wbr>(ICakeContext, <wbr>FilePath, <wbr>string, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>Dot<wbr>Net<wbr>Core<wbr>Tool<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Execute an .NET Core Extensibility Tool.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/8FE77742">DotNetCoreVSTest<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;FilePath&gt;<wbr>, <wbr>Dot<wbr>Net<wbr>Core<wbr>V<wbr>S<wbr>Test<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Test one or more specified projects with settings using the VS Test host runner.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/13D5671C">DotNetCoreVSTest<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Test one or more projects specified by a path or glob pattern using the VS Test host runner.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/8C1A4B59">DotNetCoreVSTest<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>V<wbr>S<wbr>Test<wbr>Settings)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+     Test one or more projects specified by a path or glob pattern with settings using the VS Test host runner.
+     </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
+
 
 
 	
@@ -481,6 +692,17 @@ public static class DotNetCoreAliases</code></pre>
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

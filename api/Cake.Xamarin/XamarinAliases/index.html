@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -138,10 +146,13 @@
 		<li><a href="/api/Cake.Xamarin">Cake<wbr>.Xamarin</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
+				<li><a href="/api/Cake.Xamarin/CommonProjectTypeGuids">Common<wbr>Project<wbr>Type<wbr>Guids</a></li>
 				<li><a href="/api/Cake.Xamarin/MDToolSettings">MDToolSettings</a></li>
 				<li><a href="/api/Cake.Xamarin/MDToolSetupRunner">MDToolSetupRunner</a></li>
 				<li><a href="/api/Cake.Xamarin/MDToolSetupSettings">MDToolSetupSettings</a></li>
 				<li><a href="/api/Cake.Xamarin/TestCloudSettings">TestCloudSettings</a></li>
+				<li><a href="/api/Cake.Xamarin/VSToolSetupRunner">VSToolSetupRunner</a></li>
+				<li><a href="/api/Cake.Xamarin/VSToolSetupSettings">VSToolSetupSettings</a></li>
 				<li class="selected"><a href="/api/Cake.Xamarin/XamarinAliases">XamarinAliases</a></li>
 				<li><a href="/api/Cake.Xamarin/XamarinComponentCredentialSettings">Xamarin<wbr>Component<wbr>Credential<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Xamarin/XamarinComponentRestoreSettings">Xamarin<wbr>Component<wbr>Restore<wbr>Settings</a></li>
@@ -192,7 +203,7 @@
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>object</li>								
+											<li>Object</li>								
 									</ul>
 								</dd>				
 							
@@ -202,7 +213,7 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["object"]--&gt;Type
+	Base0["Object"]--&gt;Type
 	Type["XamarinAliases"]
 class Type type-node
 
@@ -257,7 +268,9 @@ class Type type-node
 								<td>FilePath</td>
 								<td>
 									<div>
-            Creates an android .APK package file
+            DEPRECATED: Creates an android .APK package file
+            Use the MSBuild target `SignAndroidPackage` instead.
+            See documentation for more info: https://developer.xamarin.com/guides/android/under_the_hood/build_process/#Build_Targets
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -267,7 +280,9 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-            Creates an archive of an app with MDTool
+            DEPRECATED: Creates an archive of an app with MDTool
+            Change your project settings to output an IPA file, and use the MSBuild to build.
+            See documentation for more info: https://developer.xamarin.com/guides/ios/deployment,_testing,_and_metrics/app_distribution/ipa_support/#Building_via_the_Command_Line_On_Mac
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -277,7 +292,8 @@ class Type type-node
 								<td>void</td>
 								<td>
 									<div>
-            Builds a project with MDTool
+            DEPRECATED: Builds a project with MDTool
+            Use MSBuild instead.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -372,10 +388,21 @@ class Type type-node
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
+							<tr>
+								<td><a href="/api/Cake.Xamarin/XamarinAliases/C53C8932">VSToolSetup<wbr>(ICakeContext)<wbr></a></td>
+								<td><a href="/api/Cake.Xamarin/VSToolSetupRunner">VSToolSetupRunner</a></td>
+								<td>
+									<div>
+            Gets a runner for invoking the Visual Studio Mac Add-in Setup Utility.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
+
 
 
 	
@@ -410,6 +437,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

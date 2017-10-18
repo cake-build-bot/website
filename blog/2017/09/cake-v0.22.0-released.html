@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - Cake v0.22.0 released</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/cake-build/website/blob/develop/input/blog/2017-09-13-cake-v0.22.0-released.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">                    
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+    <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
+        <li><a href="/blog/Addins">Addins</a></li>
+        <li><a href="/blog/Announcement">Announcement</a></li>
+        <li><a href="/blog/How-Tos">How To&#x27;s</a></li>
+        <li><a href="/blog/Infrastructure">Infrastructure</a></li>
+        <li><a href="/blog/News">News</a></li>
+        <li><a href="/blog/Release-Notes">Release Notes</a></li>
+    
+    <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/blog/archive/2017/10">October, 2017</a></li>
+        <li><a href="/blog/archive/2017/09">September, 2017</a></li>
+        <li><a href="/blog/archive/2017/08">August, 2017</a></li>
+        <li><a href="/blog/archive/2017/07">July, 2017</a></li>
+        <li><a href="/blog/archive/2017/06">June, 2017</a></li>
+        <li><a href="/blog/archive/2017/05">May, 2017</a></li>
+        <li><a href="/blog/archive/2017/04">April, 2017</a></li>
+        <li><a href="/blog/archive/2017/03">March, 2017</a></li>
+        <li><a href="/blog/archive/2017/01">January, 2017</a></li>
+        <li><a href="/blog/archive/2016/12">December, 2016</a></li>
+        <li><a href="/blog/archive/2016/11">November, 2016</a></li>
+        <li><a href="/blog/archive/2016/10">October, 2016</a></li>
+        <li><a href="/blog/archive/2016/09">September, 2016</a></li>
+        <li><a href="/blog/archive/2016/08">August, 2016</a></li>
+        <li><a href="/blog/archive/2016/07">July, 2016</a></li>
+        <li><a href="/blog/archive/2016/06">June, 2016</a></li>
+        <li><a href="/blog/archive/2016/05">May, 2016</a></li>
+        <li><a href="/blog/archive/2016/04">April, 2016</a></li>
+        <li><a href="/blog/archive/2016/03">March, 2016</a></li>
+        <li><a href="/blog/archive/2016/02">February, 2016</a></li>
+        <li><a href="/blog/archive/2016/01">January, 2016</a></li>
+        <li><a href="/blog/archive/2015/12">December, 2015</a></li>
+        <li><a href="/blog/archive/2015/11">November, 2015</a></li>
+        <li><a href="/blog/archive/2015/10">October, 2015</a></li>
+        <li><a href="/blog/archive/2015/09">September, 2015</a></li>
+        <li><a href="/blog/archive/2015/08">August, 2015</a></li>
+        <li><a href="/blog/archive/2015/07">July, 2015</a></li>
+    
+    <li class="header"><i class="fa fa-user"></i> Authors</li>    
+        <li><a href="/blog/author/agc93">agc93</a></li>
+        <li><a href="/blog/author/daveaglick">daveaglick</a></li>
+        <li><a href="/blog/author/devlead">devlead</a></li>
+        <li><a href="/blog/author/gep13">gep13</a></li>
+        <li><a href="/blog/author/jericho">jericho</a></li>
+        <li><a href="/blog/author/Larz-White">Larz White</a></li>
+        <li><a href="/blog/author/mholo65">mholo65</a></li>
+        <li><a href="/blog/author/patriksvensson">patriksvensson</a></li>
+        <li><a href="/blog/author/phillipsj">phillipsj</a></li>
+        <li><a href="/blog/author/RLittlesII">RLittlesII</a></li>
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+	<section class="content-header">
+		<h1>Cake v0.22.0 released</h1>
+	</section>
+	<section class="content">
+		
+
+
+<dl class="dl-horizontal">
+    <dt><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Wednesday, September 13, 2017</dd>
+        <dt><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/Release-Notes">Release Notes</a></dd>
+            <dt><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/mholo65">mholo65</a></dd>
+</dl>
+
+<p>Version 0.22.0 of Cake has been released.</p>
+<p>So, let's be clear, this release will break things - but it is all intentional!</p>
+<p>This release was initially about updating Roslyn, unifying scripting engines, and targeting .NET 4.6. But one thing led to another which resulted in better support for tool and addin versioning when using preprocessor directives, and an optional in-process NuGet client.</p>
+<p>Updating Roslyn and unifying scripting engines has been a long-awaited improvement for many of you. This brings you C# 7 features (without need for <code>--experimental</code> switch), debugging with Mono (as we completely removed the old Mono scripting engine), and much, much more. It also allows us to ship Roslyn with Cake, so there's no need for Cake to actually download Roslyn anymore. In order for us to update Roslyn, we also needed to change target framework to .NET 4.6.</p>
+<p>Tool and addin versioning when using preprocessor directives has been an issue, which has caused many questions. E.g. you may have noted that when changing version for a tool or addin, the old version was still used. Prior to this release, the only solution was to delete the tool/addin from the <code>tools</code> folder. This is now fixed as Cake supports side-by-side downloading of different versions of tools and addins.</p>
+<p>Due to unpredictable results when downloading packages using <code>nuget.exe</code>, tool/addin versioning was solved by adding a intermediate directory containing the version number. This intermediate directory can however cause <code>MAX_PATH</code> issues when downloading some specific packages. To address this issue, we implemented functionality in <code>Cake.NuGet</code> to allow Cake to download tools and addins without the need for <code>nuget.exe</code>. This functionality is currently optional through <a href="/docs/fundamentals/configuration">configuration</a>, and is the first step towards removing need for <code>nuget.exe</code> in Cake. Example usage to opt-in for the in-process NuGet client:</p>
+<pre><code>Cake.exe --nuget_useinprocessclient=true
+</code></pre>
+<p>The in-process NuGet client also gives the possibility to load assemblies from NuGet dependencies. This behaviour can be enabled either via <a href="/docs/fundamentals/configuration">configuration</a> or directive. Example usage for loading dependencies:</p>
+<pre><code>Cake.exe --nuget_useinprocessclient=true --nuget_loaddependencies=true
+</code></pre>
+<p>or</p>
+<pre><code>#addin nuget:?package=foo&amp;loaddependencies=true
+#addin nuget:?package=foo.bar&amp;loaddependencies=false
+</code></pre>
+<p>As 0.22.0 has several breaking changes, it will require addins to reference Cake.Core 0.22.0 or newer to be loaded, there's a &quot;you're on your own anything can happen&quot; setting to skip verification but we recommend to start targeting the newer version as soon as possible. Example usage to skip verification:</p>
+<pre><code>Cake.exe --settings_skipverification=true
+</code></pre>
+<p>We have said it before, but here it comes again. Regardless of intentional or unintentional breaking changes, the possibility of new releases breaking something is why we always recommend you pin the version of Cake you're running, thus avoiding any unplanned broken builds. You can read more about pinning Cake version <a href="/docs/tutorials/pinning-cake-version">here</a>. We always try to avoid breaking changes, but we think these new features and improvements justify the friction, and we hope you will too!</p>
+<p>And as always thanks to all Cake contributors and users, Cake wouldn't have been possible without you!</p>
+<p>Contributions were included from:</p>
+<ul>
+<li><a href="https://github.com/pascalberger">pascalberger</a></li>
+<li><a href="https://github.com/gep13">gep13</a></li>
+<li><a href="https://github.com/soydachi">soydachi</a></li>
+<li><a href="https://github.com/devlead">devlead</a></li>
+<li><a href="https://github.com/patriksvensson">patriksvensson</a></li>
+<li><a href="https://github.com/mholo65">mholo65</a></li>
+<li>Eugen Richter</li>
+<li><a href="https://github.com/phillipsj">phillipsj</a></li>
+<li><a href="https://github.com/Roemer">Roemer</a></li>
+<li><a href="https://github.com/DixonDs">DixonDs</a></li>
+<li><a href="https://github.com/patridge">patridge</a></li>
+<li><a href="https://github.com/kcamp">kcamp</a></li>
+<li><a href="https://github.com/dudleyt">dudleyt</a></li>
+<li><a href="https://github.com/Redth">Redth</a></li>
+<li><a href="https://github.com/SIkebe">SIkebe</a></li>
+<li><a href="https://github.com/david-driscoll">david-driscoll</a></li>
+<li><a href="https://github.com/olevett">olevett</a></li>
+<li><a href="https://github.com/atsushieno">atsushieno</a></li>
+<li><a href="https://github.com/Cheesebaron">Cheesebaron</a></li>
+<li><a href="https://github.com/ErikSchierboom">ErikSchierboom</a></li>
+<li><a href="https://github.com/djdelaney">djdelaney</a></li>
+<li>Mahmoud Ali</li>
+<li><a href="https://github.com/akamud">akamud</a></li>
+<li><a href="https://github.com/Julien-Mialon">Julien-Mialon</a></li>
+</ul>
+<p>Full details of everything that was included in this release can be seen below.</p>
+<!--excerpt-->
+<p>As part of this release we had <a href="https://github.com/cake-build/cake/issues?milestone=32&amp;state=closed">49 issues</a> closed.</p>
+<p><strong>Breaking changes</strong></p>
+<ul>
+<li><a href="https://github.com/cake-build/cake/issues/1785"><strong>#1785</strong></a> Bump LatestBreakingChange to 0.22.0</li>
+<li><a href="https://github.com/cake-build/cake/issues/1745"><strong>#1745</strong></a> Change parameter for InstallTools and InstallAddins in IScriptProcessor</li>
+<li><a href="https://github.com/cake-build/cake/issues/1720"><strong>#1720</strong></a> ILRepackSettings.Libs should be List of DirectoryPath</li>
+<li><a href="https://github.com/cake-build/cake/issues/1719"><strong>#1719</strong></a> Jenkins BRANCH_NAME is missing</li>
+<li><a href="https://github.com/cake-build/cake/pull/1714"><strong>#1714</strong></a> Updated CakeRuntime.TargetVersion to net462.</li>
+<li><a href="https://github.com/cake-build/cake/issues/1674"><strong>#1674</strong></a> MSBuildFileLogger LogFile is a string and not a FilePath</li>
+<li><a href="https://github.com/cake-build/cake/issues/1665"><strong>#1665</strong></a> NUnit3Settings: Params and multiple results</li>
+<li><a href="https://github.com/cake-build/cake/issues/1651"><strong>#1651</strong></a> NUnit3Settings <code>Verbose</code> flag obsoleted by NUnit console runner</li>
+<li><a href="https://github.com/cake-build/cake/issues/1614"><strong>#1614</strong></a> Correct the class that TeamCityEnvironmentInfo inherits from</li>
+<li><a href="https://github.com/cake-build/cake/issues/1597"><strong>#1597</strong></a> CommitsSinceVersionSource and PreReleaseNumber as Integer</li>
+<li><a href="https://github.com/cake-build/cake/issues/1564"><strong>#1564</strong></a> DeleteDirectory cannot delete read-only files</li>
+<li><a href="https://github.com/cake-build/cake/issues/1540"><strong>#1540</strong></a> Upgrade to Roslyn 2.0</li>
+</ul>
+<p><strong>Features</strong></p>
+<ul>
+<li><a href="https://github.com/cake-build/cake/issues/1791"><strong>#1791</strong></a> Add option to enable MSBuild binary logging</li>
+<li><a href="https://github.com/cake-build/cake/issues/1771"><strong>#1771</strong></a> Look for msbuild in default install path on Linux</li>
+<li><a href="https://github.com/cake-build/cake/issues/1761"><strong>#1761</strong></a> DoesForEach() extension method</li>
+<li><a href="https://github.com/cake-build/cake/issues/1754"><strong>#1754</strong></a> VSWhere not returning &quot;prerelease&quot; versions</li>
+<li><a href="https://github.com/cake-build/cake/issues/1743"><strong>#1743</strong></a> Implement functionality in Cake.NuGet for downloading packages</li>
+<li><a href="https://github.com/cake-build/cake/issues/1734"><strong>#1734</strong></a> Add GitLink 3 compatible aliases</li>
+<li><a href="https://github.com/cake-build/cake/issues/1710"><strong>#1710</strong></a> Add alias for simple sub-directory listing</li>
+<li><a href="https://github.com/cake-build/cake/issues/1699"><strong>#1699</strong></a> NuGetPackSettings missing language/locale ID for the package</li>
+<li><a href="https://github.com/cake-build/cake/issues/1670"><strong>#1670</strong></a> OpenCover is missing some commandline parameter (for example mergebyhash)</li>
+<li><a href="https://github.com/cake-build/cake/issues/1667"><strong>#1667</strong></a> Add support for choco download internalize-all-urls</li>
+<li><a href="https://github.com/cake-build/cake/issues/1621"><strong>#1621</strong></a> Add overload for StartProcess which also returns redircted error output</li>
+</ul>
+<p><strong>Bugs</strong></p>
+<ul>
+<li><a href="https://github.com/cake-build/cake/issues/1775"><strong>#1775</strong></a> Strange usage of Cake.Core.dll when executing cake sub process</li>
+<li><a href="https://github.com/cake-build/cake/issues/1773"><strong>#1773</strong></a> NuGetHasSource call do not take care of ArgumentCustomization in NuGetSourcesSettings</li>
+<li><a href="https://github.com/cake-build/cake/issues/1759"><strong>#1759</strong></a> XmlPoke always writes the xmldeclaration even if the original file didn't have one</li>
+<li><a href="https://github.com/cake-build/cake/issues/1742"><strong>#1742</strong></a> Some unit tests are locale-sensitive</li>
+<li><a href="https://github.com/cake-build/cake/issues/1739"><strong>#1739</strong></a> NuGetContentResolver can't find assemblies if located in root</li>
+<li><a href="https://github.com/cake-build/cake/issues/1738"><strong>#1738</strong></a> NuGetInstaller can't resolve files if package contains dependencies</li>
+<li><a href="https://github.com/cake-build/cake/issues/1697"><strong>#1697</strong></a> CakeContextAdapter do not implement ICakeContext</li>
+<li><a href="https://github.com/cake-build/cake/issues/1694"><strong>#1694</strong></a> Addin directive shouldn't attempt to load native assemblies</li>
+<li><a href="https://github.com/cake-build/cake/issues/1693"><strong>#1693</strong></a> Possible bug when setting process environment variable</li>
+<li><a href="https://github.com/cake-build/cake/issues/1625"><strong>#1625</strong></a> Comma in msbuild commands are not escaped</li>
+<li><a href="https://github.com/cake-build/cake/issues/1602"><strong>#1602</strong></a> MSBuildFileLogger Verbosity does not accept Verbosity.Verbose</li>
+<li><a href="https://github.com/cake-build/cake/issues/1537"><strong>#1537</strong></a> XmlPeek not working correctly for element nodes</li>
+<li><a href="https://github.com/cake-build/cake/issues/1422"><strong>#1422</strong></a> Error: Unkown token when directory contains multibyte characters</li>
+</ul>
+<p><strong>Improvements</strong></p>
+<ul>
+<li><a href="https://github.com/cake-build/cake/issues/1752"><strong>#1752</strong></a> Extend DownloadFile to allow AcceptEncoding gzip</li>
+<li><a href="https://github.com/cake-build/cake/issues/1746"><strong>#1746</strong></a> ScriptAnalyzer.Analyze() should not throw, instead return list of errors</li>
+<li><a href="https://github.com/cake-build/cake/issues/1704"><strong>#1704</strong></a> Move CakeConsole &amp; CakeBuildLog to Cake.Core and made CakeConfiguration public</li>
+<li><a href="https://github.com/cake-build/cake/issues/1512"><strong>#1512</strong></a> Please support C# 7 and Roslyn v2</li>
+<li><a href="https://github.com/cake-build/cake/issues/753"><strong>#753</strong></a> Tool Versioning</li>
+</ul>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><a href="https://github.com/cake-build/cake/issues/1787"><strong>#1787</strong></a> Add opt-out config information to assembly version verification error message</li>
+<li><a href="https://github.com/cake-build/cake/pull/1780"><strong>#1780</strong></a> Fix typo in version.cake</li>
+<li><a href="https://github.com/cake-build/cake/issues/1727"><strong>#1727</strong></a> Incorrect documentation for XmlPeek Alias</li>
+<li><a href="https://github.com/cake-build/cake/pull/1700"><strong>#1700</strong></a> Update nuget license url</li>
+<li><a href="https://github.com/cake-build/cake/pull/1525"><strong>#1525</strong></a> Updated examples for DotNetCoreTest</li>
+</ul>
+
+
+<hr />
+
+<ul class="share-buttons">
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcakebuild.net%2Fblog%2F2017%2F09%2Fcake-v0.22.0-released&t=Cake%20v0.22.0%20released" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="/assets/img/social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fcakebuild.net%2Fblog%2F2017%2F09%2Fcake-v0.22.0-released&text=Cake%20v0.22.0%20released:%20http%3A%2F%2Fcakebuild.net%2Fblog%2F2017%2F09%2Fcake-v0.22.0-released&via=cakebuildnet" target="_blank" title="Tweet"><img alt="Tweet" src="/assets/img/social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fcakebuild.net%2Fblog%2F2017%2F09%2Fcake-v0.22.0-released&title=Cake%20v0.22.0%20released" target="_blank" title="Submit to Reddit"><img alt="Submit to Reddit" src="/assets/img/social_flat_rounded_rects_svg/Reddit.svg"></a></li>
+  <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fcakebuild.net%2Fblog%2F2017%2F09%2Fcake-v0.22.0-released&title=Cake%20v0.22.0%20released&summary=&source=http%3A%2F%2Fcakebuild.net%2Fblog%2F2017%2F09%2Fcake-v0.22.0-released" target="_blank" title="Share on LinkedIn"><img alt="Share on LinkedIn" src="/assets/img/social_flat_rounded_rects_svg/LinkedIn.svg"></a></li>
+  <li><a href="mailto:?subject=Cake%20v0.22.0%20released&body=:%20http%3A%2F%2Fcakebuild.net%2Fblog%2F2017%2F09%2Fcake-v0.22.0-released" target="_blank" title="Send email"><img alt="Send email" src="/assets/img/social_flat_rounded_rects_svg/Email.svg"></a></li>
+</ul>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br/>
+    Copyright &copy; <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br/>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

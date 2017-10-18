@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -115,7 +116,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -127,6 +128,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -142,7 +150,7 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
 				<li><a href="/api/Cake.Docker/DockerAliases/4AE54A45">DockerBuild<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/6AFAC01B">DockerBuild<wbr>(ICakeContext, <wbr>Docker<wbr>Build<wbr>Settings, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/F49509D6">DockerBuild<wbr>(ICakeContext, <wbr>Docker<wbr>Image<wbr>Build<wbr>Settings, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/9A2BEA69">DockerComposeBuild<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/06F37ACC">DockerComposeBuild<wbr>(ICakeContext, <wbr>Docker<wbr>Compose<wbr>Build<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/AC317F59">DockerComposeCreate<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
@@ -174,12 +182,16 @@
 				<li><a href="/api/Cake.Docker/DockerAliases/07DC0034">DockerComposeUp<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/4B611675">DockerComposeUp<wbr>(ICakeContext, <wbr>Docker<wbr>Compose<wbr>Up<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/CF5326C6">DockerCp<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/3484110B">DockerCp<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>DockerCpSettings)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/7948CAE9">DockerCp<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>Docker<wbr>Container<wbr>Cp<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/DAA43165">DockerCreate<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/0FE23E97">DockerCreate<wbr>(ICakeContext, <wbr>Docker<wbr>Create<wbr>Settings, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/706A7B6E">DockerLoad<wbr>(ICakeContext, <wbr>DockerLoadSettings)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/C497980A">DockerCreate<wbr>(ICakeContext, <wbr>Docker<wbr>Container<wbr>Create<wbr>Settings, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/18362CC7">DockerExec<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/CE2AF0E3">DockerExec<wbr>(ICakeContext, <wbr>Docker<wbr>Container<wbr>Exec<wbr>Settings, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/0F412F75">DockerLoad<wbr>(ICakeContext, <wbr>Docker<wbr>Image<wbr>Load<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/E17B347B">DockerLogin<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/2ABCDE96">DockerLogin<wbr>(ICakeContext, <wbr>Docker<wbr>Login<wbr>Settings, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/68E06099">DockerLogin<wbr>(ICakeContext, <wbr>Docker<wbr>Registry<wbr>Login<wbr>Settings, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/A4A83F7F">DockerLogs<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/16B7FCC4">DockerLogs<wbr>(ICakeContext, <wbr>Docker<wbr>Container<wbr>Logs<wbr>Settings, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/FE72D38B">DockerNetworkConnect<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/DAEA685E">DockerNetworkConnect<wbr>(ICakeContext, <wbr>Docker<wbr>Network<wbr>Connect<wbr>Settings, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/5B6A8E12">DockerNetworkCreate<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
@@ -188,21 +200,21 @@
 				<li><a href="/api/Cake.Docker/DockerAliases/542FDF05">Docker<wbr>Network<wbr>Disconnect<wbr>(ICakeContext, <wbr>Docker<wbr>Network<wbr>Disconnect<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/53085EB4">DockerNetworkRemove<wbr>(ICakeContext, <wbr>string, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/A1B23D9C">DockerNetworkRemove<wbr>(ICakeContext, <wbr>string[], <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/3324E817">DockerPs<wbr>(ICakeContext)<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/220CF338">DockerPs<wbr>(ICakeContext, <wbr>DockerPsSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/E5925CB8">DockerPull<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/8AC021A8">DockerPull<wbr>(ICakeContext, <wbr>DockerPullSettings, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/57223449">DockerPull<wbr>(ICakeContext, <wbr>Docker<wbr>Image<wbr>Pull<wbr>Settings, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/56CBA02D">DockerPush<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/1DDB3007">DockerPush<wbr>(ICakeContext, <wbr>DockerPushSettings, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/6C5FEDE0">DockerPush<wbr>(ICakeContext, <wbr>Docker<wbr>Image<wbr>Push<wbr>Settings, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/C639CA77">DockerRemove<wbr>(ICakeContext, <wbr>Docker<wbr>Image<wbr>Remove<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/A0D23B59">DockerRm<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/CA39D956">DockerRm<wbr>(ICakeContext, <wbr>DockerRmSettings, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/265EDBEF">DockerRm<wbr>(ICakeContext, <wbr>Docker<wbr>Container<wbr>Rm<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/E27EC9E3">DockerRmi<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/61CBE139">DockerRmi<wbr>(ICakeContext, <wbr>DockerRmiSettings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/74202973">DockerRun<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/E84CC18D">DockerRun<wbr>(ICakeContext, <wbr>DockerRunSettings, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/990E1554">DockerSave<wbr>(ICakeContext, <wbr>DockerSaveSettings, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/04A84456">DockerRun<wbr>(ICakeContext, <wbr>Docker<wbr>Container<wbr>Run<wbr>Settings, <wbr>string, <wbr>string, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/54278586">DockerSave<wbr>(ICakeContext, <wbr>Docker<wbr>Image<wbr>Save<wbr>Settings, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/DA9CA854">DockerStart<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/A64E463B">DockerStart<wbr>(ICakeContext, <wbr>Docker<wbr>Container<wbr>Start<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/15876606">DockerStop<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/98CC957D">DockerStop<wbr>(ICakeContext, <wbr>DockerStopSettings, <wbr>string[])<wbr></a></li>
+				<li><a href="/api/Cake.Docker/DockerAliases/8DB4FCB9">DockerStop<wbr>(ICakeContext, <wbr>Docker<wbr>Container<wbr>Stop<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/86E4DC1C">DockerSwarmInit<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/C0516D8A">DockerSwarmInit<wbr>(ICakeContext, <wbr>Docker<wbr>Swarm<wbr>Init<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/CCD96059">DockerSwarmJoin<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
@@ -212,7 +224,6 @@
 				<li><a href="/api/Cake.Docker/DockerAliases/D5B7749B">DockerSwarmUpdate<wbr>(ICakeContext, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/4AC11358">DockerSwarmUpdate<wbr>(ICakeContext, <wbr>Docker<wbr>Swarm<wbr>Update<wbr>Settings, <wbr>string[])<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases/81FA81F7">DockerTag<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
-				<li><a href="/api/Cake.Docker/DockerAliases/8CBEAC06">Processor<wbr>(IEnumerable<wbr>&lt;string&gt;<wbr>)<wbr></a></li>
 
 
                     </ul>
@@ -301,7 +312,7 @@
 					</tr>
 					<tr>
 						<td>services</td>
-						<td></td>
+						<td>string[]</td>
 						<td>The list of services.</td>
 					</tr>
 			</tbody></table>
@@ -359,6 +370,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

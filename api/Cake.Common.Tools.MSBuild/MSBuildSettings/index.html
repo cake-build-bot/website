@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -115,7 +116,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -127,6 +128,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -136,18 +144,22 @@
 			<li class="header">Namespace</li>
 		<li><a href="/api/Cake.Common.Tools.MSBuild">Cake<wbr>.Common<wbr>.Tools<wbr>.MSBuild</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildFileLoggerOutput">M<wbr>S<wbr>Build<wbr>File<wbr>Logger<wbr>Output</a></li>
-				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildPlatform">MSBuildPlatform</a></li>
-				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildToolVersion">MSBuildToolVersion</a></li>
-				<li><a href="/api/Cake.Common.Tools.MSBuild/PlatformTarget">PlatformTarget</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildAliases">MSBuildAliases</a></li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildBinaryLogSettings">M<wbr>S<wbr>Build<wbr>Binary<wbr>Log<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildFileLogger">MSBuildFileLogger</a></li>
 				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildLogger">MSBuildLogger</a></li>
 				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildRunner">MSBuildRunner</a></li>
 				<li class="selected"><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings">MSBuildSettings</a></li>
 				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions">M<wbr>S<wbr>Build<wbr>Settings<wbr>Extensions</a></li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildVerbosityExtensions">M<wbr>S<wbr>Build<wbr>Verbosity<wbr>Extensions</a></li>
+			<li class="header">Enum Types</li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildBinaryLogImports">M<wbr>S<wbr>Build<wbr>Binary<wbr>Log<wbr>Imports</a></li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildFileLoggerOutput">M<wbr>S<wbr>Build<wbr>File<wbr>Logger<wbr>Output</a></li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildPlatform">MSBuildPlatform</a></li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildToolVersion">MSBuildToolVersion</a></li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/MSBuildVersion">MSBuildVersion</a></li>
+				<li><a href="/api/Cake.Common.Tools.MSBuild/PlatformTarget">PlatformTarget</a></li>
 
 
                     </ul>
@@ -251,7 +263,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/50AAB3A8">Argument<wbr>Customization</a></td>
-								<td>Func<wbr>&lt;<wbr>Process<wbr>Argument<wbr>Builder, <wbr>Process<wbr>Argument<wbr>Builder&gt;<wbr></td>
+								<td>Func<wbr>&lt;T, <wbr>TResult&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets the argument customization.
@@ -259,6 +271,15 @@ class Type type-node
     This allows you to support new tool arguments, customize arguments or address potential argument issues.
     </div>
 											<div><small><em>Inherited from <a href="/api/Cake.Core.Tooling/ToolSettings">ToolSettings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/CB807ABD">BinaryLogger</a></td>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildBinaryLogSettings">M<wbr>S<wbr>Build<wbr>Binary<wbr>Log<wbr>Settings</a></td>
+								<td>
+									<div>
+    Gets or sets the binary logging options
+    </div>
 								</td>
 							</tr>
 							<tr>
@@ -272,7 +293,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/EB592A07">DetailedSummary</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets whether or not detailed summary is created.
@@ -284,7 +305,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/ACBC8906">EnvironmentVariables</a></td>
-								<td>IDictionary<wbr>&lt;string, <wbr>string&gt;<wbr></td>
+								<td>IDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets search paths for files, directories for temporary files, application-specific options, and other similar information.
@@ -294,7 +315,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/027CEE4C">FileLoggers</a></td>
-								<td>ICollection<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>File<wbr>Logger&gt;<wbr></td>
+								<td>ICollection<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets the file loggers
@@ -303,7 +324,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/B4721B5C">Loggers</a></td>
-								<td>ICollection<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>Logger&gt;<wbr></td>
+								<td>ICollection<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets the loggers.
@@ -312,7 +333,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/60E763EA">MaxCpuCount</a></td>
-								<td>int?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets the maximum CPU count.
@@ -333,7 +354,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/67CC1BF3">NoConsoleLogger</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets whether or not information is logged to the console.
@@ -344,7 +365,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/B86E25CE">NodeReuse</a></td>
-								<td>bool?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets whether or not node reuse is used.
@@ -355,7 +376,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/DC7081D0">PlatformTarget</a></td>
-								<td>PlatformTarget?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets the platform target.
@@ -364,7 +385,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/DD57ACB0">Properties</a></td>
-								<td>IDictionary<wbr>&lt;string, <wbr>IList<wbr>&lt;string&gt;<wbr>&gt;<wbr></td>
+								<td>IDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr></td>
 								<td>
 									<div>
     Gets the properties.
@@ -373,7 +394,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/197E7ACC">Targets</a></td>
-								<td>ISet<wbr>&lt;string&gt;<wbr></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
     Gets the targets.
@@ -392,7 +413,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/B98A10B0">ToolTimeout</a></td>
-								<td>TimeSpan?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets optional timeout for tool execution.
@@ -420,6 +441,35 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/A846986C">WarningsAsError</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether warnings should be treated as errors.
+    Treats all warnings as errors unless <code class="cs"><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/1CF00CE0">WarningsAsErrorCodes</a></code> has specific codes specified.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/1CF00CE0">WarningsAsErrorCodes</a></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
+								<td>
+									<div>
+    Gets the warning codes to treat as errors.
+    If any specified  will implicitly be treated as true.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings/9F310A82">Warnings<wbr>As<wbr>Message<wbr>Codes</a></td>
+								<td>ISet<wbr>&lt;&gt;<wbr></td>
+								<td>
+									<div>
+    Gets the warning codes to NOT treat as errors.
+    </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/A29EC283">WorkingDirectory</a></td>
 								<td><a href="/api/Cake.Core.IO/DirectoryPath">DirectoryPath</a></td>
 								<td>
@@ -433,6 +483,7 @@ class Type type-node
 				</div>
 			</div>
 		
+
 
 
 			<h1 id="ExtensionMethods">Extension Methods</h1>
@@ -470,6 +521,50 @@ class Type type-node
     The next nine (max) file loggers will match up to the /fl1 through /fl9 respectively.
     </div>
 										<div><small><em>From <a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions">M<wbr>S<wbr>Build<wbr>Settings<wbr>Extensions</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>Settings&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>Settings&gt;<wbr><wbr>(MSBuildSettings[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -553,6 +648,28 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;<wbr>M<wbr>S<wbr>Build<wbr>Settings&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions/2D5DE120">UseToolVersion<wbr>(MSBuildToolVersion)<wbr></a></td>
 								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings">MSBuildSettings</a></td>
 								<td>
@@ -588,6 +705,26 @@ class Type type-node
 								<td>
 									<div>
     Adds a MSBuild target to the configuration.
+    </div>
+										<div><small><em>From <a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions">M<wbr>S<wbr>Build<wbr>Settings<wbr>Extensions</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions/AA2066F5">WithWarningsAsError<wbr>(string[])<wbr></a></td>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings">MSBuildSettings</a></td>
+								<td>
+									<div>
+    Treat warnnings as errors, if no codes specified all errors will be treated as errors.
+    </div>
+										<div><small><em>From <a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions">M<wbr>S<wbr>Build<wbr>Settings<wbr>Extensions</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions/22D7899C">With<wbr>Warnings<wbr>As<wbr>Message<wbr>(string[])<wbr></a></td>
+								<td><a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettings">MSBuildSettings</a></td>
+								<td>
+									<div>
+    Warnings to not treat as errors.
     </div>
 										<div><small><em>From <a href="/api/Cake.Common.Tools.MSBuild/MSBuildSettingsExtensions">M<wbr>S<wbr>Build<wbr>Settings<wbr>Extensions</a></em></small></div>
 								</td>
@@ -629,6 +766,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

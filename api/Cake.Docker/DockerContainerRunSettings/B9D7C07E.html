@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - API - DockerContainerRunSettings.LabelFile Property</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/Cake.Docker.dll">Cake<wbr>.Docker<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/Cake.Docker">Cake<wbr>.Docker</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/Cake.Docker/DockerContainerRunSettings">Docker<wbr>Container<wbr>Run<wbr>Settings</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Constructors</li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/E8CB6FAD">Docker<wbr>Container<wbr>Run<wbr>Settings<wbr>()<wbr></a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/41E11150">AddHost</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/B0364F3A">Attach</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/CCB2C6CD">BlkioWeightDevice</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/12845F2E">CapAdd</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/464611BD">CapDrop</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/826E1414">CgroupParent</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/65699A98">Cidfile</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/A9E3AF5E">CpuCount</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/81630A01">CpuPercent</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/5173D5C9">CpuPeriod</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/26A86AB7">CpuQuota</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/BA807C25">CpuRtPeriod</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/C07D2E82">CpuRtRuntime</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/4C28024A">Cpus</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/BC2592FD">CpusetCpus</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/4DABBB85">CpusetMems</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/E31C329C">CpuShares</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/31190237">Detach</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/642B57C5">DetachKeys</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/BFFCA9ED">Device</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/40E95780">DeviceCgroupRule</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/57056B19">DeviceReadBps</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/D6504E05">DeviceReadIops</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/282C15B9">DeviceWriteBps</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/524254C5">DeviceWriteIops</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/D9FEED21">DisableContentTrust</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/5EF18AEA">Dns</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/C5166B38">DnsOption</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/D2CD1DD6">DnsSearch</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/527586B1">Entrypoint</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/E66F229B">Env</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/3B075D5C">EnvFile</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/164DA1D5">Expose</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/CA62160D">GroupAdd</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/B5053AFA">HealthCmd</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/A91EF0B5">HealthInterval</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/6DC34E6F">HealthRetries</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/12B737B4">HealthStartPeriod</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/B957490B">HealthTimeout</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/AB8B05B5">Hostname</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/AC8E144B">Init</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/82F51D8C">Interactive</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/80121AD0">IoMaxbandwidth</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/3391A6F8">IoMaxiops</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/FF547D1F">Ip</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/CDE8A530">Ip6</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/B64DA42B">Ipc</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/78EA5C52">Isolation</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/15262956">KernelMemory</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/646A2286">Label</a></li>
+				<li class="selected"><a href="/api/Cake.Docker/DockerContainerRunSettings/B9D7C07E">LabelFile</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/29F3CCBB">Link</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/8A8CABA5">LinkLocalIp</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/F7706897">LogDriver</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/BB0D7094">LogOpt</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/14D25472">MacAddress</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/047EEB0E">Memory</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/2F0DE431">MemoryReservation</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/72FF9E0E">MemorySwap</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/CDEAB6AD">MemorySwappiness</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/8FC06CB2">Mount</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/DE1443D3">Name</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/CC01BE31">Network</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/87F269BD">NetworkAlias</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/2842FEF7">NoHealthcheck</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/7D1231D0">OomKillDisable</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/F7F83858">OomScoreAdj</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/F2E9373D">Pid</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/D245D078">PidsLimit</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/ABF2A214">Privileged</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/314AAEE9">Publish</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/1391041D">PublishAll</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/7C2F38CC">ReadOnly</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/77A4C3B6">Restart</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/BCF34DD5">Rm</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/0B8A9C84">Runtime</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/AD206D40">SecurityOpt</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/3BF965E2">ShmSize</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/D325E768">SigProxy</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/16195E8B">StopSignal</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/DC94BDB8">StopTimeout</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/E24F7039">StorageOpt</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/C9FD7C10">Sysctl</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/B720E325">Tmpfs</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/EB4154A6">Tty</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/9D681FB7">Ulimit</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/91BCF300">User</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/5F3026D9">Userns</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/C2C24347">Uts</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/EF871C5D">Volume</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/FEE9B58C">VolumeDriver</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/D11B1F80">VolumesFrom</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings/8B6AE436">Workdir</a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/Cake.Docker/DockerContainerRunSettings">Docker<wbr>Container<wbr>Run<wbr>Settings</a>.</h3>
+	<h1>LabelFile <small>Property</small></h1>
+</section>
+<section class="content">
+	        <div class="alert alert-info" role="alert">
+            <i class="fa fa-info-circle"></i> This content is part of a third party addin that is not supported by the Cake project.
+
+                        For more information about this project, please visit 
+                        <a href="https://github.com/MihaMarkic/Cake.Docker" class="alert-link">https://github.com/MihaMarkic/Cake.Docker</a>.
+                            </div>
+
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            --label-file
+            Read in a line delimited file of labels
+            </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/api/Cake.Docker.dll">Cake<wbr>.Docker<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/Cake.Docker">Cake<wbr>.Docker</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/Cake.Docker/DockerContainerRunSettings">Docker<wbr>Container<wbr>Run<wbr>Settings</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public string[] LabelFile { get; set; }</code></pre>
+
+
+
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>string[]</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br>
+    Copyright © <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
+
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

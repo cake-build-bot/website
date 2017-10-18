@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -116,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -128,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -142,9 +150,23 @@
 			<li class="header">Method Members</li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/0D79A1B5">DotNetCoreBuild<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/8E8365A3">DotNetCoreBuild<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Build<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/75949DF3">DotNetCoreClean<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/E9691F43">DotNetCoreClean<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Clean<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/C7890987">DotNetCoreExecute<wbr>(ICakeContext, <wbr>FilePath)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/F93D2CCC">DotNetCoreExecute<wbr>(ICakeContext, <wbr>FilePath, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
-				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/1E1BF146">DotNetCoreExecute<wbr>(ICakeContext, <wbr>FilePath, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>DotNetCoreSettings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/980E2761">DotNetCoreExecute<wbr>(ICakeContext, <wbr>FilePath, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>Dot<wbr>Net<wbr>Core<wbr>Execute<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/E4F74647">DotNetCoreMSBuild<wbr>(ICakeContext)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/2A6E31D3">DotNetCoreMSBuild<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/B1AC2D04">DotNetCoreMSBuild<wbr>(ICakeContext, <wbr>Dot<wbr>Net<wbr>Core<wbr>M<wbr>S<wbr>Build<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/9789CA99">DotNetCoreMSBuild<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>M<wbr>S<wbr>Build<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/E5078DE9">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/9F3B9DD6">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/B3548CC4">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/708E2F89">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/1406E50B">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/17C42973">Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>(ICakeContext, <wbr>string, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/C02DD80A">DotNetCoreNuGetPush<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/813030CA">DotNetCoreNuGetPush<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Nu<wbr>Get<wbr>Push<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/DDA19EA2">DotNetCorePack<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/0F7A518E">DotNetCorePack<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Pack<wbr>Settings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/95B416B7">DotNetCorePublish<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
@@ -160,6 +182,12 @@
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/C9C3270F">DotNetCoreTest<wbr>(ICakeContext)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/DD3913B1">DotNetCoreTest<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/8191BBC4">DotNetCoreTest<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>Test<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/2E865230">DotNetCoreTool<wbr>(ICakeContext, <wbr>FilePath, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/0C29BCC5">DotNetCoreTool<wbr>(ICakeContext, <wbr>FilePath, <wbr>string, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/F55DA2CB">DotNetCoreTool<wbr>(ICakeContext, <wbr>FilePath, <wbr>string, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>Dot<wbr>Net<wbr>Core<wbr>Tool<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/13D5671C">DotNetCoreVSTest<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/8C1A4B59">DotNetCoreVSTest<wbr>(ICakeContext, <wbr>string, <wbr>Dot<wbr>Net<wbr>Core<wbr>V<wbr>S<wbr>Test<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Tools.DotNetCore/DotNetCoreAliases/8FE77742">DotNetCoreVSTest<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;FilePath&gt;<wbr>, <wbr>Dot<wbr>Net<wbr>Core<wbr>V<wbr>S<wbr>Test<wbr>Settings)<wbr></a></li>
 
 
                     </ul>
@@ -237,7 +265,7 @@ public static void DotNetCoreRun(this ICakeContext context)</code></pre>
 						<td>
     An attribute used to hint Cake about additional namespaces that need
     to be imported for an alias to work. This attribute can mark an
-    extension method or the extension method class.
+    extension method, the extension method class, or the assembly to provide a global set of imports
     </td>
 					</tr>
 			</tbody></table>
@@ -316,6 +344,17 @@ public static void DotNetCoreRun(this ICakeContext context)</code></pre>
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -82,6 +83,7 @@
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Properties">Properties</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -114,7 +116,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +128,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -143,7 +152,6 @@
 				<li><a href="/api/Cake.Docker/AutoToolSettings">AutoToolSettings</a></li>
 				<li><a href="/api/Cake.Docker/DockerAliases">DockerAliases</a></li>
 				<li><a href="/api/Cake.Docker/DockerBridge">DockerBridge</a></li>
-				<li><a href="/api/Cake.Docker/DockerBuildSettings">DockerBuildSettings</a></li>
 				<li><a href="/api/Cake.Docker/DockerComposeBuildSettings">Docker<wbr>Compose<wbr>Build<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerComposeCreateSettings">Docker<wbr>Compose<wbr>Create<wbr>Settings</a></li>
 				<li class="selected"><a href="/api/Cake.Docker/DockerComposeDownSettings">Docker<wbr>Compose<wbr>Down<wbr>Settings</a></li>
@@ -156,34 +164,34 @@
 				<li><a href="/api/Cake.Docker/DockerComposeStopSettings">Docker<wbr>Compose<wbr>Stop<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerComposeTool_1">DockerComposeTool<wbr>&lt;TSettings&gt;<wbr></a></li>
 				<li><a href="/api/Cake.Docker/DockerComposeUpSettings">Docker<wbr>Compose<wbr>Up<wbr>Settings</a></li>
-				<li><a href="/api/Cake.Docker/DockerCpSettings">DockerCpSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerCreateSettings">DockerCreateSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerLoadSettings">DockerLoadSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerLoginSettings">DockerLoginSettings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerCpSettings">Docker<wbr>Container<wbr>Cp<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerCreateSettings">Docker<wbr>Container<wbr>Create<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerExecSettings">Docker<wbr>Container<wbr>Exec<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerLogsSettings">Docker<wbr>Container<wbr>Logs<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRmSettings">Docker<wbr>Container<wbr>Rm<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerRunSettings">Docker<wbr>Container<wbr>Run<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerStartSettings">Docker<wbr>Container<wbr>Start<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerContainerStopSettings">Docker<wbr>Container<wbr>Stop<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerImageBuildSettings">Docker<wbr>Image<wbr>Build<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerImageLoadSettings">Docker<wbr>Image<wbr>Load<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerImagePullSettings">Docker<wbr>Image<wbr>Pull<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerImagePushSettings">Docker<wbr>Image<wbr>Push<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerImageRemoveSettings">Docker<wbr>Image<wbr>Remove<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerImageSaveSettings">Docker<wbr>Image<wbr>Save<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerImageTagSettings">Docker<wbr>Image<wbr>Tag<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkConnectSettings">Docker<wbr>Network<wbr>Connect<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkCreateSettings">Docker<wbr>Network<wbr>Create<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerNetworkDisconnectSettings">Docker<wbr>Network<wbr>Disconnect<wbr>Settings</a></li>
-				<li><a href="/api/Cake.Docker/DockerPsParser">DockerPsParser</a></li>
-				<li><a href="/api/Cake.Docker/DockerPsResult">DockerPsResult</a></li>
-				<li><a href="/api/Cake.Docker/DockerPsSettings">DockerPsSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerPullSettings">DockerPullSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerPushSettings">DockerPushSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerRmiSettings">DockerRmiSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerRmSettings">DockerRmSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerRunSettings">DockerRunSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerSaveSettings">DockerSaveSettings</a></li>
-				<li><a href="/api/Cake.Docker/DockerStopSettings">DockerStopSettings</a></li>
+				<li><a href="/api/Cake.Docker/DockerNetworkRemoveSettings">Docker<wbr>Network<wbr>Remove<wbr>Settings</a></li>
+				<li><a href="/api/Cake.Docker/DockerRegistryLoginSettings">Docker<wbr>Registry<wbr>Login<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings">Docker<wbr>Swarm<wbr>Init<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmJoinSettings">Docker<wbr>Swarm<wbr>Join<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmLeaveSettings">Docker<wbr>Swarm<wbr>Leave<wbr>Settings</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmUpdateSettings">Docker<wbr>Swarm<wbr>Update<wbr>Settings</a></li>
-				<li><a href="/api/Cake.Docker/DockerTagSettings">DockerTagSettings</a></li>
 				<li><a href="/api/Cake.Docker/DockerTool_1">DockerTool<wbr>&lt;TSettings&gt;<wbr></a></li>
 				<li><a href="/api/Cake.Docker/EmptySettings">EmptySettings</a></li>
 				<li><a href="/api/Cake.Docker/GenericDockerComposeRunner_1">Generic<wbr>Docker<wbr>Compose<wbr>Runner<wbr>&lt;TSettings&gt;<wbr></a></li>
 				<li><a href="/api/Cake.Docker/GenericDockerRunner_1">GenericDockerRunner<wbr>&lt;TSettings&gt;<wbr></a></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/api/Cake.Docker/ContainerStatus">ContainerStatus</a></li>
 
 
                     </ul>
@@ -296,7 +304,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/api/Cake.Docker/DockerComposeSettings/62FC6890">Files</a></td>
-								<td></td>
+								<td>string[]</td>
 								<td>
 									<div>
             Configuration files.
@@ -310,6 +318,17 @@ class Type type-node
 								<td>
 									<div>
             Daemon socket to connect to
+            </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Docker/DockerComposeSettings">Docker<wbr>Compose<wbr>Settings</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Docker/DockerComposeSettings/7AB47422">ProjectDirectory</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Specify an alternate working directory
+            (default: the path of the Compose file)
             </div>
 											<div><small><em>Inherited from <a href="/api/Cake.Docker/DockerComposeSettings">Docker<wbr>Compose<wbr>Settings</a></em></small></div>
 								</td>
@@ -446,6 +465,88 @@ class Type type-node
 
 
 
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Down<wbr>Settings&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Down<wbr>Settings&gt;<wbr><wbr>(<wbr>Docker<wbr>Compose<wbr>Down<wbr>Settings[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Down<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Down<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Down<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;<wbr>Docker<wbr>Compose<wbr>Down<wbr>Settings&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
 	
 </section>
                 
@@ -478,6 +579,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

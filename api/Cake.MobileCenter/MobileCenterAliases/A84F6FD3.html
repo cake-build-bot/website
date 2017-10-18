@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake - API - MobileCenterAliases.MobileCenterDistributeReleasesShow(ICakeContext, MobileCenterDistributeReleasesShowSettings) Method</title>
+        <link href="/assets/css/mermaid.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/dsl">Reference</a></li>
+        <li><a href="/addins">Addins</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Parameters">Parameters</a></p>
+<p><a href="#ReturnValue">Return Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">                    
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/Cake.MobileCenter.dll">Cake<wbr>.MobileCenter<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/Cake.MobileCenter">Cake<wbr>.MobileCenter</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/Cake.MobileCenter/MobileCenterAliases">MobileCenterAliases</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/538CC911">Mobile<wbr>Center<wbr>Analytics<wbr>App<wbr>Versions<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Analytics<wbr>App<wbr>Versions<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/5AC04E23">Mobile<wbr>Center<wbr>Analytics<wbr>Audience<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Analytics<wbr>Audience<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/4D188112">Mobile<wbr>Center<wbr>Analytics<wbr>Events<wbr>Delete<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Analytics<wbr>Events<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/3B0FCDFD">Mobile<wbr>Center<wbr>Analytics<wbr>Events<wbr>Show<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Analytics<wbr>Events<wbr>Show<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/0CDA2084">Mobile<wbr>Center<wbr>Analytics<wbr>Log<wbr>Flow<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Analytics<wbr>Log<wbr>Flow<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/F1A4B06E">Mobile<wbr>Center<wbr>Analytics<wbr>Sessions<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Analytics<wbr>Sessions<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/579C21F7">Mobile<wbr>Center<wbr>Apps<wbr>Create<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Apps<wbr>Create<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/153ED8A8">Mobile<wbr>Center<wbr>Apps<wbr>Delete<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Apps<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/9C94EDEC">Mobile<wbr>Center<wbr>Apps<wbr>Get<wbr>Current<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Apps<wbr>Get<wbr>Current<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/CFFBE0B8">MobileCenterAppsList<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Apps<wbr>List<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/A9B9DD13">Mobile<wbr>Center<wbr>Apps<wbr>Set<wbr>Current<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Apps<wbr>Set<wbr>Current<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/E47FAF25">MobileCenterAppsShow<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Apps<wbr>Show<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/E2EA4E4B">Mobile<wbr>Center<wbr>Apps<wbr>Update<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Apps<wbr>Update<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/D3CB679F">Mobile<wbr>Center<wbr>Build<wbr>Branches<wbr>List<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Build<wbr>Branches<wbr>List<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/F74F1166">Mobile<wbr>Center<wbr>Build<wbr>Branches<wbr>Show<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Build<wbr>Branches<wbr>Show<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/369A2D10">Mobile<wbr>Center<wbr>Build<wbr>Download<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Build<wbr>Download<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/5AE3E56C">Mobile<wbr>Center<wbr>Build<wbr>Logs<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Build<wbr>Logs<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/AAA28A0B">Mobile<wbr>Center<wbr>Build<wbr>Queue<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Build<wbr>Queue<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/1227E327">Mobile<wbr>Center<wbr>Crashes<wbr>Upload<wbr>Missing<wbr>Symbols<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Crashes<wbr>Upload<wbr>Missing<wbr>Symbols<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/BD96E841">Mobile<wbr>Center<wbr>Crashes<wbr>Upload<wbr>Symbols<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Crashes<wbr>Upload<wbr>Symbols<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/54FA8B05">Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Create<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Create<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/59AA5F6D">Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Delete<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/E6357B31">Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Download<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Download<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/F574095C">Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>List<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>List<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/3A8276E2">Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Show<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Show<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/025B6179">Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Update<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Groups<wbr>Update<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/B857A1D7">Mobile<wbr>Center<wbr>Distribute<wbr>Release<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Release<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/CEC4CB4C">Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>Delete<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/85CF1C58">Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>List<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>List<wbr>Settings)<wbr></a></li>
+				<li class="selected"><a href="/api/Cake.MobileCenter/MobileCenterAliases/A84F6FD3">Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>Show<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>Show<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/4D3657FA">MobileCenterLogin<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Login<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/073B0F52">MobileCenterLogout<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Logout<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/2F3B3D7D">Mobile<wbr>Center<wbr>Orgs<wbr>Apps<wbr>List<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Orgs<wbr>Apps<wbr>List<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/E0802126">Mobile<wbr>Center<wbr>Orgs<wbr>Collaborators<wbr>List<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Orgs<wbr>Collaborators<wbr>List<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/0E717180">Mobile<wbr>Center<wbr>Orgs<wbr>Collaborators<wbr>Update<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Orgs<wbr>Collaborators<wbr>Update<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/26FB9A8E">Mobile<wbr>Center<wbr>Orgs<wbr>Create<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Orgs<wbr>Create<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/6647FF50">MobileCenterOrgsList<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Orgs<wbr>List<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/4DC3B0CD">MobileCenterOrgsShow<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Orgs<wbr>Show<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/938DF532">Mobile<wbr>Center<wbr>Orgs<wbr>Update<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Orgs<wbr>Update<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/956CFD5E">Mobile<wbr>Center<wbr>Profile<wbr>List<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Profile<wbr>List<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/3026D547">Mobile<wbr>Center<wbr>Profile<wbr>Update<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Profile<wbr>Update<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/700939C2">Mobile<wbr>Center<wbr>Setup<wbr>Autocomplete<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Setup<wbr>Autocomplete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/9FBF55B3">Mobile<wbr>Center<wbr>Telemetry<wbr>Off<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Telemetry<wbr>Off<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/A1F3DA85">Mobile<wbr>Center<wbr>Telemetry<wbr>On<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Telemetry<wbr>On<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/C9E06A3E">Mobile<wbr>Center<wbr>Test<wbr>Generate<wbr>Appium<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Generate<wbr>Appium<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/07E52363">Mobile<wbr>Center<wbr>Test<wbr>Generate<wbr>Uitest<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Generate<wbr>Uitest<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/900ACD82">Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Appium<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Appium<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/09B503E8">Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Calabash<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Calabash<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/A06DA846">Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Espresso<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Espresso<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/8C8A791B">Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Uitest<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Uitest<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/4DCE2E4E">Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Xcuitest<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Prepare<wbr>Xcuitest<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/031917F2">Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Appium<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Appium<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/E55EAD9A">Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Calabash<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Calabash<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/CC877037">Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Espresso<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Espresso<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/DE713183">Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Manifest<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Manifest<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/873A7168">Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Uitest<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Uitest<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/4E5408A4">Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Xcuitest<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Run<wbr>Xcuitest<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/A03DE6D6">Mobile<wbr>Center<wbr>Test<wbr>Status<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Status<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/7BBD24D2">MobileCenterTestStop<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Test<wbr>Stop<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/11ED8C0F">Mobile<wbr>Center<wbr>Tokens<wbr>Create<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Tokens<wbr>Create<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/5ED764BD">Mobile<wbr>Center<wbr>Tokens<wbr>Delete<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Tokens<wbr>Delete<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.MobileCenter/MobileCenterAliases/CE7CFFFE">Mobile<wbr>Center<wbr>Tokens<wbr>List<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Tokens<wbr>List<wbr>Settings)<wbr></a></li>
+
+
+                    </ul>
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/Cake.MobileCenter/MobileCenterAliases">MobileCenterAliases</a>.</h3>
+	<h1>Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>Show<wbr>(ICakeContext, <wbr>Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>Show<wbr>Settings)<wbr> <small>Method</small></h1>
+</section>
+<section class="content">
+	        <div class="alert alert-info" role="alert">
+            <i class="fa fa-info-circle"></i> This content is part of a third party addin that is not supported by the Cake project.
+
+                        For more information about this project, please visit 
+                        <a href="https://github.com/cake-contrib/Cake.MobileCenter" class="alert-link">https://github.com/cake-contrib/Cake.MobileCenter</a>.
+                            </div>
+
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+            Shows full details about release
+            </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">	
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/api/Cake.MobileCenter.dll">Cake<wbr>.MobileCenter<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/Cake.MobileCenter">Cake<wbr>.MobileCenter</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/Cake.MobileCenter/MobileCenterAliases">MobileCenterAliases</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static void MobileCenterDistributeReleasesShow(this ICakeContext context, MobileCenterDistributeReleasesShowSettings settings)</code></pre>
+
+
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>Cake<wbr>Method<wbr>Alias<wbr>Attribute</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	<h1 id="Parameters">Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover three-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>context</td>
+						<td>ICakeContext</td>
+						<td>The context.</td>
+					</tr>
+					<tr>
+						<td>settings</td>
+						<td><a href="/api/Cake.MobileCenter/MobileCenterDistributeReleasesShowSettings">Mobile<wbr>Center<wbr>Distribute<wbr>Releases<wbr>Show<wbr>Settings</a></td>
+						<td>The settings.</td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+	<h1 id="ReturnValue">Return Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>void</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/cake-build/cake"><i class="fa fa-github"></i> GitHub</a> |
+    <a href="https://twitter.com/cakebuildnet"><i class="fa fa-twitter"></i> Twitter</a> |
+    <a href="https://gitter.im/cake-build/cake"><i class="fa fa-comment"></i> Gitter</a>
+    <br>
+    Copyright © <a href="http://dotnetfoundation.org">.NET Foundation</a> and contributors.
+    <br>
+    Generated by <a href="http://wyam.io">Wyam</a>
+</p>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <!-- Gitter -->
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'cake-build/cake'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
+
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).load(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        htmlLabels: false,
+                        useMaxWidth:false
+                    }
+                });  
+                mermaid.init(undefined, ".mermaid")
+                $('svg').addClass('img-responsive');
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

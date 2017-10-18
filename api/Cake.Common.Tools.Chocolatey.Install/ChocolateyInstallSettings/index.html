@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -81,6 +82,7 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Properties">Properties</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -113,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -125,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -175,6 +184,7 @@
 									<ul class="list-unstyled">										
 											<li>object</li>								
 											<li><a href="/api/Cake.Core.Tooling/ToolSettings">ToolSettings</a></li>								
+											<li><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></li>								
 									</ul>
 								</dd>				
 							
@@ -184,9 +194,11 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["ToolSettings"]--&gt;Type
-	click Base0 "/api/Cake.Core.Tooling/ToolSettings"
-	Base1["object"]--&gt;Base0
+	Base0["ChocolateySettings"]--&gt;Type
+	click Base0 "/api/Cake.Common.Tools.Chocolatey/ChocolateySettings"
+	Base1["ToolSettings"]--&gt;Base0
+	click Base1 "/api/Cake.Core.Tooling/ToolSettings"
+	Base2["object"]--&gt;Base1
 	Type["ChocolateyInstallSettings"]
 class Type type-node
 
@@ -197,7 +209,7 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public sealed class ChocolateyInstallSettings : ToolSettings</code></pre>
+	<pre><code>public sealed class ChocolateyInstallSettings : ChocolateySettings</code></pre>
 
 
 
@@ -219,12 +231,13 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/32042EA8">AcceptLicense</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/ED223DCF">AcceptLicense</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to accept license for package.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -237,17 +250,18 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/A325B6D4">AllowUnofficial</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/9D1E1B00">AllowUnofficial</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to run in allow unofficial mode.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/50AAB3A8">Argument<wbr>Customization</a></td>
-								<td>Func<wbr>&lt;<wbr>Process<wbr>Argument<wbr>Builder, <wbr>Process<wbr>Argument<wbr>Builder&gt;<wbr></td>
+								<td>Func<wbr>&lt;T, <wbr>TResult&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets the argument customization.
@@ -258,26 +272,28 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/0D1A89D8">CacheLocation</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/D23C9ABF">CacheLocation</a></td>
 								<td>string</td>
 								<td>
 									<div>
     Gets or sets the location of the download cache.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/4CEE2975">Debug</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/05E37339">Debug</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to run in debug mode.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/ACBC8906">EnvironmentVariables</a></td>
-								<td>IDictionary<wbr>&lt;string, <wbr>string&gt;<wbr></td>
+								<td>IDictionary<wbr>&lt;TKey, <wbr>TValue&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets search paths for files, directories for temporary files, application-specific options, and other similar information.
@@ -286,21 +302,23 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/3B113625">ExecutionTimeout</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/ABA183E4">ExecutionTimeout</a></td>
 								<td>int</td>
 								<td>
 									<div>
     Gets or sets the execution timeout value.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/C32AE48E">Force</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/8A27BEC2">Force</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to run in forced mode.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -349,48 +367,53 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/238468A9">LimitOutput</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/54809FA4">LimitOutput</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to run in limited output mode.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/F34FC9EB">Noop</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/D258D4D8">Noop</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to run in noop mode.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/FF0A0CCA">NotSilent</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/7E36F61B">NotSilent</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether or not to install silently.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/6EE914E2">OverrideArguments</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/9ACFDA12">OverrideArguments</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to override the passed arguments.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/7619D1E1">PackageParameters</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/823F1F11">PackageParameters</a></td>
 								<td>string</td>
 								<td>
 									<div>
     Gets or sets the parameters to pass to the package.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -413,30 +436,33 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/E205F68B">SideBySide</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/684C9811">SideBySide</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to allow side by side installation.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/524B16C2">SkipPowerShell</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/31971DD4">SkipPowerShell</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to skip the PowerShell installation of package.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/2AC84B68">Source</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/136B0767">Source</a></td>
 								<td>string</td>
 								<td>
 									<div>
     Gets or sets a package sources to use for this command.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -451,7 +477,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Core.Tooling/ToolSettings/B98A10B0">ToolTimeout</a></td>
-								<td>TimeSpan?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
     Gets or sets optional timeout for tool execution.
@@ -469,22 +495,24 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/B9331130">Verbose</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/12F71B6F">Verbose</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or sets a value indicating whether to run in verbose mode.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/api/Cake.Common.Tools.Chocolatey.Install/ChocolateyInstallSettings/24FB9CAD">Version</a></td>
+								<td><a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings/8F3F96F2">Version</a></td>
 								<td>string</td>
 								<td>
 									<div>
     Gets or sets the version of the package to install.
     If none specified, the latest will be used.
     </div>
+											<div><small><em>Inherited from <a href="/api/Cake.Common.Tools.Chocolatey/ChocolateySettings">ChocolateySettings</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -503,6 +531,88 @@ class Type type-node
 		
 
 
+
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Cake.Incubator/LoggingExtensions/D2217BAF">Dump<wbr>&lt;<wbr>Chocolatey<wbr>Install<wbr>Settings&gt;<wbr><wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+             Get a basic string representation of specified object.
+             </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/LoggingExtensions">LoggingExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/EnumerableExtensions/7EF3F1C2">IsIn<wbr>&lt;<wbr>Chocolatey<wbr>Install<wbr>Settings&gt;<wbr><wbr>(<wbr>Chocolatey<wbr>Install<wbr>Settings[])<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if the source is contained in a list
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/EnumerableExtensions">EnumerableExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Chocolatey<wbr>Install<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Issues addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Ftp/Extensions/09E77671">NotNull<wbr>&lt;<wbr>Chocolatey<wbr>Install<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Throws an exception if the specified parameter's value is null.
+            </div>
+										<div><small><em>From <a href="/api/Cake.Ftp/Extensions">Extensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Ftp addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/1A01586C">ThrowIfNull<wbr>&lt;<wbr>Chocolatey<wbr>Install<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Incubator/AssertExtensions/32D7598B">ThrowIfNull<wbr>&lt;<wbr>Chocolatey<wbr>Install<wbr>Settings&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+            Throws a <code class="cs">System.ArgumentNullException</code> with a specific message if the value is null, otherwise returns the value
+            </div>
+										<div><small><em>From <a href="/api/Cake.Incubator/AssertExtensions">AssertExtensions</a></em></small></div>
+                                            <div><small><em>Requires the Cake.Incubator addin</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 	
 </section>
@@ -536,6 +646,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

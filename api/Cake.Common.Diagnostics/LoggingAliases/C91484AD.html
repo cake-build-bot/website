@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -116,7 +117,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -128,6 +129,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -142,14 +150,24 @@
 			<li class="header">Method Members</li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/5DCD705B">Debug<wbr>(ICakeContext, <wbr>string, <wbr>object[])<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/7D3C15A3">Debug<wbr>(ICakeContext, <wbr>LogAction)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/2AA3BE6E">Debug<wbr>(ICakeContext, <wbr>object)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/2C053E68">Debug<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/17EA9509">Error<wbr>(ICakeContext, <wbr>string, <wbr>object[])<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/7C7C890C">Error<wbr>(ICakeContext, <wbr>LogAction)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/3BBA2226">Error<wbr>(ICakeContext, <wbr>object)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/3D1CA220">Error<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/39845324">Information<wbr>(ICakeContext, <wbr>string, <wbr>object[])<wbr></a></li>
 				<li class="selected"><a href="/api/Cake.Common.Diagnostics/LoggingAliases/C91484AD">Information<wbr>(ICakeContext, <wbr>LogAction)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/C43E77EE">Information<wbr>(ICakeContext, <wbr>object)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/C298F7E8">Information<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/AAE9310D">Verbose<wbr>(ICakeContext, <wbr>string, <wbr>object[])<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/97F9EBC4">Verbose<wbr>(ICakeContext, <wbr>LogAction)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/DE6A4FD8">Verbose<wbr>(ICakeContext, <wbr>object)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/D8CCCFDE">Verbose<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/07AE26B4">Warning<wbr>(ICakeContext, <wbr>string, <wbr>object[])<wbr></a></li>
 				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/1756FA37">Warning<wbr>(ICakeContext, <wbr>LogAction)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/18A33642">Warning<wbr>(ICakeContext, <wbr>object)<wbr></a></li>
+				<li><a href="/api/Cake.Common.Diagnostics/LoggingAliases/1E05B644">Warning<wbr>(ICakeContext, <wbr>string)<wbr></a></li>
 
 
                     </ul>
@@ -191,6 +209,7 @@
 
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>[CakeMethodAlias]
+[CakeAliasCategory("Information")]
 public static void Information(this ICakeContext context, LogAction logAction)</code></pre>
 
 	<h1 id="Examples">Examples</h1>
@@ -213,6 +232,12 @@ public static void Information(this ICakeContext context, LogAction logAction)</
 						<td><a href="/api/Cake.Core.Annotations/CakeMethodAliasAttribute">Cake<wbr>Method<wbr>Alias<wbr>Attribute</a></td>
 						<td>
     An attribute used to mark script method aliases.
+    </td>
+					</tr>
+					<tr>
+						<td><a href="/api/Cake.Core.Annotations/CakeAliasCategoryAttribute">Cake<wbr>Alias<wbr>Category<wbr>Attribute</a></td>
+						<td>
+    An attribute used for documentation of alias methods/properties.
     </td>
 					</tr>
 			</tbody></table>
@@ -296,6 +321,17 @@ public static void Information(this ICakeContext context, LogAction logAction)</
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

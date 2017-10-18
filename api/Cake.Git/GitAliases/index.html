@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -410,7 +418,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Git/GitAliases/D5568940">GitDiff<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></td>
-								<td>ICollection<wbr>&lt;GitDiffFile&gt;<wbr></td>
+								<td>ICollection<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Get changed files from inital commit id up to current.
@@ -420,7 +428,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Git/GitAliases/6D2E6120">GitDiff<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string)<wbr></a></td>
-								<td>ICollection<wbr>&lt;GitDiffFile&gt;<wbr></td>
+								<td>ICollection<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Get changed files from certain commit id up to current.
@@ -430,7 +438,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Git/GitAliases/CAD727C5">GitDiff<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string, <wbr>string)<wbr></a></td>
-								<td>ICollection<wbr>&lt;GitDiffFile&gt;<wbr></td>
+								<td>ICollection<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Get changed files from certain commit id up to current.
@@ -449,6 +457,26 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/api/Cake.Git/GitAliases/2922099A">GitHasStagedChanges<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if a repository contains staged changes.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Git/GitAliases/8F86A2DE">Git<wbr>Has<wbr>Uncommited<wbr>Changes<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if a repository contains uncommited changes.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Git/GitAliases/C5552E3F">GitInit<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></td>
 								<td>DirectoryPath</td>
 								<td>
@@ -459,8 +487,18 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/api/Cake.Git/GitAliases/91F00FBE">GitIsValidRepository<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if a specific directory is a valid Git repository.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/api/Cake.Git/GitAliases/469FCAAF">GitLog<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>int)<wbr></a></td>
-								<td>ICollection<wbr>&lt;GitCommit&gt;<wbr></td>
+								<td>ICollection<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Get commit log.
@@ -470,7 +508,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/api/Cake.Git/GitAliases/9F14EF4E">GitLog<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>string)<wbr></a></td>
-								<td>ICollection<wbr>&lt;GitCommit&gt;<wbr></td>
+								<td>ICollection<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Get commit from certain commit id up to current.
@@ -619,10 +657,41 @@ class Type type-node
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
+							<tr>
+								<td><a href="/api/Cake.Git/GitAliases/0A452041">GitTags<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></td>
+								<td>List<wbr>&lt;T&gt;<wbr></td>
+								<td>
+									<div>
+            Gets a list of all tags from the repo
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Git/GitAliases/92A9EAE1">GitUnstage<wbr>(ICakeContext, <wbr>DirectoryPath, <wbr>FilePath[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Removes from the staging area all the modifications of a collection of file since the latest commit (addition, updation or removal).
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Cake.Git/GitAliases/112629F9">GitUnstageAll<wbr>(ICakeContext, <wbr>DirectoryPath)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Removes from the staging area all the modifications all files the latest commit (addition, updation or removal).
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
 					</tbody></table>
 				</div>
 			</div>
 		
+
 
 
 	
@@ -657,6 +726,17 @@ class Type type-node
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

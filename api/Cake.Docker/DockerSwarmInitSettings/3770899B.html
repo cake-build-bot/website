@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -113,7 +114,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -125,6 +126,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -141,13 +149,17 @@
 			<li class="header">Constructors</li>
 				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/4700E34D">Docker<wbr>Swarm<wbr>Init<wbr>Settings<wbr>()<wbr></a></li>
 			<li class="header">Property Members</li>
-				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/67D89A1B">AutoAccept</a></li>
+				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/B90E9DBC">AdvertiseAddr</a></li>
+				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/5F50C7C0">Autolock</a></li>
+				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/A00EE95F">Availability</a></li>
 				<li class="selected"><a href="/api/Cake.Docker/DockerSwarmInitSettings/3770899B">CertExpiry</a></li>
+				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/21E1C587">DataPathAddr</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/C109FAC4">DispatcherHeartbeat</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/69035E01">ExternalCa</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/586BA4D7">ForceNewCluster</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/ECDF1563">ListenAddr</a></li>
-				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/31DEE6F2">Secret</a></li>
+				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/325BDBF0">MaxSnapshots</a></li>
+				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/154A1E1E">SnapshotInterval</a></li>
 				<li><a href="/api/Cake.Docker/DockerSwarmInitSettings/78F12C59">TaskHistoryLimit</a></li>
 
 
@@ -176,7 +188,9 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Validity period for node certificates (default 2160h0m0s)
+            --cert-expiry
+            default: 90*24*time.Hour
+            Validity period for node certificates (ns|us|ms|s|m|h)
             </div>
 
 		<div class="panel panel-default">
@@ -196,7 +210,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public TimeSpan? CertExpiry { get; set; }</code></pre>
+	<pre><code>public string CertExpiry { get; set; }</code></pre>
 
 
 
@@ -213,7 +227,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>TimeSpan?</td>
+					<td>string</td>
 					<td></td>
 				</tr>
 			</tbody></table>
@@ -253,6 +267,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){

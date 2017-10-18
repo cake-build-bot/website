@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description">
@@ -15,7 +15,7 @@
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/override.css" rel="stylesheet">
-        <script src="/assets/js/jQuery-2.2.3.min.js"></script>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
         <script src="/assets/js/highlight.pack.js"></script>   
@@ -36,11 +36,12 @@
             <header class="main-header">   
                      
                 <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/assets/img/logo.png"></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/assets/img/logo.png"></span>
-                </a>   
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
@@ -114,7 +115,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -126,6 +127,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -140,9 +148,18 @@
 			<li class="header">Constructors</li>
 				<li class="selected"><a href="/api/Cake.Common.Tools.GitReleaseNotes/GitReleaseNotesRunner/F4679CA1">Git<wbr>Release<wbr>Notes<wbr>Runner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator)<wbr></a></li>
 			<li class="header">Method Members</li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/9B12C97A">Get<wbr>Alternative<wbr>Tool<wbr>Paths<wbr>(TSettings)<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/32C94032">Get<wbr>Environment<wbr>Variables<wbr>(TSettings)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.GitReleaseNotes/GitReleaseNotesRunner/7C2C9CC2">Get<wbr>Tool<wbr>Executable<wbr>Names<wbr>()<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.GitReleaseNotes/GitReleaseNotesRunner/3DCC3E97">GetToolName<wbr>()<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/FAB95BAD">GetToolPath<wbr>(TSettings)<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/9C92E157">GetWorkingDirectory<wbr>(TSettings)<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/5E8C62B8">ProcessExitCode<wbr>(int)<wbr></a></li>
 				<li><a href="/api/Cake.Common.Tools.GitReleaseNotes/GitReleaseNotesRunner/1093E14C">Run<wbr>(FilePath, <wbr>Git<wbr>Release<wbr>Notes<wbr>Settings)<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/7C97BC0F">Run<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/8253AA41">Run<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>ProcessSettings, <wbr>Action<wbr>&lt;IProcess&gt;<wbr>)<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/A736B09F">RunProcess<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
+				<li><a href="/api/Cake.Core.Tooling/Tool_1/225385F4">RunProcess<wbr>(TSettings, <wbr>Process<wbr>Argument<wbr>Builder, <wbr>ProcessSettings)<wbr></a></li>
 
 
                     </ul>
@@ -274,6 +291,17 @@
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-60516413-1', 'auto');
+    ga('send', 'pageview');
+</script>
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
